@@ -1,20 +1,23 @@
-// function calc(a, b, operation) {
-//   switch (operation) {
-//     case '+':
-//       console.log(a + b);
-//       break;
-//     case '-':
-//       console.log(a - b);
-//       break;
-//     case '*':
-//       console.log(a * b);
-//       break;
-//     default:
-//       break;
-//   }
-// }
+// -------------ONLYSWITCHPRACTICE---------------
 
-// calc(8, 5, '*')
+
+function calc(a, b, operation) {
+  switch (operation) {
+    case '+':
+      console.log(a + b);
+      break;
+    case '-':
+      console.log(a - b);
+      break;
+    case '*':
+      console.log(a * b);
+      break;
+    default:
+      break;
+  }
+}
+
+calc(8, 5, '*')
 
 const operations = {
   sum: '+',
