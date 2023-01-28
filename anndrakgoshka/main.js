@@ -11,8 +11,7 @@ function calc(a, b, operation) {
 		case 'multi' :
 			return
 	}
-пше 
-
+}
 console.log(calc(5, 2, 'add'));
 console.log(calc(10, 2, 'substract'));
 console.log(calc('f', 3, 'multi'));
