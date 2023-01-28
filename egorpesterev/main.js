@@ -1,22 +1,18 @@
-let a = prompt('a = ?');
-let b = prompt('b = ?');
-alert('what operation do you want to reproduce?');
-let operation = prompt('add, multi, subtract?');
+let a = Number(prompt("Введите первое число"));
+let b = Number(prompt("Введите первое число"));
 
-function calc(operation, a, b) {
-    const add = (+a + +b);
-    const multi = (a * b);
-    const subtract = (a - b);
+let operation = prompt("Введите операцию:(*,-,+)")
 
-    if (operation == 'add') {
-        console.log(add)
-    } else if (operation == 'multi') {
-        console.log(multi)
-    } else if (operation == 'subtract') {
-        console.log(subtract)
-    } else {
-        alert('oops.. there is no such operator')
+calc = (operation, a, b) => {
+    if (operation === "+") {
+        return (a) + (b);
     }
+    else if (operation === "-"){
+    return (a) - (b);
 }
+else if (operation === "*") {
+    return (a) * (b);
+}
+}
+alert (calc (operation, a, b))
 
-calc(operation, a, b)
