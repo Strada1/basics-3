@@ -1,15 +1,4 @@
-// function calc(operation, a, b){
-    //     if(operation == 'add'){
-    //         return a + b
-    //     }else if(operation == 'multi'){
-    //         return a * b
-    //     } else if (operation == 'subtract'){
-    //         return a - b
-    //     }
-    // }
-    
-    
-    function calc(operation, a, b){
+function calc(operation, a, b){
         switch(operation){
             case 'add':
                 return a + b
@@ -40,19 +29,6 @@
     
     console.log(switchif2(-13))
     
-    
-    function swtchIf(browser) {
-      if (browser === 'Edge') {
-        return  "You've got the Edge!" ;
-      } else if(browser == 'Chrome' || browser == 'Firefox' || browser ==   'Safari'  ||  browser ==  'Opera') {
-        return 'Okay we support these browsers too' ;
-      }else {
-        return 'We hope that this page looks ok!' ;
-      }
-    
-    }
-    
-    console.log(swtchIf('Edge'))
     
     
     switch (browser) {
