@@ -82,6 +82,6 @@ switch (expr) {
     alert("Sorry, we are out of " + expr + ".");
 }
 
-prompt("Is there anything else you'd like?",``);
+prompt("Is there anything else you'd like? ",``);
 
 
