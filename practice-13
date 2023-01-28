@@ -1,0 +1,13 @@
+function calc(operation,a,b,){
+   switch (operation){
+      case 'add':
+        return a+b
+      case 'mul':
+        return a*b
+      case 'min':
+        return a-b
+      case 'div':
+        return a/b
+   }
+}
+console.log (calc('min',4,2));
