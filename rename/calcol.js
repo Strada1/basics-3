@@ -34,4 +34,4 @@ function calc(operation = 'add' , a = 1, b = 2 ) {
 }
 console.log(calc('multi', 10 ,))
 
-let f = 13;
+let f = 12;
