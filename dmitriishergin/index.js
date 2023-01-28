@@ -1,4 +1,9 @@
-console.log(calc('sdgsdgsdg', 7, '*'))
+const FIRST_OPERAND = 'sdgsdgsdg'
+const SECOND_OPERAND = 5
+const OPERATOR = '*'
+const RESULT = calc(FIRST_OPERAND, SECOND_OPERAND, OPERATOR)
+
+console.log(RESULT)
 
 function calc(a, b, oper) {
     a = Number(a)
