@@ -14,5 +14,6 @@ function calc(operation, a, b) {
   }
 }
 
-calc("subtract", 2, 7);
-calc("multi", 2, 7);
+calc("subtract", 5, 7);
+calc("multi", 5, 7);
+calc("add",1,2);
