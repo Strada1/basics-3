@@ -1,3 +1,37 @@
+function calc(operation, a, b) {
+    if (operation === "add") {
+        console.log(a + b);
+    } else if (operation === "multi") {
+        console.log(a * b);
+    } else if (operation === "subtract") {
+        console.log(a - b);
+    } else {
+        console.log("Something went wrong...")
+    }
+}
+calc("add", 1, 2);
+calc("multi", 1, 2);
+calc("subtract", 3, 2);
+
+function calc(opetration, a, b) {
+    switch(opetration) {
+        case "add":
+            console.log(a + b);
+            break;
+        case "multi":
+            console.log(a * b);
+            break;
+        case "subtract":
+            console.log(a - b);
+            break;
+        default:
+            console.log("Something went wrong...");
+    }
+}
+calc("add", 1, 2);
+calc("multi", 1, 2);
+calc("subtract", 3, 2);
+
 // function checkAge(age) {
 //   if (age < 18) {
 //       return console.log("you are not allowed");
@@ -113,39 +147,4 @@
 //   alert( i );
 //   i++;
 // } while (i < 3);
-
-function calc(operation, a, b) {
-    if (operation === "add") {
-        console.log(a + b);
-    } else if (operation === "multi") {
-        console.log(a * b);
-    } else if (operation === "subtract") {
-        console.log(a - b);
-    } else {
-        console.log("Something went wrong...")
-    }
-}
-calc("add", 1, 2);
-calc("multi", 1, 2);
-calc("subtract", 3, 2);
-
-function calc(opetration, a, b) {
-    switch(opetration) {
-        case "add":
-            console.log(a + b);
-            break;
-        case "multi":
-            console.log(a * b);
-            break;
-        case "subtract":
-            console.log(a - b);
-            break;
-        default:
-            console.log("Something went wrong...");
-    }
-}
-calc("add", 1, 2);
-calc("multi", 1, 2);
-calc("subtract", 3, 2);
-
 
