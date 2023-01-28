@@ -1,11 +1,4 @@
-
-
-
-
-
-
 /*
-
 function calc(operation, a, b) {
   let add = (a + b);
   let subtract = (a - b);
@@ -23,8 +16,6 @@ function calc(operation, a, b) {
  calc('subtract',55, 2);
  calc('multi', 8, 14);
 */
-
-
 
 function calc(operation, a, b) {
   let add = (a + b);
@@ -45,7 +36,6 @@ function calc(operation, a, b) {
       break;
   }
 }
-
  calc('add',18, 3);
  calc('subtract',25, 2);
  calc('multi', 8, 9);
