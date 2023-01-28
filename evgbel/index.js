@@ -16,7 +16,7 @@ function calc(a, b, operation) {
 
   case '*':
    const multiply = Number(a) * Number(b)
-   alert(multiply);
+   alert(multipl);
    break;
 
   case '/':
