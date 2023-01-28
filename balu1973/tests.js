@@ -11,9 +11,14 @@ function calc(operation, a, b) {
       case "subtract":
         result = a - b;
         break;
+      default:
+        result = "Принимаются только команды: 'add', 'multi', 'subtract'";
     }
-    return result;
+  } else {
+    result = "Нужно ввести чила! а не что-то там!";
   }
+  
+  return result;
 }
 
 console.log(calc("add", 2, 3));
