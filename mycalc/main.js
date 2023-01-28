@@ -1,20 +1,17 @@
 function calc(a, b, operation) {
-  let result;
-  switch (operation) {
-    case "add":
-      result = a + b;
-      break;
-    case "multi":
-      result = a * b;
-      break;
-    case "subtract":
-      result = a - b;
-      break;
+  if (operation == "add") {
+    console.log(a + b);
+    return;
   }
-  return result;
+  else if (operation == "multi") {
+    console.log(a * b);
+    return;
+  }
+  else if (operation == "subtract") {
+    console.log(a - b);
+    return;
+  }
 }
-
-console.log(calc(1, 2, "add"));
-console.log(calc(1, 2, "multi"));
-console.log(calc(3, 2, "subtract"));
-s
+calc(1, 2, "add");
+calc(1, 2, "multi");
+calc(3, 2, "subtract");
