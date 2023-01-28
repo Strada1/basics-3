@@ -14,7 +14,8 @@ function calc( a, operation, b) {
         default:
             break;
     }
-    // if (operation == '+') {
+}
+  // if (operation == '+') {
     //     return a + b;
     // }
     // else if (operation == '*') {
@@ -23,7 +24,7 @@ function calc( a, operation, b) {
     // else if (operation == '-') {
     //     return a - b;
     // }
-}
+    
 let add = calc(7, '-', 2); // 5
 let multi = calc(6, '+', 6); // 12
 let subtract = calc(17, '/', 27); //459
