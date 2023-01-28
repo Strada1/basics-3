@@ -1,0 +1,22 @@
+{
+  "scripts": {
+    "start": "calc.js"
+  },
+  "name": "stradacalc",
+  "version": "1.0.0",
+  "description": "calc",
+  "main": "calc.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Elisy69/StradaCalc.git"
+  },
+  "keywords": [
+    "calc"
+  ],
+  "author": "Elsy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Elisy69/StradaCalc/issues"
+  },
+  "homepage": "https://github.com/Elisy69/StradaCalc#readme"
+}
