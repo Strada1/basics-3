@@ -1,16 +1,18 @@
-const number = 33
+console.log(calc(5, 7, '*'))
 
-switch (number) {
-    case 0:
-        console.log('Вы ввели число 0')
-        break
-    case 1:
-        console.log('Вы ввели число 1')
-        break
-    case 2:
-    case 3:
-        console.log('Вы ввели число 2, а может и 3')
-        break
-    default: console.log('Введи другое число')
+function calc(a, b, oper) {
+    a = Number(a)
+    b = Number(b)
+
+    switch (oper) {
+        case '+': return a + b
+        case '-': return a - b
+        case '*': return a * b
+        case '/': return a / b
+        default: return null
+    }
 }
+
+
+
 
