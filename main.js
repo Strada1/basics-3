@@ -1,14 +1,22 @@
 function calc(operation = resultAll, a, b) {
+    if (typeof (a) != 'number' || typeof (b) != 'number') {
+        return 'Указано не число';
+    }
+    let result;
     switch (operation) {
         case "add":
-            return a + b;
+            result = a + b;
+            break;
         case "multi":
-            return a * b;
+            result = a * b;
+            break;
         case "substract":
-            return a % b;
+            return a - b;
+            break;
         default:
-            return resultAll;
+            result = resultAll;
     }
+    return result;
 }
 const resultAdd = calc("add", 1, 2);
 console.log(resultAdd);
@@ -19,4 +27,4 @@ console.log(resultSubstract);
 const resultAll = resultAdd + resultMulti + resultSubstract;
 console.log(resultAll);
 const resultany = calc();
-console.log("вы не выбрали действие, выполним сложение всех действий = " + resultany);
+console.log("Сумма доступных действий равна = " + resultany);
