@@ -18,4 +18,5 @@ let result;
   }
 
 alert(result);
+
 //версия только с switch
