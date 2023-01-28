@@ -12,12 +12,12 @@ function calc(operation, a, b) {
         result = a - b;
         break;
       default:
-        result = "Принимаются только команды: 'add', 'multi', 'subtract'";
+        console.log("Принимаются только команды: 'add', 'multi', 'subtract'");;
     }
   } else {
-    result = "Нужно ввести чила! а не что-то там!";
+    console.log("Нужно ввести чила! а не что-то там!");
   }
-  
+
   return result;
 }
 
