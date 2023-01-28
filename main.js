@@ -14,7 +14,15 @@ function calc( a, operation, b) {
         default:
             break;
     }
-    
+    // if (operation == '+') {
+    //     return a + b;
+    // }
+    // else if (operation == '*') {
+    //     return a * b;
+    // }
+    // else if (operation == '-') {
+    //     return a - b;
+    // }
 }
 let add = calc(7, '-', 2); // 5
 let multi = calc(6, '+', 6); // 12
