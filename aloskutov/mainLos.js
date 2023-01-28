@@ -9,6 +9,9 @@ function calc(operator, a, b) {
         case "subtract":
             return a-b;
             break;
+        default:
+            console.log("Неверная команада");
+            break;
     }
 }
 
