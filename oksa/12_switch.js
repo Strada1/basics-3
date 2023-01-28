@@ -11,6 +11,8 @@ function calc(operation, num1, num2) {
 		case 'subtract':
 			return num1-num2;
 			break;
+		default:
+			console.log("Something went wrong...");
 	}
 }
 
