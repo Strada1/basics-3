@@ -20,7 +20,7 @@ function calc(operation, a, b) {
     }
   }
 }
-console.log(calc("add", "h", 7));
+console.log(calc("add", 3, 7));
 console.log(calc("+", 3, 7));
 console.log(calc("*", 3, 5));
 console.log(calc("multi", 3, 5));
