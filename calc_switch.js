@@ -19,4 +19,3 @@ console.log(calc('multi', 5, 5)); //25
 console.log(calc('subtract', 100, 50));//50
 calc('abc');//Вы что вообще ввели?
 calc();
-  
