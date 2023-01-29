@@ -22,3 +22,4 @@ function calc(operation, a, b ){
           console.log(i);
         }
       }
+      console.log('проверка коммита');
