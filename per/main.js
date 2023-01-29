@@ -1,22 +1,27 @@
-const calcul = (opperator, a, b) => {
+const calc = (opperator, a, b) => {
   if (typeof a == 'number' || typeof b == 'number') {
     if (a !== 0 || b !== 0) {
       let result = 0
       switch (opperator) {
         case 'add':
+        case '+':
           result = a + b
           break
         case 'subtract':
+        case '-':
           result = a - b
           break
+        case '*':
         case 'multi':
           result = a * b
           break
         case 'delit':
+        case '/':
           result = a / b
           break
         case 'procent':
-          result = (a / b) * 100
+        case '%':
+          result = (a / b) * 100 + '%'
         default:
           'I not know this opperator'
       }
@@ -29,8 +34,12 @@ const calcul = (opperator, a, b) => {
   }
 }
 
-console.log(calcul('add', 34, 597))
-console.log(calcul('multi', 34, 597))
-console.log(calcul('precent', 34, 597))
-console.log(calcul('delit', 34, 597))
-console.log(calcul('sutract', 34, 597))
+console.log(calc('add', 34, 597)) // 631
+console.log(calc('multi', 34, 597)) // 20298
+console.log(calc('procent', 450, 67)) // 671.6417910447761%
+console.log(calc('delit', 634, 5)) // 126.8
+console.log(calc('subtract', 597, 13)) // 584
+console.log(calc('*', 597, 13)) // 7761
+console.log(calc('+', 597, 13)) // 610
+console.log(calc('-', 597, 13)) // 584
+console.log(calc('/', 597, 13)) // 45.92307692307692
