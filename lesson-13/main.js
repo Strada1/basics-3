@@ -43,26 +43,26 @@ calc1('mult', 8, 14);
 
 
 
-// function calc(operation, a, b) {
-//   let add = (a + b);
-//   let subtract = (a - b);
-//   let multi = (a * b);  
+function calc2(operation, a, b) {
+  let add = (a + b);
+  let subtract = (a - b);
+  let multi = (a * b);  
 
-//   switch (operation) {
-//     case 'add':
-//       console.log(add);
-//     break;
+  switch (operation) {
+    case 'add':
+      console.log(add);
+    break;
 
-//     case 'subtract':
-//       console.log(subtract);
-//       break; 
+    case 'subtract':
+      console.log(subtract);
+      break; 
 
-//     case 'multi':
-//       console.log(multi);
-//       break;
-//   }
-// }
-//  calc('add',18, 3);
-//  calc('subtract',25, 2);
-//  calc('multi', 8, 9);
+    case 'multi':
+      console.log(multi);
+      break;
+  }
+}
+ calc2('add',18, 3);
+ calc2('subtract',25, 2);
+ calc2('multi', 8, 9);
 
