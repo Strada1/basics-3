@@ -1,6 +1,6 @@
 function calc(operation, a, b) {
   if (isNaN(a) || isNaN(b)) {
-    console.log("You should write numbers");
+    console.log("You should write numbers, not symbols");
   } else {
     switch (operation) {
       case "add":
