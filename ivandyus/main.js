@@ -1,21 +1,25 @@
-let operation = prompt('Введите add, multi или subtract', '');
-let a = +prompt('Введите число 1', '');
-let b = +prompt('Введите число 2', '');
-
-if (isNaN(a) || isNaN(b)) {
-    alert('Введите число!');
-} else {
-    switch (operation) {
-        case 'add':
-            alert(a + b);
-            break;
-        case 'multi':
-            alert(a * b);
-            break;
-        case 'subtract':
-            alert(a - b);
-            break;
-        default:
-            alert('Вы ввели неверное значение');
-    };
+function calc (operation, a, b) {
+  let result;
+  if (isNaN (a) || isNaN (b)) {
+    console.log('Введите число!');
+} else {  
+switch(operation) {
+  case 'add':
+   result = (a + b);
+    break;
+  case 'multi':
+   result = (a * b); 
+    break;
+  case 'subtract':
+   result = (a - b);
+    break;
+  default:
+   result = ('Вы ввели не то значение');
 };
+};
+   console.log(result);
+}
+
+calc('multi', 2, 6);
+
+
