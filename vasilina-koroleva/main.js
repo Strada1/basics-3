@@ -9,11 +9,16 @@ function switchCalc(operation, a, b,) {
         case 'substract':
             console.log(a - b);
             break;
-
+        default:
+            console.log("Нет таких значений");
     }
+
 }
+
 
 switchCalc('add', 1, 2);
 switchCalc('multi', 1, 2);
 switchCalc('substract', 3, 2);
+switchCalc('', 4, 3);
+
 
