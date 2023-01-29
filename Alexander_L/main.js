@@ -1,3 +1,4 @@
+
 function calc(operation, a, b) {
 	switch (operation) {
 		case "add":
@@ -22,5 +23,7 @@ console.log(resultMulti);
 
 const resultSubtract = calc("subtract", 3, 2);
 console.log(resultSubtract);
+
+
 
 
