@@ -9,7 +9,6 @@ function calc(operation, a, b) {
             return a - b;
         }
     }
-  
   console.log(calc('add', 2, 1));
   console.log(calc('multi', 60, 3));
   console.log(calc('subtract', 3, 2));
