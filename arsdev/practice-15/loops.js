@@ -28,7 +28,6 @@ for (; k < 7; k++) {
 
 
 
-
 while (true) {
 	console.log('начало');
 	break;
