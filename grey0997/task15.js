@@ -34,4 +34,9 @@ for (let j = 1; j < 10; j++) {
     if (j % 2 == 0) continue;
     console.log(j); // 1, затем 3, 5, 7, 9
   }
+for (let j = 1; j < 10; j++) {
+    // если true, пропустить оставшуюся часть тела цикла
+    if (j % 2 == 0) continue;
+    console.log(j); // 1, затем 3, 5, 7, 9
+  }
 
