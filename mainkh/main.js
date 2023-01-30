@@ -22,7 +22,7 @@ function calc (a,b,operation){
                 return a/b
                 break;
             case 'cat':
-                return a-b
+                return a*b
                 break
     }
    
