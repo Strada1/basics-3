@@ -1,7 +1,7 @@
 // циклы
 
 let i = 1;
- do {
+do {
     console.log(i)
     i++
-} while (i < 20);
+} while (i < 20); 
