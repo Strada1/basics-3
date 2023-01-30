@@ -1,6 +1,6 @@
 let i = 1;
 
-while (i < 19) {
+do {
 	console.log(i);
 	i++;
-}
+} while (i < 19);
