@@ -11,7 +11,7 @@ function calc (operation, a, b){
             return a - b;
             break;  
         default:
-            console.log('operation dont found')          
+            console.log('operation dont found') ;         
     }
 }
 calc('add', 1, 2)
