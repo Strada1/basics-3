@@ -21,3 +21,4 @@ console.log(calc('add', 546, 454));
 console.log(calc('multi', 2, 2));
 console.log(calc('substract', 99, 9));
 console.log(calc('страйк', 1, 2));
+console.log(calc('add', 12, 25));
