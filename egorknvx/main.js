@@ -1,23 +1,28 @@
-function calc(operation, a, b) {
+function do_while() {
 
-      switch (operation) {
+      let i = 1;
 
-            case 'add':
-                  alert(a + b);
-                  break;
+      do {
+            console.log(i);
+            i = i + 1;
+      } while (i < 20);
 
-            case 'multi':
-                  alert(a * b);
-                  break;
+}
 
-            case 'subtract':
-                  alert(a - b);
-                  break;
+do_while();
 
-            default:
-                  alert('Вы сделали что-то не так');
-                  break;
+function for_() {
+      for (let i = 1; i < 20; i++) {
+            console.log(i);
       }
 }
 
-calc('multi', 4, 4);
+for_();
+
+function lines(line, number) {
+      for (let i = 1; i < number; i++) {
+            console.log(line);
+      }
+}
+
+lines('text', 5);
