@@ -433,9 +433,6 @@ switch (number) {
 
 }
 
-*/
-
-/*
 function calc(a, b, operation) {
     if (operation === 'add') {
         return console.log(a + b);
@@ -447,7 +444,6 @@ function calc(a, b, operation) {
         return console.log('Oops...');
     }
 }
-*/
 
 function calc(a, b, operation) {
     switch (operation) {
@@ -468,3 +464,53 @@ function calc(a, b, operation) {
 
 calc(1458, 9997, 'add')
 calc(90, 10, 'add')
+
+*/
+
+/* #15 ТЕМА ЦИКЛЫ */
+
+// Цикл while будет вызывать блок кода снова и снова “до тех пор” пока условие в скобках не станет равно false.Условие будет проверяться перед каждым “запуском кода”
+
+// let i = 1;
+// while (i < 4) {
+//     console.log(i)
+//     i = i + 1;
+// }
+
+// let k = 5;
+
+// do {
+//     console.log(k);
+//     k = k + 1;
+// } while (k < 3);
+
+console.log('Числа от 1 до 19 через обычную конструкцию while');
+
+let num = 1;
+while (num < 20) {
+    console.log(num);
+    num = ++num;
+}
+
+console.log('Числа от 1 до 19 через конструкцию do {} while ()');
+
+let numTwo = 1;
+do {
+    console.log(numTwo);
+    numTwo = ++numTwo;
+} while (numTwo < 20)
+
+console.log('Ниже числа от 1 до 19 через For');
+
+for (numThree = 0; numThree < 3; numThree++) {
+    console.log(numThree);
+}
+
+
+console.log('Проверка continue');
+
+for (let i = 0; i < 10; i++) {
+    // если true, пропустить оставшуюся часть тела цикла
+    if (i % 2 == 0) continue;
+    console.log(i); // 1, затем 3, 5, 7, 9
+}
