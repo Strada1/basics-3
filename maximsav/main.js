@@ -13,4 +13,4 @@ function calc(operation, a, b) {
  calc(`multi`, 1, 2); //2
  calc(`subtract`, 3, 2); //1
 
- //changes
+ //changes 3
