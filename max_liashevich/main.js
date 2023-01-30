@@ -155,3 +155,38 @@ continue next;
 }
 alert(currentNum);
 }
+
+
+//ОБЛЕГЧЕННЫЙ СИНТАКСИС ДЛЯ WHILE
+let num = -1;
+while (num) console.log(num++); 
+
+//ВЫВОД В КОНСОЛЬ ЧИСЕЛ ОТ 0 ДО 5 ВСЕМИ ВИДАМИ ЦИКЛОВ
+let j = 1;
+while(j <= 5) {
+  console.log(j++);
+}
+// homework
+let j = 1;
+while(j <= 5) console.log(j++);
+
+let j = 1;
+do {
+  console.log(j++);
+} while (j <= 5);
+
+for( let j = 1; j <= 5; j++) {
+  console.log(j);
+}
+
+for( let j = 1; j <= 5; j++) {
+  if(j % 2 == 0) continue;
+  console.log(j);
+}
+
+for(let num = 0; num < 2; num++) {
+  for(let size = 0; size < 3; size++) {
+  }
+  if (num == 2) break;
+  console.log(num);
+}
