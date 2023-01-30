@@ -1,16 +1,12 @@
-function culc(operation, a ,b) {
-	switch (operation) {
-		case 'add':
-			console.log(a + b)
-			break
-		case 'multi':
-			console.log(a * b)
-			break
-		case 'subtract':
-			console.log(a - b)
-			break
-	}
+let a = 1;
+while (a < 7) {
+	a = a + 1;
+	console.log(a)
+	if (a == 5) break
 }
-culc('add', 1, 2)
-culc('multi', 1, 2)
-culc('subtract', 3, 2)
+
+let age = 0;
+for (let age = 0; age < 10; age++) {
+	if (age == 3) continue;
+	console.log(age)
+}
