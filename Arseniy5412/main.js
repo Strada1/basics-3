@@ -1,13 +1,6 @@
-function culc(operation, a, b) {
-	if (operation == 'add') {
-		return a + b;
-	} else if (operation == 'multi') {
-		return a * b;
-	} else if (operation == 'subtract') {
-		return a - b;
-	} else {
-		return 'Вы ввели неправильную операцию';
-	}
-}
+let i = 1;
 
-console.log(culc('mu', 6, 3));
+while (i < 19) {
+	console.log(i);
+	i++;
+}
