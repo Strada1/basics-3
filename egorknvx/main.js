@@ -1,28 +1,23 @@
-function do_while() {
+const phoneBook = {
 
-      let i = 1;
+      list: {
+            'Egor': '+' + 11111111111,
+            'Yana': '+' + 22211111111,
+            'Artem D': '+' + 12312313,
+            'Dasha': '+' + 44444444
+      },
 
-      do {
-            console.log(i);
-            i = i + 1;
-      } while (i < 20);
-
-}
-
-do_while();
-
-function for_() {
-      for (let i = 1; i < 20; i++) {
-            console.log(i);
+      log() {
+            console.log(this.list);
       }
-}
 
-for_();
+};
 
-function lines(line, number) {
-      for (let i = 1; i < number; i++) {
-            console.log(line);
-      }
-}
+phoneBook.log();
 
-lines('text', 5);
+phoneBook.list.Egor = 'change';
+phoneBook.list['Artem D'] = 'change 2';
+phoneBook.list.Polina = 71232144;
+delete phoneBook.list.Dasha;
+
+phoneBook.log();
