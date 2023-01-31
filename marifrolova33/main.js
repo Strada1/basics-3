@@ -3,18 +3,19 @@ const myCat = {
   name: "Misa",
   catColor: "grey",
   owner: "Marina",
+  mainFeature: "naughty"
 };
-myCat["cat color"] = "grey and yellow";
+myCat.catColor = "grey and yellow";
 console.log("Hello, " + myCat.name + "!");
 
 ////////////////////////
 //tasks from a lesson
-const phoneBook = {	const myCat = {
+const phoneBook = {
   "Mari Fr": 7911783,	  age: 3,
   "Lena More": 79091,	  name: "Misa",
   Misa: 792158,	  "cat color": "grey",
   Homebank: 100000,	  owner: "Marina",
-};	};
+};
 
 myCat["cat color"] = "grey and yellow";
 //вызываем сам обЪект phoneBook	console.log("Hello, " + myCat.name + "!");
