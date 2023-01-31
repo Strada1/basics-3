@@ -1,6 +1,13 @@
-let i = 1;
+const phoneBook = {
+	'Vadim': 674565,
+	'Mihail': 453322,
+	'Andrey': 3437774
+};
 
-do {
-	console.log(i);
-	i++;
-} while (i < 19);
+phoneBook['Danil'] = 223133;
+
+phoneBook['Andrey'] = 111111;
+
+delete phoneBook['Mihail'];
+
+console.log(phoneBook);
