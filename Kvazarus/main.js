@@ -1,22 +1,16 @@
-let i = 1
-
-/*
-while (i < 20) {
-    console.log(i)
-    i++;
+const teleg = {
+    spam: '88005553535',
+    "just number": '8536475610',
+    infoOut() {
+        console.log(this.spam);
+    }
 }
 
-i = 1
-do {
-    console.log(i);
-    i++;
-} while (i < 20);
-*/
+console.log(teleg.spam, teleg["just number"]);
 
-for (i; i < 20; i++) {
-    console.log(i);
-}
+teleg["justNumber"] = teleg["just number"];
+delete teleg['just number'];
+teleg.spam = '+78005553535'
+console.log(teleg);
 
-for (let j = 1; j < 20; j++) {
-    console.log(j);
-}
+teleg.infoOut();
