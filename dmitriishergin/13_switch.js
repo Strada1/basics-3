@@ -38,4 +38,3 @@ function calc(a, b, oper) {
         default: return error
     }
 }
-
