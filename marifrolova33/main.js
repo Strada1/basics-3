@@ -1,19 +1,42 @@
-//Вывести в консоль числа от 1 до 30 с помощью цикла
-let k = 1;
-while (k < 31) {
-  console.log(k);
-  k = k + 1;
-}
+const phoneBook = {
+  "Mari Fr": 7911783,
+  "Lena More": 79091,
+  Misa: 792158,
+  Homebank: 100000,
+};
 
-//Вывести в консоль числа от 1 до 30 с помощью цикла
-//но с проверкой условия после тела цикла (do ... while)
-let l = 1;
-do {
-  console.log(l);
-  l = l + 1;
-} while (l < 31);
+//вызываем сам обЪект phoneBook
+console.log(phoneBook);
+//получить доступ к Misa
+console.log(phoneBook.Misa);
 
-//Вывести в консоль числа от 1 до 30 с помощью  цикла  for //
-for (let i = 1; i < 31; i++) {
-  console.log(i);
-}
+// строки в квадратных скобках
+console.log(phoneBook["Lena More"]);
+console.log(phoneBook["Mari Fr"]);
+
+//добавить запись
+phoneBook.Mother = 8937379;
+console.log(phoneBook);
+
+//обновить запись
+phoneBook["Lena More"] = "lpraud";
+console.log(phoneBook);
+
+//удалить запись
+delete phoneBook["Homebank"];
+console.log(phoneBook);
+
+// Методы
+const anotherPhoneBook = {
+  list: {
+    "Mari Fr": 7911783,
+    "Lena More": 79091,
+    Misa: 792158,
+    Homebank: 100000,
+  },
+  log() {
+    console.log(this.list); //ключевое слово - для вывода информации, которая есть в самом объекте
+  },
+};
+
+anotherPhoneBook.log();
