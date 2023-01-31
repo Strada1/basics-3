@@ -17,5 +17,3 @@ const user = {
     }
     
 }
-
-console.log(user.userData['name'])
