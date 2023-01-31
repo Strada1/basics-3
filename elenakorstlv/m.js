@@ -15,3 +15,10 @@ for (инициализация; условие; шаг) {
   // тело цикла
 }
 */
+for(let i = 1; i < 20; i++) {
+    console.log(i);
+}
+
+for( let k = 1; k < 20; k++){
+    console.log(k);
+}
