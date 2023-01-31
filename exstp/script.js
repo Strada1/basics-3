@@ -18,5 +18,4 @@ const user = {
     
 }
 
-user.userData['name'] = 'max'
 console.log(user.userData['name'])
