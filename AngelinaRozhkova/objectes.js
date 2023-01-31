@@ -1,8 +1,15 @@
-const phoneBook={
-    "mother": 89221291788,
-    "father": 89221291747,
-    "brother": 89995671598
-}
+const phoneBook = {
+    list: {
+        "mother": 89221291,
+        "father": 89221292,
+        "brother": 8999567
+    },
 
-console.log(phoneBook.brother);
-console.log(phoneBook);
+    log() {
+        console.log('its a phonebook!')
+		console.log(this.list) 
+    }
+};
+
+phoneBook.list["me"] = 8999559;
+phoneBook.log();
