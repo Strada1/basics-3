@@ -205,3 +205,79 @@ userInfo = null;
 userInfo.showInfo();
 
 console.log(userInfo.age);
+
+//FOR IN___IN OBJECTS
+let userInfo = {
+  name: "Max",
+  age: 30,
+}
+for (const key in userInfo) {
+  const value = userInfo[key];
+  console.log(value);
+}
+
+let userInfo = {
+  name: "Max",
+  age: 30,
+  adress: {
+    city:"Uzhgorod"
+  }
+}
+for(const key in userInfo.adress) {
+  console.log(userInfo.adress[key]);
+}
+
+///CHANGE ELEMENT IN OBJECT AND THEN DELETE THIS SHIT FROM THERE
+let userInfo = {
+  name: "Max",
+  age: 30,
+}
+userInfo.name = "Lena";
+console.log(userInfo.name)
+delete userInfo.name
+for(const key in userInfo) {
+  console.log(userInfo[key]);
+}
+
+// CHECK OBJ AND RETURN TRUE OR FALSE
+function isEmpty(obj) {
+  for(let key in obj) {
+    return alert(false);
+  }
+  return alert(true);
+}
+let userName = {
+}
+
+
+isEmpty(userName);
+
+// SUM ALL KEYS OF OBJ
+let salaries = {
+  John: 100,
+  Ann: 160,
+  Pete: 130
+}
+let sum = 0;
+for (let key in salaries) {
+  sum += salaries[key];
+}
+
+console.log(sum); 
+
+// MULTIPLY ALL KEYS IN OBJ
+let menu = {
+  width: 200,
+  height: 300,
+  title: "My menu"
+}
+
+function multipltNumeric(obj) {
+  for(let key in obj) {
+    if(typeof obj[key] == 'number'){
+      obj[key] *= 2;
+    }
+    console.log(obj[key])
+  }
+}
+multipltNumeric(menu);
