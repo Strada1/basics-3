@@ -1,4 +1,4 @@
-let number = 0;
+let number = prompt('Введите число : ','');
 
 switch (number) {
     case 0:
@@ -13,6 +13,4 @@ switch (number) {
         console.log('Число 2 или 3')
         break;
 
-
-        
 }
