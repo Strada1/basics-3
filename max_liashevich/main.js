@@ -190,3 +190,18 @@ for(let num = 0; num < 2; num++) {
   if (num == 2) break;
   console.log(num);
 }
+
+//OBJECTS
+
+let userInfo = {
+  name: "Max",
+  age: 30,
+  showInfo() {
+    console.log(`${this.name}`)
+  }
+}
+let user = userInfo;
+userInfo = null;
+userInfo.showInfo();
+
+console.log(userInfo.age);
