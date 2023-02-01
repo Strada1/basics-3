@@ -19,7 +19,6 @@ const contactBook = {
 // console.log(fullName in contactBook.list) //true
 
 for (const name in contactBook.list) {
-  console.log(name);
-  console.log(contactBook.list[name])
+  console.log(name, '>>', contactBook.list[name]);
 }
   
