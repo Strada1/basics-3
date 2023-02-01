@@ -15,8 +15,4 @@ const contactBook = {
   },
 };
 
-  if (contactBook.list['Ivan Meshkov']) {
-    console.log('Ivan is here');
-  }
-
-console.log(contactBook.list['Ivan Meshkov'])
+console.log('Ivan Meshkov' in contactBook.list) //true
