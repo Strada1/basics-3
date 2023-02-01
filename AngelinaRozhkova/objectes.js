@@ -4,12 +4,17 @@ const phoneBook = {
         "father": 89221292,
         "brother": 8999567
     },
-
+    add(name, number) {
+        this.list[name] = number;
+    },
+    del(name) {
+        delete this.list[name];
+    },
     log() {
-        console.log('its a phonebook!')
-		console.log(this.list) 
+        console.log(this.list);
     }
 };
 
-phoneBook.list["me"] = 8999559;
+phoneBook.add("Anna",8999123);
+phoneBook.del('brother');
 phoneBook.log();
