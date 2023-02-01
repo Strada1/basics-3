@@ -15,4 +15,5 @@ const contactBook = {
   },
 };
 
-console.log('Ivan Meshkov' in contactBook.list) //true
+const fullName = 'Ivan Meshkov'
+console.log(fullName in contactBook.list) //true
