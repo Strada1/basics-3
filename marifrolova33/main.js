@@ -8,6 +8,9 @@ const myCat = {
 myCat.catColor = "grey and yellow";
 console.log("Hello, " + myCat.name + "!");
 
+
+
+
 ////////////////////////
 //tasks from a lesson
 const phoneBook = {
