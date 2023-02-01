@@ -1,20 +1,33 @@
-const phoneBook = {
+const persons = {
     list: {
-        'Number1': 1111,
-        'Number2': 2222,
-        'Number3': 3333,
-    },
-    add(name, number) {
-        phoneBook.list[name] = number
+        John: {
+            firstName: 'John',
+            gender: 'Man',
+            age: 18,
+            phone: 1111,
+            address: 'pride street'
+        },
+        Harry: {
+            firstName: 'Harry',
+            gender: 'man',
+            age: 19,
+            phone: 2222,
+            address: 'jump street'
+        },
+        Ennie: {
+            firstName: 'Ennie',
+            gender: 'woman',
+            age: 22,
+            phone: 3333,
+            address: 'front street'
+        }
     }
 }
 
-phoneBook.add('Number4', 4444)
-for(const name in phoneBook.list) {
-    console.log(name + ' - ' + phoneBook.list[name])  // name - это ключ myPhoneBook.list[name]  - это означает, что ты просишь js в объекте myPhoneBook найти запись с ключом list, в значении которого объект, и у него по ключу [name] получить значение
+console.log(persons.list.Harry['firstName'] + ' - ' + persons.list.Harry['phone']);
+console.log(persons.list.Harry['firstName'] + ' - ' + persons.list.Harry['gender']);
+
+
+for(const allDate in persons.list.Harry) {
+    console.log(allDate + ' ' + persons.list.Harry[allDate])
 }
-
-
-
-
-
