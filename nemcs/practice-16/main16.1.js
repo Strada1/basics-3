@@ -3,7 +3,7 @@ const phoneBook = {
     "Jane Doe": 987654321,
     "Jim Smith": 111111111
   };
-  
+
 phoneBook["Nick"] = 'not available';
 phoneBook["Earl Grey"] = 802802802;
 phoneBook["Frank"] = 891180101;
