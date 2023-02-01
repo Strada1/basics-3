@@ -1,21 +1,21 @@
 const persons = {
     list: {
         John: {
-            firstName: 'John',
+            name: 'John',
             gender: 'Man',
             age: 18,
             phone: 1111,
             address: 'pride street'
         },
         Harry: {
-            firstName: 'Harry',
+            name: 'Harry',
             gender: 'man',
-            age: 19,
+            age: 12,
             phone: 2222,
             address: 'jump street'
         },
         Ennie: {
-            firstName: 'Ennie',
+            name: 'Ennie',
             gender: 'woman',
             age: 22,
             phone: 3333,
@@ -24,10 +24,38 @@ const persons = {
     }
 }
 
-console.log(persons.list.Harry['firstName'] + ' - ' + persons.list.Harry['phone']);
-console.log(persons.list.Harry['firstName'] + ' - ' + persons.list.Harry['gender']);
+// console.log(persons.list.personTwo['name'] + ' - ' + persons.list.personTwo['phone']);
+// console.log(persons.list.personTwo['name'] + ' - ' + persons.list.personTwo['gender']);
 
 
-for(const allDate in persons.list.Harry) {
-    console.log(allDate + ' ' + persons.list.Harry[allDate])
+// console.log(persons.list.personTwo['name'] + ' - ' + persons.list.personTwo['phone'] + ' - ' + persons.list.personTwo['gender'] + ' - ' + persons.list.personTwo['age'] + ' - ' + persons.list.personTwo['address'])
+
+//                  имя и телефон; потом имя и пол; имя + телефон + пол + возраст + адрес
+
+
+
+//     if(persons.list.Ennie['age'] >= 18) {
+//         console.log(persons.list.Ennie['name'] + ' - Welcome')
+// } else {
+//     console.log(persons.list.Ennie['name'] + ' - oops.. you are under 18')
+// }
+//     if(persons.list.Harry['age'] >= 18) {
+//         console.log(persons.list.Harry['name'] + ' - Welcome')
+// } else {
+//     console.log(persons.list.Harry['name'] + ' - oops.. you are under 18')
+// }
+    
+//     if(persons.list.John['age'] >= 18) {
+//         console.log(persons.list.John['name'] + ' - Welcome')
+// } else {
+//     console.log(persons.list.John['name'] + ' - oops.. you are under 18')
+// }
+
+
+for (const name in persons.list) {
+    if(persons.list[name].age >= 18) {
+        console.log(name + ' - welcome')
+    }else {
+        console.log(name + ' - oops.. you are under 18')
+    }
 }
