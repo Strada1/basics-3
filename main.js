@@ -8,9 +8,15 @@ const contactBook = {
 
   add(name, number) {
     this.list[name] = number;
+  },
+
+  delete(name) {
+   delete this.list[name];
   }
 };
 
-contactBook.add('Darya Lyzhina', 88993748293);
-console.log(contactBook.list['Darya Lyzhina'])
+const fullName = 'Ivan Meshkov'
+
+contactBook.delete(fullName);
+console.log(contactBook.list['Ivan Meshkov'])
 
