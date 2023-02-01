@@ -19,9 +19,11 @@ delete phoneBook.list["name_1"];
 phoneBook.add("name_9", 999999);
 
 for (const name in phoneBook.list) {
-    console.log(name)
-    console.log(phoneBook.list[name])
+    console.log(name + '---' + phoneBook.list[name])
+   
 }
+
+
 
 
 
