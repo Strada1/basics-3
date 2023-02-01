@@ -13,6 +13,5 @@ this.list[name]=number;
 }
 phoneBook.delete("zionlionk");
 phoneBook.add("yonas",44444444);
-phoneBook.add("qwerty",55555555);
 console.log(phoneBook.list);
 
