@@ -281,3 +281,22 @@ function multipltNumeric(obj) {
   }
 }
 multipltNumeric(menu);
+
+//OBJECTS MORE
+const contacts = {
+  list: {
+    "Max" : 123412424,
+    "Tati": 539934834,
+    "Pedro": 53959358
+  },
+  add(name, number) {
+    this.list[name] = number;
+  },
+  delete(name) {
+    delete this.list[name];
+  }
+};
+
+contacts.add("Sanchez", 4024242424);
+contacts.delete("Max");
+console.log(contacts);
