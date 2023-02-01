@@ -7,9 +7,8 @@ const phoneBook = {
     "Папа": 79610000001,
     "Света Т": 79180000003
     },
-    add(name, number) {
-        this.list[name] = number;
-    }
-    };
-phoneBook.add("Оля К", 79280000001);
-console.log(phoneBook.list['Оля К']);
+};
+for (const name in phoneBook.list) {
+console.log(name);
+console.log(phoneBook.list[name]);
+}
