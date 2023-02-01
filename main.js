@@ -1,39 +1,12 @@
-const address = {
-  "city": "New York",
-  "street": "Gagarina",
-  "houseNumber": 146,
-  "apartmentNumber": 66 
-};
-
-console.log (address) // all
-console.log (address.city) // New York
-console.log (address["city", "street"]) // New York Gagarina
-
 const contactBook = { 
 
-  address: {
-  "city": "New York",
-  "street": "Gagarina",
-  "houseNumber": 146,
-  "apartmentNumber": 66 
-  },
-
   name: {
-    "firstName": "George",
-    "secondName": "Obalabama"
+    "Ivan Mehskov": 88992234578,
+    "Dmitry Polivtsev": 88993746278,
+    "Albert Akhtyamov": 88993746372
   },
-
-  contacts: {
-    "phoneNumber": 17850032,
-    "telegram": "@geobalabama",
-    "twitter": "@suckmusk"
-  },
-
-  log () {
-    console.log(this.name)
-    console.log(this.contacts)
-  }
 
 };
 
-contactBook.log()
+let fullName = 'Ivan Meshkov' // Переменнаая - пользователь вводит имя
+console.log (contactBook.name["Ivan Mehskov"]) // Имя как ключ // получаем номер Ивана
