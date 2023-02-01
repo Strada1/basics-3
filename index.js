@@ -1,19 +1,18 @@
 
-function calc(operation, a, b) {
-    switch (operation) {
-        case "add":
-            console.log(a + b);
-            break;
-        case "multi":
-            console.log(a * b);
-            break;
-        case "subtract":
-            console.log(b - a);
-            break;    
+   const myPhoneBook = {
+    list: {
+    'Катя': 354374626,
+    'Мама': 33778347,
+    'Настёна': Boolean(0),
+    'Павел Александрович': +'2'
+    },
+    del(name){
+        delete this.list[name];
     }
+};
+for (const name in myPhoneBook.list) {
+    console.log(name + ' - ' + myPhoneBook.list[name]);
     
 }
-console.log(calc("add", 1, 2));
-console.log(calc("multi", 1, 2));
-console.log(calc("subtract", 3, 2));
-
+myPhoneBook.del('Павел Александрович')
+console.log(myPhoneBook.list)
