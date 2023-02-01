@@ -9,14 +9,36 @@ const telegramUserContacts = {
   },
 
   addContact(name, number) {
-    this[name] = number;
+    if (this.checkProperty(name)) {
+      return null;
+    }
+
+    if (this.checkEmptyString(name)) {
+      return null;
+    }
+
+    this.list[name] = number;
   },
   deleteContact(name) {
-    delete this[name];
+    if (!this.checkProperty(name)) {
+      return null;
+    }
+
+    if (this.checkEmptyString(name)) {
+      return null;
+    }
+
+    delete this.list[name];
   },
+  checkProperty(prop) {
+    return prop in this.list;
+  },
+  checkEmptyString(str) {
+    return str === '';
+  }
 };
 
-telegramUserContacts.addContact('Hoor', 81102894475);
+telegramUserContacts.addContact('Rick', 81102894475);
 telegramUserContacts.deleteContact('John');
 
 console.log(telegramUserContacts);
