@@ -1,14 +1,27 @@
 const phoneBook = {
-    "Scottie": 222333444,
-    "Dennis Rodman": 222333555,
-    "Michael": 222333666,
-    "Horace Grant": 222333777,
-    "Bob Love": 222333888,
-    "Reginald": 222333999
+    list: {
+        "name_1": 11111,
+        "name_2": 22222,
+        "name_3": 33333,
+        "name_4": 44444,
+        "name_5": 55555
+    },
+    log() {
+        console.log(this.list)
+    },
+    add(name, number) {
+        this.list[name] = number;
+    }
 };  
-phoneBook["Zach Lavine"] = 333444555;
-phoneBook["Michael"] = 777777777;
-delete phoneBook["Dennis Rodman"];
-console.log(phoneBook);
-console.log(phoneBook.Michael);
-console.log(phoneBook["Bob Love"]);
+phoneBook.list["name_6"] = 666666;
+phoneBook.list["name_2"] = 777777;
+delete phoneBook.list["name_1"];
+phoneBook.add("name_9", 999999);
+
+for (const name in phoneBook.list) {
+    console.log(name)
+    console.log(phoneBook.list[name])
+}
+
+
+
