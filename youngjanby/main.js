@@ -16,3 +16,4 @@ if(myPhoneBook.list.Number1) {
 
 myPhoneBook.add('Number4', 4444);
 console.log(myPhoneBook.list['Number4'])
+console.log('Number1' in myPhoneBook.list)
