@@ -15,5 +15,11 @@ const contactBook = {
   },
 };
 
-const fullName = 'Ivan Meshkov'
-console.log(fullName in contactBook.list) //true
+// const fullName = 'Ivan Meshkov'
+// console.log(fullName in contactBook.list) //true
+
+for (const name in contactBook.list) {
+  console.log(name);
+  console.log(contactBook.list[name])
+}
+  
