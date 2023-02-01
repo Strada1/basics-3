@@ -9,4 +9,4 @@ const contactBook = {
 };
 
 let fullName = 'Ivan Meshkov' // Переменнаая - пользователь вводит имя
-console.log (contactBook.name["Ivan Mehskov"]) // Имя как ключ // получаем номер Ивана
+console.log (contactBook.name[fullName]) // Имя как ключ // получаем номер Ивана
