@@ -20,3 +20,7 @@ telegramUserContacts.addContact('Hoor', 81102894475);
 telegramUserContacts.deleteContact('John');
 
 console.log(telegramUserContacts);
+
+for (let user in telegramUserContacts.list) {
+  console.log(`${user} - ${telegramUserContacts.list[user]}`);
+}
