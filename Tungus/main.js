@@ -9,9 +9,13 @@ this.list[name]=number;
   },
   delete(name){
     delete this.list[name];
-  }
-}
+  },
+};
 phoneBook.delete("zionlionk");
 phoneBook.add("yonas",44444444);
-console.log(phoneBook.list);
+for(const name in phoneBook.list){
+    console.log(name+" - "+phoneBook.list[name]);
+    }
+
+ 
 
