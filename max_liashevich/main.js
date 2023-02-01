@@ -300,3 +300,17 @@ const contacts = {
 contacts.add("Sanchez", 4024242424);
 contacts.delete("Max");
 console.log(contacts);
+
+const options = {
+  name: 'test',
+  width: 1024,
+  height: 1024,
+  colors: {
+    border: 'black',
+    bg: 'red'
+  }
+};
+
+for(key in options) {
+  console.log(`Свойство ${key} имеет значение ${options[key]}`);
+}
