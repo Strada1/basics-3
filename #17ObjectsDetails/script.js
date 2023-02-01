@@ -10,11 +10,13 @@ const phoneBook = {
     del(name) {
         delete this.list[name];
     },
-    log() {
-        console.log(this.list);
+    logAll() {
+        for (const name in this.list) {
+            console.log(`${name} - ${this.list[name]}`)
+        }
     }
 }
 
-phoneBook.log();
 phoneBook.add('Andrey', 12312312);
-phoneBook.log();
+phoneBook.del('John');
+phoneBook.logAll();
