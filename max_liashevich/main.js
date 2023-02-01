@@ -300,7 +300,7 @@ const contacts = {
 contacts.add("Sanchez", 4024242424);
 contacts.delete("Max");
 console.log(contacts);
-
+// OBJ PRACTICE:
 const options = {
   name: 'test',
   width: 1024,
@@ -311,6 +311,46 @@ const options = {
   }
 };
 
-for(key in options) {
-  console.log(`Свойство ${key} имеет значение ${options[key]}`);
+// for(let key in options) {
+//   if(typeof(options[key]) === 'object') {
+//     for(let i in options[key]) {
+//       console.log(`Свойство ${i} имеет значение ${options[key][i]}`);
+//     }
+//   } else {
+//     console.log(`Свойство ${key} имеет значение ${options[key]}`);
+//   }
+// }
+// COUNTER IN OBJ(bad method, cause it's too long, too many)
+let counter = 0;
+for(let key in options) {
+  if(typeof(options[key]) === 'object') {
+    for(let i in options[key]) {
+      console.log(`Свойство ${i} имеет значение ${options[key][i]}`);
+      counter++;
+    }
+  } else {
+    console.log(`Свойство ${key} имеет значение ${options[key]}`);
+    counter++;
+  }
 }
+console.log(counter);
+// METHODS IN OBJ
+const options = {
+  name: 'test',
+  width: 1024,
+  height: 1024,
+  colors: {
+    border: 'black',
+    bg: 'red'
+  },
+  makeTest: function () {
+    console.log("Test");
+  }
+};
+options.makeTest(); //CREATE MY OWN METHOD IN OBJECT
+console.log(Object.keys(options));
+console.log(Object.keys(options).length);
+// DESTRUCT OBJECT:
+
+const {border, bg} = options.colors;// ДЕСТРУКТУРИЗАЦИЯ ОБЬЕКТА
+console.log(border);
