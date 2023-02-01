@@ -8,4 +8,4 @@ function calc(operation, a, b){
     }
 }
 let result = calc('add', 1, 2);
-console.log(result);
+console.log(result); 
