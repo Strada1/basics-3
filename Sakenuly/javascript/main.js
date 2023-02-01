@@ -1,29 +1,16 @@
-function calc(){
-  const operation = prompt('add,multi,subtract');
-  const firstNumber = +prompt('Первая цифра');
-  const secondNumber = +prompt('Вторая цифра');
-  let result;
-  
-  switch(operation) {
-  case 'add':
-     result = firstNumber + secondNumber; 
-    break;
-  case 'multi':
-      result = firstNumber * secondNumber;
-    break;
-  case 'subtract':
-      result = firstNumber - secondNumber;
-        break;
-}
-switch(result) {
-  case null:
-    case '':
-    case undefined:
-    return alert('Ошибка');
+const contacts = {
+  list: {
+      "Andryuha": 808,
+      "Ali": 777
+  }, 
+  add(name, number) {
+      contacts.list[name] = number;
+  },
+  delete(name) {
+  delete contacts.list[name];
+  },
+};
+for (const cname in contacts.list) {
+console.log(cname + ' - ' + contacts.list[cname]);
 
-}
-alert(String(result)); 
-
-}
- 
-calc();
+} 
