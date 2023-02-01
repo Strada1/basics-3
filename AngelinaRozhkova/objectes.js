@@ -9,12 +9,16 @@ const phoneBook = {
     },
     del(name) {
         delete this.list[name];
-    },
-    log() {
-        console.log(this.list);
     }
 };
 
 phoneBook.add("Anna",8999123);
 phoneBook.del('brother');
-phoneBook.log();
+
+console.log("John" in phoneBook.list);
+console.log("Anna" in phoneBook.list);
+
+for (const name in phoneBook.list) {
+    console.log(name); 
+    console.log(phoneBook.list[name] );
+};
