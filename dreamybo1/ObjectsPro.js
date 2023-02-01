@@ -27,3 +27,6 @@ const tgList = {
  tgList.delete("Мой номер"); //Удаляем контакт из объекта
 tgList.log(); //Выводим измененный объект
  
+for (const name in tgList.list){
+    console.log(name, "-", tgList.list[name]);
+}
