@@ -41,19 +41,40 @@
 
 /* ===========================================задача 12 */
 
-function calc(operation, a, b){
-    switch (operation){
-      case "add":
-        alert(a+b)
-        break
-      case "multi":
-        alert(a*b)
-        break
-      case "substract":
-        alert(b-a)
-        break
-    }
+// function calc(operation, a, b){
+//     switch (operation){
+//       case "add":
+//         alert(a+b)
+//         break
+//       case "multi":
+//         alert(a*b)
+//         break
+//       case "substract":
+//         alert(b-a)
+//         break
+//     }
     
-  }
+//   }
   
-  calc("substract", 1,2)
+//   calc("substract", 1,2)
+
+/*========================================= Объекты*/
+
+const phoneBook = {
+  list: {
+    "John": 123456789,
+    "Jane Doe": 456123789,
+    "John Smith": 987654321
+  },
+  add(name,number) {
+    this.list[name] = number
+  },
+  delete(name){
+    this.list[name] = number
+  }
+}
+
+phoneBook.add("Maks", 159753456)
+console.log(phoneBook.list["Maks"])
+delete phoneBook.list["Maks"]
+console.log(phoneBook.list)
