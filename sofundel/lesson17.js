@@ -20,16 +20,16 @@ const phoneBookHard = {
     },
 
     showLocalInfo(name, info) {
-        console.log(name, "-", phoneBookHard.list[name][info]);
+        console.log(name, "-", this.list[name][info]);
     },
 
     showGlobalInfo(name) {
-        console.log(name, "-", phoneBookHard.list[name]);
+        console.log(name, "-", this.list[name]);
     },
 
     searchAge(ageMin, ageMax) {
-        for (const name in phoneBookHard.list) {
-            if (phoneBookHard.list[name]["age"] >= ageMin && phoneBookHard.list[name]["age"] <= ageMax) {
+        for (const name in this.list) {
+            if (this.list[name]["age"] >= ageMin && this.list[name]["age"] <= ageMax) {
                 console.log(name);
             }
         }
