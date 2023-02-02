@@ -1,16 +1,12 @@
-let firstObject = {
-    name: "Juan",
-    age: 228,
-    sex: "male"
+let thirdObject = {
+    nameOfSecond: "noName",
+    age: 14,
+   parents: {
+        momsName: "Klara",
+        dadsName:"Carol"
+    }
+
 }
-
-let clone = Object.assign({},firstObject);
-
-console.log(clone);
-console.log(clone === firstObject);
-
-clone.name="Pele";
-console.log(clone);
-console.log(firstObject);
-
-
+let fourthObject = structuredClone(thirdObject,{});
+console.log(fourthObject);
+console.log(thirdObject===fourthObject);
