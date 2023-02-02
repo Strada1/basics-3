@@ -1,6 +1,8 @@
-let user = {
-    name: 'John'
+let a = {
+
 }
 
-let admin = user;
-console.log(admin.name)
+let b = a;
+
+console.log(a == b);
+console.log(a === b)
