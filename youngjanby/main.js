@@ -1,15 +1,14 @@
-let List = {
-    name: 'Janby',
+let names = {
+    name: 'Janby'
 }
 
-let clone = {}
-
-for (let ui in List) {
-    clone[ui] = List[ui]
+let numbers = {
+    number: 11111,
 }
 
-clone.name = 'youngjanby';
+let ages = {
+    age: 18,
+}
 
-
-console.log(List.name)
-console.log(clone.name)
+Object.assign(names, numbers, ages);
+console.log(names)
