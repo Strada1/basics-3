@@ -6,10 +6,17 @@ const telegrammContacts = {
 		'Sveta': 89996769162,
 		'Raf': 89992022543,
 	},
-	log() {
-		console.log(this.list)
+	// Метод функция для добавления или удаления контакта
+	contact(action, name, number) {
+		if (action == 'add') {
+			telegrammContacts.list[name] = number;
+		} else if (action == 'dell') {
+			delete telegrammContacts.list[name];
+		}
 	}
-}
+};
+
+
 
 console.log(telegrammContacts.list.Father); // Вызов контакта 'Father'
 
@@ -23,14 +30,22 @@ console.log(telegrammContacts.list.Father); // Вызов обновленног
 
 console.log(telegrammContacts.list['Vlad Byk']) // Вызов контакта 'Vlad Byk'
 
-telegrammContacts.log(); // Вызов всего списка через log()
-
 
 // Использование for...in для поиска значений объекта
-for (const name in telegrammContacts.list) {
-	console.log(name + ' - ' + telegrammContacts.list[name]) // Выводит список контактов в формате 'Имя' - 'номер телефона'
+for (const key in telegrammContacts.list) {
+	console.log(key + ' - ' + telegrammContacts.list[key]) // Выводит список контактов в формате 'Имя' - 'номер телефона'
 }
+
+// Вызов через метод
+telegrammContacts.contact('add', 'Mom', 89653617437); // Добавление контакта через метод
+console.log(telegrammContacts.list['Mom']); // Вызвал добавленный контакт
+console.log(telegrammContacts.list); // Проверил новый котакт в общем списке
+
+telegrammContacts.contact('dell', 'Raf'); // Удаление котакта через метод
+console.log(telegrammContacts.list['Raf']); // Проверил удаление контакта
+console.log(telegrammContacts.list); // Проверил обновленный список котактов
 
 // Проверка нахождения ключа в объекте
 console.log('Sveta' in telegrammContacts.list); // True
 console.log('German' in telegrammContacts.list); // False
+
