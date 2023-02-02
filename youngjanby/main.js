@@ -1,8 +1,15 @@
-let a = {
-
+let List = {
+    name: 'Janby',
 }
 
-let b = a;
+let clone = {}
 
-console.log(a == b);
-console.log(a === b)
+for (let ui in List) {
+    clone[ui] = List[ui]
+}
+
+clone.name = 'youngjanby';
+
+
+console.log(List.name)
+console.log(clone.name)
