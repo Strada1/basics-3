@@ -2,13 +2,6 @@ let names = {
     name: 'Janby'
 }
 
-let numbers = {
-    number: 11111,
-}
+let clone = Object.assign({}, names)
 
-let ages = {
-    age: 18,
-}
-
-Object.assign(names, { name: 'youngjanby'})
-console.log(names)
+console.log(clone)
