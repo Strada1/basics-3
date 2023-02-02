@@ -32,3 +32,7 @@ phoneBook.list["Sveta"] = "@svetagol";
 phoneBook.list["Jane Doe"] = "@jane_doe";
 
 phoneBook.log();
+
+phoneBook.hi = function hi() {console.log("Hello!")};   // добавляем в свойство функцию hi()
+
+phoneBook.hi();
