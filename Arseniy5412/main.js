@@ -1,13 +1,22 @@
 const phoneBook = {
+	list: {
 	'Vadim': 674565,
 	'Mihail': 453322,
 	'Andrey': 3437774
+},
+	add(name, number) {
+		this.list[name] = number;	
+	},
+	delete(name) {
+		delete this.list[name];
+	}
 };
 
-phoneBook['Danil'] = 223133;
+phoneBook.add('Artem', 969696);
 
-phoneBook['Andrey'] = 111111;
+phoneBook.add('Semen', 111111);
 
-delete phoneBook['Mihail'];
+phoneBook.delete('Semen');
 
-console.log(phoneBook);
+
+console.log(phoneBook.list);
