@@ -10,5 +10,5 @@ let ages = {
     age: 18,
 }
 
-Object.assign(names, numbers, ages);
+Object.assign(names, { name: 'youngjanby'})
 console.log(names)
