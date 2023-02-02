@@ -13,3 +13,13 @@ delete phoneBook["Jane Doe"];
 
 console.log("Katie Johnson:", phoneBook["Katie Johnson"]);
 console.log("Jane Doe:", phoneBook["Jane Doe"]);
+
+phoneBook.Oksana = "@mir0_k";
+phoneBook["Sveta"] = "@svetago";
+
+console.log(phoneBook);
+
+phoneBook["Sveta"] = "@svetagol";
+phoneBook["Jane Doe"] = "@jane_doe";
+
+console.log(phoneBook);
