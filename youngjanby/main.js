@@ -1,28 +1,42 @@
 const persons = {
     list: {
         John: {
-            name: 'John',
             gender: 'Man',
             age: 18,
-            phone: 1111,
-            address: 'pride street'
+            // phone: 1111,
+            // address: 'pride street'
         },
         Harry: {
-            name: 'Harry',
             gender: 'man',
             age: 12,
-            phone: 2222,
-            address: 'jump street'
+            // phone: 2222,
+            // address: 'jump street'
         },
         Ennie: {
-            name: 'Ennie',
             gender: 'woman',
             age: 22,
-            phone: 3333,
-            address: 'front street'
+            // phone: 3333,
+            // address: 'front street'
         }
+    },
+    addPersonInList() {
+        this.list = {...this.list}
+        let name = prompt('name?')
+        let gender = prompt('gender?')
+        let age = prompt('age?')
+
+        return this.list[name] = {
+            gender,
+            age,
+        };
     }
 }
+
+
+persons.addPersonInList()
+console.log(persons.list)
+
+
 
 // console.log(persons.list.personTwo['name'] + ' - ' + persons.list.personTwo['phone']);
 // console.log(persons.list.personTwo['name'] + ' - ' + persons.list.personTwo['gender']);
@@ -52,10 +66,19 @@ const persons = {
 // }
 
 
-for (const name in persons.list) {
-    if(persons.list[name].age >= 18) {
-        console.log(name + ' - welcome')
-    }else {
-        console.log(name + ' - oops.. you are under 18')
-    }
-}
+// for (const name in persons.list) {
+//     if(persons.list[name].age >= 18) {
+//         console.log(name + ' - welcome')
+//     }else {
+//         console.log(name + ' - oops.. you are under 18')
+//     }
+// }
+
+
+// for (const name in persons.list) {
+//     for(let i = 0; persons.list[name].gender == 'man'; i++) {
+//         console.log(i)
+//     }
+//   }
+
+
