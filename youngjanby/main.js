@@ -20,23 +20,21 @@ const persons = {
         }
     },
     addPersonInList() {
-        this.list = {...this.list}
-        let name = prompt('name?')
-        let gender = prompt('gender?')
+        let name = prompt('name?');
+        let gender = prompt('gender?');
         let age = prompt('age?')
 
-        return this.list[name] = {
+        return persons.list[name] = {
             gender,
             age,
-        };
+        }
+
     }
 }
 
 
-persons.addPersonInList()
+persons.addPersonInList();
 console.log(persons.list)
-
-
 
 // console.log(persons.list.personTwo['name'] + ' - ' + persons.list.personTwo['phone']);
 // console.log(persons.list.personTwo['name'] + ' - ' + persons.list.personTwo['gender']);
