@@ -29,7 +29,7 @@ const phoneBookHard = {
 
     searchAge(ageMin, ageMax) {
         for (const name in this.list) {
-            if (this.list[name]["age"] >= ageMin && this.list[name]["age"] <= ageMax) {
+            if (this.list[name].age >= ageMin && this.list[name].age <= ageMax) {
                 console.log(name);
             }
         }
