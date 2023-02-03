@@ -2,7 +2,7 @@ const toDo = {
     list: {
         "create a new practice task": "Todo",
         "make a bed": "In Progress",
-        "write a post": "Done",
+        "write a post": "todo",
     },
 
     changeStatus(key, value) {
@@ -10,7 +10,7 @@ const toDo = {
     },
 
     addTask(key) {
-        this.list[key] = 'To Do';
+        this.list[key] = 'Todo';
     },
 
     deleteTask(key) {
@@ -34,9 +34,10 @@ const toDo = {
             }
         }
         if (!Object.values(this.list).includes('Done')) {
-            console.log('Nothing is done')
+            console.log('Nothing is done!');
         }
     }
 }
-
+toDo.addTask('do homework');
+toDo.changeStatus('write a post', 'Done');
 toDo.showList();
