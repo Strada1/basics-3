@@ -1,33 +1,42 @@
-const list = {
-	"create a new practice task": "In Progress", 
-	"make a bed": "Done", 
-	"write a post": "To Do",
-}
-
-function changeStatus(key) {
-  if (key == list["write a post"]) {
-    list["write a post"] = "In Progress"
-    list["make a bed"] = "To Do"
-    list["create a new practice task"] = "To Do"
+const ToDo = {
+  list: {
+      "create a new practice task": "In Progress",
+      "make a bed": "Done",
+      "write a post": "ToDo",
+  },
+  changeStatus: function(key, status) {
+    if (key in ToDo.list) {
+      this.list[key] = status
+    } else {
+      console.log('No1')
+    }
+  },
+  addTask: function (key, status) {
+    if (!(key in ToDo.list)) {
+      this.list[key] = status
+    } else  {
+      console.log("No2")
+    }
+  },
+  deleteTask: function (key) {
+    if (key in this.list) {
+      delete this.list[key] 
+    } else {
+      console.log("No3")
+    }
+  },
+  showList: function () {
+    for (const key in ToDo.list) {
+      console.log(key, this.list[key])
+    }
   }
 }
-changeStatus(list["write a post"])
+ToDo.changeStatus("create a new practice task", "ToDo")
+ToDo.addTask("read book", "already")
+ToDo.deleteTask("write a post")
+ToDo.showList()
 
-function addTask(key) {
-  if (key == 'have a walk') {
-    list['have a walk'] = 'go'
-  }
-}
-addTask('have a walk')
 
-function deleteTask(key) {
-  if (key == 'have a walk') {
-    delete list['have a walk']
-  }
-}
-deleteTask('have a walk')
 
-function showList() {
-  console.log(list)
-}
-showList()
+
+
