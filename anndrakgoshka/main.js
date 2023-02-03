@@ -32,57 +32,36 @@ function deleteTask(task) {
 	delete list[task];
 };
 
+
 function showList() {
+let done = '';
+let inProgress = '';
+let toDo = ''
 
-	let todo = null;
-	let inprogress = null;
-	let done = null;
-
-	for (const task in list) {
-		if(list[task] === 'Done') {
-			done += `${task},`;
-		} else if (list[task] === 'In Progress') {
-			done += `${task},`;
-		} else if (list[task] === 'To Do') {
-			done += `${task},`;
-		}
+for (const task in list) {
+	if (list[task] === 'Done') {
+   done += `${task}, \n`;
+} else if (list[task] === 'In Progress') {
+   inProgress += `${task}, \n`
+ } else {
+   toDo += `${task}, \n`
 }
-
+}
 if(!done) {
-	console.log("Nothing is Done")
+  done = 'Nothing is done\n'
+ }
+ if(!inProgress) {
+  inProgress = 'Nothing is inProgress\n'
+ }
+ if(!toDo) {
+  toDo = 'Nothing is todo\n'
+ }
+ return console.log(`Done: \n${done} In Progress: \n ${inProgress} To do: \n${toDo}`);
 }
-if(!todo) {
-	console.log('Nothing is ToDO')
-}
-if(!inprogress){
-	console.log('Nothing is InProgress')
-}
-}
+
 
 
 changeStatus('write a post', 'Done');
 addTask('have a walk', 'To Do');
-console.log(list)
+deleteTask('have a walk');
 showList();
-// 	console.log('To Do');
-// 	for (const task in list) {
-// 		if (list[task] === 'To Do') {
-// 			console.log(task)
-// 		} 
-// 	}
-	
-
-// 	console.log('In Progress')
-// 	for (const task in list) {
-// 		if (list[task] === 'In Progress') {
-// 			console.log(task)
-// 		} 
-// 	}
-
-// 	console.log('Done')
-// 	for (const task in list) {
-// 		if (list[task] === 'Done') {
-// 			console.log(task)
-// 		}
-// }
-
