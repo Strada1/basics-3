@@ -1,8 +1,14 @@
+const DONE = 'Done'
+const TO_DO = 'To Do'
+const IN_PROGRESS = 'In Progress'
+
 const list = {
-	"create a new practice task": "In Progress", 
-	"make a bed": "Done", // задача "заправить кровать" в статусе "Готово"
-	"write a post": "To Do",
+	"create a new practice task": IN_PROGRESS, 
+	"make a bed": TO_DO, // задача "заправить кровать" в статусе "Готово"
+	"write a post": TO_DO,
 }
+
+const statuses = {DONE, TO_DO, IN_PROGRESS}
 
 const todoList = {
     list,
@@ -23,41 +29,37 @@ const todoList = {
         for(key in this.list) {
             if(this.list[key] === 'Done' && a == 0) {
                 a++
-                console.log(`\n${key} : \t${this.list[key]}`)
+                console.log(`\n${DONE}:\n${key}  \t`)
             } else if(this.list[key] === 'Done' && a >= 1) {
-                console.log(`${key} : \t${this.list[key]}`)
+                console.log(`${key}  \t`)
             }
         }
         for(key in this.list) {
             if(this.list[key] === 'To Do' && b == 0) {
                 b++
-                console.log(`\n${key} : \t${this.list[key]}`)
+                console.log(`\n${TO_DO}:\n${key}  \t`)
             } else if(this.list[key] === 'To Do' && b >= 1) {
-                console.log(`${key} : \t${this.list[key]}`)
+                console.log(`${key}  \t`)
             }
         }
 
         for(key in this.list) {
             if(this.list[key] === 'In Progress' && c == 0) {
                 c++
-                console.log(`\n${key} : \t${this.list[key]}`)
+                console.log(`\n${IN_PROGRESS}:\n${key}  \t`)
             } else if(this.list[key] === 'In Progress' && c >= 1) {
-                console.log(`${key} : \t${this.list[key]}`)
+                console.log(`${key} \t`)
             }
         }
 
-        if(a == 0) {
-            console.log(`\n\'Nothink is \'Done\'`)
-        }
-        if(b == 0) {
-            console.log(`\n\'Nothink is \'To Do\'`)
-        }
-
-        if(c == 0) {
-            console.log(`\n\'Nothink is \'In Progress\'`)
-        }
-
-
+                if(a == 0) {
+                    console.log(`\n\"Nothing is ${DONE}\"\n`)
+                }
+                if(b == 0) {
+                    console.log(`\n\"Nothing is ${TO_DO}\"\n`)
+                }if(c == 0) {
+                    console.log(`\n\"Nothing is ${IN_PROGRESS}\"\n`)
+                }
 
     }
 
@@ -70,9 +72,9 @@ todoList.addTask('second todo'); // добавляет новую задачу
 todoList.changeStatus("second todo", "To Do") // меняет статус задачи
 
 todoList.addTask('first done'); // добавляет новую задачу
-todoList.changeStatus("first done", "Done") // меняет статус задачи
+// todoList.changeStatus("first done", "Done") // меняет статус задачи
 todoList.addTask('second done'); // добавляет новую задачу
-todoList.changeStatus("second done", "Done") // меняет статус задачи
+// todoList.changeStatus("second done", "Done") // меняет статус задачи
 
 todoList.addTask('first in proces'); // добавляет новую задачу
 todoList.addTask('second in proces'); // добавляет новую задачу
