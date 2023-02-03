@@ -6,24 +6,26 @@ list: {
   "Спрятать деньги": "In Progress"
 },
 
+//Функция добавления
   add(name, status) {
     this.list[name] = status
   },
   
-  delete(name) {
+  //Функция удаления
+  delete(name) { 
     delete this.list[name]
   },
   
 };
 
 // ПРОВЕРКА ФУНКЦИИ ДОБАВЛЕНИЯ ЗАДАЧИ
-const newTaskName = "Купить молоко"
-const newTaskStatus = "To Do"
-taskList.add(newTaskName, newTaskStatus);
+const newTaskName = "Купить молоко" //Имя новой задачи
+const newTaskStatus = "To Do" //Статус новой задачи
+taskList.add(newTaskName, newTaskStatus); //Обращение к функции добавления
 
 //ПРОВЕРКА ФУНКЦИИ УДАЛЕНИЯ ЗАДАЧИ
-const deleteTaskName = "Выбрать банк"
-taskList.delete(deleteTaskName)
+const deleteTaskName = "Выбрать банк"; //Имя удаляемой задачи
+taskList.delete(deleteTaskName); //Обращение к функции удаления
 
 //ВЫВОД В КОНСОЛЬ РЕЗУЛЬАТОВ
 console.log(taskList.list)
