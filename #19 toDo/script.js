@@ -2,7 +2,7 @@ const toDo = {
     list: {
         "create a new practice task": "Todo",
         "make a bed": "In Progress",
-        "write a post": "Todo",
+        "write a post": "Done",
     },
 
     changeStatus(key, value) {
@@ -19,18 +19,6 @@ const toDo = {
 
     showList() {
         for (let item in this.list) {
-            // if (this.list[item] === 'Todo') {
-            //     console.log(`"${item}" : Todo`)
-            // }
-            // if (this.list[item] === 'In Progress') {
-            //     console.log(`"${item}" : In Progress`)
-            // }
-            // if (this.list[item] === 'Done') {
-            //     console.log(`"${item}" : Done`)
-            // }
-            // if ('Done' in Object.values(this.list)) {
-            //     console.log('nothing is done')
-            // }
             switch (this.list[item]) {
                 case 'Todo':
                     console.log(`"${item}" : Todo`);
@@ -45,13 +33,10 @@ const toDo = {
                     console.log(`"${item}" : incorrect value`);
             }
         }
+        if (!Object.values(this.list).includes('Done')) {
+            console.log('Nothing is done')
+        }
     }
 }
 
 toDo.showList();
-
-
-// for (const name in phoneBook.list) {
-//     console.log(name); // John
-//     console.log(phoneBook.list[name]); // 123456789
-// }
