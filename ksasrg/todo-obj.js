@@ -57,9 +57,37 @@ const showList = () => {
 
 }
 
+const showList2 = () => {
+
+  showStatusList(list, 'To Do');
+  showStatusList(list, 'In Progress');
+  showStatusList(list, 'Done');
+
+  function showStatusList(list, status) {
+
+    console.log(status + ':');
+
+    let nothing = true;
+    for (let task in list) {
+      if (list[task] == status) {
+        console.log('    ' + task);
+        nothing = false;
+      }
+    }
+    if (nothing) {
+      console.log('    -');
+    }
+    console.log('');
+  }
+
+}
+
+
 changeStatus("write a post", "Done") // меняет статус задачи
 addTask('have a walk'); // добавляет новую задачу
-addTask('have a walk');
 deleteTask('have a walk'); // удаляет задачу
 deleteTask('have a walk'); // удаляет задачу
+
 showList(); // показывает список всех задач
+console.log('-----------------------------------------------------------');
+showList2(); // показывает список всех задач Версия 2
