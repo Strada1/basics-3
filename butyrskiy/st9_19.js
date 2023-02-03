@@ -97,7 +97,6 @@ function showList() {
 }
 
 
-
 newTask('Walk a dog');
 newTask('Write a post');
 newTask('Open the door');
@@ -106,6 +105,7 @@ newTask('Watch the movie');
 
 changeStatus('Write a post', 'In progress');
 changeStatus('Listen to music', 'ToDo');
+changeStatus('Walk a dog', 'Done');
 
 deleteTask('Open the door');
 
