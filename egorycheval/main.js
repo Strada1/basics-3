@@ -48,8 +48,6 @@ function showList() {
 }
 
 
-
-
 changeStatus('make a bed', 'Done');
 addTask('play in PS5');
 addTask('listen a music');
@@ -81,4 +79,6 @@ function showListProVersion() {
     findTaskOnStatusProVersion(Done);
 }
 
+addTask('watching TV');
+changeStatus('watching TV', 'Done');
 showListProVersion();
