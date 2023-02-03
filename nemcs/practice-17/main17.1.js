@@ -10,11 +10,11 @@ const phoneBook = {
   }
 };
 
-phoneBook.add('Fergison', 20230202);  // этот потом удалить
+phoneBook.add('Fergison', 20230202);
 console.log(phoneBook.list['Fergison']);
 
 phoneBook.add('Trust', 223525);
-console.log(phoneBook.list['Trust']);
+console.log(phoneBook.list['Trust']); //
 
 delete phoneBook.list['Trust'];
 
@@ -30,3 +30,4 @@ for (const name in phoneBook.list) { // выводит список имен Fer
   console.log(name + ' - ' + phoneBook.list[name]);
 }
 
+console.log(phoneBook.list);
