@@ -6,37 +6,69 @@ const to_do = "To Do";
 
 const list = {
 
+  
+    "Проснуться": done,
     
-    "wake up": done,
-    "Make a breakfast" : in_Progres,
-    'go to the hall': to_do,
+    "Сделать завтрак" : in_Progres,
+    
+    'Пойти в зал': to_do,
    
 
 }
 
-function showList(){
-    for (let name in list){
-        console.log (`${list[name]}:`);
-        console.log (name);
 
-    }
 
+function showList() {
+ 
+
+    for (key in list) {
+        if (list[key] === done ) {
+            
+            console.log(`"${key}" : ${list[key]}`)
+        }
+    };
+
+    for (key in list){
+        if (list[key] === in_Progres ){
+
+            console.log(`"${key}" : ${list[key]}`)
+        }
+    };
+
+    for (key in list){
+        if (list[key] === to_do ){
+
+            console.log(`"${key}" : ${list[key]}`)
+        }
+    };
 }
 
-function addTask (name,status){
-    list[name] = status;
+function addTask (name){
+    if (!name){
+        console.log ("Введите имя задачи")
+    }else{
+    list[name] = to_do;
+    }
 }
 
 function deleteTask(name){
+    if(name in list){
     delete list[name];
+    }else {
+        console.log ("Такой задачи и небыло !!")
+    }
 }
 
 function changeStatus(name,status){
+    for(key in list){
     list[name] = status;
+    }
 }
 
-addTask("aaaaaa",to_do)
-deleteTask("aaaaaa")
-addTask("иииии",done)
-changeStatus("иииии", to_do)
+
+addTask("Сделать план на день")
+addTask("Написать ToDo")
+changeStatus("Написать ToDo",done)
+deleteTask("Проснуться")
+
 showList()
