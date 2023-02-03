@@ -1,26 +1,33 @@
-const todo = {
- list: {
+const list = {
 	'create a new practice task': 'In Progress',
 	'make a bed': 'Done',
 	'write a post': 'To Do',
-},
-changeStatus (task, stat) {
-	this.list[tasl] = stat;
-},
-addTask(task) {
-	this.list[task] = 'To Do';
+}
+function changeStatus (task, stat) {
+	list[task] = stat;
+};
 
-},
-deleteTask() {
-delete this.list[task];
-},
-showList() {
-	for (const task in todo.list) {
-		console.log(`${stat}: \n ${task} \n`)
+function addTask(task, stat) {
+	list[task] = 'To Do';
+};
+
+function deleteTask(task) {
+delete list[task];
+};
+
+function showList() {
+	
+	for (const task in list) {
+		console.log(`${task}: ${list[task]}`);
+		
 	}
 }
-}
 
 
 
-console.log(changeStatus(todo.list['write a post', 'Done']));
+addTask('have a walk','To Do');
+deleteTask('have a walk');
+changeStatus('create a new practice', 'To Do');
+changeStatus('make a bed', 'To Do')
+changeStatus('write a post', 'In Progress');
+showList();
