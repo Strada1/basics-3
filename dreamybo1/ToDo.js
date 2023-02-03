@@ -68,7 +68,8 @@ const list ={
     }
 }};
 
-list.deleteTask("Do 19th task of Strada");
-list.deleteTask(123);
-list.deleteTask("New task")
+list.changeStatus("Do 19th task of Strada","Done");
+list.changeStatus(123,123);
+list.changeStatus("Do 19th task of Strada","Super Done")
+list.changeStatus("New Task","Done");
 list.showList();// output 'new' list
