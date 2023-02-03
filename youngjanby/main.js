@@ -8,21 +8,58 @@ function changeStatus(quest, progress) {
     list[quest] = progress;
 }
 
-function showList(quest ,progress) {
-    if(list[quest] == 'done') {
-        сonsole.log(list[quest] == 'done')
-    } else if(list[quest] == 'In Progress') {
-        console.log(/nlist[quest] == 'In progress')
-    } else if(list[quest] == 'To Do') {
-        console.log(/n/nlist[quest] == 'To Do')
-    }
-    }
+function showList() {
+    let i = 0;
+    let q = 0;
+    let x = 0;
+
+
+    for (key in list) {
+        if (list[key] === 'Done') {
+            x++;
+            console.log(`${key} : ${list[key]}`)
+        }
+    };
+
+
+    for (key in list) {
+        if(list[key] === 'In Progress') {
+            i++;
+            console.log(`${key} : ${list[key]}`)
+        }
+    };
+        
+
+    for (key in list) {
+        if(list[key] === 'To Do') {
+            q++;
+            console.log(`${key} : ${list[key]}`)
+        } 
+    };
+
+
+            if (q == 0) {
+                console.log('\nNothing is \'To Do\'')
+            }
+            if (x == 0) {
+                console.log('\nNothing is \'Done\'')
+            }
+            if (i == 0) {
+                console.log('\nNothing is \'In Progress\'')
+            }
+        }
+    
+
+
+
+    // console.log(list)
+    
 
 function addTask(quest, progress) {
         list[quest] = progress;
 
         if(list[quest] == undefined) {
-            list[quest] = 'in progress';
+            list[quest] = 'In Progress';
         }
 }
 
@@ -32,8 +69,9 @@ function deleteTask(quest) {
 
 
 
+
+
 changeStatus("write a post", "Done") // меняет статус задачи
 addTask('have a walk'); // добавляет новую задачу
 deleteTask('have a walk'); // удаляет задачу
 showList(); // показывает список всех задач
-
