@@ -15,27 +15,38 @@ function showList() {
 
 
     for (key in list) {
-        if (list[key] === 'Done') {
+        if (list[key] === 'Done' && x < 1) {
             x++;
-            console.log(`${key} : ${list[key]}`)
+            console.log(`\n\"${key}\" : ${list[key]}`)
+        } else if ((list[key] === 'Done' && x >= 1)) {
+            x++;
+            console.log(`\"${key}\" : ${list[key]}`)
         }
     };
 
 
     for (key in list) {
-        if(list[key] === 'In Progress') {
+        if(list[key] === 'In Progress' && i < 1) {
             i++;
-            console.log(`${key} : ${list[key]}`)
+            console.log(`\n\"${key}\" : ${list[key]}`)
+        } else if ((list[key] === 'In Progress' && i >= 1)) {
+            i++;
+            console.log(`\"${key}\" : ${list[key]}`)
         }
     };
+    
         
 
     for (key in list) {
-        if(list[key] === 'To Do') {
+        if(list[key] === 'To Do' && q < 1) {
             q++;
-            console.log(`${key} : ${list[key]}`)
-        } 
+            console.log(`\n\"${key}\" : ${list[key]}`)
+        } else if ((list[key] === 'Done' && q >= 1)) {
+            q++;
+            console.log(`\"${key}\" : ${list[key]}`)
+        }
     };
+    
 
 
             if (q == 0) {
@@ -49,10 +60,6 @@ function showList() {
             }
         }
     
-
-
-
-    // console.log(list)
     
 
 function addTask(quest, progress) {
