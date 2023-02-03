@@ -5,11 +5,11 @@ const statuses = {
 }
 
 const list = {
-  'create a new practice task': statuses.DONE,
-  'do the housework': statuses.DONE,
-  'make a bed': statuses.DONE,
-  'write a post': statuses.IN_PROGRESS,
-  'do the Strada': statuses.IN_PROGRESS,
+  'create a new practice task': statuses.TO_DO,
+  'do the housework': statuses.TO_DO,
+  'make a bed': statuses.TO_DO,
+  'write a post': statuses.TO_DO,
+  'do the Strada': statuses.TO_DO,
 }
 
 function isValidTask(task) {
@@ -45,43 +45,16 @@ function deleteTask(task) {
 }
 
 function showList() {
-  let isNothingToDo = true;
-  let isNothingInProgress = true;
-  let isNothingDone = true;
-
-  for (let key in list) {
-    if (list[key] == statuses.TO_DO) {
-      console.log(`${key}: ${statuses.TO_DO}`);
-      isNothingToDo = false;
+  for (let prop in statuses) {
+    let isEmptyStatus = true;
+    console.log(`${statuses[prop]}:`)
+    for (let key in list) {
+      if (list[key] == statuses[prop]) {
+        console.log(`\t${key}`);
+        isEmptyStatus = false;
+      }
     }
-  }
-  if(!isNothingToDo) console.log();
-  
-  for (let key in list) {
-    if (list[key] == statuses.DONE) {
-      console.log(`${key}: ${statuses.DONE}`)
-      isNothingDone = false;
-    } 
-  }    
-  if(!isNothingDone) console.log();
-  
-  for (let key in list) {
-    if (list[key] == statuses.IN_PROGRESS) {
-      console.log(`${key}: ${statuses.IN_PROGRESS}`)
-      isNothingInProgress = false;
-    }
-  }
-  if(!isNothingInProgress) console.log();
-
-
-  if (isNothingToDo) {
-    console.log('Nothing is To Do');
-  }
-  if (isNothingDone) {
-    console.log('Nothing is Done')
-  }
-  if (isNothingInProgress) {
-    console.log('Nothing is In Progress')
+    if(isEmptyStatus) console.log(`\t-`);
   }
 }
 
