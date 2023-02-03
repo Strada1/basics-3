@@ -8,13 +8,24 @@ list: {
 
   add(name, status) {
     this.list[name] = status
-  }
+  },
   
+  delete(name) {
+    delete this.list[name]
+  },
   
 };
 
-const taskName = "Купить молоко"
-const taskStatus = "To Do"
+// ПРОВЕРКА ФУНКЦИИ ДОБАВЛЕНИЯ ЗАДАЧИ
+const newTaskName = "Купить молоко"
+const newTaskStatus = "To Do"
+taskList.add(newTaskName, newTaskStatus);
 
-taskList.add(taskName, taskStatus);
-console.log (taskList.list)
+//ПРОВЕРКА ФУНКЦИИ УДАЛЕНИЯ ЗАДАЧИ
+const deleteTaskName = "Выбрать банк"
+taskList.delete(deleteTaskName)
+
+//ВЫВОД В КОНСОЛЬ РЕЗУЛЬАТОВ
+console.log(taskList.list)
+
+
