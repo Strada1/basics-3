@@ -30,6 +30,6 @@ const toDo = {
 //toDo.addTask('have a walk', "To Do");
 //console.log(toDo.list['have a walk']);
 //toDo.changeStatus("write a post", "Done");
-//toDo.deleteTask("make a bed");
+toDo.deleteTask("make a bed");
 toDo.showList();
 
