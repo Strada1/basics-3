@@ -1,39 +1,33 @@
 const list = {
-	read: "read book",  
-	change: "change book",
-  delet: "delet book"
+	"create a new practice task": "In Progress", 
+	"make a bed": "Done", 
+	"write a post": "To Do",
 }
-function changeStatus(a) {
-  if (a == list.change) {
-    list.change = 'change note'
-    console.log(list)
-  }
-}
-changeStatus(list.change)
 
-function addTask(a) {
-  if (a == list.add) {
-    list.add = 'add note'
-    console.log(list)
+function changeStatus(key) {
+  if (key == list["write a post"]) {
+    list["write a post"] = "In Progress"
+    list["make a bed"] = "To Do"
+    list["create a new practice task"] = "To Do"
   }
 }
-addTask(list.add)
+changeStatus(list["write a post"])
 
-function deleteTask(a) {
-  if (a == list.delet) {
-    delete list.delet
-    console.log(list)
+function addTask(key) {
+  if (key == 'have a walk') {
+    list['have a walk'] = 'go'
   }
 }
-deleteTask(list.delet)
+addTask('have a walk')
+
+function deleteTask(key) {
+  if (key == 'have a walk') {
+    delete list['have a walk']
+  }
+}
+deleteTask('have a walk')
 
 function showList() {
   console.log(list)
 }
 showList()
-
-
-
-
-
-
