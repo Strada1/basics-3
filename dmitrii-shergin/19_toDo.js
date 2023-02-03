@@ -1,18 +1,10 @@
-const IN_PROGRESS = 'IN PROGRESS'
+const IN_PROGRESS = 'IN_PROGRESS'
 const DONE = 'DONE'
-const TO_DO = 'TO DO'
-
-const statuses = { IN_PROGRESS, DONE, TO_DO }
-
-const list = {
-    "create a new practice task": IN_PROGRESS,
-    "make a bed": DONE,
-    "write a post": TO_DO,
-}
+const TO_DO = 'TO_DO'
 
 const toDoList = {
-    list,
-    statuses,
+    list: {},
+    statuses: { IN_PROGRESS, DONE, TO_DO },
 
     changeStatus(task, status) {
         if (!(task && status)) {
@@ -51,7 +43,6 @@ const toDoList = {
         else {
             console.log('there is no this task in list')
         }
-
     },
 
     values() {
@@ -75,10 +66,10 @@ const toDoList = {
         }
         else {
             for (let status in this.statuses) {
-                console.log(this.statuses[status])
-                if (this.values().includes(this.statuses[status])) {
+                console.log(`${status}:`)
+                if (this.values().includes(status)) {
                     for (let key in this.list) {
-                        if (this.list[key] === this.statuses[status]) {
+                        if (this.list[key] === status) {
                             console.log(`\t ${key}`)
                         }
                     }
@@ -91,28 +82,14 @@ const toDoList = {
     }
 }
 
-toDoList.changeStatus('write a post', 'DONE')
 toDoList.addTask('to go for a walk')
-toDoList.deleteTask('write a post')
-toDoList.deleteTask('make a bed')
 toDoList.addTask('learn JS')
 toDoList.addTask('learn English')
+toDoList.changeStatus('learn English', IN_PROGRESS)
+//toDoList.changeStatus('to go for a walk', DONE)
 
-// log(showlist)
-toDoList.showList()
+
+//toDoList.showList()
 toDoList.showList(DONE)
 toDoList.showList(IN_PROGRESS)
-
-// log(errors)
-toDoList.deleteTask()
-toDoList.deleteTask(' ')
-toDoList.deleteTask('asfasf')
-
-toDoList.addTask()
-toDoList.addTask('  ')
-toDoList.addTask('learn English')
-
-toDoList.changeStatus()
-toDoList.changeStatus('')
-toDoList.changeStatus('asasf')
-toDoList.changeStatus('learn English', 'asfs')
+toDoList.showList(TO_DO)
