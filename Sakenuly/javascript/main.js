@@ -1,8 +1,9 @@
 const list = {
   "create a new practice task": "In progress",
   "make cookie": "Done",
-  "Write code": "To Do",
-  "Learn js": "To Do",
+  "Meme Time": "Done",
+  "Write code": "Done",
+  "Learn js": "Done",
   }
   function changeStatus(task, status) {
   
@@ -24,16 +25,25 @@ const list = {
       console.log('Задачи "' + task + '" нет в списке' );
     }
   }
-  function showList() {
-    for (rezultat in list) {
-      console.log(rezultat + '  --  ' + list[rezultat]);
- 
-    }
-   //  console.log('Список задач', list);
+  let doneCount = 0;
 
-      
-  }
-  showList();
-  changeStatus("Learn js","Done");
+
+  function showList() {
+    for (rezultat in list) { 
+      console.log(rezultat + '  --  ' + list[rezultat]);
+      if (list[rezultat] == "Done") {doneCount = doneCount + 1;
+      }
+    }
+    if (doneCount == 0) {
+      console.log('Ты лентяй!');
+    }
+      else if (doneCount > 0) {
+        console.log('Выполненных задач ' + doneCount);
+        }
+    }
+     
+    
+    
+
   showList();
 
