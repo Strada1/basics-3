@@ -1,6 +1,6 @@
 const list = {
-	
-	
+	'create s new practice task': 'In Progress',
+	'make a bed': 'Done',	
 	'write a post': 'To Do',
 }
 
@@ -10,7 +10,7 @@ function changeStatus (task, stat) {
 	}
 };
 
-function addTask(task) {
+function addTask(task, stat) {
 	if (!task) {
 		return console.log('error')
 	}
@@ -23,8 +23,8 @@ function addTask(task) {
 	if(task in list) {
 		return list[task] 
 	}
-	list[task] = 'To Do';
-	// list[task] = 'To Do';
+	list[task] = stat;
+	
 	
 };
 
@@ -35,14 +35,11 @@ function deleteTask(task) {
 function showList() {
 	
 	console.log('To Do');
-	// for (const task in list) {
-	// 	if (list[task] === 'To Do') {
-	// 		console.log(task)
-	// 	} else if (!task[list]) {
-	// 		console.log('Nothing is To Do');
-	// 	}
-	// 	break;
-	// }
+	for (const task in list) {
+		if (list[task] === 'To Do') {
+			console.log(task)
+		} 
+	}
 	
 
 	console.log('In Progress')
@@ -50,24 +47,16 @@ function showList() {
 		if (list[task] === 'In Progress') {
 			console.log(task)
 		} 
-		else {
-			console.log('Nothing')
-		}
-		break;
-		
 	}
 
 	console.log('Done')
 	for (const task in list) {
 		if (list[task] === 'Done') {
 			console.log(task)
-		} else if (!task[list]) {
-			console.log('Nothing is Done');
 		}
-		break;
-	}
 }
+}
+changeStatus('write a post', 'Done');
+addTask('have a walk', 'To Do');
 
-addTask('xbox')
-console.log(list)
 showList();
