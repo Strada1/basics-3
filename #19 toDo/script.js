@@ -13,10 +13,15 @@ const toDo = {
         this.list[key] = 'To Do';
     },
 
+    deleteTask(key) {
+        delete this.list[key];
+    },
+
     showList() {
         console.log(this.list)
     }
 }
 
+toDo.deleteTask('first');
 toDo.addTask('have a walk');
 toDo.showList();
