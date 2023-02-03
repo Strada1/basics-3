@@ -1,34 +1,63 @@
-const teleg = {
-    spam: '88005553535',
-    "just number": '8536475610',
-    infoOut() {
-        console.log(this);
+const ToDo = {
+    list: {
+        "create a new practice task": "In Progress",
+        "make a bed":"Done",
+        "write a post": "ToDo",
     },
-    add(name, value) {
-        this[name] = value;
+    changeStatus(name, status) {
+        if (name in this.list) {
+            this.list[name] = status;
+        } else {
+            console.log("This name doesn't exist. Write 'addTask' to create new task.");
+        };
     },
-    removal(name) {
-        delete this[name];
+    addTask(name, status="ToDo") {
+        if (!(name in this.list)) {
+            this.list[name] = status;
+        } else {
+            console.log("This name already exists. Write 'changeStatus' to change status of the task.");
+        };
     },
-}
+    deleteTask(name) {
+        if (name in this.list) {
+            delete this.list[name];
+        } else {
+            console.log("This name doesn't exist.");
+        }
+    },
+    showList() {
+        console.log("ToDo:");
+        let flag = false;
+        for (const name in this.list) {
+            const x = this.list[name];
+            if (x === "ToDo" || x === "Todo" || x === "To Do" || x === "To do"){
+                console.log('\t' + name);
+                flag = true;
+            }
+        }
+        if (!flag) {console.log('\t' + '-');}
+        flag = false;
+        console.log("In Progress:");
+        for (const name in this.list) {
+            if (this.list[name] === "In Progress"){
+                console.log('\t' + name);
+                flag = true;
+            }
+        }
+        if (!flag) {console.log('\t' + '-');}
+        flag = false;
+        console.log("Done:");
+        for (const name in this.list) {
+            if (this.list[name] === "Done"){
+                console.log('\t' + name);
+                flag = true;
+            }
+        }
+        if (!flag) {console.log('\t' + '-');}
+    }
+};
 
-console.log(teleg.spam, teleg["just number"]);
+ToDo.addTask('to wash dishes');
+ToDo.changeStatus("write a post", "Done");
 
-teleg["justNumber"] = teleg["just number"];
-delete teleg['just number'];
-teleg.spam = '+78005553535'
-teleg.infoOut();
-
-
-teleg.add("list", {});
-teleg.infoOut();
-teleg.list["spam"] = teleg.spam;
-teleg.removal("spam");
-teleg.infoOut();
-teleg.list['justNumber'] = teleg['justNumber'];
-teleg.removal('justNumber');
-teleg.infoOut();
-
-for (const name in teleg.list) {
-    console.log(name, teleg.list[name]);
-}
+ToDo.showList();
