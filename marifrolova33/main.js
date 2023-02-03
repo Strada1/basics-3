@@ -77,18 +77,18 @@ addTask("feed a cat");
 //console.log(list);
 
 // меняет статус задачи
-// changeStatus("write a post", "In Progress");
-// changeStatus("make a bed", "To Do");
-// changeStatus("have a walk", "To Do");
-// changeStatus("feed a cat", "Done");
+changeStatus("write a post", "In Progress");
+changeStatus("make a bed", "To Do");
+changeStatus("have a walk", "To Do");
+changeStatus("feed a cat", "Done");
 
 // для проверки чтобы вывести Nothing для всех статусов
-changeStatus("write a post", "");
-changeStatus("make a bed", "");
-changeStatus("write a post", "");
-changeStatus("have a walk", "");
-changeStatus("feed a cat", "");
-changeStatus("create a new practice task", "");
+// changeStatus("write a post", "");
+// changeStatus("make a bed", "");
+// changeStatus("write a post", "");
+// changeStatus("have a walk", "");
+// changeStatus("feed a cat", "");
+// changeStatus("create a new practice task", "");
 
 // удаляет задачу
 deleteTask("have a walk"); // удаляет задачу
