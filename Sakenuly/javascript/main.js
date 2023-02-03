@@ -1,9 +1,11 @@
 const list = {
   "create a new practice task": "In progress",
-  "make cookie": "Done",
+  "make cookie": "ToDo",
+  "Go to the bed": "ToDo",
+  "Make meme": "ToDo",
   "Meme Time": "In progress",
   "Write code": "In progress",
-  "Learn js": "Done",
+  "Learn js": "ToDo",
   }
   
   function changeStatus(task, status) {
@@ -29,10 +31,9 @@ const list = {
   let doneCount = 0;
 
 
-  function showList() {
+  function showDoneCount() {
     for (rezultat in list) { 
-      console.log(rezultat+ '  --  ' + list[rezultat]);
-
+      
       if (list[rezultat] == "Done") {doneCount = doneCount + 1;
       }
      
@@ -43,7 +44,34 @@ const list = {
       else if (doneCount > 0) {
         console.log('Выполненных задач ' + doneCount);
         }
+        
     }
 
-  showList();
-
+  function showDone() {
+    for (rezultat in list) {
+      if (list[rezultat] == "In progress" || list[rezultat] == "ToDo" ) continue;
+      console.log(rezultat + '  ' + list[rezultat]);
+        }
+  }
+  function showToDo() {
+    for (rezultat in list) {
+      if (list[rezultat] == "In progress" || list[rezultat] == "Done" ) continue;
+      console.log(rezultat + '  ' + list[rezultat]);
+        }
+  }
+  function showInprogress() {
+    for (rezultat in list) {
+      if (list[rezultat] == "ToDo" || list[rezultat] == "Done" ) continue;
+      console.log(rezultat + '  ' + list[rezultat]);
+        }
+  }
+  function showMeALL() {
+    console.log('')
+    showDone();
+    showInprogress();
+    console.log('')
+    showToDo();
+    console.log('')
+    showDoneCount();
+  }
+ showMeALL();
