@@ -1,14 +1,27 @@
-const phoneBook = {
+const toDo = {
     list: {
-    "Брат": 79030000001,
-    "Игорь": 79180000001,
-    "Ира": 79160000001,
-    "Надя Н": 79180000002,
-    "Папа": 79610000001,
-    "Света Т": 79180000003
+    "приготовить завтрак": "Done",
+    "приготовить обед": "Done",
+    "приготовить ужин": "Done",
+    "разобрать вещи": "In Progress",
+    },
+    addTask(task) {
+        this.list[task] = "To Do";
+    },
+    deleteTask(task) {
+        delete this.list[task];
+    },
+    changeStatus(task, status) {
+        this.list[task] = status;
+    },
+    showList() {
+        console.log(this.list)
     },
 };
-for (const name in phoneBook.list) {
-console.log(name);
-console.log(phoneBook.list[name]);
-}
+toDo.addTask("сделать домашнее задание");
+toDo.addTask("прочесть 1 главу книги");
+toDo.deleteTask("приготовить завтрак");
+toDo.changeStatus("разобрать вещи", "Done");
+toDo.changeStatus("сделать домашнее задание", "Done");
+toDo.changeStatus("прочесть 1 главу книги", "Done");
+toDo.showList();
