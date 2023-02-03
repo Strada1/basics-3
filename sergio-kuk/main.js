@@ -54,3 +54,10 @@ phoneBook.delete("Ivan");
 phoneBook.log();
 
 console.log("Ivan" in phoneBook.list);
+
+phoneBook.add(33, 333);
+phoneBook.add(22, 2222);
+
+for (const name in phoneBook.list) {
+    console.log(name, '-', phoneBook.list[name]);
+}
