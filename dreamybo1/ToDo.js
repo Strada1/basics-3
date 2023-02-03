@@ -68,7 +68,7 @@ const list ={
     }
 }};
 
-list.addTask("Become developer", "In Progress");// using method "list.addTask" to add new task
-list.addTask(12321,123);// key should always be string!
-list.addTask("Become developer","Done"); // to forbide use method "list.addTask" if task is already exist
+list.deleteTask("Do 19th task of Strada");
+list.deleteTask(123);
+list.deleteTask("New task")
 list.showList();// output 'new' list
