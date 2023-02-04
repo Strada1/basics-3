@@ -10,62 +10,62 @@ const todo = {
         'task2': taskStatus.ToDo,
         'task3': taskStatus.Done,
     },
-    
-    showList(){
+
+    showList() {
         this.sortTaskByStatus(taskStatus.ToDo);
         this.sortTaskByStatus(taskStatus.InProgress);
         this.sortTaskByStatus(taskStatus.Done);
     },
 
-    sortTaskByStatus(status){
+    sortTaskByStatus(status) {
         console.log(`${status}:`);
         let countOfTasks = 0;
-        for(key in this.list){
-            if(this.list[key] === status){
+        for (key in this.list) {
+            if (this.list[key] === status) {
                 countOfTasks++;
                 console.log(`   ${key}`);
             }
         }
-        if(countOfTasks === 0)
-        console.log('-');
+        if (countOfTasks === 0)
+            console.log('-');
     },
 
-    addTask(name){
-        if(name in this.list && name == false){
+    addTask(name) {
+        if (name in this.list && name == false) {
             console.log('Не удалось добавить задачу: такая задача уже есть в списке или пустая задача');
         }
-        else{
+        else {
             this.list[name] = taskStatus.ToDo;
             console.log(`Задача "${name}" добавлена`);
         }
     },
 
-    changeStatus(name, status){
-        if(name in this.list && name != false){
-            if(status === taskStatus.ToDo || status === taskStatus.InProgress || status === taskStatus.Done){
+    changeStatus(name, status) {
+        if (name in this.list && name != false) {
+            if (status === taskStatus.ToDo || status === taskStatus.InProgress || status === taskStatus.Done) {
                 this.list[name] = status;
                 console.log(`Статус задачи "${name}" изменён на "${status}"`);
             }
-            else{
+            else {
                 console.log(`Не удалось изменить статус задачи "${name}": указан неправильный статус`);
             }
         }
-        else{
+        else {
             console.log(`Не удалось изменить статус: задачи "${name}" нет в списке`);
         }
-        
+
     },
 
-    deleteSTask(name){
-        if(name in this.list){
+    deleteSTask(name) {
+        if (name in this.list) {
             delete this.list[name];
             console.log(`Задача "${name}" удалена`);
         }
-        else{
+        else {
             console.log(`Не удалось удалить: задачи "${name}" нет в списке`);
         }
     }
-    
+
 }
 
 todo.addTask('task4');
