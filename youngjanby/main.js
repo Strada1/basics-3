@@ -9,28 +9,28 @@ function changeStatus(quest, progress) {
 }
 
 function showList() {
-    let i = 0;
-    let q = 0;
-    let x = 0;
+    let DoneListCount = 0;
+    let InProgressListCount = 0;
+    let ToDoListCount = 0;
 
 
     for (key in list) {
-        if (list[key] === 'Done' && x < 1) {
-            x++;
+        if (list[key] === 'Done' && DoneListCount < 1) {
+            DoneListCount++;
             console.log(`\n\"${key}\" : ${list[key]}`)
-        } else if ((list[key] === 'Done' && x >= 1)) {
-            x++;
+        } else if (list[key] === 'Done' && DoneListCount >= 1) {
+            DoneListCount++;
             console.log(`\"${key}\" : ${list[key]}`)
         }
     };
 
 
     for (key in list) {
-        if(list[key] === 'In Progress' && i < 1) {
-            i++;
+        if(list[key] === 'In Progress' && InProgressListCount < 1) {
+            InProgressListCount++;
             console.log(`\n\"${key}\" : ${list[key]}`)
-        } else if ((list[key] === 'In Progress' && i >= 1)) {
-            i++;
+        } else if (list[key] === 'In Progress' && InProgressListCount >= 1) {
+            InProgressListCount++;
             console.log(`\"${key}\" : ${list[key]}`)
         }
     };
@@ -38,24 +38,24 @@ function showList() {
         
 
     for (key in list) {
-        if(list[key] === 'To Do' && q < 1) {
-            q++;
+        if(list[key] === 'To Do' && ToDoListCount < 1) {
+            ToDoListCount++;
             console.log(`\n\"${key}\" : ${list[key]}`)
-        } else if ((list[key] === 'Done' && q >= 1)) {
-            q++;
+        } else if (list[key] === 'Done' && ToDoListCount >= 1) {
+            ToDoListCount++;
             console.log(`\"${key}\" : ${list[key]}`)
         }
     };
     
 
 
-            if (q == 0) {
+            if (ToDoListCount === 0) {
                 console.log('\nNothing is \'To Do\'')
             }
-            if (x == 0) {
+            if (DoneListCount === 0) {
                 console.log('\nNothing is \'Done\'')
             }
-            if (i == 0) {
+            if (InProgressListCount === 0) {
                 console.log('\nNothing is \'In Progress\'')
             }
         }
@@ -65,7 +65,7 @@ function showList() {
 function addTask(quest, progress) {
         list[quest] = progress;
 
-        if(list[quest] == undefined) {
+        if(list[quest] === undefined) {
             list[quest] = 'In Progress';
         }
 }
