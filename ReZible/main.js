@@ -39,7 +39,7 @@ function deleteTask(task){
   delete list[task];
   console.log(`Задача "${task}" была успешно удалена из списка`);
 }
-function test(status){
+function showTaskOfStatus(status){
     if(!(status in STATUS)){
         return console.log('Вы ввели неверный статус, доступные статусы: "To Do", "Done", "In Progress"');
     }
@@ -57,9 +57,9 @@ function test(status){
     console.log(text);
 }
 function showList(){
-    test("To Do");
-    test("Done");
-    test("In Progress");
+  showTaskOfStatus("To Do");
+  showTaskOfStatus("Done");
+  showTaskOfStatus("In Progress");
 }
 changeStatus("write a post", "Done") // меняет статус задачи
 addTask("learn PHP"); // добавляет новую задачу
