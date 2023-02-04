@@ -67,10 +67,10 @@ const todo = {
     ${todo || 'Nothing is Todo'}
 
     In Progress:
-    ${inProgress|| 'Nothing is In Progress'}
+    ${inProgress || 'Nothing is In Progress'}
 
     Done:
-    ${done|| 'Nothing is Done'}
+    ${done || 'Nothing is Done'}
     `);
   },
 };
