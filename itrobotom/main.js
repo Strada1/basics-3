@@ -22,7 +22,13 @@ function deleteTask(deltask) { //удаление какой-либо запис
     delete list[deltask]; //delete this.list.Alex; // с точкой не получится удалить свойство, если оно состоит из более одного слова с пробелом
 }
 
-
+function showList() {
+    for (const key in list){
+        let namestr = key;
+        let stat = list[key];
+        console.log('"' + namestr + '"' + ": " + stat); //вывести в одну сторку дело и его статус
+    }
+}
 
 // проверить на пустой результат "Nothing is Done"
 function showList2() {
