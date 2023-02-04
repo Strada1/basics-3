@@ -62,8 +62,12 @@ const todo = {
           inProgress = this.addNewString(inProgress, item[0]);
           break;
 
-        default:
+        case 'Done':
           done = this.addNewString(done, item[0]);
+          break;
+
+        default:
+          throw new Error('Needs a status for the task!!!');
       }
     }
 
