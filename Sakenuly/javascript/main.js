@@ -17,7 +17,7 @@ const list = {
        return console.log("Уже существует"); 
       }
       else {
-      return list[task] = status = "To Do", console.log('Задача добавлена')
+      return list[task] = status = "ToDo", console.log('Задача добавлена')
     }
   }
   function deleteTask(task) { 
@@ -46,32 +46,40 @@ const list = {
         }
         
     }
-
   function showDone() {
+      console.log('Done:');
     for (rezultat in list) {
       if (list[rezultat] == "In progress" || list[rezultat] == "ToDo" ) continue;
-      console.log(rezultat + '  ' + list[rezultat]);
+      console.log('\t' + rezultat + '  ' + list[rezultat]); //можно было убрать list[rezultat] для бонусного задания но для наглядности пусть будет)
+      
         }
   }
   function showToDo() {
+    console.log('To Do:');
     for (rezultat in list) {
       if (list[rezultat] == "In progress" || list[rezultat] == "Done" ) continue;
-      console.log(rezultat + '  ' + list[rezultat]);
+      console.log('\t' + rezultat + '  ' + list[rezultat]);
         }
   }
   function showInprogress() {
+    console.log('In Progress:');
     for (rezultat in list) {
       if (list[rezultat] == "ToDo" || list[rezultat] == "Done" ) continue;
-      console.log(rezultat + '  ' + list[rezultat]);
+      console.log('\t' + rezultat + '  ' + list[rezultat]);
         }
   }
   function showMeALL() {
     console.log('')
     showDone();
+    console.log('')
     showInprogress();
     console.log('')
     showToDo();
     console.log('')
     showDoneCount();
   }
+ addTask("Make a zavtrak");
+ changeStatus("Make a zavtrak", "Done");
+ addTask("Make mass");
+ changeStatus("Make mass", "In progress");
  showMeALL();
