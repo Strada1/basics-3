@@ -44,38 +44,38 @@ function deleteTask(key){
 }
 function showList(){
   let text = "", 
-  Todo = "Todo: \n" ,
-  Progress = "Progress: \n",
-  Done = "Done: \n",
-  TodoFlag = true,
-  ProgressFlag = true,
-  DoneFlag = true;
+  todo = "Todo: \n" ,
+  progress = "Progress: \n",
+  done = "Done: \n",
+  todoFlag = true,
+  progressFlag = true,
+  doneFlag = true;
   for(key in list){
     switch(list[key]){
       case "To Do":
-        Todo += `\t ${key} \n`;
-        TodoFlag = false;
+        todo += `\t ${key} \n`;
+        todoFlag = false;
         break;
       case "In Progress":
-        Progress += `\t ${key} \n`;
-        ProgressFlag = false;
+        progress += `\t ${key} \n`;
+        progressFlag = false;
         break;
       case "Done":
-        Done += `\t ${key} \n`;
-        DoneFlag = false;
+        done += `\t ${key} \n`;
+        doneFlag = false;
         break;
     }
   }
-  if(TodoFlag){
-    Todo += '\t - \n';
+  if(todoFlag){
+    todo += '\t - \n';
   }
-  if(ProgressFlag){
-    Progress += '\t - \n';
+  if(progressFlag){
+    progress += '\t - \n';
   }
-  if(DoneFlag){
-    Done += '\t - \n';
+  if(doneFlag){
+    done += '\t - \n';
   }
-  text = Todo + Progress + Done;
+  text = todo + progress + done;
   console.log(text);
 }
 const list = {
