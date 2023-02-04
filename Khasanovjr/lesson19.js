@@ -30,6 +30,8 @@ const ToDo = {
         }
     },
     showList() {
-        console.log(this.list)
+        for (i in this.list) {
+            console.log(i + " : " + this.list[i])
+        }
     }
 }
