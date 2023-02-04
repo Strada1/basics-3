@@ -52,43 +52,36 @@ const toDoList = {
         return objValues
     },
 
+    showHelper(statusValue, listStatuses) {
+        if (!(statusValue in listStatuses)) {
+            console.log(`${statusValue}: \n \t -`)
+        }
+        else {
+            console.log(`${statusValue}:`)
+        }
+        for (let listTask in this.list) {
+            let listStatus = this.list[listTask]
+            if (listStatus === statusValue) {
+                console.log(`\t - ${listTask}`)
+            }
+        }
+    },
+
     showList(statusValue) {
         const listStatuses = this.getObjectValues(this.list)
         const statusValues = this.getObjectValues(STATUS)
 
         if (statusValue) {
             if (statusValue in statusValues) {
-                if (!(statusValue in listStatuses)) {
-                    console.log(`${statusValue}: \n \t -`)
-                }
-                else {
-                    console.log(`${statusValue}:`)
-                }
-                for (let listTask in this.list) {
-                    let listStatus = this.list[listTask]
-                    if (listStatus === statusValue) {
-                        console.log(`\t - ${listTask}`)
-                    }
-                }
+                this.showHelper(statusValue, listStatuses)
             }
             else {
                 console.log('enter the valid status')
             }
         }
         else {
-            for (let statusValue in statusValues) {
-                if (!(statusValue in listStatuses)) {
-                    console.log(`${statusValue}: \n \t -`)
-                }
-                else {
-                    console.log(`${statusValue}:`)
-                }
-                for (let key in this.list) {
-                    let listStatus = this.list[key]
-                    if (listStatus === statusValue) {
-                        console.log(`\t - ${key}`)
-                    }
-                }
+            for (statusValue in statusValues) {
+                this.showHelper(statusValue, listStatuses)
             }
         }
     },
