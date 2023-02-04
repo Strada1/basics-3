@@ -1,9 +1,9 @@
 function changeStatus(key, status){
   if(!(key in list)){
-    console.log("Такой задачи нет в списке")
+      return console.log("Такой задачи нет в списке");
   }
   if(!(status === "To Do" || status === "Done" || status === "In Progress")){
-      console.log('Вы ввели неверный статус, доступные статусы: "To Do", "Done", "In Progress"');
+      return console.log('Вы ввели неверный статус, доступные статусы: "To Do", "Done", "In Progress"');
   }
   const lastStatus = list[key];
   list[key] = status;
@@ -11,32 +11,23 @@ function changeStatus(key, status){
 }
 function addTask(key){
   if(key in list){
-    if(key === "" || key === undefined){
+      console.log("Такая задачка уже есть");
+  }
+  if(key === "" || key === undefined){
       console.log("Вы не ввели задачку");
-    }
-    else{
-      list[key] = "To Do";
-      console.log(`Задача "${key}" была успешно добавлена в список`);
-    }
-    console.log("Такая задачка уже есть");
   }
-  else{
-    console.log("Такая задачка уже есть");
-  }
+  list[key] = "To Do";
+  console.log(`Задача "${key}" была успешно добавлена в список`);
 }
 function deleteTask(key){
-  if(key in list){
-    if(key === "" || key === undefined){
-      console.log("Вы не ввели задачку для удаления");
-    }
-    else{
-      delete list[key];
-      console.log(`Задача "${key}" была успешно удалена из списка`);
-    }
+  if(!(key in list)){
+      return console.log("Такой задачи нет в списке");
   }
-  else{
-    console.log("Такой задачи нет в списке")
+  if(key === "" || key === undefined){
+      return console.log("Вы не ввели задачку для удаления");
   }
+  delete list[key];
+  console.log(`Задача "${key}" была успешно удалена из списка`);
 }
 function showList(){
   let text = "", 
@@ -75,9 +66,9 @@ function showList(){
   console.log(text);
 }
 const list = {
-	"create a new practice task": "In Progress", 
-	"make a bed": "Done", // задача "заправить кровать" в статусе "Готово"
-	"write a post": "To Do",
+    "create a new practice task": "In Progress", 
+    "make a bed": "Done", // задача "заправить кровать" в статусе "Готово"
+    "write a post": "To Do",
 }
 changeStatus("write a post", "Done") // меняет статус задачи
 addTask("learn PHP"); // добавляет новую задачу
