@@ -24,13 +24,17 @@ function showList() {
 	const cloneInProgress = {};
 	const cloneDone = {};
 	for (let name in tasks) {
-		if (tasks[name] === "To Do") {
-			cloneToDo[name] = tasks[name];
-		} else if (tasks[name] === "In Progress") {
-			cloneInProgress[name] = tasks[name];
-		} else if (tasks[name] === "Done") {
-			cloneDone[name] = tasks[name];
-		};
+		switch (tasks[name]) {
+			case "To Do":
+				cloneToDo[name] = tasks[name];
+				break;
+			case "In Progress":
+				cloneInProgress[name] = tasks[name];
+				break;
+			case "Done":
+				cloneDone[name] = tasks[name];
+				break;
+		}
 	};
 	if (Object.keys(cloneToDo).length === 0 && cloneToDo.constructor === Object) {
 		console.log("Nothing to do");
