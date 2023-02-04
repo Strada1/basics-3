@@ -34,90 +34,78 @@ const ToDolist = {
    }
   }
 
+ //  function showMessage(clones) {
+ //   switch (clones) {
+
+ //    case clone1:
+ //     clones = clone1
+ //     clone1.name = "To Do"
+ //     break;
+
+ //    case clone2:
+ //     clones = clone2
+ //     clone2.name = "In Progress"
+ //     break;
+
+ //    default:
+ //     clones = clone3
+ //     clone3.name = "Done"
+ //     break;
+ //   }
+
+ //  let item = 0
+ //  for (const task in clones) {
+ // let  a = clones.name
+ //   delete clones.name;
+ //   if (task in clones) {
+ //    item++
+ //    while (item-- > 0) {
+ //     console.log(task + ': ' + clones[task]); break
+ //    }
+ //   } else {
+ //    console.log("Nothing is " + a);
+ //   }
+ //  }
+
+
   function showMessage(clones) {
    switch (clones) {
 
     case clone1:
-     clones = clone1
-     clone1.name = "To Do"
+     clone1.name = "To Do:"
+     console.log(clone1.name);
      break;
 
     case clone2:
-     clones = clone2
-     clone2.name = "In Progress"
+     clone2.name = "In Progress:"
+     console.log(clone2.name);
      break;
 
     default:
-     clones = clone3
-     clone3.name = "Done"
+     clone3.name = "Done:"
+     console.log(clone3.name);
      break;
    }
 
-  let item = 0
-  for (const task in clones) {
- let  a = clones.name
-   delete clones.name;
-   if (task in clones) {
-    item++
-    while (item-- > 0) {
-     console.log(task + ': ' + clones[task]); break
+
+   let item = 0
+   for (const task in clones) {
+    delete clones.name;
+    if (task in clones) {
+     item++
+     while (item-- > 0) {
+      console.log(task); break
+     }
+    } else {
+     console.log("-");
     }
-   } else {
-    console.log("Nothing is " + a);
    }
-  }
-
-
-  // function showMessage(clones) {
-  //  switch (clones) {
-
-  //   case clone1:
-  //    clone1.name = "To Do:"
-  //    console.log(clone1.name);
-  //    break;
-
-  //   case clone2:
-  //    clone2.name = "In Progress:"
-  //    console.log(clone2.name);
-  //    break;
-
-  //   default:
-  //    clone3.name = "Done:"
-  //    console.log(clone3.name);
-  //    break;
-  //  }
-
-
-   // let item = 0
-   // for (const task in clones) {
-   //  delete clones.name;
-   //  if (task in clones) {
-   //   item++
-   //   while (item-- > 0) {
-   //    console.log(task); break
-   //   }
-   //  } else {
-   //   console.log("-");
-   //  }
-   // }
   }
 
   showMessage(clone1)
   showMessage(clone2)
   showMessage(clone3)
-
-
-  // function showMessage(clones) {
-
-  //  for (const task in clones) {
-  //   if (clones === '') {
-  //    console.log(`Nothing `)
-
-  //   } else {
-  //    console.log(task + ': ' + clones[task])
-
-  //  }}
-  // }
+  
  }
 };
 
