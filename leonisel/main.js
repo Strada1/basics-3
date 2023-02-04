@@ -26,36 +26,36 @@ const showList = () => {
   let todoStr = '';
   for(let key in list){
     if(list[key] == STATUS.TODO) {
-      todoStr += `"${key}"\n    `; 
+      todoStr += `\n    "${key}"`; 
     }
   }
   if(todoStr == ''){
-    todoStr = `    -`;
+    todoStr = `\n    -`;
   }
-  console.log(`Todo:\n    ${todoStr}`)
+  console.log(`Todo:${todoStr}`)
 
   let progressStr = '';
   for(let key in list){
     if(list[key] == STATUS.PROGRESS) {
-      progressStr += `"${key}"\n    `;
+      progressStr += `\n    "${key}"`;
       
     }
   }
   if(progressStr == '') {
-    progressStr = '    -';
+    progressStr = '\n    -';
   }
-  console.log(`In Progress:\n    ${progressStr}`)
+  console.log(`In Progress:${progressStr}`)
 
   let doneStr = '';
   for(let key in list){
     if(list[key] == STATUS.DONE) {
-      doneStr += `"${key}"\n    `;
+      doneStr += `\n    "${key}"`;
     }
   }
   if(doneStr == '') {
-    doneStr = `    -`;
+    doneStr = `\n    -`;
   }
-  console.log(`Done:\n    ${doneStr}`);
+  console.log(`Done:${doneStr}`);
 }
 
 changeStatus("make a bed", STATUS.TODO);
