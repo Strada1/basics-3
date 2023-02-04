@@ -39,6 +39,14 @@ const todo = {
     delete this.list[task];
   },
 
+  addNewString(str = '', value = '') {
+    if (str === '' && value === '') {
+      return '';
+    }
+
+    return str += value + '\n';
+  },
+
   showList() {
     let todo = '';
     let inProgress = '';
@@ -47,18 +55,15 @@ const todo = {
     for (let item of Object.entries(this.list)) {
       switch (item[1]) {
         case 'Todo':
-          todo += item[0];
-          todo += `\n`;
+          todo = this.addNewString(todo, item[0]);
           break;
 
         case 'In Progress':
-          inProgress += item[0];
-          inProgress += `\n`;
+          inProgress = this.addNewString(inProgress, item[0]);
           break;
 
         default:
-          done += item[0];
-          done += `\n`;
+          done = this.addNewString(done, item[0]);
       }
     }
 
