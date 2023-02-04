@@ -1,25 +1,28 @@
-const toDoList = {};
-const inProgressList = {};
-const doneList = {};
+const STATUS = {
+    TO_DO: "To Do",
+    IN_PROGRESS: "In Progress",
+    DONE: "Done",
+}
 
 const scheduler = {
     fullList: {
         "drink water": "Done",
         "create a new practice task": "In Progress",
         "drink coffee": "In Progress",
-        "have breakfast": "To Do",
-        "work": "To Do",
+        //"have breakfast": "To Do",
+        //"work": "To Do",
         "sleep": "To Do",
     },
 
 
     checkStatus(status) {
-        if (status === "To Do" || status === "In Progress" || status === "Done") {
-            return true;
+        for (const value in STATUS) {
+            if (status === STATUS[value]) {
+                return true;
+            }
         }
-        else {
-            return console.log("Такого статуса нет!");
-        }
+
+        return console.log("Такого статуса нет!");
     },
 
     changeStatus(task, status) {
@@ -30,7 +33,7 @@ const scheduler = {
         this.fullList[task] = status;
     },
 
-    addTask(task, status = "To Do") {
+    addTask(task, status = STATUS.TO_DO) {
         if (!this.checkStatus(status)) {
             return;
         }
@@ -42,120 +45,32 @@ const scheduler = {
         delete this.fullList[task];
     },
 
+    // Отображение без сортировки
     showListWithoutSorting() {
         console.log(this.fullList);
     },
 
-    // Первый способ отображения с сортировкой
+    // Отображение с сортировкой
     showList() {
-        let i = 0;
+        for (const value in STATUS) {
 
-        console.log("To Do:")
-        for (const task in this.fullList) {
-            if (this.fullList[task] === "To Do") {
-                console.log("   " + task);
-                i++;
-            }
-        };
+            let flagEmpty = true;
 
-        if (i === 0) {
-            console.log("   -")
-        };
+            console.log(STATUS[value] + ":")
 
-        console.log("");
+            for (const task in this.fullList) {
+                if (this.fullList[task] === STATUS[value]) {
+                    console.log("   " + task);
+                    flagEmpty = false;
+                }
+            };
 
-        i = 0;
-        console.log("In Progress:")
-        for (const task in this.fullList) {
-            if (this.fullList[task] === "In Progress") {
-                console.log("   " + task);
-                i++;
-            }
-        };
+            if (flagEmpty === true) {
+                console.log("   -")
+            };
 
-        if (i === 0) {
-            console.log("   -")
-        };
-
-        console.log("");
-
-        i = 0;
-        console.log("Done:")
-        for (const task in this.fullList) {
-            if (this.fullList[task] === "Done") {
-                console.log("   " + task);
-                i++
-            }
-        };
-
-        if (i === 0) {
-            console.log("   -")
-        };
-    },
-
-    // Второй способ отображения с сортировкой - через "подобъекты"
-    createSubLists() {
-        for (const task in this.fullList) {
-            if (this.fullList[task] === "To Do") {
-                toDoList[task] = this.fullList[task];
-            }
-        };
-
-        for (const task in this.fullList) {
-            if (this.fullList[task] === "In Progress") {
-                inProgressList[task] = this.fullList[task];
-            }
-        };
-
-        for (const task in this.fullList) {
-            if (this.fullList[task] === "Done") {
-                doneList[task] = this.fullList[task];
-            }
-        };
-    },
-
-    checkListIsEmpty(list) {
-        for (const key in list) {
-            return false;
+            console.log("");
         }
-        return true;
-    },
-
-    showListAlternative() {
-        this.createSubLists();
-
-        console.log("To Do:");
-
-        if (this.checkListIsEmpty(toDoList)) {
-            console.log("   -")
-        } else {
-            for (const task in toDoList) {
-                console.log("   " + task);
-            }
-        };
-
-        console.log("");
-        console.log("In Progress:");
-
-        if (this.checkListIsEmpty(inProgressList)) {
-            console.log("   -")
-        } else {
-            for (const task in inProgressList) {
-                console.log("   " + task);
-            }
-        };
-
-        console.log("");
-        console.log("Done:");
-
-        if (this.checkListIsEmpty(doneList)) {
-            console.log("   -")
-        } else {
-            for (const task in doneList) {
-                console.log("   " + task);
-            }
-        };
-
     },
 
 };
@@ -165,6 +80,4 @@ scheduler.addTask("drink second cup of coffee", "In Progress");
 scheduler.addTask("drink second cup of coffee", "oh no"); // Такого статуса нет!
 scheduler.deleteTask("sleep");
 
-//scheduler.showList();
-
-scheduler.showListAlternative();
+scheduler.showList();
