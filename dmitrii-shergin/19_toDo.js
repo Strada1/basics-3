@@ -3,24 +3,6 @@ const STATUS = { IN_PROGRESS: 'In Progress', DONE: 'Done', TO_DO: 'To Do', }
 const toDoList = {
     list: {},
 
-    changeStatus(task, status) {
-        if (!(task && status)) {
-            console.log('enter the valid value')
-        }
-        else if (!(task in this.list)) {
-            console.log('there is no this task in list')
-        }
-        else if (!(
-            status === STATUS.DONE ||
-            status === STATUS.TO_DO ||
-            status === STATUS.IN_PROGRESS)) {
-            console.log('enter the valid status')
-        }
-        else {
-            this.list[task] = status
-        }
-    },
-
     addTask(task) {
         if (task) {
             if (!task.trim()) {
@@ -45,27 +27,47 @@ const toDoList = {
         }
     },
 
-    showList(status) {
-        const currentTaskStatuses = {}
+    changeStatus(task, status) {
+        const statusValues = this.getObjectValues(STATUS)
 
-        for (key in this.list) {
-            currentTaskStatuses[this.list[key]] = ''
+        if (!(task && status)) {
+            console.log('enter the valid value')
         }
+        else if (!(task in this.list)) {
+            console.log('there is no this task in list')
+        }
+        else if (!(status in statusValues)) {
+            console.log('enter the valid status')
+        }
+        else {
+            this.list[task] = status
+        }
+    },
 
-        if (status) {
-            if (status === STATUS.DONE ||
-                status === STATUS.IN_PROGRESS ||
-                status === STATUS.TO_DO) {
-                if (!(status in currentTaskStatuses)) {
-                    console.log(`${status}: \n \t -`)
+    getObjectValues(obj) {
+        objValues = {}
+        for (let key in obj) {
+            objValues[obj[key]] = ''
+        }
+        return objValues
+    },
+
+    showList(statusValue) {
+        const listStatuses = this.getObjectValues(this.list)
+        const statusValues = this.getObjectValues(STATUS)
+
+        if (statusValue) {
+            if (statusValue in statusValues) {
+                if (!(statusValue in listStatuses)) {
+                    console.log(`${statusValue}: \n \t -`)
                 }
                 else {
-                    console.log(`${status}:`)
+                    console.log(`${statusValue}:`)
                 }
-                for (let key in this.list) {
-                    let value = this.list[key]
-                    if (value === status) {
-                        console.log(`\t - ${key}`)
+                for (let listTask in this.list) {
+                    let listStatus = this.list[listTask]
+                    if (listStatus === statusValue) {
+                        console.log(`\t - ${listTask}`)
                     }
                 }
             }
@@ -74,15 +76,16 @@ const toDoList = {
             }
         }
         else {
-            for (let status in STATUS) {
-                if (!(STATUS[status] in currentTaskStatuses)) {
-                    console.log(`${STATUS[status]}: \n \t -`)
+            for (let statusValue in statusValues) {
+                if (!(statusValue in listStatuses)) {
+                    console.log(`${statusValue}: \n \t -`)
                 }
                 else {
-                    console.log(`${STATUS[status]}:`)
+                    console.log(`${statusValue}:`)
                 }
                 for (let key in this.list) {
-                    if (this.list[key] === STATUS[status]) {
+                    let listStatus = this.list[key]
+                    if (listStatus === statusValue) {
                         console.log(`\t - ${key}`)
                     }
                 }
@@ -96,6 +99,8 @@ toDoList.addTask('learn English')
 toDoList.addTask('go to sleep')
 toDoList.addTask('go for a walk')
 toDoList.changeStatus('go for a walk', STATUS.IN_PROGRESS)
-toDoList.deleteTask('go to sleep')
+toDoList.changeStatus('go to sleep', STATUS.DONE)
+toDoList.deleteTask('learn English')
 
+toDoList.showList(STATUS.TO_DO)
 toDoList.showList()
