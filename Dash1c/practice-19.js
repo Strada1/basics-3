@@ -7,41 +7,43 @@ const toDo = {
         "cleaning up": 'to do'
     },
 
-}
+};
 
 function addTask (key, status) {
-    if (key in list) {
-        console.log ("Такая задача уже есть")
+    if (key in toDo.list) {
+        console.log ("Такая задача уже есть в списке")
     } else {
-        list[key] = status
-        console.log("Новая задача добавлена")
+        toDo.list[key] = status
+        console.log("Задача", (key), "добавлена")
     }
-}
-
-
+};
 
 function deleteTask (key) {
-    if (key in list) {
-        delete list[key];
-        console.log ("Задача удалена") ;
+    if (key in toDo.list) {
+        delete toDo.list[key];
+        console.log ("Задача", (key), "удаленa") ;
     }   else {
         console.log ("Такой задачи нет в списке");
     }
-}
+};
 
 function changeStatus (key, status) {
-    if (key in list) {
-        list[key] = status;
-        console.log("Статус задачи изменен")
+    if (key in toDo.list) {
+        toDo.list[key] = status;
+        console.log("Статус задачи", (key), "изменен на", (status))
     } else {
         console.log("Задача не найдена")
     }
-}
+};
 
 function showList () {
     console.log (toDo.list)
-}
+};
 
+addTask("wash the dishes", "done")
+addTask("coocked the dinner", "to do")
 deleteTask("make a bed")
+deleteTask("go to bed")
+changeStatus ("write a task", "done")
 showList()
 
