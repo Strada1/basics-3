@@ -10,10 +10,16 @@ const list = {
         "Make some JavaScript": stat.TO_DO
     },
     showList () {
-        console.log(this.tasks);
-        if (this.tasks != stat.DONE) {
+        console.log(this.tasks)
+        let number = 0;
+        for (const key in list.tasks) {
+            if (this.tasks[key] === stat.DONE) {
+                number++
+            }
+        }
+        if (number === 0) {
             console.log ("Nothing is done");
-        } 
+        }
     },
     addTask (taskName) {
        this.tasks[taskName] = stat.TO_DO;
@@ -22,7 +28,7 @@ const list = {
         if (taskName in this.tasks) {
             delete this.tasks[taskName];
         } else {
-            console.log("Nothing to delete");
+            return (this.tasks);
         }
     },
     changeStatus (taskName, statusName) {
@@ -35,6 +41,6 @@ const list = {
     }
 };
 list.addTask("Relax");
-list.deleteTask ("Make some HTML-cod");
+list.deleteTask ("Make some HTML");
 list.changeStatus("Make some JavaScript", "in progress");
 list.showList();
