@@ -6,6 +6,7 @@ const list = {
 
 function changeStatus(val, status){
     list[val] = status
+
 }
 
 function deleteTask(val){
@@ -17,23 +18,53 @@ function addTask (val){
 }
 
 function showList() {
+    const todo = {}
+    const progress = {}
+    const done = {}
+
     for (const status in list) {
         
         if (list[status] === 'To Do') {
-            console.log(`${status} - ${list[status]}`);
-        } 
-        else if (list[status] === 'In Progress') {
-        console.log(`${status} - ${list[status]}`);
-        } 
-        else if (list[status] === 'Done') {
-            console.log(`${status} - ${list[status]}`);
-        }        
+            todo[status] = 'To Do'
+        }
+        if (list[status] === 'In Progress') {
+            progress[status] = 'In Progress'
+
+        }
+        if (list[status] === 'Done') {
+            done[status] = 'Done'
+
+        }
     
     }
-    if (!Object.values(list).includes('Done')) {
-        console.log('Nothing is done!');
-    } 
-    
+
+
+    console.log("Todo:")
+    if(Object.entries(todo).length === 0){
+        console.log("-")
+    }
+    for (const status in todo) {
+        console.log(status)
+    }
+
+    console.log("In Progress:")
+    if(Object.entries(progress).length === 0){
+        console.log("-")
+    }
+    for (const status in progress) {
+        console.log(status)
+    }
+
+    console.log("Done:")
+    if(Object.entries(done).length === 0){
+        console.log("-")
+    }
+    for (const status in done) {
+        console.log(status)
+    }
+
+
+
 }
 
 
