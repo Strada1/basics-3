@@ -46,4 +46,5 @@ deleteTask("make a bed")
 deleteTask("go to bed")
 changeStatus ("write a task", "done")
 showList()
+g
 
