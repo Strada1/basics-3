@@ -55,6 +55,7 @@ function showList2() {
 showList2(); // показывает список всех задач
 
 console.log(list);
+deleteTask("make a bed");
 addTask('have a walk');
 console.log(list);
 
