@@ -62,9 +62,16 @@ const todo = {
       }
     }
 
-    console.log(`Todo:\n${todo.trim() || 'Nothing is Todo'}\n`);
-    console.log(`In Progress:\n${inProgress.trim() || 'Nothing is In Progress'}\n`);
-    console.log(`Done:\n${done.trim() || 'Nothing is In Progress'}`);
+    console.log(`
+    Todo:
+    ${todo || 'Nothing is Todo'}
+
+    In Progress:
+    ${inProgress|| 'Nothing is In Progress'}
+
+    Done:
+    ${done|| 'Nothing is Done'}
+    `);
   },
 };
 
