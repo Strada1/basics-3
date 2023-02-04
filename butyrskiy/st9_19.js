@@ -7,6 +7,8 @@ const STATUS = {
 
 const list = {};
 
+// Check methods
+
 const checkKit = {
   checkName(nameTask) {
     if(typeof(nameTask) === 'string') {
@@ -25,6 +27,8 @@ const checkKit = {
     } else console.error('Error Status');
   }
 }
+
+// Main operations
 
 function newTask(nameTask) {
   if(checkKit.checkName(nameTask)) {
@@ -45,6 +49,8 @@ function deleteTask(nameTask) {
     delete list[nameTask];
   }
 }
+
+// Outputting the result to the console
 
 function showList() {
   for(let key in list) {
@@ -94,6 +100,53 @@ function showList() {
       console.log(`\t ${key}`);
     }  
   }
+
+// checking for missing tasks
+  
+  let inboxCounter = 0;
+  let todoCounter = 0;
+  let inProgressCounter = 0;
+  let doneCounter = 0;
+
+  for(let key in list) {
+    if(list[key] === STATUS.Inbox) {
+      inboxCounter++;
+    }
+  }
+
+  for(let key in list) {
+    if(list[key] === STATUS.ToDo) {
+      todoCounter++;
+    }
+  }
+
+  for(let key in list) {
+    if(list[key] === STATUS["In progress"]) {
+      inProgressCounter++;
+    }
+  }
+
+  for(let key in list) {
+    if(list[key] === STATUS.Done) {
+      doneCounter++;
+    }
+  }
+
+  if(inboxCounter == 0) {
+    console.log(`${STATUS.Inbox}: \n\t -`)
+  }
+
+  if(todoCounter == 0) {
+    console.log(`${STATUS.ToDo}: \n\t -`)
+  }
+
+  if(inProgressCounter == 0) {
+    console.log(`${STATUS["In progress"]}: \n\t -`)
+  }
+
+  if(doneCounter == 0) {
+    console.log(`${STATUS.Done}: \n\t -`)
+  }
 }
 
 
@@ -104,8 +157,7 @@ newTask('Listen to music');
 newTask('Watch the movie');
 
 changeStatus('Write a post', 'In progress');
-changeStatus('Listen to music', 'ToDo');
-changeStatus('Walk a dog', 'Done');
+changeStatus('Listen to music', 'In progress');
 
 deleteTask('Open the door');
 
