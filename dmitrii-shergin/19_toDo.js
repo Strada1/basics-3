@@ -1,10 +1,7 @@
-const IN_PROGRESS = 'IN_PROGRESS'
-const DONE = 'DONE'
-const TO_DO = 'TO_DO'
+const STATUS = { IN_PROGRESS: 'In Progress', DONE: 'Done', TO_DO: 'To Do', }
 
 const toDoList = {
     list: {},
-    statuses: { IN_PROGRESS, DONE, TO_DO },
 
     changeStatus(task, status) {
         if (!(task && status)) {
@@ -13,7 +10,10 @@ const toDoList = {
         else if (!(task in this.list)) {
             console.log('there is no this task in list')
         }
-        else if (!(status in this.statuses)) {
+        else if (!(
+            status === STATUS.DONE ||
+            status === STATUS.TO_DO ||
+            status === STATUS.IN_PROGRESS)) {
             console.log('enter the valid status')
         }
         else {
@@ -29,7 +29,7 @@ const toDoList = {
             else if (task in this.list) {
                 console.log('this task has already been added')
             }
-            else this.list[task] = TO_DO
+            else this.list[task] = STATUS.TO_DO
         }
         else {
             console.log('enter the valid value')
@@ -45,51 +45,57 @@ const toDoList = {
         }
     },
 
-    values() {
-        return Object.values(this.list)
-    },
-
     showList(status) {
+        const currentTaskStatuses = {}
+
+        for (key in this.list) {
+            currentTaskStatuses[this.list[key]] = ''
+        }
+
         if (status) {
-            console.log(`${status}:`)
-            if (this.values().includes(status)) {
+            if (status === STATUS.DONE ||
+                status === STATUS.IN_PROGRESS ||
+                status === STATUS.TO_DO) {
+                if (!(status in currentTaskStatuses)) {
+                    console.log(`${status}: \n \t -`)
+                }
+                else {
+                    console.log(`${status}:`)
+                }
                 for (let key in this.list) {
                     let value = this.list[key]
                     if (value === status) {
-                        console.log(`\t ${key}`)
+                        console.log(`\t - ${key}`)
                     }
                 }
             }
             else {
-                console.log(`\t -`)
+                console.log('enter the valid status')
             }
         }
         else {
-            for (let status in this.statuses) {
-                console.log(`${status}:`)
-                if (this.values().includes(status)) {
-                    for (let key in this.list) {
-                        if (this.list[key] === status) {
-                            console.log(`\t ${key}`)
-                        }
-                    }
+            for (let status in STATUS) {
+                if (!(STATUS[status] in currentTaskStatuses)) {
+                    console.log(`${STATUS[status]}: \n \t -`)
                 }
                 else {
-                    console.log(`\t -`)
+                    console.log(`${STATUS[status]}:`)
+                }
+                for (let key in this.list) {
+                    if (this.list[key] === STATUS[status]) {
+                        console.log(`\t - ${key}`)
+                    }
                 }
             }
         }
-    }
+    },
 }
 
-toDoList.addTask('to go for a walk')
 toDoList.addTask('learn JS')
 toDoList.addTask('learn English')
-toDoList.changeStatus('learn English', IN_PROGRESS)
-//toDoList.changeStatus('to go for a walk', DONE)
+toDoList.addTask('go to sleep')
+toDoList.addTask('go for a walk')
+toDoList.changeStatus('go for a walk', STATUS.IN_PROGRESS)
+toDoList.deleteTask('go to sleep')
 
-
-//toDoList.showList()
-toDoList.showList(DONE)
-toDoList.showList(IN_PROGRESS)
-toDoList.showList(TO_DO)
+toDoList.showList()
