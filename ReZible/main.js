@@ -1,21 +1,16 @@
 function changeStatus(key, status){
-  if(key in list){
-    if(status === "To Do" || status === "Done" || status === "In Progress")
-    {
-      const lastStatus = list[key];
-      list[key] = status;
-      console.log(`Статус для "${key}" был изменен с "${lastStatus}" на "${status}"`);
-    }
-    else{
-      console.log('Вы ввели неверный статус, доступные статусы: "To Do", "Done", "In Progress"');
-    }
-  }
-  else{
+  if(!(key in list)){
     console.log("Такой задачи нет в списке")
   }
+  if(!(status === "To Do" || status === "Done" || status === "In Progress")){
+      console.log('Вы ввели неверный статус, доступные статусы: "To Do", "Done", "In Progress"');
+  }
+  const lastStatus = list[key];
+  list[key] = status;
+  console.log(`Статус для "${key}" был изменен с "${lastStatus}" на "${status}"`);
 }
 function addTask(key){
-  if(!(key in list)){
+  if(key in list){
     if(key === "" || key === undefined){
       console.log("Вы не ввели задачку");
     }
@@ -23,6 +18,7 @@ function addTask(key){
       list[key] = "To Do";
       console.log(`Задача "${key}" была успешно добавлена в список`);
     }
+    console.log("Такая задачка уже есть");
   }
   else{
     console.log("Такая задачка уже есть");
