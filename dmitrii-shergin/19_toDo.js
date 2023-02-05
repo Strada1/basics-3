@@ -1,99 +1,113 @@
 const STATUS = { IN_PROGRESS: 'In Progress', DONE: 'Done', TO_DO: 'To Do', }
 
+const ERRORS = {
+    VALID_VALUE: 'enter the valid value',
+    TASK_EXIST: 'this task has already been added',
+    TASK_EMPTY: 'there is no such task or status',
+}
+
 const toDoList = {
     list: {},
 
     addTask(task) {
-        if (task) {
-            if (!task.trim()) {
-                console.log('enter the valid value')
-            }
-            else if (task in this.list) {
-                console.log('this task has already been added')
-            }
-            else this.list[task] = STATUS.TO_DO
-        }
-        else {
-            console.log('enter the valid value')
+        let message = this.utils.check(task, this.list, false)
+
+        if (message) {
+            console.log(message)
+        } else {
+            this.list[task] = STATUS.TO_DO
         }
     },
 
     deleteTask(task) {
-        if (task in this.list) {
+        let message = this.utils.check(task, this.list, true)
+
+        if (message) {
+            console.log(message)
+        } else {
             delete this.list[task]
-        }
-        else {
-            console.log('there is no this task in list')
         }
     },
 
     changeStatus(task, status) {
-        const statusValues = this.getObjectValues(STATUS)
+        const statusValues = this.utils.getObjectValues(STATUS)
 
-        if (!(task && status)) {
-            console.log('enter the valid value')
-        }
-        else if (!(task in this.list)) {
-            console.log('there is no this task in list')
-        }
-        else if (!(status in statusValues)) {
-            console.log('enter the valid status')
-        }
-        else {
+        let messageTask = this.utils.check(task, this.list, true)
+        let messageStatus = this.utils.check(status, statusValues, true)
+
+        let message = (messageTask) ? messageTask : (messageStatus) ? messageStatus : ''
+
+        if (message) {
+            console.log(message)
+        } else {
             this.list[task] = status
         }
     },
 
-    getObjectValues(obj) {
-        objValues = {}
-        for (let key in obj) {
-            objValues[obj[key]] = ''
-        }
-        return objValues
-    },
-
-    showHelper(statusValue, listStatuses) {
-        if (!(statusValue in listStatuses)) {
-            console.log(`${statusValue}: \n \t -`)
-        }
-        else {
-            console.log(`${statusValue}:`)
-        }
-        for (let listTask in this.list) {
-            let listStatus = this.list[listTask]
-            if (listStatus === statusValue) {
-                console.log(`\t - ${listTask}`)
-            }
-        }
-    },
-
     showList(statusValue) {
-        const listStatuses = this.getObjectValues(this.list)
-        const statusValues = this.getObjectValues(STATUS)
+        const listStatuses = this.utils.getObjectValues(this.list)
+        const statusValues = this.utils.getObjectValues(STATUS)
 
         if (statusValue) {
-            if (statusValue in statusValues) {
-                this.showHelper(statusValue, listStatuses)
+            let message = this.utils.check(statusValue, statusValues, true)
+            if (message) {
+                console.log(message)
+            } else {
+                this.utils.showHelper(statusValue, listStatuses, this.list)
             }
-            else {
-                console.log('enter the valid status')
-            }
-        }
-        else {
+        } else {
             for (statusValue in statusValues) {
-                this.showHelper(statusValue, listStatuses)
+                this.utils.showHelper(statusValue, listStatuses, this.list)
             }
         }
+    },
+
+    utils: {
+        getObjectValues(obj) {
+            objValues = {}
+            for (let key in obj) {
+                objValues[obj[key]] = ''
+            }
+            return objValues
+        },
+
+        check(key, obj, shouldKeyExist) {
+            switch (true) {
+                case !key: {
+                    return ERRORS.VALID_VALUE
+                }
+                case !key.trim(): {
+                    return ERRORS.VALID_VALUE
+                }
+                case !shouldKeyExist && (key in obj): {
+                    return ERRORS.TASK_EXIST
+                }
+                case shouldKeyExist && (!(key in obj)): {
+                    return ERRORS.TASK_EMPTY
+                }
+            }
+        },
+
+        showHelper(statusValue, listStatuses, list) {
+            if (!(statusValue in listStatuses)) {
+                console.log(`${statusValue}: \n \t -`)
+            } else {
+                console.log(`${statusValue}:`)
+            }
+            for (let listTask in list) {
+                let listStatus = list[listTask]
+                if (listStatus === statusValue) {
+                    console.log(`\t - ${listTask}`)
+                }
+            }
+        },
     },
 }
 
 toDoList.addTask('learn JS')
 toDoList.addTask('learn English')
 toDoList.addTask('go to sleep')
-toDoList.addTask('go for a walk')
-toDoList.changeStatus('go for a walk', STATUS.IN_PROGRESS)
 toDoList.changeStatus('go to sleep', STATUS.DONE)
-toDoList.deleteTask('learn English')
 
-toDoList.showList(STATUS.TO_DO)
 toDoList.showList()
+toDoList.showList(STATUS.IN_PROGRESS)
