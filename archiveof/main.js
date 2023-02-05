@@ -10,8 +10,11 @@ function changeStatus(task, state) {
   }
 }
 
-function addTask(task) {
-  list[task] = 'To Do'
+function addTask(task, state = 'To Do') {
+  if(task in list) {
+    alert('This task already was created. You need use changeStatus()')
+  };
+  list[task] = state;
 }
 
 function deleteTask(task) {
@@ -24,7 +27,7 @@ function showList() {
   const todo = showTask('To Do', list);
   const inProgress = showTask('In Progress', list);
   const done = showTask('Done', list)
-
+  // console.log(todo.length, inProgress, done);
   res = todo + inProgress + done;
 
   return res
@@ -32,18 +35,17 @@ function showList() {
 
 function showTask(status, obj) {
   let res = `${status}:\n`;
+      isEmptyTask = true,
+      isEmptyTaskMessage = `${status}\n\tTasks are not found\n`;
 
   for(let key in obj) {
     if(obj[key] === status) {
       res += '\t' + key + '\n';
+      isEmptyTask = false;
     }
   }
 
-  return res
+  return isEmptyTask ? isEmptyTaskMessage : res;
 }
 
-addTask('have a walk')
-changeStatus('have a walk', 'In Progress')
-deleteTask('create a new practice task')
 
-console.log(showList())
