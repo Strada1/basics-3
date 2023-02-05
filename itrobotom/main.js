@@ -47,16 +47,32 @@ const toDo = {
             console.log('Список дел пуст!');
         }
         else{
+            let taskCountDone = 0;
             for (const task in this.list){
-                let nameTask = task;
-                let stat = toDo.list[task];
+                //let nameTask = task;
+                //let stat = toDo.list[task];
                 //вывод в одну строку с предварительным преобразованием элементов в отдельные строчки кода
                 //console.log('"' + nameTask + '"' + ": " + stat); //вывести в одну сторку дело и его статус
                 //альтернативный вывод в одну строку без предварительного создания строки
                 console.log(`\"${task}\": ${this.list[task]}`);
+                if (this.list[task] == 'Done'){
+                    taskCountDone++;
+                }
+            }
+            if (taskCountDone > 0){
+                console.log(`Выполнено задач: ${taskCountDone}`);
+            }
+            else {
+                console.log('Nothing is Done'); //Ничего не сделано
             }
         }
+    },
+    
+    //реализация функции в формате вывода: статус, и все задачи, которые в этом статусе
+    showList2() {
+
     }
+
 }
 
 toDo.showList(); // показывает список всех задач
