@@ -70,17 +70,73 @@ const toDo = {
     
     //реализация функции в формате вывода: статус, и все задачи, которые в этом статусе
     showList2() {
-
+        //проверка, есть ли ключи в свойстве list объекта todo (если их нет, значит список с делами пуст)
+        if (Object.keys(this.list).length == 0) {
+            console.log('Список дел пуст!');
+        }
+        else {
+            let taskCountDone = 0;
+            let taskCountTodo = 0;
+            let taskCountProgress = 0;
+            for (const task in this.list){
+                //console.log(`\"${task}\": ${this.list[task]}`);
+                if (this.list[task] == 'Done'){
+                    taskCountDone++;
+                }
+                if (this.list[task] == 'To Do'){
+                    taskCountTodo++;
+                }
+                if (this.list[task] == 'In Progress'){
+                    taskCountProgress++;
+                }
+            }
+            if (taskCountDone > 0){
+                console.log('Done:')
+                for (const task in this.list){
+                    if(this.list[task] === 'Done') {
+                        console.log('    "' + task + '"')
+                    }
+                }
+            }
+            else {
+                console.log('Done:')
+                console.log('    -'); 
+            }
+            if (taskCountTodo > 0){
+                console.log('Todo:')
+                for (const task in this.list){
+                    if(this.list[task] === 'To Do') {
+                        console.log('    "' + task + '"')
+                    }
+                }
+            }
+            else {
+                console.log('Todo:')
+                console.log('    -'); 
+            }
+            if (taskCountProgress > 0){
+                console.log('In Progress:')
+                for (const task in this.list){
+                    if(this.list[task] === 'In Progress') {
+                        console.log('    "' + task + '"')
+                    }
+                }
+            }
+            else {
+                console.log('In Progress:')
+                console.log('    -'); 
+            }
+        }
     }
 
 }
 
-toDo.showList(); // показывает список всех задач
+toDo.showList2(); // показывает список всех задач
 toDo.changeStatus("make a bed", "In Progress");
-toDo.showList(); 
+toDo.showList2(); 
 toDo.deleteTask("make a bed");
 toDo.addTask("create a new practice taskkkkkkkkkk");
-toDo.showList();
+toDo.showList2();
 
 
 
