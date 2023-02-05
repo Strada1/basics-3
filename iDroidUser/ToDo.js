@@ -33,14 +33,27 @@ const toDo = {
 		}
 	},
 	showInfo() {
+		console.log(`${d}:`);
 		for (const task in this.list) {
-			if (this.list[task] != 'Done') {
-				console.log(`${task}:` + " " + this.list[task]);
-
-			}
-		} console.log('Nothing is Done!')
+			if (this.list[task] === d) {
+				console.log(`${task};`);
+			};
+		};
+		console.log(`${iP}:`);
+		for (const task in this.list) {
+			if (this.list[task] === iP) {
+				console.log(`${task};`);
+			};
+		};
+		console.log(`${tD}:`);
+		for (const task in this.list) {
+			if (this.list[task] === tD) {
+				console.log(`${task};`)
+			};
+		};
 	}
 };
+
 
 
 
