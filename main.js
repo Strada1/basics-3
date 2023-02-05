@@ -1,28 +1,31 @@
 // ОБЪЕКТЫ 
-const taskList = {
-  list: {
-    "Выбрать банк": "Done",
+
+const list = {
+    "111Выбрать банк": "Done",
     "Составить план": "Done",
     "Ограбить банк": "To Do",
     "Спрятать деньги": "In Progress"
     },
   
-    //Функция добавления
-    add(name, status) {
-      this.list[name] = status
-    },
+ const editTask = {
+  list,
 
+   //Функция добавления
+   add(name, status) {
+     this.list[name] = status
+    },
+    
     //Функция удаления
     deleteTask(name) { 
       delete this.list[name]
     },
-
+    
     //Функция изменения
     changeStatus(name, status) {
       this.list[name] = status
     }
+  }   
       
-};
 
 
 
@@ -55,24 +58,24 @@ function editStatus(status) {
 // ФУНКЦИЯ ИЗМЕНЕНИЯ СПИСКА ЗАДАЧ
 function editTask (name, status) {
 
-  for(name in taskList.list) {
+  for(key in taskList.list) {
 
-    if(name = taskList.list && status !== deleteTask){
+    if(key == taskList.list && status !== deleteTask){     
       console.log(`Изменён статус задачи "${taskName}" c "${taskList.list[taskName]}" на "${taskStatus}"`)
-      return taskList.changeStatus(taskName, taskStatus)
+      return taskList.list.changeStatus(taskName, taskStatus)
     }
   
-    if(name = taskList.list && status == deleteTask){
+    if(key == taskList.list && status == deleteTask){
       console.log(`Удалена задача "${taskName}"`)
-      return taskList.deleteTask(taskName, taskStatus)
+      return taskList.list.deleteTask(taskName, taskStatus)
     }
     
-    if (name != taskList.list && status !== deleteTask) {
+    if (key !== taskList.list && status !== deleteTask) {
       console.log(`Добавлена задача "${taskName}" со статусом "${taskStatus}"`)
-      return taskList.add(taskName, taskStatus)
+      return taskList.list.add(taskName, taskStatus)
     }
 
-    if(name != taskList.list && status == deleteTask){
+    if(key !== taskList.list && status == deleteTask){
       console.log(`Задачи "${taskName}" нет в списке`)
     }
 
@@ -120,7 +123,9 @@ function showList() {
 editStatus(taskStatus)          ////  
                                 ////
 // Внесение изменений           ////
-editTask(taskName, taskStatus)  ////
+// let editTaskResult = 0
+editTask(taskName, taskStatus)
+console.log (editTaskResult)                   ////
                                 ////
 // УВЕДОМЛЕНИЕ                  ////
 showList();                     ////
