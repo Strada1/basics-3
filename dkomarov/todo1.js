@@ -13,13 +13,13 @@ function addTask(name) {
 };
 
 function changeStatus(name, status) {
-    if(name in todoList) {
+    if(todoList[name]) {
         todoList[name] = status;
     }
 };
 
 function deleteTask(name) {
-    if(name in todoList) {
+    if(todoList[name]) {
         delete todoList[name];
     }
 };
