@@ -39,22 +39,23 @@ const todoList = {
     delete this.list[taskName];
   },
 
-  getTasksByStatus(status, tasksList) {
-    let tasks = "";
+  getTasksByStatus(status, sortedTasks) {
+    let allTasksByStatus = "";
 
-    for (const task in tasksList[status]) {
-      tasks += `    ${task}\n`;
+    for (const task in sortedTasks[status]) {
+      allTasksByStatus += `    ${task}\n`;
     }
 
-    if (0 === tasks.length) {
-      tasks += "    -";
+    if (0 === allTasksByStatus.length) {
+      allTasksByStatus += "    -";
     }
 
-    return `${status}:\n${tasks}`.trim();
+    return `${status}:\n${allTasksByStatus}`.trim();
   },
 
   showlist() {
     const sortedTasks = {};
+
     for (const status in STATUSES) {
       sortedTasks[STATUSES[status]] = {};
     }
@@ -91,3 +92,4 @@ todoList.changeStatus("eat", STATUSES.DONE);
 // todoList.deleteTask("go to sleep");
 // todoList.deleteTask("coffe");
 todoList.showlist();
+
