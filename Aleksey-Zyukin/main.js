@@ -15,7 +15,7 @@ function changeStatus(task, status){
       return console.log("Такой задачи нет в списке");
   }
   if(!(status in STATUS)){
-      return console.log('Вы ввели неверный статус, доступные статусы: "To Do", "Done", "In Progress"');
+      return console.log('Вы ввели некорректный статус, доступные статусы: "To Do", "Done", "In Progress"');
   }
   const lastStatus = list[task];
   list[task] = status;
