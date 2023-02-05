@@ -1,5 +1,12 @@
+const STATUSES = {
+  TODO: "Todo",
+  IN_PROGRESS: "In progress",
+  DONE: "Done",
+};
+
 const todoList = {
   list: {},
+
   addTask(taskName) {
     if (!checkStr(taskName)) {
       console.log("Невозможно добавить задачу, введены некорректные данные");
@@ -7,7 +14,7 @@ const todoList = {
     }
 
     if (!(taskName in this.list)) {
-      this.list[taskName] = "Todo";
+      this.list[taskName] = STATUSES.TODO;
     } else {
       console.log("Такая задача уже существует");
     }
@@ -32,31 +39,34 @@ const todoList = {
     delete this.list[taskName];
   },
 
-  showlist() {
-    const tasksToShow = {
-      Todo: {},
-      "In Progress": {},
-      Done: {},
-    };
+  getTasksByStatus(status, tasksList) {
+    let tasks = "";
 
+    for (const task in tasksList[status]) {
+      tasks += `    ${task}\n`;
+    }
+
+    if (0 === tasks.length) {
+      tasks += "    -";
+    }
+
+    return `${status}:\n${tasks}`.trim();
+  },
+
+  showlist() {
+    const sortedTasks = {};
+    for (const status in STATUSES) {
+      sortedTasks[STATUSES[status]] = {};
+    }
 
     for (const task in this.list) {
       let taskStatus = this.list[task];
-      tasksToShow[taskStatus][task] = "";
+      sortedTasks[taskStatus][task] = "";
     }
 
-    for (const status in tasksToShow) {
-      console.log(status + ":");
-
-      let taskExist = false;
-      for (const task in tasksToShow[status]) {
-        taskExist = true;
-        console.log("    " + task);
-      }
-
-      if (!taskExist) {
-        console.log("    -");
-      }
+    for (const status in sortedTasks) {
+      let tasks = this.getTasksByStatus(status, sortedTasks);
+      console.log(tasks);
     }
   },
 };
@@ -70,8 +80,14 @@ function checkStr(str) {
 }
 
 todoList.addTask("go to sleep");
+todoList.changeStatus("go to sleep", STATUSES.DONE);
+todoList.addTask("coffe");
 todoList.addTask("sport");
 todoList.addTask("eat");
-todoList.changeStatus("sport", "In Progress");
-todoList.changeStatus("eat", "Done");
+todoList.changeStatus("sport", STATUSES.IN_PROGRESS);
+todoList.changeStatus("eat", STATUSES.DONE);
+// todoList.deleteTask("eat");
+// todoList.deleteTask("sport");
+// todoList.deleteTask("go to sleep");
+// todoList.deleteTask("coffe");
 todoList.showlist();
