@@ -11,35 +11,61 @@ const toDo = {
 	    "write a post": "To Do",
     },
     
-    changeStatus(task, status) {
-        //!!!!!!!проверить, не пуст ли список, точнее есть ли такая задача, а если обратимся к ней, а ее нет..
-        this.list[task] = status; 
+    changeStatus(task, status) { //смена статуса для задачи
+        //проверяем, есть ли такой ключ, который мы передали в функцию
+        if (task in this.list) { //Object.list.task(this).length == 0
+            this.list[task] = status; 
+        }
+        else{
+            console.log('Такой задачи нет!');
+        }
     },
 
     addTask(newTask) { //добавление задачи с пустым статусом по умолчанию
-        this.list[newTask] = ""; //можно сделать задачу не пустой, а со статусом To Do
+        //если такая задача уже есть, то не надо добавлять
+        if (newTask in this.list) { //Object.list.task(this).length == 0
+            console.log('Такая задача уже существует!');
+        }
+        else{
+            this.list[newTask] = ""; //если такой задачи нет в списке, добавим ее с пустым статусом (можно добавить статус по умолчанию)
+        }
     },
 
     deleteTask(deltask) { //удаление какой-либо записи из списка
-        delete this.list[deltask]; //delete this.list.Alex; // с точкой не получится удалить свойство, если оно состоит из более одного слова с пробелом
+        //проверка, есть ли такая задача
+        if (deltask in this.list) { 
+            delete this.list[deltask];
+        }
+        else{
+            console.log('Невозможно удалить задачу. Ее не существует');
+        }
     },
 
     showList() { //показать весь список toDo
-        //!!!!!!проверить, не пуст ли список, чтобы не выводить пустоту
-        for (const task in this.list){
-            let nameTask = task;
-            let stat = toDo.list[task];
-            //вывод в одну строку с предварительным преобразованием элементов в отдельные строчки кода
-            //console.log('"' + nameTask + '"' + ": " + stat); //вывести в одну сторку дело и его статус
-            //альтернативный вывод в одну строку без предварительного создания строки
-            console.log(`\"${task}\": ${this.list[task]}`);
+        //проверка, есть ли ключи в свойстве list объекта todo (если их нет, значит список с делами пуст)
+        if (Object.keys(this.list).length == 0) {
+            console.log('Список дел пуст!');
+        }
+        else{
+            for (const task in this.list){
+                let nameTask = task;
+                let stat = toDo.list[task];
+                //вывод в одну строку с предварительным преобразованием элементов в отдельные строчки кода
+                //console.log('"' + nameTask + '"' + ": " + stat); //вывести в одну сторку дело и его статус
+                //альтернативный вывод в одну строку без предварительного создания строки
+                console.log(`\"${task}\": ${this.list[task]}`);
+            }
         }
     }
 }
 
 toDo.showList(); // показывает список всех задач
+toDo.changeStatus("make a bed", "In Progress");
+toDo.showList(); 
 toDo.deleteTask("make a bed");
+toDo.addTask("create a new practice taskkkkkkkkkk");
 toDo.showList();
+
 
 
 // console.log(toDo.list);
