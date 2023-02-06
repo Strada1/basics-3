@@ -1,6 +1,6 @@
 const list = {
   "create a new practice task": "In Progress",
-  "make a bed": "Done", // задача "заправить кровать" в статусе "Готово"
+  "make a bed": "Done",
   "write a post": "To Do",
 };
 
@@ -37,20 +37,17 @@ function deleteTask(task) {
 }
 
 function showList() {
-  let listToDo = {};
-  let listDone = {};
-  let listInProgress = {};
-  for (let key in list) {
-    if (list[key] == StatusToDo) {
-      listToDo[key] = StatusToDo;
-    } else if (list[key] == StatusDone) {
-      listDone[key] = StatusDone;
-    } else {
-      listInProgress[key] = StatusInProgress;
-    }
-  }
-
   function showNewFormat(statusTasks) {
+    let StatusObj = {};
+
+    console.log(`${statusTasks}: `);
+
+    for (let key in list) {
+      if (list[key] === statusTasks) {
+        StatusObj[key] = statusTasks;
+      }
+    }
+
     function isEmpty(obj) {
       for (let key in obj) {
         return false;
@@ -58,21 +55,18 @@ function showList() {
       return true;
     }
 
-    if (isEmpty(statusTasks)) {
+    if (isEmpty(StatusObj)) {
       console.log("    -");
     } else {
-      for (let key in statusTasks) {
+      for (let key in StatusObj) {
         console.log(`    ${key}`);
       }
     }
   }
 
-  console.log("ToDo: ");
-  showNewFormat(listToDo);
-  console.log("In Progress: ");
-  showNewFormat(listInProgress);
-  console.log("Done: ");
-  showNewFormat(listDone);
+  showNewFormat(StatusToDo);
+  showNewFormat(StatusInProgress);
+  showNewFormat(StatusDone);
 }
 
 changeStatus("write a post", "Done"); // меняет статус задачи
@@ -86,4 +80,5 @@ deleteTask("create a new practice task");
 changeStatus("create a new practice task", "Done");
 addTask("EBASHIT'");
 changeStatus("EBASHIT'", StatusInProgress);
+deleteTask("EBASHIT'");
 showList();
