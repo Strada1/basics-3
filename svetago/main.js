@@ -1,6 +1,7 @@
 const TODO = "To Do";
 const INPROGRESS = "In Progress";
 const DONE = "Done"
+
 const toDo = {
     list: {},
     addTask(task) {
@@ -12,19 +13,24 @@ const toDo = {
     changeStatus(task, status) {
         this.list[task] = status;
     },
-    showList() {
+    showStatus(status) {
         let i = 0;
-        console.log(TODO);
+        console.log(status);
         for (const task in this.list) {
-            if (this.list[task] === TODO) {
+            if (this.list[task] === status) {
                 i++;
                 console.log(task+":", this.list[task]);
             }
         }
         if (i === 0) {
-            console.log("Nothing is To Do");
+            console.log("Nothing is", status);
         } 
-
+    },
+    showList() {
+        this.showStatus (TODO);
+        this.showStatus (INPROGRESS);
+        this.showStatus (DONE);
+        /*
         i = 0;
         console.log(INPROGRESS);
         for (const task in this.list) {
@@ -47,7 +53,8 @@ const toDo = {
         }
         if (i === 0) {
             console.log("Nothing is Done");
-        } 
+        }
+        */ 
     }
 }
 toDo.addTask("сделать зарядку");
