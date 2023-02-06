@@ -1,36 +1,85 @@
-let userName = 'Арс';
-let userAge = 31;
-let userHeight;
-console.log(userHeight);
-userHeight = 180;
-console.log(userHeight);
-console.log('меня зовут ' + userName + ' и мне ' + userAge);
+const STATUSES = {
+  
+    INPROGRESS: 'In Progress',
+    DONE: 'Done',
+    MAKE: 'To Do',
+     
+    };
+    
+    const toDo = {
+      list: {
+        'create a new practice task': STATUSES.INPROGRESS,
+        'make a bed': STATUSES.DONE,
+        'write a post': STATUSES.MAKE,
+      },
 
-console.log(5 + 10);
-console.log(10 * 2);
-console.log(2 > 10);
-
-console.log(4 + 4);
-
-
-
-let a = 8;
-let b = a + ' Vertino';
-console.log(b);
-
-
-// console.log(5 > 4); // true
-// console.log("ананас" > "яблоко"); // false
-// console.log("2" > "12"); // true
-// console.log(undefined == null); // true
-// console.log(undefined === null); // false
-// console.log(null == "\n0\n"); //false
-// console.log(null === +"\n0\n"); // false
-
-// console.log('Apple' > 12);
-// console.log('false' > 12);
-// console.log(false > 12);
-
-let age = prompt('Сколько вам лет?', '');
-let result = (age > 18) ? true : false;
-console.log(result);
+      changeStatus(task, status) {
+        this.list[task] = status;
+        
+      },
+      
+      addTask(task, status) {
+        this.list[task] = status;
+        
+      }, 
+    
+      
+      deleteTask(task) {
+        delete this.list[task];
+       
+      },
+      
+      showList() {
+        
+         let checkToDo = 0;
+         let checkInProgress = 0;
+         let checkDone = 0;
+         
+        
+         console.log('Todo:');
+         for (task in toDo.list) {
+           if (toDo.list[task] === STATUSES.MAKE) {
+             console.log(task);
+             checkToDo++;
+           }
+         }
+         if (checkToDo === 0) {
+           console.log('-');
+         }
+         console.log('In progress:');
+         for (task in toDo.list) {
+           if (toDo.list[task] === STATUSES.INPROGRESS) {
+             console.log(task);
+             checkInProgress++;
+           }
+         }
+         if (checkInProgress === 0) {
+           console.log('-');
+         }
+         console.log('Done:');
+         for (task in toDo.list) {
+           if (toDo.list[task] === STATUSES.DONE) {
+             console.log(task);
+             checkDone++;
+           }
+         }
+         if (checkDone || checkInProgress || checkToDo === 0) {
+           console.log('-');
+         }
+    
+       }
+     };
+     
+    
+    toDo.changeStatus('create a new practice task', STATUSES.DONE);
+    
+    toDo.addTask('read more about onjects', STATUSES.INPROGRESS);
+    
+    toDo.addTask('more practice', STATUSES.MAKE);
+    
+    toDo.addTask('watch Alf', STATUSES.DONE);
+    
+    toDo.deleteTask('watch Alf');
+    
+    toDo.showList();
+    
