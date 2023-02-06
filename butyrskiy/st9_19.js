@@ -14,17 +14,17 @@ const checkKit = {
     if(typeof(nameTask) === 'string') {
       return true;
     }
-    else console.error('Error name');
+    else console.error(`Error name: ${nameTask}`);
   },
   checkNameInList(nameTask) {
     if(nameTask in list) {
       return true;
-    } else console.error('Task not found');
+    } else console.error(`Task - «${nameTask}» not found`);
   },
   checkStatus(statusTask) {
     if(statusTask in STATUS) {
       return true;
-    } else console.error('Error Status');
+    } else console.error(`Error status: ${statusTask}`);
   }
 }
 
@@ -157,7 +157,7 @@ newTask('Listen to music');
 newTask('Watch the movie');
 
 changeStatus('Write a post', 'In progress');
-changeStatus('Listen to music', 'In progress');
+changeStatus('Listen to music', 'Done');
 
 deleteTask('Open the door');
 
