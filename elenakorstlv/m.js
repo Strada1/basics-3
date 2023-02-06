@@ -24,15 +24,7 @@ const listToDo = {
 
     // показывает список всех задач
     showList(){
-        let message;
-        if(this.list.task = 'Done'){
-            message = 'Some task is done'
-        } else {
-            message = 'Nothing is Done'
-        }
-        
-    console.log(this.list)
-    console.log(message)
+        console.log(this.list)
     },
 };
 
