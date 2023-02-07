@@ -1,13 +1,13 @@
 function showVerticalMessage(str = 'Example') {
   if (typeof str !== 'string') {
-    throw new Error('Incorrect type data!');
+    return 'Incorrect type data!';
   }
 
-  const strWithUpperCaseLetter = str.toLocaleLowerCase().includes('s') ?
-    str[0].toLocaleUpperCase() + str.slice(1) :
-    str
+  const strUpperCase = str.toLocaleLowerCase().includes('s')
+    ? str[0].toLocaleUpperCase() + str.slice(1).trim()
+    : str.trim();
 
-  for (let letter of strWithUpperCaseLetter.trim()) {
+  for (let letter of strUpperCase) {
     console.log(letter);
   }
 }
