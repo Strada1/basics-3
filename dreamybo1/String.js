@@ -1,10 +1,13 @@
-//First exercise from learn.javascript.ru
-function ucFirst(str){
-    if(str===""){//Check for empty string
-        return "String is empty"
-    }   else{
-            return str[0].toUpperCase() + str.slice(1);
-        }
+function checkSpam(str){
+    
+    if(str.toLowerCase().includes("viagra") || str.toLowerCase().includes("xxx")===true){//Make str LowerCase and check if viagra or xxx included
+        return true
+    }
+    else{
+        return false
+    }
 }
-console.log(ucFirst(""));
-console.log(ucFirst("example"));
+console.log(checkSpam("xXxXxxxxxxx"));
+console.log(checkSpam("ViAGrAaaaaa"));
+console.log(checkSpam("Vi33AGrAaaaaa"));
+console.log(checkSpam("xxTentacionxx"));
