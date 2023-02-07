@@ -4,8 +4,8 @@ function showVerticalMessage (text) {
             text = text[0].toUpperCase() + text.slice(1)
         } 
     for (let char of text) {
-        console.log(`${char}`)
+        console.log(char)
     }
 }
 
-showVerticalMessage('stradahello')
+showVerticalMessage('лф')
