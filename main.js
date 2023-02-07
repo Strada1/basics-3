@@ -1,6 +1,6 @@
-function showVerticalMessage(String) {
-  console.log(String[0].toUpperCase());
-  for (let letter of String.substr(1, Infinity)) {
+function showVerticalMessage(Str) {
+  console.log(Str[0].toUpperCase());
+  for (let letter of Str.slice(1, 7)) {
       console.log(letter);
   }
 };
