@@ -1,13 +1,11 @@
-function checkSpam(str){
-    
-    if(str.toLowerCase().includes("viagra") || str.toLowerCase().includes("xxx")===true){//Make str LowerCase and check if viagra or xxx included
-        return true
+function truncate(str, maxlength){
+    if(str.length > maxlength){
+        return str.slice(0,maxlength-1) + "…"
     }
     else{
-        return false
+        console.log(str)
     }
 }
-console.log(checkSpam("xXxXxxxxxxx"));
-console.log(checkSpam("ViAGrAaaaaa"));
-console.log(checkSpam("Vi33AGrAaaaaa"));
-console.log(checkSpam("xxTentacionxx"));
+
+console.log(truncate("хахаха, я пошутил", 18));
+console.log(truncate("хахаха, я пошутил", 6));
