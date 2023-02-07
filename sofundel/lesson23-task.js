@@ -22,4 +22,17 @@ function showModifiedMessage(str) {
     showVerticalMessage(strUpperTrim);
 }
 
-showModifiedMessage("strada!lez");
+//showModifiedMessage("strada!lez");
+
+// Все действия в одной функции
+function showVerticalMessage(str) {
+    if (str[0] === "s") {
+        str = str[0].toUpperCase() + str.slice(1);
+    } else str;
+
+    for (let char of str.slice(0, 7)) {
+        console.log(char);
+    }
+}
+
+showVerticalMessage("strada!lez");
