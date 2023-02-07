@@ -4,4 +4,4 @@ function showVerticalMessage(String) {
       console.log(letter);
   }
 };
-showVerticalMessage('Strada');
+showVerticalMessage('strada');
