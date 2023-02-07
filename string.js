@@ -1,5 +1,5 @@
 function showVerticalMessage (text) {
-    text = text.substring(0,6)
+    text = text.substring(0,7)
         if (text.startsWith('s')) {        
             text = text[0].toUpperCase() + text.slice(1)
         } 
@@ -8,4 +8,4 @@ function showVerticalMessage (text) {
     }
 }
 
-showVerticalMessage('лф')
+showVerticalMessage('stradahello')
