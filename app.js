@@ -1,11 +1,20 @@
+const STR_MAX_LENGTH = 7;
+
 function showVerticalMessage(str = 'Example') {
   if (typeof str !== 'string') {
-    return 'Incorrect type data!';
+    console.log('Incorrect type data!');
+    return null;
   }
 
-  const strUpperCase = str.toLocaleLowerCase().includes('s')
-    ? str[0].toLocaleUpperCase() + str.slice(1).trim()
-    : str.trim();
+  str.toLocaleLowerCase().trim();
+
+  if (str.length > STR_MAX_LENGTH) {
+    str = str.substring(0, STR_MAX_LENGTH);
+  }
+
+  const strUpperCase = str.includes('s')
+    ? str[0].toLocaleUpperCase() + str.slice(1)
+    : str;
 
   for (let letter of strUpperCase) {
     console.log(letter);
