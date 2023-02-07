@@ -16,6 +16,10 @@ const todo = {
       return null;
     }
 
+    if (this.checkEmptyString(task)) {
+      return null;
+    }
+
     this.list[task] = status;
   },
 
@@ -89,6 +93,6 @@ todo.addTask('write a post');
 todo.addTask('write a post');
 todo.addTask('make a bed');
 todo.addTask('create a new practice task');
-todo.changeStatus('write a post', 'Done');
+todo.changeStatus('dsadsa', 'Done');
 todo.deleteTask('make a bed');
 todo.showList();
