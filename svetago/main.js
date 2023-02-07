@@ -5,7 +5,7 @@ function showVerticalMessage(str) {
         console.log('\\\\', str[0]);
     }
     let a = 1;
-    while ( a < 6 ) {
+    while ( a < 7 ) {
         console.log('\\\\', str[a]);
         a++;
         }
