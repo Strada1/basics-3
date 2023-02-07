@@ -1,11 +1,13 @@
-function truncate(str, maxlength){
-    if(str.length > maxlength){
-        return str.slice(0,maxlength-1) + "…"
+function extractCurrencyValue(str){
+    let pos = 0;
+    while(isFinite(str[pos])===false){
+        pos++;
     }
-    else{
-        console.log(str)
+    let endpos = pos; 
+    while(isFinite(str[endpos])===true){
+        endpos++;
     }
+    return str.slice(pos,endpos);
 }
 
-console.log(truncate("хахаха, я пошутил", 18));
-console.log(truncate("хахаха, я пошутил", 6));
+console.log(extractCurrencyValue("2228hfhf22388"));
