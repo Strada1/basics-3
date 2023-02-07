@@ -1,9 +1,6 @@
-const STR_MAX_LENGTH = 7;
-
-function showVerticalMessage(str = 'Example') {
+function showVerticalMessage(str = 'Example', STR_MAX_LENGTH = 7) {
   if (typeof str !== 'string') {
-    console.log('Incorrect type data!');
-    return null;
+    return console.log('Incorrect type data!');
   }
 
   str.toLocaleLowerCase().trim();
@@ -21,4 +18,4 @@ function showVerticalMessage(str = 'Example') {
   }
 }
 
-showVerticalMessage('strada');
+showVerticalMessage('www');
