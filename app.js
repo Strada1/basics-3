@@ -3,19 +3,19 @@ function showVerticalMessage(str = 'Example', STR_MAX_LENGTH = 7) {
     return console.log('Incorrect type data!');
   }
 
-  str.toLocaleLowerCase().trim();
+  let currentStr = str.toLocaleLowerCase().trim();
 
-  if (str.length > STR_MAX_LENGTH) {
-    str = str.substring(0, STR_MAX_LENGTH);
+  if (currentStr.length > STR_MAX_LENGTH) {
+    currentStr = currentStr.substring(0, STR_MAX_LENGTH);
   }
 
-  const strUpperCase = str.includes('s')
-    ? str[0].toLocaleUpperCase() + str.slice(1)
-    : str;
+  const strUpperCase = currentStr.includes('s')
+    ? currentStr[0].toLocaleUpperCase() + currentStr.slice(1)
+    : currentStr;
 
   for (let letter of strUpperCase) {
     console.log(letter);
   }
 }
 
-showVerticalMessage('www');
+showVerticalMessage('STRADA ');
