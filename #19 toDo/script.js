@@ -28,7 +28,7 @@ function showList() {
                 console.log(`"${item}" : ${VALUE.Todo}`);
                 break;
             case VALUE.InProgress:
-                console.log(`"${item}" : ${VALUE.Todo}`);
+                console.log(`"${item}" : ${VALUE.InProgress}`);
                 break;
             case VALUE.Done:
                 console.log(`"${item}" : ${VALUE.Done}`);
