@@ -46,8 +46,8 @@ const toDo = {
     list: {
         "create a new practice task": "Todo",
         "make a bed": "In Progress",
-        "write a post": "todo",
-        "empty post": ""
+        "write a post": "Todo",
+        "empty post": "Todo"
     },
     deleteTask,
     changeStatus,
@@ -55,5 +55,6 @@ const toDo = {
     showList
 };
 
-toDo.deleteTask('empty pos')
+toDo.addTask('do homework')
+
 toDo.showList();
