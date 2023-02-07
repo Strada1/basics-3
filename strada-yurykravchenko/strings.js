@@ -1,10 +1,9 @@
 function checkString(str, maxLength) {
-  let firstString = str;
   let result = '';
   
-  for(let i = 0; i <= firstString.length-1; i++) {
-    if(firstString[0].toLowerCase().slice(0, maxLength-1)) {
-      result = firstString[0].toUpperCase() + firstString.slice(1, maxLength)
+  for(let i = 0; i <= str.length-1; i++) {
+    if(str[0].toLowerCase().slice(0, maxLength-1)) {
+      result = str[0].toUpperCase() + str.slice(1, maxLength)
     }
   }
 
@@ -12,4 +11,4 @@ function checkString(str, maxLength) {
     console.log(char)
   }
 }
-checkString('stradafwergfaegsbgbtdtz', 7)
+checkString('stradafwergfaegsbgbtdtz', 6)
