@@ -2,5 +2,11 @@
 //Если строка начинается с буквы s - нужно вывести эту строку с первой заглавной буквой
 //Если строка больше 7 символов - вывести только первые 7
 function showVerticalMessage(str){
-    
+    if (str.length > 7){ //изменить проверку на букву s
+        for (let i = 0; i < 7; i++) {
+            console.log(str[i]);
+        }
+    }  
 }
+
+showVerticalMessage("stradagjjh");
