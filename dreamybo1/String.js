@@ -1,13 +1,14 @@
-function extractCurrencyValue(str){
-    let pos = 0;
-    while(isFinite(str[pos])===false){
-        pos++;
+function showVerticalMessage(str){
+    if(str[0]==="s"){
+        console.log(str[0].toUpperCase(),"\n");
+        for(length=1;length<7;length++){
+            console.log(str[length],"\n")
+        }
     }
-    let endpos = pos; 
-    while(isFinite(str[endpos])===true){
-        endpos++;
+    else{
+        for(length=0;length<7;length++){
+            console.log(str[length],"\n")
+        }
     }
-    return str.slice(pos,endpos);
 }
-
-console.log(extractCurrencyValue("2228hfhf22388"));
+showVerticalMessage("esabcdefhasjfjaf")
