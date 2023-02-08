@@ -1,14 +1,13 @@
 const showVerticalMessage = (str) => {
-  if (! typeof (str) === 'string') {
-    console.log("Error! Enter valid property!");
+    str[0] === 's' || 'S' ? str = str[0].toUpperCase() + str.slice(1) : str
+    if (str.length > 7) {
+      let smalStr = str.substr(0, 7)
+      for (i = 0; i < smalStr.length; i++) {
+        console.log(k.at([i]));
+      }
+    } for (i = 0; i < str.length; i++) {
+      console.log(str.at([i]))
+    }
   }
-
-  const newStr =
-    str.startsWith("s") ?
-      str[0].toUpperCase() + str.slice(1) :
-      str
-  for (let char of newStr.substr(0, 6))
-    console.log(char);
-}
-
-showVerticalMessage('stradalets')
+  
+  showVerticalMessage('strada')
