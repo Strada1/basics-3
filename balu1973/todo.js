@@ -50,7 +50,7 @@ const todoList = {
       allTasksByStatus += "    -";
     }
 
-    return `${status}:\n${allTasksByStatus}`.trim();
+    return allTasksByStatus.trimEnd();
   },
 
   showlist() {
@@ -66,7 +66,7 @@ const todoList = {
     }
 
     for (const status in sortedTasks) {
-      let tasks = this.getTasksByStatus(status, sortedTasks);
+      let tasks = status + ":\n" + this.getTasksByStatus(status, sortedTasks);
       console.log(tasks);
     }
   },
