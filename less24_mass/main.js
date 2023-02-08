@@ -4,3 +4,7 @@
 //Используйте методы массива чтобы вывести все задачи
 
 let todoArr = ["create a new practice task", "make a bed", "write a post"];
+
+for (const task of todoArr){
+    console.log(task);
+}
