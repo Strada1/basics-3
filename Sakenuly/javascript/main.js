@@ -19,13 +19,8 @@ let numbers = 0;
       console.log(numbers + '.' + element)
       numbers++;
 }
+
 }
-console.log(viewElementsNumber(toDoList));//Последним выводит undefined не пойму почему так.
+viewElementsNumber(toDoList); 
 
-console.log('\n');
-
-let numbers = 0;
-for (element of toDoList) {
-console.log(numbers + '.' + element); //такой же код вне функции работает нормально. ХелП!!!!!!!!!
-numbers++;
-};
+ 
