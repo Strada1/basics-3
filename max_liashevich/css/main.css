@@ -1,0 +1,129 @@
+html,
+body {
+  min-height: 100vh;
+}
+
+body {
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: "Space Mono";
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+.display-4 {
+  text-align: center;
+}
+.h4 {
+  text-align: center;
+  font-weight: 300;
+}
+.card {
+  transform: translateX(75%);
+  max-width: 40%;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.558);
+}
+.aside {
+  height: 400px;
+}
+.main {
+  height: 400px;
+}
+.d-flex {
+  display: flex;
+}
+.task-title {
+  font-weight: 900;
+  padding-top: 5px;
+}
+.gray {
+  color: #bdbdbd;
+}
+.task-title--done {
+  text-decoration: line-through;
+  color: #803333;
+}
+.task-item__buttons {
+  display: flex;
+  column-gap: 5px;
+}
+.notify-holder {
+  height: 60px;
+  margin-bottom: 20px;
+}
+.empty-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+.empty-list__title {
+  font-size: 28px;
+  margin-bottom: 15px;
+  font-weight: 300;
+}
+.empty-list__icon {
+  color: #42be2a;
+  font-size: 32px;
+}
+.btn-action {
+  background-color: #e0e5ea;
+  padding: 8px 10px;
+  cursor: pointer;
+  border: 0;
+  border-radius: 4px;
+  transition: opacity 0.2s ease-in;
+  opacity: 0.5;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-action:hover {
+  background-color: #e0e5ea;
+  opacity: 1;
+}
+
+.btn-action img {
+  pointer-events: none;
+}
+
+.none {
+  display: none !important;
+}
+
+.float-right {
+  float: right;
+}
+.copyright {
+  margin-top: 40px;
+  font-size: 14px;
+  color: gray;
+  text-align: center;
+  margin-bottom: 30px;
+  /* position: absolute; */
+  /* bottom: 30px; */
+  /* left: 0; */
+  /* right: 0; */
+}
+
+.btn-primary {
+  margin-top: 10px;
+  transform: translateX(240%);
+}
