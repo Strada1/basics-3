@@ -1,0 +1,14 @@
+{
+  "name": "georgesemenov",
+  "version": "1.0.0",
+  "description": "",
+  "main": "03.02.2023.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
+}
