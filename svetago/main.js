@@ -1,4 +1,3 @@
-const numbers = [1, 2, 3, 4, 5];
-numbers.forEach(number => {
-console.log('Number is', number)
-});
+const animals = ['cat', 'dog', 'elephant', 'tiger', 'lion']; 
+const longAnimals = animals.filter(animal => animal.length > 7);
+console.log(longAnimals);
