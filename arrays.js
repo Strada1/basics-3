@@ -1,5 +1,5 @@
 const numbers = [4, 3, 43, -5, 6, -32, 4, -60]
-const negativeNumbers = numbers.filter(number => number < 0)
+const absNumbers = numbers.map(number => Math.abs(number))
 //  longWord = animals[checkLongWord]
 
-console.log(negativeNumbers)
+console.log(absNumbers)
