@@ -14,3 +14,7 @@ console.log(negativeNumArray); // [ -2, -10 ]
 // Task three
 const absoluteNumArray = numArray.map((num) => Math.abs(num));
 console.log(absoluteNumArray); // [ 1, 11, 2, 3, 10, 4 ]
+
+// Task four
+const sortedArr = numArray.sort((a, b) => b- a);
+console.log(sortedArr); // [ 11, 4, 3, 1, -2, -10 ]
