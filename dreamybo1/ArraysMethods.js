@@ -1,3 +1,3 @@
-const animalArray = ['cat', 'dog', 'elephant', 'tiger', 'lion'];
-const findAnimal = animalArray.find(animal => animal.length > 7);
-console.log(findAnimal)
+const numbersArray = [1, 11, -2, 3, -10, 4];
+const newNumbersArray = numbersArray.filter(number => number<0);
+console.log(newNumbersArray);
