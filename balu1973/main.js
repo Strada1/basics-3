@@ -7,7 +7,7 @@ function showVerticalMessage(str) {
   str = str.trim();
   const MAX_LENGTH_STRING = 7;
   const SEARCH_LETTER = "s";
-  const firstLetter = (str[0] === SEARCH_LETTER) ? str[0].toUpperCase() : str[0];
+  const firstLetter = str.startsWith(SEARCH_LETTER) ? str.at(0).toUpperCase() : str.at(0);
 
   str = firstLetter + str.substring(1, MAX_LENGTH_STRING);
   for (const char of str) {
