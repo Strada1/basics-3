@@ -1,10 +1,14 @@
-const tasks = ['почитать', 'помыть посуду', 'помыть машину', 'посадить цветы'];
-tasks.push('кодить')
-tasks.shift()
-tasks.unshift('почитать')
-tasks.pop()
-const tasks2 = tasks.slice(1,3)
-tasks.splice(1, 2, 'Почитать про git')
-for (const task of tasks) {
-    console.log(task);
-  }
+const arr = ['cat', 'dog', 'elephant', 'tiger', 'lion']
+console.log(arr.find((elem) => elem.length > 7))
+
+
+const number = [1, 11, -2, 3, -10, 4]
+const negativeNumber = number.filter((elem) => elem < 0)
+console.log(negativeNumber)
+const absoluteNumber =  number.map((elem) =>Math.abs(elem))
+console.log(absoluteNumber)
+
+const sortedNumbers = number.sort((a, b) => a - b);
+console.log(sortedNumbers); 
+
+
