@@ -1,5 +1,5 @@
-const animals = ['cat', 'dog', 'elephant', 'tiger', 'lion', 'fdsflkdfs']
-const checkLongWord = animals.findIndex(word => word.length > 7, 2)
+const numbers = [4, 3, 43, -5, 6, -32, 4, -60]
+const negativeNumbers = numbers.filter(number => number < 0)
 //  longWord = animals[checkLongWord]
 
-console.log(animals[checkLongWord])
+console.log(negativeNumbers)
