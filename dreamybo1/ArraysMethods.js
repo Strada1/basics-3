@@ -1,4 +1,3 @@
-let numArray = [1,2,3,4,5,6,7,8,9,0];
-numArray.forEach(num => {
-    console.log(`Number is ${num}`);
-})
+const animalArray = ['cat', 'dog', 'elephant', 'tiger', 'lion'];
+const findAnimal = animalArray.find(animal => animal.length > 7);
+console.log(findAnimal)
