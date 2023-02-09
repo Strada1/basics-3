@@ -1,5 +1,5 @@
-const toDoList = [1, 2, 3, 4]
+const animals = ['cat', 'dog', 'elephant', 'tiger', 'lion', 'fdsflkdfs']
+const checkLongWord = animals.findIndex(word => word.length > 7, 2)
+//  longWord = animals[checkLongWord]
 
-toDoList.forEach(task =>
-    console.log(`Number is ${task}`)
-)
+console.log(animals[checkLongWord])
