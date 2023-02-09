@@ -1,7 +1,3 @@
-// for(task in newArray){
-//     console.log(task);
-// }
-
 let newArray = ['Проснуться', "Потянуться", "Сесть за курс"];
 let push = newArray.push("Выпить воды");
 console.log(newArray, push,"\n"); // [ 'Проснуться', 'Потянуться', 'Сесть за курс', 'Выпить воды' ] 4
