@@ -1,3 +1,3 @@
-let animals = ['cat', 'dog', 'elephant', 'tiger', 'lion'];
-const firstWord = animals.find(animal => animal.length > 7);
-console.log(firstWord);
+let num = [1, 11, -2, 3, -10, 4];
+const negativeNum = num.filter(number => number < 0);
+console.log(negativeNum);
