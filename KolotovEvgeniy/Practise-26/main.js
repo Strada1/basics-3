@@ -35,6 +35,5 @@ for (const task of Todo) {
   console.log(task);
 }
 
-
 console.log(Todo)
 
