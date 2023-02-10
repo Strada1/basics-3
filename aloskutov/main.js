@@ -2,11 +2,10 @@ const list = [
     {name: 'create a post', status: 'In progress', priority: 'Low'},
     {name: 'test', status: 'Done', priority: 'High'}
 ];
-function changeStatus(name, stat, prior) {
+function changeStatus(name, stat) {
     for (key in list) {
         if (list[key].name === name) {
             list[key].status = stat;
-            list[key].priority = prior;
         }
     }
 }
@@ -42,6 +41,6 @@ function showList() {
     }
 }
 addTask('make a program', 'In progress', 'High');
-changeStatus('create a post', 'Done', 'Low');
+changeStatus('create a post', 'Todo');
 deleteTask('test');
 showList();
