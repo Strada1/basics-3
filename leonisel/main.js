@@ -62,8 +62,3 @@ changeStatus("make a bed", STATUS.TODO);
 changeStatus("create a new practice task", STATUS.TODO);
 changeStatus("write a post", STATUS.PROGRESS);
 showList();
-
-
-
-
-
