@@ -1,4 +1,4 @@
-const Todo = [
+const todo = [
   { name: 'Заправить кровать', status: 'выполнено', priority: 'низкий' },
   { name: 'Покормить кота', status: 'выполнено', priority: 'высокий' },
   { name: 'Завтрак', status: 'выплнено', priority: 'средний' },
@@ -8,32 +8,21 @@ const Todo = [
 
 // добавляем новую задачу
 
-Todo.splice(1, 0, { name: 'Напоить кота', status: 'выполнено', priority: 'высокий' }
-),
+const addTask = (task, status1, status2) => {
+  const add = { name: task, status: status1, priority: status2 };
+  todo.push(add)
+}
+// удалить задачу
 
-  // изменям статус задачи
-
-  Todo.splice(3, 1, { name: 'Завтрак', status: 'выплнено', priority: 'низкий' },
-  ),
-
-  // добавляем новую задачу в начало
-
-  Todo.unshift({ name: 'Выспаться', status: 'не выполнено', priority: 'средний' });
-
-// оставляем 2 задачи
-
-let Tododel = Todo.slice(0, 2);
-console.log(Tododel);
-
-// удаляем последнюю задачу
-
-const TodolastItem = Todo.pop();
-
-// итерировать массив с помощью цикла for of
-
-for (const task of Todo) {
-  console.log(task);
+const deleteTask = (ind, Del) => {
+  todo.splice(ind, Del)
 }
 
-console.log(Todo)
+const changeStatus = (stat1, stat2) => {
+  todo[stat1].status = stat2
+}
 
+addTask('Напоить кота', 'неполнено', 'высокий');
+deleteTask(1, 2);
+changeStatus(1, 'не выполнено');
+console.log(todo); 
