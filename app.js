@@ -11,7 +11,7 @@ const TODO = {
     MEDIUM: 'medium',
     HIGH: 'high',
   }
-}
+};
 
 const todo = {
   list: [],
@@ -34,7 +34,7 @@ const todo = {
 
     this.list = this.list.map((item) => {
       if (item.name === task) {
-        item.status = status.toLowerCase();
+        item.status = status.toLocaleLowerCase();
         return item;
       }
 
@@ -43,7 +43,7 @@ const todo = {
   },
 
   addTask(name = '', status = TODO.TASK_STATUSES.TODO, priority = TODO.TASK_PRIORITIES.LOW) {
-    const lowerCaseStatus = status.toLowerCase();
+    const lowerCaseStatus = status.toLocaleLowerCase();
 
     if (!this.checkEmptyString(name)) {
       return null;
