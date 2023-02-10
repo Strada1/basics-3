@@ -37,10 +37,9 @@ function addTask(task){
   console.log(`Задача "${task}" была успешно добавлена в список`);
 }
 function deleteTask(task){
-  const tasks = list.find(tasks => tasks.name === task);
-  const taskIndex = list.indexOf(task);
+  const taskIndex = list.findIndex(tasksIndex => tasksIndex.name === task);
   const countDeletedElem = 1;
-  if(!tasks){
+  if(taskIndex < 0){
       return console.log("Такой задачи нет в списке");
   }
   if(task === "" || task === undefined){
