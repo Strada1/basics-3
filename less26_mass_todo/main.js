@@ -11,13 +11,11 @@ let todoArr = [
     {name: 'create a new practice task №2', status: 'In progress', priority: 'high'}, 
     {name: 'make a bed', status: 'Done', priority: 'high'}, 
     {name: 'make a bed2', status: 'Done', priority: 'low'},
-    {name: 'make a bed2', status: 'Done', priority: 'high'},
 ];
 
 function changeStatus(arr, task, stat) {
     //найти задачу по name и по ключу status изменить статус
     //если задачи такое нет, вывести сообщение об этом
-    //ПЕРЕДЕЛАТЬ ПОИСК ЭЛЕМЕНТОВ В МАССЕВЕ НА FINDE
     let flagTask = true;
     arr.forEach(element => {
         if(element.name === task){
@@ -72,16 +70,9 @@ function showTodo(arr) {
         console.log('Список дел пуст!');
     }
     else {
-        //найти элементы массива с ключом status: Done
-        //ПЕРЕДЕЛАТЬ на for по СТАТУСАМ ЧТОБЫ НЕ ПОВТОРЯТЬ ТОТ ЖЕ КОД
-        
-        //это использовать для поиска вместо forEach в функциях
-        //!!!!!!!
-        //let arrDone = arr.find(element => element.status === 'Done');
         arrStatus.forEach(stat => {
             const arrDone = arr.filter(element => element.status === stat);
             //console.log(arrDone); 
-            
             if (arrDone.length === 0) {
                 console.log(`${stat}:`)
                 console.log('    -'); 
