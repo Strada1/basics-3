@@ -36,12 +36,12 @@ function showList() {
     if (a <= 0) {
         console.log('Nothing in Done');
     }; if (b <= 0) {
-        console.log('Nothing in Progress')
+        console.log('Nothing in Progress');
     }; if (c <= 0) {
-        console.log('Nothing in Todo')
+        console.log('Nothing in Todo');
     }
 }
 addTask('make a program', 'In progress', 'High');
 changeStatus('create a post', 'Done', 'Low');
-deleteTask('make a program');
+deleteTask('test');
 showList();
