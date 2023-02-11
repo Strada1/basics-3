@@ -3,20 +3,32 @@
 //хранилище - массив
 //имена задач - ключи name в каждом объекте
 //в значениях будут указаны статусы: "In Progress", "Done", "To Do"
+//https://learn.javascript.ru/array-methods
 
-const arrStatus = ['In progress', 'Done', 'To Do'];
+const STATUSES = { //пространство имен задаем, когда есть изначально известные часто используемые в коде данные (строки, числа)
+    TO_DO: 'To Do',
+    IN_PROGRESS: 'In progress',
+    DONE: 'Done',
+}; 
+
+const PRIORIRTIES = {
+    LOW: 'Low',
+    MEDIUM: 'Medium',
+    HIGH: 'High',
+}
+
 const statusDefault = 'To Do';
 
 let todoArr = [ 
-    {name: 'create a new practice task', status: 'In progress', priority: 'high'}, 
-    {name: 'create a new practice task №2', status: 'In progress', priority: 'high'}, 
-    {name: 'make a bed', status: 'Done', priority: 'high'}, 
-    {name: 'make a bed2', status: 'Done', priority: 'low'},
+    {name: 'create a new practice task', status: STATUSES.IN_PROGRESS, priority: PRIORIRTIES.HIGH}, 
+    {name: 'create a new practice task №2', status: STATUSES.IN_PROGRESS, priority: PRIORIRTIES.HIGH}, 
+    {name: 'make a bed', status: STATUSES.DONE, priority: PRIORIRTIES.HIGH}, 
+    {name: 'make a bed2', status: STATUSES.DONE, priority: PRIORIRTIES.LOW},
 ];
 
 function changeStatus(arr, taskInTodoArr, newStat) {
     //если задачи такой нет, вывести сообщение об этом    
-    if (arr.find(element => element.name === taskInTodoArr) === undefined){ //(!(arr.includes(arr.name) === taskInTodoArr)){
+    if (arr.find(element => element.name === taskInTodoArr) === undefined){ 
         console.log('Такой задачи не существует!');
     } else { //иначе найти задачу по name и по ключу status изменить статус
         arr[arr.findIndex(element => element.name == taskInTodoArr)].status = newStat;
@@ -26,13 +38,10 @@ function changeStatus(arr, taskInTodoArr, newStat) {
 function addTask(arr, newTask, prior){
     //добавить задачу, если такой еще нет
     //если есть, сообщить что такая уже есть
-    if (arr.find(element => element.name === newTask)){ //(!(arr.includes(arr.name) === taskInTodoArr)){
+    if (arr.find(element => element.name === newTask)){ 
         console.log('Такая зачача уже есть!');
     } else { //иначе добавить задачу
-        let newTaskObj = {};
-        newTaskObj.name = newTask;
-        newTaskObj.status = statusDefault; //по умолчанию To Do
-        newTaskObj.priority = prior;
+        let newTaskObj = {name: newTask, status: PRIORIRTIES.TO_DO, priority: prior};
         arr.push(newTaskObj);
     }
 }
@@ -54,19 +63,19 @@ function showTodo(arr) {
         console.log('Список дел пуст!');
     }
     else {
-        arrStatus.forEach(stat => {
-            const arrDone = arr.filter(element => element.status === stat);
+        for(let prop in STATUSES){
+            const arrDone = arr.filter(element => element.status === STATUSES[prop]);
             //console.log(arrDone); 
             if (arrDone.length === 0) {
-                console.log(`${stat}:`) //вместо console.log('    -'); можно добавить в кавычки:  \n    -
+                console.log(`${STATUSES[prop]}:`) //вместо console.log('    -'); можно добавить в кавычки:  \n    -
                 console.log('    -'); 
             } else {
-                console.log(`${stat}:`)
+                console.log(`${STATUSES[prop]}:`)
                 arrDone.forEach(element => {    
                     console.log(`    "${element.name}", "${element.priority}"`) 
                 });
             }
-        });     
+        } 
     }
 }
 
