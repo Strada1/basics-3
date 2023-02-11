@@ -70,3 +70,4 @@ console.log('Sort list');
 list.sort(rangeStatus);
 console.log(list);
 console.log('__________________________________________');
+
