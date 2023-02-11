@@ -24,11 +24,13 @@ function deleteTask(task) {
 }  
 
 function showAloneStatus(statustofilter){
-   const filteredStatus = console.log(list.filter(word => word.status === statustofilter));
+   const filteredStatus = list.filter(word => word.status === statustofilter);
+   console.log(filteredStatus);  
 }
 function showTask(){
    const sortedList = list.sort((task1, task2) => task1.status.localeCompare(task2.status)); 
    console.log(sortedList);  
 }
+showAloneStatus("Done");
 
 
