@@ -43,6 +43,7 @@ function rangeStatus(a, b) {
 }
 
 
+
 console.log('__________________________________________');
 console.log('Add new task');
 addTask('Go to the cinema', 'In progress', 'Low');
