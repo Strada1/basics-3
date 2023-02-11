@@ -71,3 +71,4 @@ list.sort(rangeStatus);
 console.log(list);
 console.log('__________________________________________');
 
+
