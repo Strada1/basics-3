@@ -26,10 +26,18 @@ let todoArr = [
     {name: 'make a bed2', status: STATUSES.DONE, priority: PRIORIRTIES.LOW},
 ];
 
+function isValidTask(arr, taskInTodoArr){ //проверка, есть ли такая задача в массиве todoArr
+    return arr.find(element => element.name === taskInTodoArr);
+}
+
+function isValidStatus(inputStatus){ //проверка, есть ли такая задача в массиве todoArr
+    return inputStatus === STATUSES.DONE || inputStatus === STATUSES.IN_PROGRESS || inputStatus === STATUSES.TO_DO;
+}
+
 function changeStatus(arr, taskInTodoArr, newStat) {
     //если задачи такой нет, вывести сообщение об этом    
-    if (arr.find(element => element.name === taskInTodoArr) === undefined){ 
-        console.log('Такой задачи не существует!');
+    if (!isValidTask(arr, taskInTodoArr) || !isValidStatus(newStat)){ 
+        console.log('Такой задачи/статуса не существует!');
     } else { //иначе найти задачу по name и по ключу status изменить статус
         arr[arr.findIndex(element => element.name == taskInTodoArr)].status = newStat;
     }
@@ -48,7 +56,7 @@ function addTask(arr, newTask, prior){
 
 function deleteTask(arr, delTask){
     //проверить, есть ли задача для удаления
-    if (!(arr.find(element => element.name === delTask))){
+    if (!isValidTask(arr, delTask)){
         console.log('Такой задачи не существует!');
     } else { // удалить задачу
         let delTaskConsole = arr.splice(arr.findIndex(element => element.name == delTask), 1);
@@ -80,9 +88,12 @@ function showTodo(arr) {
 }
 
 showTodo(todoArr);
+changeStatus(todoArr, 'create a new practice task', 'Doneee');
+showTodo(todoArr);
 changeStatus(todoArr, 'create a new practice task', 'Done');
 addTask(todoArr, 'take a shower', 'high'); //'take a shower'
 showTodo(todoArr);
+deleteTask(todoArr, 'create a new practice taskkk');
 showTodo(todoArr);
 deleteTask(todoArr, 'create a new practice task');
 showTodo(todoArr);
