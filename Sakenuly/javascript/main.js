@@ -11,26 +11,24 @@ function addTask(task, status) {
    list.push({name: task, status: status});
 }
 function changeStatus(task, status){
-   const findForChange = list.findIndex(user => user.name === task);
+   const findForChange = list.findIndex(obj => obj.name === task);
    return list[findForChange] = {name: task, status: status};
    
 }
 function deleteTask(task) {
-   const findForDelete = list.findIndex(user => user.name === task);
+   const findForDelete = list.findIndex(obj => obj.name === task);
    const deleteIndex = list.splice(findForDelete, 1);
    console.log('Вы удалили задачу');
    console.log(deleteIndex, '\n');
  
 }  
-//function showTask(){
-//const sortedList = list.sort((name1, name2) => name1.status - name2.status); 
-//  console.log(sortedList); не смог сделать сортировку
-//}
-function showTask(){
-const filterToDo = console.log(list.filter(word => word.status === "ToDo"));
-const filterInprogress = console.log(list.filter(word => word.status === "In progress"));
-const filterDone = console.log(list.filter(word => word.status === "Done"));
+
+function showAloneStatus(statustofilter){
+   const filteredStatus = console.log(list.filter(word => word.status === statustofilter));
 }
-showTask()
- 
- 
+function showTask(){
+   const sortedList = list.sort((task1, task2) => task1.status.localeCompare(task2.status)); 
+   console.log(sortedList);  
+}
+
+
