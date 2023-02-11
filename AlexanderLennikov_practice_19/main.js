@@ -41,23 +41,3 @@ showList();
 
 
 
-
-// function showListPro(status) {
-// 	let count = 0;
-// 	for (let key in this.toDO) {
-// 		if (list[key] === status) {
-// 			console.log('     ' + key);
-// 			count++;
-// 		}
-// 	}
-// 	if (count === 0) {
-// 		console.log('-')
-// 	}
-
-// };
-
-// showListPro();
-
-
-
-
