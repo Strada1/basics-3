@@ -1,37 +1,38 @@
+const STATUSES = {
+  TO_DO: "To Do",
+  DONE: "Done",
+  IN_PROGRESS: "In Progress"
+}
+const PRIORITIES = {
+  LOW: 'low',
+  MEDIUM: 'medium',
+  HIGH: 'high'
+}
 const list = [ 
-	{name: 'create a post', status: 'In Progress', priority: 'low'}, 
-  {name: 'test', status: 'Done', priority: 'medium'},
-  {name: 'test1', status: 'To Do', priority: 'low'},
-  {name: 'test2', status: 'In Progress', priority: 'high'},
-  {name: 'test3', status: 'To Do', priority: 'low'}
-];
-const STATUS = {
-  "To Do": "To Do",
-  "Done": "Done",
-  "In Progress": "In Progress"
-}
-const PRIORITY = {
-  low: 'low',
-  medium: 'medium',
-  high: 'high'
-}
+    {name: 'create a post', status: STATUSES.TO_DO, priority: PRIORITIES.LOW}, 
+    {name: 'test', status: STATUSES.DONE, priority: PRIORITIES.MEDIUM},
+    {name: 'test1', status: STATUSES.TO_DO, priority: PRIORITIES.LOW},
+    {name: 'test2', status: STATUSES.IN_PROGRESS, priority: PRIORITIES.HIGH},
+    {name: 'test3', status: STATUSES.DONE, priority: PRIORITIES.LOW},
+    {name: 'test22', status: STATUSES.TO_DO, priority: PRIORITIES.HIGH}
+  ];
 function changeStatus(task, newStatus){
   const tasks = list.find(tasks => tasks.name === task);
   const lastStatus = tasks.status;
   if(!tasks){
       return console.log("Такой задачи нет в списке");
   }
-  if(!(newStatus in STATUS)){
-      return console.log('Вы ввели неверный статус, доступные статусы: "To Do", "Done", "In Progress"');
+  if(!(newStatus)){
+      return console.log('Вы ввели неверный статус');
   }
   tasks.status = newStatus;
   console.log(`Статус для "${task}" был изменен с "${lastStatus}" на "${newStatus}"`);
 }
 function addTask(task){
-  const defaultStatus = 'To Do';
-  const defaultPriority = 'medium';
+  const defaultStatus = STATUSES.TO_DO;
+  const defaultPriority = PRIORITIES.MEDIUM;
   if(task === "" || task === undefined){
-      console.log("Вы не ввели задачку");
+    return console.log("Вы не ввели задачку");
   }
   list.push({name: task, status: defaultStatus, priority: defaultPriority});
   console.log(`Задача "${task}" была успешно добавлена в список`);
@@ -49,30 +50,16 @@ function deleteTask(task){
   console.log(`Задача "${task}" была успешно удалена из списка`);
 }
 function showTaskOfStatus(status){
-  if(!(status in STATUS)){
-      return console.log('Вы ввели неверный статус, доступные статусы: "To Do", "Done", "In Progress"');
+  if(!(status)){
+      return console.log('Вы ввели неверный статус');
   }
   flag = false;
   let text = `${status}:`;
   list.sort(function (a, b) {
-    if (a.priority === 'low') {
-      return -1;
-    }
-    if (b.priority === 'low') {
-      return 1;
-    }
-    if(a.priority === 'medium'){
-      return -1;
-    }
-    if(b.priority === 'medium'){
-      return 1;
-    }
-    if(a.priority === 'high'){
-      return -1;
-    }
-    if(b.priority === 'high'){
-      return 1;
-    }}
+    (a.priority === 'medium') ? a = 1 : (a.priority === 'high') ? a = 2 : a = 0;
+    (b.priority === 'medium') ? b = 1 : (b.priority === 'high') ? b = 2 : b = 0;
+    return a-b;
+    }   
   );
   list.forEach(list => {
     if(list.status === status){
@@ -86,12 +73,12 @@ function showTaskOfStatus(status){
   console.log(text);
 }
 function showList(){
-  showTaskOfStatus("To Do");
-  showTaskOfStatus("Done");
-  showTaskOfStatus("In Progress");
+  showTaskOfStatus(STATUSES.TO_DO);
+  showTaskOfStatus(STATUSES.DONE);
+  showTaskOfStatus(STATUSES.IN_PROGRESS);
 }
-changeStatus('test','In Progress');
-addTask("learn PHP",'low');
+changeStatus('test', STATUSES.IN_PROGRESS);
+addTask("learn PHP");
 addTask("learn CSS");
 deleteTask('learn PHP');
 showList();
