@@ -1,7 +1,7 @@
 const STATUSES = {
-    toDo: 'to do',
-    inProgress: 'in progress',
-    done: 'done',
+    toDo: 'ToDo',
+    inProgress: 'In progress',
+    done: 'Done',
 };
 
 const PRIORITIES = {
@@ -13,6 +13,8 @@ const PRIORITIES = {
 let list = [
     {name: 'make \'Todo\' using arrays', status: STATUSES.inProgress, priority: PRIORITIES.high},
     {name: 'do a workout', status: STATUSES.done, priority: PRIORITIES.high},
+    {name: 'do a workout', status: STATUSES.inProgress, priority: PRIORITIES.high},
+    {name: 'do a workout', status: STATUSES.toDo, priority: PRIORITIES.high},
     {name: 'make dinner', status: STATUSES.toDo, priority: PRIORITIES.medium},
     {name: 'routines', status: STATUSES.toDo, priority: PRIORITIES.low},
     {name: 'study technical specification to the project', status: STATUSES.done, priority: PRIORITIES.high},
@@ -32,36 +34,63 @@ const addTask = (taskList, task, priority) => {
 }
 addTask(list, 'read a fiction',  PRIORITIES.low);
 
-
-const changeStatusAndPriority = (taskList, task, status, priority) => {
+//функции changeStatus и changePriority не отвечают концепции не повторять себя, но не успела решить как отказаться от этого
+const changeStatus = (taskList, task, status) => {
     const element = taskList.find(element => element.name === task);
     if (!element) {
         return console.log('такой задачи в списке дел не обнаржуено');
     }
     if (element) {
          element.status = status ?? element.status;
-         element.priority = priority ?? element.priority;
     }
     return element;
 }
 
-changeStatusAndPriority(list, 'routines');
+changeStatus(list, 'routines', STATUSES.inProgress);
 
-const getStatusList = (taskList, status) => {
-     return console.log({
-         [status]: (taskList
-             .filter(task => task.status === status)
-             .map(task => task.name).join(', ')) || 'nothing'
-     })
+const changePriority = (taskList, task, priority) => {
+    const element = taskList.find(element => element.name === task);
+    if (!element) {
+        return console.log('такой задачи в списке дел не обнаржуено');
+    }
+    if (element) {
+        element.priority = priority ?? element.priority;
+    }
+    return element;
 }
 
+changePriority(list, 'routines', PRIORITIES.high);
+
+const getStatusList = (taskList, status) => {
+    if (status) {
+        status = (taskList
+            .filter(task => task.status === status)
+            .map(task => task.name).join(', ')) || '-'
+    }
+    return status;
+}
+
+//вывод статусов и задач просто в консоль
 const showTaskList = () => {
-    getStatusList(list, STATUSES.toDo);
-    getStatusList(list, STATUSES.inProgress)
-    getStatusList(list, STATUSES.done)
+    return console.log(`${STATUSES.toDo}:
+${getStatusList(list, STATUSES.toDo)}
+${STATUSES.inProgress}:
+${getStatusList(list, STATUSES.inProgress)}
+${STATUSES.done}:
+${getStatusList(list, STATUSES.done)}`);
 }
 showTaskList();
 
+//вывод статусов в один объект в консоль
+const showTaskList2 = () => {
+    return console.log({
+        [STATUSES.toDo]: getStatusList(list, STATUSES.toDo),
+[STATUSES.inProgress]: getStatusList(list, STATUSES.inProgress),
+    [STATUSES.done]: getStatusList(list, STATUSES.done),
+
+})
+}
+showTaskList2();
 //решение через метод reduce, не могу решить пролему с висячей запятой и пробелом, остальное все по ТЗ, подскажите как решить задачу через reduce
 const showList = (taskList) => {
     const statusList =  taskList.reduce((obj, task) => {
