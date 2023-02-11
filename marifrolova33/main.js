@@ -5,6 +5,7 @@ const STATUSES = {
 };
 const PRIORITIES = {
   LOW: "low",
+  MEDIUM: "medium",
   HIGH: "high",
 };
 const list = [
@@ -17,18 +18,30 @@ function addTask(task) {
 }
 
 function deleteTask(task) {
-  const delTask = list.find((delTask) => delTask.name === task); //находим данный объект
-  const indexOfDelTask = list.indexOf(delTask); //находим индекс элемента
-  list.splice(indexOfDelTask, 1); // удаляем данную задачу
+  const delTask = list.find((delTask) => delTask.name === task); //находим данную задачу
+  if (delTask === undefined) {
+    console.log(`"${task}"
+    is absent in TodoList'`);
+  } else {
+    const indexOfDelTask = list.indexOf(delTask); //находим индекс элемента
+    list.splice(indexOfDelTask, 1); // удаляем данную задачу
+    console.log(`"${task}" is deleted from Todolist`);
+  }
 }
 
 function changeStatus(task, status) {
-  const changeTaskStatus = list.find(
-    (changeTaskStatus) => changeTaskStatus.name === task
-  );
-  changeTaskStatus.status = status;
+  const isTask = list.find((isTask) => isTask.name === task);
+  if (isTask === undefined) {
+    console.log(`"${task}" is absent in TodoList'`);
+  } else {
+    console.log(`"${task}" is added to Todolist`);
+    const changeTaskStatus = list.find(
+      (changeTaskStatus) => changeTaskStatus.name === task
+    );
+    changeTaskStatus.status = status;
+    changeTaskStatus.priority = PRIORITIES.LOW;
+  }
 }
-
 
 function findStatus(status) {
   const forFindStatus = list.map((item) => item.status);
@@ -46,9 +59,10 @@ function findStatus(status) {
     console.log("Nothing is " + status);
   }
   console.log("\t");
-};
+}
 
 function showList() {
+  console.log('ShowList:')
   findStatus(STATUSES.TO_DO);
   findStatus(STATUSES.IN_PROGRESS);
   findStatus(STATUSES.DONE);
@@ -57,7 +71,5 @@ function showList() {
 addTask("have a walk");
 addTask("feed a cat");
 changeStatus("create a post", "Todo");
+deleteTask("have a walk");
 showList();
-
-
-
