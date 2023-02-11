@@ -41,6 +41,15 @@ function changeStatus(taskName, status) {
 
 }
 
+function deleteTask(task) {
+  let listNames = getListNames(list);
+  let currentTaskIndex = listNames.indexOf(taskName);
+
+  if(listNames.includes(taskName)) {
+    list.splice(currentTaskIndex, 1);
+  }
+}
+
 function addTask(task, status = 'To Do', priority) {
   let listNames = getListNames(list);
   if(listNames.includes(task)) {
