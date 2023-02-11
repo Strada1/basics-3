@@ -1,51 +1,80 @@
-const list = {
-    "create a new practice task": "In Progress",
-    "make a bed": "Done",
-    "write a post": "To Do",
-  }
+const STATUSES = [
+  'to do',
+  'in progress',
+  'done'
+]
 
-function changeStatus(task, state) {
-  if(list[task] !== undefined) {
-    list[task] = state;
-  }
+const PRIORITIES = [
+  'low',
+  'high'
+]
+
+function getListNames(arr) {
+  return arr.map( task => task.name)
 }
 
-function addTask(task, state = 'To Do') {
-  if(task in list) {
+const list = [
+	{name: 'create a post', status: 'In progress', priority: 'low'},
+  {name: 'test', status: 'Done', priority: 'high'}
+];
+
+
+function changePriority(taskName, priority) {
+  let listNames = getListNames(list);
+  let currentTaskIndex = listNames.indexOf(taskName);
+  let priorityIsValid = PRIORITIES.includes(priority.toLowerCase())
+
+  if(listNames.includes(taskName) && priorityIsValid) {
+    list[currentTaskIndex].priority = priority;
+  }
+
+}
+
+function changeStatus(taskName, status) {
+  let listNames = getListNames(list);
+  let currentTaskIndex = listNames.indexOf(taskName);
+  let statusIsValid = STATUSES.includes(status.toLowerCase());
+
+  if(listNames.includes(taskName) && statusIsValid) {
+    list[currentTaskIndex].status = status;
+  }
+
+}
+
+function addTask(task, status = 'To Do', priority) {
+  let listNames = getListNames(list);
+  if(listNames.includes(task)) {
     alert('This task already was created. You need use changeStatus()')
   };
-  list[task] = state;
-}
-
-function deleteTask(task) {
-  delete list[task]
+  list.push({name: task, status, priority})
 }
 
 function showList() {
   let res = '';
 
   const todo = showTask('To Do', list);
-  const inProgress = showTask('In Progress', list);
+  const inProgress = showTask('In progress', list);
   const done = showTask('Done', list)
-  // console.log(todo.length, inProgress, done);
+
   res = todo + inProgress + done;
 
   return res
 }
 
-function showTask(status, obj) {
-  let res = `${status}:\n`;
+function showTask(status, list) {
+  let res = `${status}:\n`,
       isEmptyTask = true,
-      isEmptyTaskMessage = `${status}\n\tTasks are not found\n`;
+      emptyTaskMessage = `${status}\n\tTasks are not found\n`,
+      filteredList = list.filter( task => task.status.toLowerCase() === status.toLowerCase() );
 
-  for(let key in obj) {
-    if(obj[key] === status) {
-      res += '\t' + key + '\n';
+      if(!filteredList.length) return emptyTaskMessage;
+
       isEmptyTask = false;
-    }
-  }
+      for(let task of filteredList) {
+          res += '\t' + task.name + '\n';
+      }
 
-  return isEmptyTask ? isEmptyTaskMessage : res;
+      return res;
 }
 
-
+console.log(showList())
