@@ -4,6 +4,8 @@ const STATUS = {
   IN_PROGRESS: "In Progress",
 };
 
+const STATUSLIST = ["to Do", "Done", "In Progress"];
+
 const PRIORITIES = {
   LOW: "Low",
   HIGH: "High",
@@ -14,7 +16,7 @@ const DEFAULT_PRIORITY = PRIORITIES.HIGH;
 
 const list = [
   {
-    name: "crea",
+    name: "create universe",
     status: STATUS.IN_PROGRESS,
     priority: PRIORITIES.HIGH,
   },
@@ -23,18 +25,24 @@ const list = [
   { name: "write a post", status: STATUS.DONE, priority: PRIORITIES.LOW },
 ];
 
-function changeStatus(task, currentStat) {
-  let obj = list.find((item) => item.name === task);
+function changeStatus(taskName, currentStat) {
+  let obj = list.find((item) => item.name == taskName);
   if (obj) {
     for (let name in STATUS) {
-      if (STATUS[name] === currentStat) {
-        obj.status = currentStat;
+      if (STATUS[name] == currentStat) {
+        obj.status = STATUS[name];
         break;
       }
     }
-    console.log("Такой статус задачи не предусмотрен");
+    if (!STATUSLIST.includes(currentStat)) {
+      console.log(
+        "Такой статус задачи не предусмотрен, добавим стандартный статус"
+      );
+      obj.status = DEFAULT_STATUS;
+    }
   } else {
-    console.log("Такой задачи нет");
+    console.log("Такой задачи не найдено, добавляю задачу");
+    addTask(taskName, currentStat);
   }
 }
 
@@ -89,24 +97,33 @@ function showList() {
   for (let obj of list) {
     switch (obj.status) {
       case STATUS.DONE:
-        TASKS[STATUS.DONE] += obj.name + `\n `;
+        TASKS[STATUS.DONE] += "  " + obj.name + `\n `;
         break;
       case STATUS.TODO:
-        TASKS[STATUS.TODO] += obj.name + `\n `;
+        TASKS[STATUS.TODO] += "  " + obj.name + `\n `;
         break;
       case STATUS.IN_PROGRESS:
-        TASKS[STATUS.IN_PROGRESS] += obj.name + `\n `;
+        TASKS[STATUS.IN_PROGRESS] += "  " + obj.name + `\n `;
         break;
       default:
-         break;
+        break;
     }
   }
 
-    if (TASKS[STATUS.TODO] == "") {TASKS[STATUS.TODO] += "- \n"};
-    if (TASKS[STATUS.IN_PROGRESS] == "") {TASKS[STATUS.IN_PROGRESS] += "- \n"};
-    if (TASKS[STATUS.DONE] == "") {TASKS[STATUS.DONE] +="- \n"};
+  for (let status in TASKS) {
+    if (TASKS[status] == "") {
+      TASKS[status] = "   - \n";
+    }
+  }
 
-  console.log(`${STATUS.TODO}:\n`, TASKS[STATUS.TODO], `\r${STATUS.IN_PROGRESS}:\n`, TASKS[STATUS.IN_PROGRESS], `\r${STATUS.DONE}:\n`, TASKS[STATUS.DONE]);
+  console.log(
+    `${STATUS.TODO}:\n`,
+    TASKS[STATUS.TODO],
+    `\r${STATUS.IN_PROGRESS}:\n`,
+    TASKS[STATUS.IN_PROGRESS],
+    `\r${STATUS.DONE}:\n`,
+    TASKS[STATUS.DONE]
+  );
 }
 
 function showBy(filterRange) {
@@ -121,54 +138,79 @@ function showBy(filterRange) {
     [PRIORITIES.HIGH]: "",
   };
 
-  if (filterRange === 'status') {
+  if (filterRange === "status") {
     for (let obj of list) {
       switch (obj.status) {
         case STATUS.DONE:
-          BY_STATUS[STATUS.DONE] += obj.name + `\n `;
+          BY_STATUS[STATUS.DONE] += "  " + obj.name + `\n `;
           break;
         case STATUS.TODO:
-          BY_STATUS[STATUS.TODO] += obj.name + `\n `;
+          BY_STATUS[STATUS.TODO] += "  " + obj.name + `\n `;
           break;
         case STATUS.IN_PROGRESS:
-          BY_STATUS[STATUS.IN_PROGRESS] += obj.name + `\n `;
+          BY_STATUS[STATUS.IN_PROGRESS] += "  " + obj.name + `\n `;
           break;
         default:
-           break;
+          break;
       }
     }
-    if (BY_STATUS[STATUS.TODO] == "") {BY_STATUS[STATUS.TODO] += "- \n"};
-    if (BY_STATUS[STATUS.IN_PROGRESS] == "") {BY_STATUS[STATUS.IN_PROGRESS] += "- \n"};
-    if (BY_STATUS[STATUS.DONE] == "") {BY_STATUS[STATUS.DONE] +="- \n"};
 
-  console.log(`${STATUS.TODO}:\n`, BY_STATUS[STATUS.TODO], `\r${STATUS.IN_PROGRESS}:\n`, BY_STATUS[STATUS.IN_PROGRESS], `\r${STATUS.DONE}:\n`, BY_STATUS[STATUS.DONE]);
+    for (let status in BY_STATUS) {
+      if (BY_STATUS[status] == "") {
+        BY_STATUS[status] = "   - \n";
+      }
+    }
+
+    console.log(
+      `${STATUS.TODO}:\n`,
+      BY_STATUS[STATUS.TODO],
+      `\r${STATUS.IN_PROGRESS}:\n`,
+      BY_STATUS[STATUS.IN_PROGRESS],
+      `\r${STATUS.DONE}:\n`,
+      BY_STATUS[STATUS.DONE]
+    );
   }
-  if (filterRange === 'priority') {
+  if (filterRange === "priority") {
     for (let obj of list) {
       switch (obj.priority) {
         case PRIORITIES.LOW:
-          BY_PRYORITIES[PRIORITIES.LOW] += obj.name + `\n `;
+          BY_PRYORITIES[PRIORITIES.LOW] += "  " + obj.name + `\n `;
           break;
         case PRIORITIES.HIGH:
-          BY_PRYORITIES[PRIORITIES.HIGH] += obj.name + `\n `;
+          BY_PRYORITIES[PRIORITIES.HIGH] += "  " + obj.name + `\n `;
           break;
         default:
-           break;
+          break;
       }
     }
-    if (BY_PRYORITIES[PRIORITIES.LOW] == "") {BY_PRYORITIES[PRIORITIES.LOW] += "- \n"};
-    if (BY_PRYORITIES[PRIORITIES.HIGH] == "") {BY_PRYORITIES[PRIORITIES.HIGH] += "- \n"};
 
-  console.log(`${PRIORITIES.LOW}:\n`, BY_PRYORITIES[PRIORITIES.LOW], `\r${PRIORITIES.HIGH}:\n`, BY_PRYORITIES[PRIORITIES.HIGH]);
+    for (let priority in BY_PRYORITIES) {
+      if (BY_PRYORITIES[priority] == "") {
+        BY_PRYORITIES[priority] = "   - \n";
+      }
+    }
+
+    console.log(
+      `${PRIORITIES.LOW}:\n`,
+      BY_PRYORITIES[PRIORITIES.LOW],
+      `\r${PRIORITIES.HIGH}:\n`,
+      BY_PRYORITIES[PRIORITIES.HIGH]
+    );
   }
 }
 
-showBy('status') 
-showList() 
-
-/* addTask("write a post");
-addTask("PI PI");
-deleteTask('crea');
+/* showBy("priority"); */
+/* showList(); */
+/* addTask("clean a room"); */
+/* changeStatus("change the bad", STATUS.sd); */
+/* addTask("PI PI", "asdas", "asdas"); */
+/* showList(); */
+deleteTask("make a bed");
+deleteTask("write a post");
+showBy("priority");
+showBy("status");
+/* addTask("PI PI");
+deleteTask("crea");
 addTask("PU PU");
-showBy('status')  */
-
+showBy("status");
+ */
