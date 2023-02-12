@@ -1,67 +1,75 @@
 const list = {
-	'create s new practice task': 'In Progress',
-	'make a bed': 'Done',	
+	'create a new practice task': 'In Progress',
+	'make a bed': 'Done',
 	'write a post': 'To Do',
 }
 
 function changeStatus (task, stat) {
 	if (list[task] !== stat) {
-	list[task] = stat;
+		list[task] = stat;
 	}
 };
 
-function addTask(task, stat) {
-	if (!task) {
-		return console.log('error')
-	}
-	for (const currentTask in list) {
-		if(currentTask === task) {
+
+	function addTask(task) {
+		if (!task) {
 			return console.log('error')
 		}
-	}	
-	
-	if(task in list) {
-		return list[task] 
+		for (const currentTask in list) {
+			if (currentTask === task) {
+				return console.log('error')
+			}
+		}
+
+		if (task in list) {
+			return list[task]
+		}
+		list[task] = 'To Do';
+
+	};
+
+	function deleteTask(task) {
+		delete list[task];
 	}
-	list[task] = stat;
+
+		function showList() {
+
+			console.log('To Do');
+			for (const task in list) {
+				if (list[task] === 'To Do') {
+					console.log(task)
+				} else if (!task[list]) {
+					console.log('Nothing is To Do');
+				}
+				break;
+			}
+
+
+			console.log('In Progress')
+			for (const task in list) {
+				if (list[task] === 'In Progress') {
+					console.log(task)
+				}
+				else {
+					console.log('Nothing')
+				}
+				break;
+
+			}
+		}
+
+
+		console.log('Done')
+		for (const task in list) {
+			if (list[task] === 'Done') {
+				console.log(task)
+			} else if (!task[list]) {
+				console.log('Nothing is Done');
+			}
+			break;
+		}
 	
+
+	addTask('have a walk', 'To Do');
 	
-};
-
-function deleteTask(task) {	
-	delete list[task];
-};
-
-
-function showList() {
-let done = '';
-let inProgress = '';
-let toDo = ''
-
-for (const task in list) {
-	if (list[task] === 'Done') {
-   done += `${task}, \n`;
-} else if (list[task] === 'In Progress') {
-   inProgress += `${task}, \n`
- } else {
-   toDo += `${task}, \n`
-}
-}
-if(!done) {
-  done = 'Nothing is done\n'
- }
- if(!inProgress) {
-  inProgress = 'Nothing is inProgress\n'
- }
- if(!toDo) {
-  toDo = 'Nothing is todo\n'
- }
- return console.log(`Done: \n${done} In Progress: \n ${inProgress} To do: \n${toDo}`);
-}
-
-
-
-changeStatus('write a post', 'Done');
-addTask('have a walk', 'To Do');
-deleteTask('have a walk');
-showList();
+	showList();
