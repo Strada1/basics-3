@@ -44,27 +44,30 @@ const showList = () => {
 
   console.log(`Задач на сегодня \x1b[32m${testArray.length}:\x1b[0m`);
 
+  const logout = (logoutTaskStatus) => {
+    for (const all of logoutTaskStatus) {
+      console.log(' - ' + all.name + ',' + '\x1b[36m','приоритет: ','\x1b[0m' + all.priority);
+    };
+  };
+
   const toDo = testArray.filter(todo => todo.status === 'To Do');
   
   console.log('\x1b[35m','Нужно сделать:', '\x1b[0m');
-  for (const all of toDo) {
-    console.log(' - ' + all.name + ',' + '\x1b[36m','приоритет: ','\x1b[0m' + all.priority);
-  };
-  
+
+  logout(toDo);
   
   const inProgress = testArray.filter(todo => todo.status === 'In Progress');
   
   console.log('\x1b[33m', 'В процессе:', '\x1b[0m');
-  for (const all of inProgress) {
-    console.log(' - ' + all.name + ',' + '\x1b[36m','приоритет: ','\x1b[0m' + all.priority);
-  };
+  
+  logout(inProgress);
   
   const done = testArray.filter(todo => todo.status === 'Done');
   
   console.log('\x1b[32m', 'Завершено:', '\x1b[0m');
-  for (const all of done) {
-    console.log(' - ' + all.name + ',' + '\x1b[36m','приоритет: ','\x1b[0m' + all.priority);
-  };
+
+  logout(done);
+  
   };
 
 
