@@ -62,8 +62,6 @@ console.log('Not even started: ' + '\n' + tasksNes);
     }  
     
  }
-    
-  
 
 
 newTask('make a haircut', STATUS.DONE , PRIORITY.MEDIUM);
