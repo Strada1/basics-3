@@ -1,6 +1,6 @@
 const list = {
 	'create a new practice task': 'In Progress',
-	'make a bed': 'Done',
+	'make a bed': 'To Do',
 	'write a post': 'To Do',
 }
 
@@ -11,20 +11,12 @@ function changeStatus (task, stat) {
 };
 
 
-	function addTask(task) {
+	function addTask(task, stat) {
 		if (!task) {
 			return console.log('error')
 		}
-		for (const currentTask in list) {
-			if (currentTask === task) {
-				return console.log('error')
-			}
-		}
-
-		if (task in list) {
-			return list[task]
-		}
-		list[task] = 'To Do';
+		
+		list[task] = stat;
 
 	};
 
@@ -38,10 +30,7 @@ function changeStatus (task, stat) {
 			for (const task in list) {
 				if (list[task] === 'To Do') {
 					console.log(task)
-				} else if (!task[list]) {
-					console.log('Nothing is To Do');
-				}
-				break;
+				} 
 			}
 
 
@@ -50,12 +39,7 @@ function changeStatus (task, stat) {
 				if (list[task] === 'In Progress') {
 					console.log(task)
 				}
-				else {
-					console.log('Nothing')
-				}
-				break;
-
-			}
+				
 		}
 
 
@@ -63,13 +47,11 @@ function changeStatus (task, stat) {
 		for (const task in list) {
 			if (list[task] === 'Done') {
 				console.log(task)
-			} else if (!task[list]) {
-				console.log('Nothing is Done');
-			}
-			break;
+			} else if (list[task] !== 'In Progress' || 'To Do'){
+      console.log("ничего не найдено")
+    }
 		}
-	
+		}
 
-	addTask('have a walk', 'To Do');
-	
+
 	showList();
