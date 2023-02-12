@@ -1,4 +1,4 @@
-//TODO razvalnuy #26
+//TODO newRoadmap #3
 const STATUS = {
 	TODO: 'To Do',
 	IN_PROGRESS: 'In Progress',
@@ -9,7 +9,12 @@ const PRIORITY = {
 	LOW: 'Low',
 	HIGH: 'High',
 }
-
+function validStatus(status){
+	return status = status === STATUS.TODO || status === STATUS.IN_PROGRESS || status === STATUS.DONE;
+}
+function validPriority(priority){
+	return priority = priority === PRIORITY.LOW || PRIORITY.HIGH;
+}
 const list = [ 
 	{name: 'Убрать носки', status: STATUS.IN_PROGRESS, priority: PRIORITY.LOW}, 
 	{name: 'Погладить белье', status: STATUS.DONE, priority: PRIORITY.HIGH},
@@ -41,10 +46,11 @@ function deleteTask(task){
 
 function changeStatus(task, newStatus, newPriority){
 	const checkTaskStatus = list.find(item => item.name === task);
+	
 	if(!checkTaskStatus){
 		console.log(`\tУпс такой задачи нет, чтобы поменять ей статус ИЛИ приоритет проверьте правильность.`);
 	}else{
-		if((newStatus === 'To Do' || newStatus === 'In Progress' || newStatus === 'Done') && (newPriority === 'Low' || newPriority === 'High')){
+		if(validStatus(newStatus) && validPriority(newPriority)){
 			checkTaskStatus.status = newStatus,
 			checkTaskStatus.priority = newPriority;
 		}else{
@@ -52,29 +58,29 @@ function changeStatus(task, newStatus, newPriority){
 		}
 	}
 }
+let fullTasks;
+function checkingStatusShowList(checkStatus){
+	 return  fullTasks = list.filter(item => item.status === checkStatus);
+}
 
 function showList(){
 	console.log(`To Do`);
-	const checkListToDo = list.filter(item => item.status === 'To Do');
-	if(checkListToDo){
-		console.log(checkListToDo);
+	if(checkingStatusShowList('To Do')){
+		console.log(fullTasks);
 	}
 	console.log(`In Progress`);
-	const checkListIn = list.filter(item => item.status === 'In Progress');
-	if(checkListIn){
-		console.log(checkListIn);
+	if(checkingStatusShowList('In Progress')){
+		console.log(fullTasks);
 	}
 	console.log(`Done`);
-	const checkListDone = list.filter(item => item.status === 'Done');
-	if(checkListDone){
-		console.log(checkListDone);
+	if(checkingStatusShowList('Done')){
+		console.log(fullTasks);
 	}
 }
 //? addTask
 addTask('Поесть пиццу');
 addTask('Поиграть в пабг');
 addTask('Собрать кубика рубика')
-
 
 //? deleteTask
 deleteTask('Погладить белье');
@@ -85,3 +91,5 @@ changeStatus('Поиграть в пабг', STATUS.IN_PROGRESS, PRIORITY.HIGH);
 
 //?showList
 showList()
+
+//! пересобрать change status
