@@ -1,16 +1,5 @@
-function showVerticalMessage(str) {
-	
-		if (str[0] == 's') {
-		str = str[0].toUpperCase() + str.slice(1, 7)
-		for (let key of str) {
-			console.log(key)
-		}
-	} else {
-		str = str.slice(0, 7)
-		for (let key of str) {
-			console.log(key)
-	}
-	}
-}
+const number = [1,2,3,4,5,6,7,8,9];
 
-showVerticalMessage('rtradafdfqewq')
+number.forEach(numbers => {
+	console.log(`Number is ${numbers}`);
+})
