@@ -1,4 +1,4 @@
-const toDoList = {               // список задач, без проверки на Nothing
+const toDoList = {               // список задач c проверкой на Nothing, без "бонусной" задачи
     list: {
         "Wake up": "Done",
         "Make a bed": "ToDo",
@@ -7,38 +7,62 @@ const toDoList = {               // список задач, без провер
         "Learn JS": "In Progress",
         "Make chores": "ToDo", 
     },
-    showList() {
-        for (const task in this.list) {
-            switch(this.list[task]) {
 
+    showList() {
+    let flagDone = true;
+    let flagToDo = true;
+    let flagInProgress = true;
+
+    
+            for (const task in this.list) {
+            
+            switch(this.list[task]) {
+                
                 case 'Done':
-                    console.log(`"${task}"` + ': ' + 'Done');
+                    console.log('Done: ' + `${task}`);
+                    flagDone = false;
                     break;
             };
                 
         };
+    
         for (const task in this.list) {
             switch(this.list[task]) {
 
                 case 'ToDo':
-                    console.log(`"${task}"` + ': ' + 'ToDo');
+                    console.log('ToDo: ' + `${task}`);
+                    flagToDo = false;
                     break;
             };
                 
         };
+  
         for (const task in this.list) {
             switch(this.list[task]) {
 
                  case 'In Progress':
-                    console.log(`"${task}"` + ': ' + 'In Progress');
+                    console.log('In Progress: ' + `${task}`);
+                    flagInProgress = false;
                     break;
             };
                 
-        };                     
+        }; 
+        if (flagDone) {
+            console.log('Nothing is Done');
+        };
+
+        if (flagToDo) {
+            console.log('Nothing is ToDo');
+        };
+
+        if (flagInProgress) {
+            console.log('Nothing is In Progress');
+        }
+
     },
     addTask(task, status = 'ToDo') {
         if (task in this.list) {
-            console.log(`"${task}"` + ' - this task is already in your List');
+            console.log(`${task}` + ' - this task is already in your List');
         } else {
             toDoList.list[task] = status;
         };
@@ -58,4 +82,5 @@ toDoList.showList(); // выводим весь список задач
 console.log('--------------------------------------------------');
 toDoList.addTask('Wake up'); //пытаемся добавить уже существующую задачу
 toDoList.changeStatus('Go for a walk', 'In Progress') // меняем статус задачи
+toDoList.deleteTask('Go to work'); // удаляем задачу
 toDoList.showList(); // снова выводим весь список
