@@ -1,5 +1,5 @@
 const STATUSES = {
-  TO_DO: "Todo",
+  TO_DO: "To do",
   IN_PROGRESS: "In Progress",
   DONE: "Done",
 };
@@ -9,67 +9,95 @@ const PRIORITIES = {
   HIGH: "high",
 };
 const list = [
-  { name: "create a post", status: "In progress", priority: "low" },
-  { name: "test", status: "Done", priority: "high" },
+  {
+    name: "create a post",
+    status: STATUSES.IN_PROGRESS,
+    priority: PRIORITIES.HIGH,
+  },
+  {
+    name: "test some tasks",
+    status: STATUSES.IN_PROGRESS,
+    priority: PRIORITIES.MEDIUM,
+  },
 ];
 
+function isValidTask(task) {
+  return list.find((element) => element.name === task);
+}
+
 function addTask(task) {
-  list.push({ name: task, status: STATUSES.TO_DO, priority: PRIORITIES.LOW });
+  list.push({
+    name: task,
+    status: STATUSES.TO_DO,
+    priority: PRIORITIES.MEDIUM,
+  });
 }
 
 function deleteTask(task) {
-  const delTask = list.find((delTask) => delTask.name === task); //находим данную задачу
-  if (delTask === undefined) {
-    console.log(`"${task}"
-    is absent in TodoList'`);
+  if (!isValidTask(task)) {
+    console.log(`"${task}" is absent in Todolist`);
   } else {
-    const indexOfDelTask = list.indexOf(delTask); //находим индекс элемента
-    list.splice(indexOfDelTask, 1); // удаляем данную задачу
+    const delTask = list.filter((word) => word.name !== task);
     console.log(`"${task}" is deleted from Todolist`);
   }
 }
 
-function changeStatus(task, status) {
-  const isTask = list.find((isTask) => isTask.name === task);
-  if (isTask === undefined) {
-    console.log(`"${task}" is absent in TodoList'`);
-  } else {
-    console.log(`"${task}" is added to Todolist`);
+function changeStatusPriority(task, status, priority) {
+  if (isValidTask(task)) {
     const changeTaskStatus = list.find(
       (changeTaskStatus) => changeTaskStatus.name === task
     );
     changeTaskStatus.status = status;
-    changeTaskStatus.priority = PRIORITIES.LOW;
+    changeTaskStatus.priority = priority;
+    console.log(`status and priority of "${task}" is changed in Todolist`);
+  } else {
+    console.log(`"${task}" is absent in TodoList'`);
   }
 }
 
-function findStatus(status) {
-  const forFindStatus = list.map((item) => item.status);
-  const ifIncludeStatus = forFindStatus.includes(status);
-
-  if (ifIncludeStatus === true) {
-    const showStatus = list.filter((element) => element.status === status);
-    const showTaskStatus = showStatus.map((task) => task.name);
-    showTaskStatus.forEach((task) => {
-      console.log(`${task}: ${status}`);
-    });
+function showByStatus(status) {
+  isStatusEmpty = true;
+  console.log(status.toUpperCase());
+  for (let task of list) {
+    if (task.status === status) {
+      console.log(`\t${task.name}`);
+      isStatusEmpty = false;
+    }
   }
-
-  if (ifIncludeStatus === false) {
-    console.log("Nothing is " + status);
-  }
-  console.log("\t");
+  if (isStatusEmpty) console.log(`\t -`);
 }
 
-function showList() {
-  console.log('ShowList:')
-  findStatus(STATUSES.TO_DO);
-  findStatus(STATUSES.IN_PROGRESS);
-  findStatus(STATUSES.DONE);
+function showByPriority(priority) {
+  isStatusEmpty = true;
+  console.log(priority.toUpperCase());
+  for (let task of list) {
+    if (task.priority === priority) {
+      console.log(`\t${task.name}`);
+      isStatusEmpty = false;
+    }
+  }
+  if (isStatusEmpty) console.log(`\t -`);
+}
+
+function showListStatus() {
+  showByStatus(STATUSES.TO_DO);
+  showByStatus(STATUSES.IN_PROGRESS);
+  showByStatus(STATUSES.DONE);
+}
+
+function showListPriority() {
+  showByPriority(PRIORITIES.LOW);
+  showByPriority(PRIORITIES.MEDIUM);
+  showByPriority(PRIORITIES.HIGH);
 }
 
 addTask("have a walk");
 addTask("feed a cat");
-changeStatus("create a post", "Todo");
+addTask("try to improve ToDo");
+addTask("take a wash");
+changeStatusPriority("create a post", "In Progress", "medium");
+changeStatusPriority("feed a cat", "Todo", "high");
 deleteTask("have a walk");
-showList();
+changeStatusPriority("try to improve ToDo", "Done", "high");
+showListStatus();
+showListPriority();
