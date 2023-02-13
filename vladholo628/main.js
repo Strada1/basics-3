@@ -32,7 +32,19 @@ const todo = {
       priority: AVALIABLE_OPTIONS.priorities.low,
     },
   ],
+  checkDetailsValidity(type, detail) {
+    const detailCategory = type === "status" ? "statuses" : "priorities";
 
+    let isValid = false;
+
+    for (let item in AVALIABLE_OPTIONS[detailCategory]) {
+      if (AVALIABLE_OPTIONS[detailCategory][item] === detail) {
+        isValid = true;
+      }
+    }
+
+    return isValid;
+  },
   changeStatus(taskName, status) {
     const taskIndex = this.list.findIndex((item) => item.name === taskName);
 
@@ -40,8 +52,11 @@ const todo = {
       console.log("Task not found...");
       return;
     }
-
-    this.list[taskIndex].status = status;
+    if (this.checkDetailsValidity("status", status)) {
+      this.list[taskIndex].status = status;
+      return;
+    }
+    console.log("Invalid Status...");
   },
   changePriority(taskName, priority) {
     const taskIndex = this.list.findIndex((item) => item.name === taskName);
@@ -50,8 +65,11 @@ const todo = {
       console.log("Task not found...");
       return;
     }
-
-    this.list[taskIndex].priority = priority;
+    if (this.checkDetailsValidity("priority", priority)) {
+      this.list[taskIndex].priority = priority;
+      return;
+    }
+    console.log("Invalid Priority...");
   },
   addTask(
     taskName,
@@ -99,11 +117,12 @@ const todo = {
     render(todo, AVALIABLE_OPTIONS.statuses.toDo);
     render(done, AVALIABLE_OPTIONS.statuses.done);
     render(inProgress, AVALIABLE_OPTIONS.statuses.inProgress);
+
     if (done.length === 0) {
       console.log("Nothing is Done...");
     }
   },
 };
 
-todo.changeStatus("test", AVALIABLE_OPTIONS.statuses.inProgress);
+todo.changeStatus("test", "kek");
 todo.showList();
