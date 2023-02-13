@@ -8,7 +8,7 @@ const list = [
 
 // Добавление объекта в массив
 function addTask(nameText, statusText, priorityText) {
-    list.push({ name: nameText, status: statusText, priority: priorityText });
+    list.push({ name: nameText, status: statusText, priority: priorityText }); asd
 
 
 }
