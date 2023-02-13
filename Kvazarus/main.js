@@ -1,3 +1,4 @@
+// Моя ошибка, или скорее недочёт, состоит в том, что я не использовал методы массива,такие как findIndex или includes
 const ToDo = {
     list: [
         { taskName: "create a new practice task", status: "In Progress" },
@@ -8,7 +9,7 @@ const ToDo = {
         for (const task of this.list) {
             if (name === task.taskName) {
                 task.taskName = name;
-                task["status"] = status; 
+                task["status"] = status;
                 return;
             }
         }
@@ -21,7 +22,7 @@ const ToDo = {
                 return;
             }
         }
-        this.list.push({"taskName": name, "status": status});
+        this.list.push({ "taskName": name, "status": status });
     },
     deleteTask(name) {
         for (let i = 0; i < this.list.length; i++) {
@@ -32,35 +33,22 @@ const ToDo = {
         }
         console.log("This name doesn't exist.");
     },
-    showList() {
-        console.log("ToDo:");
+    statusOut(status) {
+        console.log(`${status}:`);
         let flag = false;
-        for (const task of this.list) {
+        this.list.forEach (task => {
             const x = task["status"];
-            if (x.toLowerCase() === "todo" || x.toLowerCase() === "to do") {
+            if (x.toLowerCase() === status.toLowerCase() || (x.slice(0, 2)+' '+x.slice(2)).toLowerCase() === status.toLowerCase) {
                 console.log('\t' + task.taskName);
                 flag = true;
             }
-        }
+        })
         if (!flag) { console.log('\t' + '-'); }
-        flag = false;
-        console.log("In Progress:");
-        for (const task of this.list) {
-            if (task["status"].toLowerCase() === "in progress") {
-                console.log('\t' + task["taskName"]);
-                flag = true;
-            }
-        }
-        if (!flag) { console.log('\t' + '-'); }
-        flag = false;
-        console.log("Done:");
-        for (const task of this.list) {
-            if (task["status"].toLowerCase() === "done") {
-                console.log('\t' + task["taskName"]);
-                flag = true;
-            }
-        }
-        if (!flag) { console.log('\t' + '-'); }
+    },
+    showList() {
+        this.statusOut("ToDo");
+        this.statusOut("In Progress");
+        this.statusOut("Done");
     }
 };
 
