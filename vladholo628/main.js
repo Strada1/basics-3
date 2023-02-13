@@ -16,9 +16,21 @@ const AVALIABLE_OPTIONS = {
 
 const todo = {
   list: [
-    { name: "create a post", status: "In progress", priority: "low" },
-    { name: "test", status: "Done", priority: "high" },
-    { name: "another task", status: "To Do", priority: "high" },
+    {
+      name: "create a post",
+      status: AVALIABLE_OPTIONS.statuses.done,
+      priority: AVALIABLE_OPTIONS.priorities.high,
+    },
+    {
+      name: "test",
+      status: AVALIABLE_OPTIONS.statuses.done,
+      priority: AVALIABLE_OPTIONS.priorities.low,
+    },
+    {
+      name: "another task",
+      status: AVALIABLE_OPTIONS.statuses.toDo,
+      priority: AVALIABLE_OPTIONS.priorities.low,
+    },
   ],
 
   changeStatus(taskName, status) {
@@ -65,10 +77,14 @@ const todo = {
     list.splice(targetTaskIndex, 1);
   },
   showList() {
-    const todo = this.list.filter((item) => item.status === "To Do");
-    const done = this.list.filter((item) => item.status === "Done");
+    const todo = this.list.filter(
+      (item) => item.status === AVALIABLE_OPTIONS.statuses.toDo
+    );
+    const done = this.list.filter(
+      (item) => item.status === AVALIABLE_OPTIONS.statuses.done
+    );
     const inProgress = this.list.filter(
-      (item) => item.status === "In progress"
+      (item) => item.status === AVALIABLE_OPTIONS.statuses.inProgress
     );
 
     const render = (arrayOfTasks, title) => {
@@ -80,10 +96,14 @@ const todo = {
       arrayOfTasks.forEach((task) => console.log(`--- ${task.name}`));
     };
 
-    render(todo, "To Do");
-    render(done, "Done"), render(inProgress, "In Progress");
-    if (done.length === 0) console.log("Nothing is Done...");
+    render(todo, AVALIABLE_OPTIONS.statuses.toDo);
+    render(done, AVALIABLE_OPTIONS.statuses.done);
+    render(inProgress, AVALIABLE_OPTIONS.statuses.inProgress);
+    if (done.length === 0) {
+      console.log("Nothing is Done...");
+    }
   },
 };
 
+todo.changeStatus("test", AVALIABLE_OPTIONS.statuses.inProgress);
 todo.showList();
