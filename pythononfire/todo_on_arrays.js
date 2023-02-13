@@ -1,19 +1,24 @@
 const todo = [
-    {name:'Спатб',
-     status:'done',
-     priority:'medium'},
-
-    {name:'Писац код',
-    status:'in progress',
-    priority:'high'},
-
-    {name:'Тренираваца',
-    status:'todo',
-    priority:'high'},
-
-    {name:'Убитб всх человеков',
-     status:'todo',
-     priority:'low'},
+    {
+        name:'Спатб',
+        status:'done',
+        priority:'medium'
+    },
+    {
+        name:'Писац код',
+        status:'in progress',
+        priority:'high'
+    },
+    {
+        name:'Тренираваца',
+        status:'todo',
+        priority:'high'
+    },
+    {
+        name:'Убитб всх человеков',
+        status:'todo',
+        priority:'low'
+    },
 ]
 
 function findId(name) {
@@ -47,7 +52,7 @@ function isInList(name) {
 
 
 function addTask(name, status, priority) {
-    if (isCorrectStatus(status) === true && isCorrectPriority(priority) === true) {
+    if (isCorrectStatus(status) && isCorrectPriority(priority)) {
     const newTask = {
         name,
         status,
@@ -60,7 +65,7 @@ function addTask(name, status, priority) {
 }
 
 function deleteTask(name) {
-    if (isInList(name) === true) {
+    if (isInList(name)) {
         todo.splice(findId(name), 1);
     } else {
         console.log('Такой задачи нет')
@@ -68,28 +73,35 @@ function deleteTask(name) {
 }
 
 function changeStatus(name, newStatus) {
-    if (isInList(name) === true) {
-        if (isCorrectStatus(newStatus) === true) {
-            todo[findId(name)].status = newStatus;
-        } else {
-            console.log('Ошибка ввода статуса')
-        }
-    } else {
-        console.log('Такой задачи нет')
+    if (!isInList(name)) {
+        console.log('Такой задачи нет');
+        return;
     }
+
+    if (!isCorrectStatus(newStatus)) {
+        console.log('Ошибка ввода статуса');
+        return;
+    }
+
+    todo[findId(name)].status = newStatus;
 }
 
 function changePriority(name, newPriority) {
-    if (isInList(name) === true){
-        if (isCorrectPriority(newPriority) === true) {
-            todo[findId(name)].priority = newPriority;
-        } else {
-            console.log('Ошибка ввода приоритета')
-        }
-    } else {
+    if (!isInList(name)){
         console.log('Такой задачи нет');
+        return;
     }
+
+    if (!isCorrectPriority(newPriority)) {
+        console.log('Ошибка ввода приоритета');
+        return;
+    }
+
+    todo[findId(name)].priority = newPriority;
 }
+
+
+
 
 function showList() {
     const arrTodo = [];
@@ -129,9 +141,10 @@ function showList() {
 
 
 
-addTask('Стац умным', 'in progress', 'high');
-deleteTask('Убитб всх человеков')
-changeStatus('Писац код', 'done');
-changePriority('Спатб', 'high')
+// addTask('Стац умным', 'in progress', 'high');
+// changeStatus('Писац код', 'done');
+// deleteTask('Убитб всх человеков')
+// changePriority('Спатб', 'high')
 
-showList()
+
+// showList()
