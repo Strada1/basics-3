@@ -38,10 +38,10 @@ addTask('Не паниковать', 'To Do', 'low');
 deleteTask('Повторить методы массивов');
 showList()
 
-
-// console.log(priority);
-
-// console.log(showListStatus());
+//доделать: 
+//changeStatus
+//changePriority
+//проверку на наличие задачи
 
 
 
