@@ -21,7 +21,7 @@ const STATUSESS = {
 
 let testArray = [
   {name : 'Сходить в магазин', status : 'To Do', priority : 'low'},
-  {name : 'Обработать фотки', status : 'In Progress', priority : 'high'},
+  {name : 'Обработать фотки', status : 'To Do', priority : 'high'},
   {name : 'Сделать задание Strada', status : 'In Progress', priority : 'high'},
   {name : 'Поспать', status :'Done', priority : 'low'},
   {name : 'Сходить в качалку', status : 'To Do', priority : 'low'}
@@ -76,10 +76,15 @@ const deleteTask = (taskName) => {
     const toDo = testArray.filter(todo => todo.status === newStatus);
   
     console.log(status);
-    for (const all of toDo) {
-      console.log(' - ' + all.name + ',' + 
-                  COLOR.CYAN, 'приоритет: ', COLOR.CLR + 
-                  all.priority);
+    
+    if (toDo.length > 0) {
+      for (const all of toDo) {
+       console.log(' - ' + all.name + ',' + 
+                   COLOR.CYAN, 'приоритет: ', COLOR.CLR + 
+                   all.priority);
+      };
+    } else {
+      console.log(' - ');
     };
   };
   
@@ -105,12 +110,4 @@ deleteTask ('Собраться на концерт');
 deleteTask ('Stradat');
 
 showList();
-
-
-
-
-
-
-
-
 
