@@ -96,7 +96,7 @@ addTask("feed a cat");
 addTask("try to improve ToDo");
 addTask("take a wash");
 changeStatusPriority("create a post", "In Progress", "medium");
-changeStatusPriority("feed a cat", "Todo", "high");
+changeStatusPriority("feed a cat", "To do", "high");
 deleteTask("have a walk");
 changeStatusPriority("try to improve ToDo", "Done", "high");
 showListStatus();
