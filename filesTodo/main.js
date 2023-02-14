@@ -1,3 +1,73 @@
+// //TODO на массивах ахаа)
+
+
+// const STATUS = {
+// 	ToDo: 'ToDo',
+// 	InProgress: 'In Progress',
+// 	Done: 'Done',
+// }
+
+// const priority = {
+// 	low: 'Low',
+// 	high: 'High',
+// }
+
+// const list = [
+// 	{name: 'Поесть чипсы', status: 'In Progress', priority: 'low'},
+// ];
+
+// function addTask(task, pr = 'low'){
+// 	list.push({
+// 		name: task,
+// 		status: STATUS.ToDo,
+// 		priority: pr,
+// 	});
+// }
+
+// function deleteTask(task){
+// 	let checking = list.findIndex(item => item === task);
+// 	list.splice(checking, 1);
+// }
+// function filterStatus(status){
+// 	console.log(list.filter(item => item.status === status));
+// }
+
+// function changePriority(task, newPriority){
+// 	let newPri = list.find(item => item.name === task)
+// 	return newPri.priority = newPriority;
+// }
+
+// function changeStatus(task, newStatus){
+// 	let newStat = list.find(item => item.name === task)
+// 	return newStat.status = newStatus;
+// }
+
+// function showList(){
+// 	console.log('ToDo');
+// 	filterStatus(STATUS.ToDo);
+
+// 	console.log('In Progress');
+// 	filterStatus(STATUS.InProgress);
+
+// 	console.log('Done');
+// 	filterStatus(STATUS.Done)
+// }
+
+// addTask('Попрактиковаться');
+// addTask('Поесть мармелад');
+// addTask('Удалить');
+// deleteTask('Удалить');
+// addTask('Сделать тз');
+// changePriority('Сделать тз', priority.high);
+// changePriority('Попрактиковаться', priority.high);
+// changeStatus('Попрактиковаться', STATUS.Done);
+
+// showList();
+
+
+
+
+
 //TODO newRoadmap #3
 const STATUS = {
 	TODO: 'To Do',
@@ -60,7 +130,11 @@ function changeStatus(task, newStatus, newPriority){
 }
 let fullTasks;
 function checkingStatusShowList(checkStatus){
-	 return  fullTasks = list.filter(item => item.status === checkStatus);
+	 fullTasks = list.filter(item => {
+		if(item.status === checkStatus) {
+		 console.log(`\t ${item.name} | ${item.priority}`);
+		}
+	 });
 }
 
 function showList(){
@@ -92,4 +166,3 @@ changeStatus('Поиграть в пабг', STATUS.IN_PROGRESS, PRIORITY.HIGH);
 //?showList
 showList()
 
-//! пересобрать change status
