@@ -1,4 +1,1 @@
-function deleteTask() {
-  console.log()
-}
-
+console.log("HelloWoefunction deleteTask() {ld")
