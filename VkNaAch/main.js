@@ -1,46 +1,48 @@
+const TodoList = [
+   { name: 'Перекур', status: 'ToDo', priority: 'high' },
+   { name: 'Кофейку', status: 'In Progress', priority: 'middle' },
+   { name: 'ОпОпОп', status: 'Done', priority: 'low' },
 
-//задача 1
+]
 
-function checkAge(age){
-   if(age<18||age<=18)
-   {
-      console.log('you are not allowed')
+function addTask(name, status, priority) {
+   TodoList.push( {name, status, priority })
+};
+
+function deleteTask(name) {
+   for (const x of TodoList) {
+      if (x.name === name) {
+
+         TodoList.splice(TodoList.indexOf(x), 1);
+         break;
+      }
+
+
    }
-   else
-   {
-      console.log('you are welcome!')
+};
+
+function showList(){
+   for (const name of TodoList){
+      console.log(TodoList);
+      break;
    }
+};
 
- }
- checkAge(17)
- checkAge(19)
+function changeStatus(name,status,priority){
+   for(const x of TodoList){
+      if(x.name===name){
+      x.status===status,
+      x.priority===priority;
+      break;
+      }
+   }
+};
 
-//задача 2
+addTask('REST AND PEACE','In Progress','low');
 
-function calc(operation, a, b) {
-   if (operation === 'add'){
-     return (a + b);
-   } else if (operation === 'multi') {
-     return (a * b);
-   } else if (operation === 'subtract') {
-     return (a - b);
-   } 
- }
- 
- 
-resultAdd = calc('add', 5, 2);
- console.log(resultAdd);
- 
-resultMulti = calc('multi', 3, 2);
- console.log(resultMulti);
- 
-resultSubtract = calc('subtract', 3, 4);
- console.log(resultSubtract);
- 
- 
- 
- 
-  
+changeStatus('REST AND PEACE','ToDo','high')
+
+showList()
 
 
-
+//я взял эту работу среди последних работу с гита и  немного доработал по своему (спасибо)
