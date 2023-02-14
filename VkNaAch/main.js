@@ -6,7 +6,7 @@ const TodoList = [
 ]
 
 function addTask(name, status, priority) {
-   TodoList.push( {name, status, priority })
+   TodoList.push({ name, status, priority })
 };
 
 function deleteTask(name) {
@@ -21,28 +21,37 @@ function deleteTask(name) {
    }
 };
 
-function showList(){
-   for (const name of TodoList){
+function showList() {
+   for (const name of TodoList) {
       console.log(TodoList);
       break;
    }
 };
 
-function changeStatus(name,status,priority){
-   for(const x of TodoList){
-      if(x.name===name){
-      x.status===status,
-      x.priority===priority;
-      break;
+function changeStatus(name, status, priority) {
+   for (const x of TodoList) {
+      if (x.name = name) {
+         x.status = status,
+            x.priority = priority;
+         break;
       }
    }
 };
 
-addTask('REST AND PEACE','In Progress','low');
 
-changeStatus('REST AND PEACE','ToDo','high')
 
-showList()
+addTask('REST', 'In Progress', 'low');
+
+deleteTask('REST');
+
+changeStatus('Перекур', 'In Progress', 'middle');
+
+
+showList();
+
 
 
 //я взял эту работу среди последних работу с гита и  немного доработал по своему (спасибо)
+
+
+
