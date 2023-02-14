@@ -199,18 +199,17 @@ function showBy(filterRange) {
   }
 }
 
-/* showBy("priority"); */
-/* showList(); */
-/* addTask("clean a room"); */
-/* changeStatus("change the bad", STATUS.sd); */
-/* addTask("PI PI", "asdas", "asdas"); */
-/* showList(); */
+showBy("priority");
+showList();
+addTask("clean a room");
+changeStatus("change the bad", STATUS.sd);
+addTask("PI PI", "asdas", "asdas");
+showList();
 deleteTask("make a bed");
 deleteTask("write a post");
 showBy("priority");
 showBy("status");
-/* addTask("PI PI");
+addTask("PI PI");
 deleteTask("crea");
 addTask("PU PU");
 showBy("status");
- */
