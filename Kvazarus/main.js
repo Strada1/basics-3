@@ -1,17 +1,29 @@
-function createCounter() {
-    let count = 0;
+function printNumbersTimeout(from, to) {
+    function numOut() {
+        if (num != +to) {
+            console.log(++num);
+            setTimeout(numOut, 1000);
+        } 
+    }
     
-    return function() {
-        count++
-        return count;
-    };
+    num = +from - 1;
+
+    if (isNaN(num) || isNaN(+to)) {
+        return;
+    } else {
+        setTimeout(numOut, 1000);
+        //numOut();
+    }
 }
 
-let counterA = createCounter();
-let counterB = createCounter();
+function printNumbersInterval(from, to) {
+    num = from;
+    const intervalID = setInterval(() => {
+        if (num == +to) {
+            clearInterval(intervalID);
+        }
+        console.log(num++);
+    }, 1000)
+}
 
-console.log(counterA());
-console.log(counterA());
-console.log(counterA());
-
-console.log(counterB());
+printNumbersTimeout(1, 5);
