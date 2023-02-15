@@ -1,5 +1,7 @@
-const helloUser = (text, name) => {
+const helloMessage = (text, name) => {
   console.log(`${text}, ${name}! :)`)
 }
 
-setTimeout(helloUser, 5000, "Привет", "чувачок")
+setTimeout(() => {
+  helloMessage("Привет", "чувачелло")
+}, 5000)
