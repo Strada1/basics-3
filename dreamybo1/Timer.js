@@ -5,7 +5,7 @@ function printNumbers(from,to){
             from++}
             else{
                 clearInterval(timerId)
-                console.log("end")
+                console.log("End")
             } 
         },1000)
     }
