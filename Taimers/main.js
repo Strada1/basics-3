@@ -8,7 +8,6 @@ function printNumber(from, to){
         }current++;
     }, 1000);
 };
-
 printNumber(6,12);
 
 function printNumber1(From, To) {
@@ -21,5 +20,4 @@ function printNumber1(From, To) {
         }num++;
     }, 4000);
 };
-
 printNumber1(5,10);
