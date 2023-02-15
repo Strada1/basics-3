@@ -1,10 +1,10 @@
 function printNumbers(from, to) {
   let currentNumber = from
 
-  let timeInterval = setInterval(function() {
+  setTimeout(function timer() {
     console.log(currentNumber)
-    if (currentNumber == to) {
-      clearTimeout(timeInterval)
+    if (currentNumber < to) {
+      setTimeout(timer, 1000)
     }
     currentNumber++
   }, 1000)
