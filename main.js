@@ -14,3 +14,4 @@ console.log(counterA()) // 2
 console.log(counterA()) // 3
 
 console.log(counterB()) // 1
+console.log(counterB())
