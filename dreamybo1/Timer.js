@@ -1,13 +1,18 @@
 function printNumbers(from,to){
-        let timerId = setInterval(()=>{
-            if(from<=to){
-            console.log(from)
-            from++}
-            else{
-                clearInterval(timerId)
-                console.log("End")
-            } 
-        },1000)
+    let timerId = setTimeout(function print() {
+        if(from<=to){
+            console.log(from);
+            from++
+            timerId = setTimeout(print, 1000); 
+        }
+        else{
+            
+            console.log("END")
+            clearTimeout(timerId)
+        }
+        
+        
+      }, 1000);
     }
     
     
