@@ -2,6 +2,5 @@ const helloMessage = (text, name) => {
   console.log(`${text}, ${name}! :)`)
 }
 
-setTimeout(() => {
-  helloMessage("Привет", "чувачелло")
-}, 5000)
+let timerId = setTimeout(helloMessage, 5000, "Hello", "bro")
+clearTimeout(timerId)
