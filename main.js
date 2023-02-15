@@ -1,4 +1,4 @@
-function helloUser(text, name) {
+const helloUser = (text, name) => {
   console.log(`${text}, ${name}! :)`)
 }
 
