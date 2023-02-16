@@ -8,7 +8,10 @@ const list = {
     this.tasks[nameOfTask] = newStatus;
   },
   addTask(nameOfTask) {
-    this.tasks[nameOfTask] = 'To Do';
+		// Проверка на тот случай, если введеные данные некорректные (не строка)
+		if (nameOfTask !== undefined && typeof nameOfTask === 'string' ) {
+			this.tasks[nameOfTask] = 'To Do';
+		}
   },
   deleteTask(nameOfTask) {
     delete this.tasks[nameOfTask];
@@ -74,7 +77,7 @@ const list = {
 list.showList();
 
 // Добавляем задачу, ее изначальный статус - To Do
-list.addTask('write code');
+list.addTask();
 list.showList();
 
 // Меняем ее статус на In Progress
