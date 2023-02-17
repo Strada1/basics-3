@@ -7,7 +7,7 @@ function showTasks(arr) {
     let done_tasks = 0;
     arr.forEach(e => {
         console.log(`name : ${e.name}, status : ${e.status}, priority : ${e.priority}`);
-        if (e.status === 'Done') done_tasks++;
+        if (e.status.toLowerCase() === 'done') done_tasks++;
     });
     if (done_tasks === 0) console.log('Nothing is done!');
 }
@@ -26,4 +26,6 @@ function changeTask(name, status) {
     list[index].status = status;
 }
 
+deleteTask('test');
+addTask('do homework', 'done', 'low');
 showTasks(list);
