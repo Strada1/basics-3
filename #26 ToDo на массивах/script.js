@@ -18,6 +18,12 @@ function deleteTask(name) {
     list.splice(index, 1);
 }
 
+function changeTask(name, status) {
+    let index = list.findIndex(i => i.name === name);
+    list[index].status = status;
+}
+
 addTask('полить цветы', 'toDo', 'medium');
-deleteTask('create a post');
+changeTask('test', 'toDo')
 showTaks(list);
+
