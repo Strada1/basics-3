@@ -3,10 +3,13 @@ const list = [
     { name: 'test', status: 'Done', priority: 'high' }
 ];
 
-function showTaks(arr) {
+function showTasks(arr) {
+    let done_tasks = 0;
     arr.forEach(e => {
         console.log(`name : ${e.name}, status : ${e.status}, priority : ${e.priority}`);
+        if (e.status === 'Done') done_tasks++;
     });
+    if (done_tasks === 0) console.log('Nothing is done!');
 }
 
 function addTask(name, status, priority) {
@@ -23,7 +26,4 @@ function changeTask(name, status) {
     list[index].status = status;
 }
 
-addTask('полить цветы', 'toDo', 'medium');
-changeTask('test', 'toDo')
-showTaks(list);
-
+showTasks(list);
