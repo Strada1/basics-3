@@ -1,18 +1,9 @@
-function buildFun(n){
-
-	var res = []
-
-	for (var i = 0; i< n; i++){
-        let fun = function abc() {
-            if(i===n-1){
-                return n
-            }
-            else{
-                return i
-            }
-        }
-		res.push(fun)
-	}
-	return res
-}
-console.log(buildFun(6));
+function getAverage(marks){
+    let sum = 0
+    
+    for(let i = 0;i<marks.length;i++){
+    sum += marks[i]
+    }
+    let sumEnd = Math.round(sum/marks.length)
+return sumEnd
+  }
