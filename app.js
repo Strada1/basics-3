@@ -1,70 +1,27 @@
-
-const STATUSES = {
-    TODO: "To Do",
-    IN_PROGRESS: "In progress",
-    DONE: "Done",
-};
-const PRIORITIES = {
-    HIGH: "High",
-    LOW: "Low",
-};
-
-const list = [
-    {name: 'create a post', status: 'In progress', priority: 'low'},
-    {name: 'test', status: 'To Do', priority: 'high'},
-    {name: 'make task', status: 'To Do', priority: 'low'},
-    {name: 'create todo', status: 'In progress', priority: 'high'},
-
-];
-
-
-function changeStatus(statusName,statusValue){
-    const index = list.findIndex((elem) => elem.name = statusName);
-    list[index].status = statusValue
-}
-function addTask(taskStatus = "To Do",taskName,taskPriorities){
-
-    list.push({
-        name:taskName,
-        status:taskStatus,
-        priority:taskPriorities
-    })
+function buildFun(n){
+	var res = []
+	for (var i = 0; i< n; i++){
+        let func = function(){
+            console.log(i)
+            return i
+        }
+		res.push(func)
+	}
+	return res
 
 }
-function deleteTask(taskName){
-    list.forEach((elem,index) => {
-        if(elem.name === taskName)
-            list.splice(index,1)
 
-    })
+buildFun(10)
 
 
+function getAverageReduce(marks){
+    let sum = marks.reduce((currentSum, currentNumber)=>{
+        return currentSum + currentNumber
+    },0)
+    sum = sum / marks.length
+    console.log(Math.round(sum))
+    return Math.round(sum)
+    
 }
-function showList() {
-
-    const arrayFindTodo = list.filter((elem) => elem.status === "To Do")
-    const arrayFindDone = list.filter((elem) => elem.status === "Done")
-    const arrayFindProgress = list.filter((elem) => elem.status === "In progress")
-
-
-    if(STATUSES.TODO === "To Do"){
-        console.log(STATUSES.TODO + ":")
-        arrayFindTodo.forEach((elem)=> console.log('\t' + elem.name))
-    }
-    if(STATUSES.DONE === "Done"){
-
-        console.log(STATUSES.DONE + ":")
-        arrayFindDone.forEach((elem)=> console.log('\t' + elem.name))
-    }
-    if(STATUSES.IN_PROGRESS === "In progress"){
-
-        console.log(STATUSES.IN_PROGRESS + ":")
-        arrayFindProgress.forEach((elem)=> console.log('\t' + elem.name))
-    }
-
-
-}
-changeStatus("create a post", "Done")
-addTask(STATUSES.DONE,'have a walk', PRIORITIES.HIGH);
-deleteTask('test');
-showList();
+getAverageReduce([1,5,87,45,8,8])
+getAverageReduce([17,7,15,5,11,4,2,14,7,5])
