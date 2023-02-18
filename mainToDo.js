@@ -58,33 +58,23 @@ function add1MoreCopy(mutateTask){
 
 
 function isCorrect(mutateTask){
-  console.log('isCorrect');
-  console.log(mutateTask ===`write a post`);
-  console.log(mutateTask === '');
   if (!(
-    (mutateTask === undefined) 
+    mutateTask === undefined
     || 
-    (mutateTask === '')
+    mutateTask === ''
     ||
-    (mutateTask === null)
-    ||
-    (`${mutateTask}` === `write a post`)
-    )) { mutateTask = NAMESPACE.DEFAULTTASK; console.log('rabotat def');}
-  else if ((
-    (mutateTask === undefined) 
+    mutateTask === null))
+    { mutateTask = NAMESPACE.DEFAULTTASK}
+  else if (
+    mutateTask === undefined
     || 
-    (mutateTask === '')
+    mutateTask === ''
     ||
-    (mutateTask === null)
-    ||
-    (`${mutateTask}` === `write a post`)
-    )) {mutateTask; console.log('rabotat')};
-  console.log(`this is now `+`${mutateTask}`);
+    mutateTask === null) {mutateTask;};
   return mutateTask;
 }
 
 function newTaskCorrector(newTask) {
-  console.log('newTaskCorrector');
   mutateTask = newTask;
   mutateTask = isCorrect(mutateTask);
   mutateTask = isExist(mutateTask);
@@ -160,9 +150,9 @@ function showList(){
     }
   }
   //my question is, how to remake these 3 "for" into "forEach" properly?
-  // NAMESPACE.ARRAYOFDONE.forEach((element) => {NAMESPACE.ARRAYOFDONE[element] = `"`+`${NAMESPACE.ARRAYOFDONE[element] }`+`"` });                  'cuz  
-  // NAMESPACE.ARRAYOFTODO.forEach((element) => {NAMESPACE.ARRAYOFTODO[element] = `"`+`${NAMESPACE.ARRAYOFTODO[element] }`+`"` });                  this
-  // NAMESPACE.ARRAYOFINPROGRESS.forEach((element) => {NAMESPACE.ARRAYOFINPROGRESS[element] = `"`+`${NAMESPACE.ARRAYOFINPROGRESS[element] }`+`"` });doesn't work
+  // NAMESPACE.ARRAYOFDONE.forEach((element) => {element = `"`+`${element}`+`"` });                  'cuz  
+  // NAMESPACE.ARRAYOFTODO.forEach((element) => {element = `"`+`${element}`+`"` });                  this
+  // NAMESPACE.ARRAYOFINPROGRESS.forEach((element) => {element = `"`+`${element}`+`"` });doesn't work
 for (i=0; i != NAMESPACE.ARRAYOFDONE.length ; i++) { NAMESPACE.ARRAYOFDONE[i]= `"`+`${NAMESPACE.ARRAYOFDONE[i]}`+`"`} //                          {   ↑
 for (i=0; i != NAMESPACE.ARRAYOFTODO.length ; i++) { NAMESPACE.ARRAYOFTODO[i]= `"`+`${NAMESPACE.ARRAYOFTODO[i]}`+`"`} //                          {   ↑
 for (i=0; i != NAMESPACE.ARRAYOFINPROGRESS.length ; i++) { NAMESPACE.ARRAYOFINPROGRESS[i]= `"`+`${NAMESPACE.ARRAYOFINPROGRESS[i]}`+`"`} //        {   ↑ ?
