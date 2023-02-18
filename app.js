@@ -1,9 +1,10 @@
 'use strict';
 
-function buildFun(n){
+// First Task
+function buildFun(N){
   let res = [];
 
-  for (let i = 0; i< n; i++){
+  for (let i = 0; i < N; i++){
     res.push(function (x) {
       return () => x;
     }(i))
@@ -12,6 +13,11 @@ function buildFun(n){
   return res;
 }
 
+function buildFun(n){
+  return [...Array(n)].map((value, i) => () => i);
+}
+
+// Second Task
 function getAverage(marks){
   let sum = 0;
 
@@ -21,3 +27,7 @@ function getAverage(marks){
 
   return Math.floor(sum / marks.length);
 }
+
+const getAverage = (marks) => {
+  return Math.floor(marks.reduce((acc, value) => acc + value, 0) / marks.length);
+};
