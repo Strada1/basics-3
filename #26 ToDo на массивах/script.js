@@ -13,6 +13,7 @@ function showTasks(arr) {
 }
 
 function addTask(name, status, priority) {
+    if (status == '' && priority == '') return
     list.push({name: name, status: status, priority: priority});
 }
 
@@ -22,10 +23,9 @@ function deleteTask(name) {
 }
 
 function changeTask(name, status) {
+    if (status == '') return
     let index = list.findIndex(i => i.name === name);
-    list[index].status = status;
+    if (index !== -1) list[index].status = status;
 }
 
-deleteTask('test');
-addTask('do homework', 'done', 'low');
 showTasks(list);
