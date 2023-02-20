@@ -1,0 +1,43 @@
+/*Variables*/
+:root {
+    --c-white: #fff;
+    --c-black: #000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*Base*/
+body {
+    background-color: #21D4FD;
+    background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
+    background-image: -webkit-linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
+
+    color: var(--c-black);
+}
+
+/*Utils*/
+.f-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*App*/
+#app {
+    height: 100vh;
+}
+
+.calculator {
+    width: 100%;
+    height: 100%;
+    max-width: 500px;
+    max-height: 200px;
+
+    border-radius: 7px;
+
+    background-color: var(--c-white);
+}
