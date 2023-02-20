@@ -9,9 +9,28 @@
 <body>
   <div id="app" class="f-center">
     <div class="calculator f-center">
-      <label for="number">
-        <input id="number" type="text">
+      <label for="first-number">
+        <input id="first-number" class="input-number" type="text">
       </label>
+
+      <label for="operations">
+        <select name="operations" id="operations">
+          <option value="addition">+</option>
+          <option value="dividing">-</option>
+          <option value="multiplication">*</option>
+          <option value="subscribing">/</option>
+        </select>
+      </label>
+
+      <label for="second-number">
+        <input id="second-number" class="input-number" type="text">
+      </label>
+
+      <label for="operation">
+        <input id="operation" class="input-operation" type="text">
+      </label>
+
+      <span>8</span>
     </div>
   </div>
 </body>
