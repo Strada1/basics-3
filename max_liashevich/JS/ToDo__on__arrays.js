@@ -6,7 +6,7 @@ const list = [
     { name: "Stretching", status: "To Do", priority: "med" },
   ];
 
-  const todoList = {
+  const todoList = {∑
     list,
     addTask(task) {
       this.list.push({ name: task, status: "To Do", priority: "high" });

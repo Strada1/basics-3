@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./CSS/style.css" />
+    <title>Calc-UI</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="content">
+        <div class="calc">
+          <input
+            type="text"
+            placeholder="enter first num"
+            id="firstNum"
+            class="num_input"
+          />
+          <select id="selectOperation">
+            <option value="plus">+</option>
+            <option value="minus">-</option>
+            <option value="divide">/</option>
+            <option value="multiply">*</option>
+          </select>
+          <input
+            type="text"
+            placeholder="enter second num"
+            id="firstNum"
+            class="num_input"
+          />
+          <button id="resultButton">=</button>
+          <div id="outputResult"></div>
+        </div>
+      </div>
+    </div>
+    <script src="./JS/Calc-UI.js"></script>
+  </body>
+</html>

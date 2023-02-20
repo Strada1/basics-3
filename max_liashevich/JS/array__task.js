@@ -21,7 +21,7 @@ console.log(newArr);
 
 //MAP 
 const moreArr = [1, 11, -2, 3, -10, 4];
-let absArr = moreArr.map( number => Math.abs(number));
+let absArr = moreArr.map( num∑ber => Math.abs(number));
 console.log(absArr);
 
 //SORT 
