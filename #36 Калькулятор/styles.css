@@ -1,0 +1,10 @@
+.calc_window {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin: 50px 0;
+}
+
+.num_input {
+    width: 60px;
+}
