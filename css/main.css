@@ -2,6 +2,8 @@
 :root {
     --c-white: #fff;
     --c-black: #000;
+
+    --main-border: 1px solid var(--c-black);
 }
 
 * {
@@ -17,6 +19,24 @@ body {
     background-image: -webkit-linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
 
     color: var(--c-black);
+}
+
+input {
+    width: 100%;
+    height: 100%;
+    min-height: 33px;
+
+    padding-left: 10px;
+
+    border: var(--main-border);
+}
+
+button {
+    color: inherit;
+    background-color: inherit;
+    border: none;
+
+    cursor: pointer;
 }
 
 /*Utils*/
@@ -41,13 +61,8 @@ body {
 
     background-color: var(--c-white);
 }
-
-input {
-    width: 100%;
-    height: 100%;
-    min-height: 33px;
-
-    padding-left: 10px;
+.calculator > *:not(:last-child) {
+    margin-right: 8px;
 }
 
 .input-number {
@@ -58,6 +73,7 @@ input {
     max-width: 39px;
 }
 
-.calculator > *:not(:last-child) {
-    margin-right: 8px;
+.result {
+    border: var(--main-border);
+    padding: 8px 13px;
 }
