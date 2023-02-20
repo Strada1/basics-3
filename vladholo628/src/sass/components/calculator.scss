@@ -1,0 +1,9 @@
+.calculator {
+  display: flex;
+  align-items: center;
+
+  &__result {
+    font-size: 40px;
+    padding-left: 20px;
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "vladholo628",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "dev": "npx parcel src/index.html",
+    "build": "npx parcel build src/index.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5",
+    "sass": "^1.58.3"
+  }
+}

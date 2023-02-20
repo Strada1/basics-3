@@ -1,0 +1,13 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50rem;
+  height: 30rem;
+  background-color: #eee9da;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  box-shadow: -11px -8px 5px 0px rgba(0, 0, 0, 0.4) inset;
+}

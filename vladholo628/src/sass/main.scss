@@ -1,0 +1,10 @@
+@import "./normalize.scss";
+@import "./container/container";
+@import "./components/calculator.scss";
+@import "./components/calculator__form.scss";
+
+body {
+  background-image: url("../images/My-Neighbor-Totoro-Scenery-hayao-miyazaki-41589065-1280-693.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
