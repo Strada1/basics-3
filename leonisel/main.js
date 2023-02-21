@@ -1,68 +1,3 @@
-// const STATUS = {
-//   PROGRESS: "In Progress",
-//   DONE: "Done",
-//   TODO: "To Do"
-// }
-
-// const list = {
-// 	"create a new practice task": STATUS.PROGRESS, 
-// 	"make a bed": STATUS.DONE,
-// 	"write a post": STATUS.TODO,
-// }
-
-// const changeStatus = (bussines, status) => {
-//   list[bussines] = status;
-// }
-
-// const addTask = (newTask) => {
-//   list[newTask] = STATUS.TODO;
-// }
-
-// const deleteTask = (task) => {
-//   delete list[task];
-// }
-
-// const showList = () => {
-//   let todoStr = '';
-//   for(let key in list){
-//     if(list[key] == STATUS.TODO) {
-//       todoStr += `\n    "${key}"`; 
-//     }
-//   }
-//   if(todoStr == ''){
-//     todoStr = `\n    -`;
-//   }
-//   console.log(`Todo:${todoStr}`)
-
-//   let progressStr = '';
-//   for(let key in list){
-//     if(list[key] == STATUS.PROGRESS) {
-//       progressStr += `\n    "${key}"`;
-      
-//     }
-//   }
-//   if(progressStr == '') {
-//     progressStr = '\n    -';
-//   }
-//   console.log(`In Progress:${progressStr}`)
-
-//   let doneStr = '';
-//   for(let key in list){
-//     if(list[key] == STATUS.DONE) {
-//       doneStr += `\n    "${key}"`;
-//     }
-//   }
-//   if(doneStr == '') {
-//     doneStr = `\n    -`;
-//   }
-//   console.log(`Done:${doneStr}`);
-// }
-
-// changeStatus("make a bed", STATUS.TODO);
-// changeStatus("create a new practice task", STATUS.TODO);
-// changeStatus("write a post", STATUS.PROGRESS);
-// showList();
-
 const STATUS = {
   PROGRESS: 'In Progress',
   DONE: 'Done',
@@ -78,7 +13,26 @@ const list = [
  {name: 'check habit tracker', status: 'To Do', priority: 'low'},
  {name: 'review students code', status: 'In Progress', priority: 'high'},
  {name: 'make the bed', status: 'Done', priority: 'low'}
-]
+];
+
+const isValidTask = (task) => {
+  return list.find(elem => elem.name === task);
+}
+
+const isValidStatus = (status) => {
+  return STATUS.TODO === status || STATUS.PROGRESS === status || STATUS.DONE === status;
+}
+const isValidPriority = (priority) => {
+  return PRIORITY.LOW === priority || PRIORITY.HIGH === priority;
+}
+
+function sortArray() {
+    list.sort((a, b) => {
+      let aUpperCase = a.name.toUpperCase();
+      let bUpperCase = b.name.toUpperCase();
+      return (aUpperCase < bUpperCase) ? -1 : (aUpperCase > bUpperCase) ? 1 : 0;
+    })
+}
 
 const addTask = (taskName, userStatus = STATUS.TODO, userPriority = PRIORITY.LOW) => {
   let template = {};
@@ -91,16 +45,20 @@ const addTask = (taskName, userStatus = STATUS.TODO, userPriority = PRIORITY.LOW
 }
 
 const changeStatusPriority = (task, newStatus, newPriority) => {
-  list.forEach(elem => {
-    if(elem.name === task) {
-      if(newStatus){
-        elem.status = newStatus;
+  if(isValidTask(task) && isValidStatus(newStatus) && isValidPriority(newPriority)) {
+    list.forEach(elem => {
+      if(elem.name === task) {
+        if(newStatus){
+          elem.status = newStatus;
+        }
+        if(newPriority){
+          elem.priority = newPriority;
+        }
       }
-      if(newPriority){
-        elem.priority = newPriority;
-      }
-    }
-  })
+    })
+  } else {
+    console.log('Please, enter correct data');
+  }
 }
 
 const changeTaskName = (changedName, newName) => {
@@ -120,42 +78,10 @@ const deleteTask = (task) => {
   })
 }
 
-// const showList = () => {
-//   let todoStr = '';
-//   list.forEach(elem => {
-//     if(elem.status === STATUS.TODO){
-//       todoStr += `\n    '${elem.name}'`;
-//     }
-//   })
-//   if(todoStr === '') {
-//     todoStr = `\n    -`;
-//   }
-//   console.log(`ToDo:${todoStr}`);
-
-//   let progressStr = '';
-//   list.forEach(elem => {
-//     if(elem.status === STATUS.PROGRESS){
-//       progressStr += `\n    '${elem.name}'`;
-//     }
-//   })
-//   if(progressStr === '') {
-//     progressStr = `\n    -`;
-//   }
-//   console.log(`In Progress:${progressStr}`);
-
-//   let doneStr = '';
-//   list.forEach(elem => {
-//     if(elem.status === STATUS.DONE){
-//       doneStr += `\n    '${elem.name}'`;
-//     }
-//   })
-//   if(doneStr === '') {
-//     doneStr = `\n    -`;
-//   }
-//   console.log(`Done:${doneStr}`);
-// }
-
 const showListByStatus = () => {
+
+  sortArray();
+
   let todoStr = '';
   let progressStr = '';
   let doneStr = '';
@@ -185,6 +111,9 @@ const showListByStatus = () => {
 }
 
 const showListByPriority = () => {
+
+  sortArray();
+
   let lowStr = '';
   let highStr = '';
   
@@ -214,4 +143,4 @@ changeTaskName(list[1].name, 'review students homework');
 deleteTask(list[2].name);
 showListByStatus();
 showListByPriority();
-// console.log(list);
+
