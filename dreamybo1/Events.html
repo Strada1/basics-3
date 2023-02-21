@@ -1,0 +1,46 @@
+<head>
+    <style>
+        body{
+            background-color: rgb(51, 63, 231);
+            
+        }
+        #Timer{
+            background-color: red;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            appearance: none;
+            border: 0;
+            border-radius: 5px;
+            background: #d03737;
+            color: #fff;
+            padding: 8px 16px;
+            font-size: 16px;
+        }
+    </style>
+    <body>
+    <button type="button" id="Timer">Таймер</button>
+  
+  <script>
+    var showMenu = true
+    var timer = document.getElementById('Timer');
+    let timerId
+    function showTime() {
+      if(showMenu){
+        timerId = setInterval(function(){
+            var now = new Date();
+            console.log('Время на данный момент: ' + now);
+        },1000)
+        showMenu = false
+        }
+        else{
+            clearInterval(timerId);
+            showMenu = true
+        }
+    }
+  
+    timer.addEventListener('click', showTime);
+  </script>
+</body>
+</head>
+
