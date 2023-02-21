@@ -1,0 +1,43 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    background: rgb(61, 47, 191);
+    background: linear-gradient(317deg, rgba(61, 47, 191, 1) 0%, rgba(170, 255, 243, 1) 100%);
+}
+
+.timer_wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 450px;
+    height: 180px;
+    background-color: rgb(110, 148, 228);
+    position: absolute;
+    border-radius: 15px;
+    box-shadow: 0px 5px 6px 1px #0000005e;
+}
+
+#clock {
+    width: 180px;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    font-size: 40px;
+}
+
+#buttonTimer {
+    color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+    background: none;
+    padding: 7px 13px;
+}
+
+#buttonTimer:hover {
+    background-color: rgb(87, 116, 179);
+}
