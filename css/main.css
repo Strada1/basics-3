@@ -39,6 +39,12 @@ button {
     cursor: pointer;
 }
 
+select {
+    border: var(--main-border);
+    color: inherit;
+    background-color: inherit;
+}
+
 /*Utils*/
 .f-center {
     display: flex;
@@ -61,6 +67,7 @@ button {
 
     background-color: var(--c-white);
 }
+
 .calculator > *:not(:last-child) {
     margin-right: 8px;
 }
