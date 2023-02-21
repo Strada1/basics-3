@@ -1,9 +1,27 @@
 const button = document.querySelector('#buttonTimer');
+const outputHours = document.querySelector('#hours');
+const outputMinutes = document.querySelector('#minutes');
+const outputSeconds = document.querySelector('#seconds');
+
+let hours = 0;
+let minutes = 0;
+let seconds = 0;
 
 function start() {
     timer = setInterval(() => {
-        let date = new Date();
-        console.log(`${date.getHours()} : ${date.getMinutes()} : ${date.getSeconds()}`)
+        outputHours.textContent = hours;
+        outputMinutes.textContent = minutes;
+        outputSeconds.textContent = seconds;
+        seconds++;
+        if (seconds >= 60) {
+            minutes++;
+            seconds = 0;
+        }
+        if (minutes >= 60) {
+            hours++;
+            minutes = 0;
+            seconds = 0;
+        }
     }, 1000);
 };
 
