@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Timer</title>
+    </head>
+    <body>
+        <button id="timer">Таймер</button>
+        
+        <script>
+            let button = document.getElementById('timer');
+            
+            let timerOn = true;
+            let timerId;
+            let passedTime = 0;
+
+            function timer() {
+                if (timerOn){
+                    timerId = setInterval(() => {
+                        passedTime += 1;
+                        console.log(`0${Math.floor(passedTime / 3600 % 60)}`.slice(-2) + ':' + `0${Math.floor(passedTime / 60 % 60)}`.slice(-2) + ':' + `0${passedTime % 60}`.slice(-2)); 
+                    }, 1000)
+                } else {
+                    clearInterval(timerId)
+                }
+                timerOn = !timerOn
+            }
+
+            button.addEventListener('click', timer)
+        </script>
+    
+    </body>
+</html>
