@@ -1,0 +1,39 @@
+<!DOCTYPE html> <!-- Объявление формата документа -->
+<html>
+<head> <!-- Техническая информация о документе -->
+<meta charset="UTF-8"> <!-- Определяем кодировку символов документа -->
+<title>Calc Ui</title> <!-- Задаем заголовок документа --> <!-- Подключаем внешнюю таблицу стилей -->
+</head>
+<style>
+body{
+    background-color: azure;
+}
+#div{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+}
+</style>
+<body> <!-- Основная часть документа -->
+<div id="div">
+    <input id="a" type="text" value="">
+    <select name="" id="operations">
+        <option id="add" value="+">+</option>
+        <option id="subtract" value="-">-</option>
+        <option id="multi" value="*">*</option>
+        <option id="divide" value="/">/</option>
+    </select>
+    <input id="b" type="text" value="">
+    <button id="equal" type="submit">=</button>
+    <code id="Answer">sds</code>
+    
+    
+</div>
+
+
+<script src="Calculator.js"></script>
+
+</body>
+</html>
