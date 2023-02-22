@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>События</title>
+  </head>
+  <body>
+    <button id="timer">Timer</button>
+    <script>
+      let button = document.getElementById("timer");
+      let flag = true;
+      let tick;
+
+      function startTimer() {
+        let seconds = 1;
+        return function () {
+          console.log(seconds + " sec");
+          seconds++;
+        };
+      }
+
+      function go() {
+        if (flag) {
+          tick = setInterval(startTimer(), 1000);
+          flag = false;
+        } else {
+          clearInterval(tick);
+          flag = true;
+        }
+      }
+
+      button.addEventListener("click", go);
+    </script>
+  </body>
+</html>
