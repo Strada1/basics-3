@@ -1,0 +1,46 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(255, 210, 152);
+}
+.main-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 700px;
+  border: 1px solid rgb(255, 210, 152);
+  height: 500px;
+  border-radius: 30px;
+  background: linear-gradient(to bottom right, blue, pink 85%);
+}
+
+.equal-button {
+  border: 1px black solid;
+  border-radius: 50%;
+  width: 33px;
+  height: 27px;
+  background-color: white;
+  margin-right: 8px;
+}
+.equal-button:active {
+  background-color: lightpink;
+}
+.first-value,
+.second-value {
+  height: 23px;
+  border-radius: 5px;
+  border: 1px black solid;
+  width: 150px;
+  margin-right: 8px;
+}
+.select-section {
+  border: 1px black solid;
+  border-radius: 5px;
+  height: 23px;
+  margin-right: 8px;
+}
+.final-result {
+  font-size: 17px;
+  margin: 0px;
+}
