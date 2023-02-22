@@ -1,0 +1,24 @@
+
+.calculate {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+.container {
+	margin: 360px 0px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.operants {
+	width: 46px;
+	height: 16px;
+	border: 1px solid #000000;
+}
+.result {
+	width: 18px;
+	height: 16px;
+	background: #FFFFFF;
+	border: 1px solid #000000;
+	border-radius: 4px;
+}
