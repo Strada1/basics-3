@@ -11,7 +11,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "parcel-bundler": "^1.12.5",
+    "@parcel/transformer-sass": "^2.8.3",
+    "parcel": "^2.8.3",
     "sass": "^1.58.3"
   }
 }

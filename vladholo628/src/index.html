@@ -8,23 +8,32 @@
     <link rel="stylesheet" href="./sass/main.scss" />
   </head>
   <body>
-    <main class="center_inside">
+    <main>
       <div class="container">
         <div class="calculator">
           <form class="calculator__form">
-            <input class="calculator__form-input" type="number" name="" id="" />
-            <select class="calculator__form-select" name="" id="">
+            <input
+              class="calculator__form-input"
+              type="number"
+              id="firstNumberInput"
+            />
+            <select class="calculator__form-select">
               <option value="+">+</option>
               <option value="-">-</option>
               <option value="*">*</option>
               <option value="/">/</option>
             </select>
-            <input class="calculator__form-input" type="number" name="" id="" />
+            <input
+              class="calculator__form-input"
+              type="number"
+              id="secondNumberInput"
+            />
             <button class="calculator__form-button" type="submit">=</button>
           </form>
           <span class="calculator__result">0</span>
         </div>
       </div>
     </main>
+    <script src="./js/main.js"></script>
   </body>
 </html>
