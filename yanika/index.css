@@ -1,0 +1,56 @@
+* {
+    font-size: 30px;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+body {
+    font-family:Arial, Helvetica, sans-serif;
+    background-color: rgb(94, 94, 94);
+
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    height: 500px;
+    background-color: rgb(229, 189, 116);
+    border: solid 10px  rgb(229, 189, 116);;
+    border-radius: 20px ;
+}
+.select {
+    height: 50px;
+    border: solid 4px black;
+    border-radius: 10px;
+    background-color: rgb(105, 190, 216);
+
+}
+.show {
+    border: solid 4px rgb(23, 23, 23);
+    border-radius: 10px;
+    width: 20%;
+    background-color: aliceblue;
+    background-color: rgb(132, 166, 135);
+
+}
+.calc {
+    display: flex;
+}
+
+.calc > input {
+    background-color: rgb(171, 171, 171);
+    border: solid 4px black;
+    border-radius: 10px;
+}
+
+.calc > button {
+    background-color: rgb(195, 116, 116);
+    border: solid 4px black;
+    border-radius: 10px;
+}
+
+
