@@ -1,29 +1,33 @@
 <!DOCTYPE HTML>
 
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>Calculator</title>
-        <link rel="stylesheet" href="calculatorStyle.css">
-    </head>
-    <body>
-        <div class="main">
-            <form>
-                <label>
-                    <input type="number" name="firstNumber">
-                </label>
-                <select>
-                    <option>+</option>
-                    <option>-</option>
-                    <option>*</option>
-                    <option>/</option>
-                </select>
-                <label>
-                    <input type="number" name="secondNumber">
-                </label>
-                <button>=</button>
-                <span>12</span>
-            </form>         
-        </div>
-    </body>
+
+<head>
+    <meta charset="utf-8">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="calculatorStyle.css">
+</head>
+
+<body>
+    <div class="main">
+        <label>
+            <input id="firstNumber" type="number" name="firstNumber" value="">
+        </label>
+        <select id="operation">
+            <option>+</option>
+            <option>-</option>
+            <option>*</option>
+            <option>/</option>
+        </select>
+        <label>
+            <input id="secondNumber" type="number" name="secondNumber" value="">
+        </label>
+        <button id="button">=</button>
+        <span id="result">0</span>
+    </div>
+
+    <script src="./calculatorLogic.js"></script>
+
+</body>
+
 </html>

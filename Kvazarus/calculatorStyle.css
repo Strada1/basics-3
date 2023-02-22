@@ -1,11 +1,11 @@
 * {
-    font-size: 19px;
+    font-size: 20px;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-body, div.main {
+body {
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -13,14 +13,18 @@ body, div.main {
     height: 100%;
 }
 
-form {
+div.main {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 400px;
+    min-width: 400px;
     height: 100px;
     border-radius: 10px;
     background-color: bisque;
+}
+
+span {
+    font-size: 23px;
 }
 
 label {
