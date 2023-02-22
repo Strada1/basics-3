@@ -1,0 +1,29 @@
+* {
+  box-sizing: border-box;
+  width: auto;
+}
+.calc {
+  display: flex;
+}
+.for_numbers {
+  width: 50px;
+  min-height: 30px;
+  border-radius: 10%;
+}
+.equals {
+  min-height: 30px;
+}
+
+.result {
+  margin-top: 5px;
+  margin-left: 5px;
+}
+.operators {
+  margin: 5px;
+}
+.equation {
+  margin-left: 10px;
+  min-height: 30px;
+  min-width: 30px;
+  border: 1px solid black;
+}
