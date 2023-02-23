@@ -16,11 +16,33 @@
             <script>
                     var button = document.getElementById("change-bg")
                     const body = document.body
+                    const colors = ['red', 'blue', 'green', 'orange'];
+
+
+
+                    function arrayRandElement(arr){ //randomizer
+                        var rand = Math.floor(Math.random() * arr.length);
+                        return arr[rand];
+                    }
+                    const white = '#FFFFFF';
+                    var flag = true;
+                    var timerId =1;
                     function changeColor(){
                         
-                        body.style.backgroundColor = button.getAttribute("data-color")
-                        
+                        if(flag){
+                            timerId = setInterval(()=>
+                            body.style.backgroundColor = arrayRandElement(colors)
+                            ,2000)
+                            flag = false;
+                        }else{
+                            clearInterval(timerId);
+                            body.style.backgroundColor = white;
+                            flag = true;
+                        }
                     }
+
+
+
                     button.addEventListener("click", changeColor)
             </script>
         </body>
