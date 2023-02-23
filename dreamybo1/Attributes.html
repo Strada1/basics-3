@@ -1,0 +1,28 @@
+<html>
+    <style>
+        #change-bg{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+        }
+    </style>
+    <head>
+        <body>
+            
+
+            <button id="change-bg" data-color="#e6e6e6">Изменить фон</button>
+
+
+            <script>
+                    var button = document.getElementById("change-bg")
+                    const body = document.body
+                    function changeColor(){
+                        
+                        body.style.backgroundColor = button.getAttribute("data-color")
+                        
+                    }
+                    button.addEventListener("click", changeColor)
+            </script>
+        </body>
+    </head>
+</html>
