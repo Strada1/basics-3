@@ -1,67 +1,53 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Калькулятор</title>
-    <link rel="stylesheet" href="main.css">
-  </head>
-  <body>
-    <form>
-      <label>
-        <input type="number">
-      </label>
-      <select name="action" id="123">
-        <option value="+">+</option>
-        <option value="-">-</option>
-        <option value="*">*</option>
-        <option value="/">/</option>
-      </select>
-      <label>
-        <input type="number">
-      </label>
-      <label>
-        <button>=</button>
-      </label>
-      <span> 10 </span>
-  </form>
-    
-    <button id="myButton">Таймер</button>
-    
-  <script>
-    const button = document.getElementById('myButton');
-    let timerId;
-    let is_started = false;
-    
-    function buttonClickOn() {
-      let i = 0;
-      timerId = setInterval(myFun, 1000);
-      function myFun() {
-        console.log (i);
-        i++;
-      }
-      is_started = true;
-      // console.log(timerId);
-    }  
-    
-    function buttonClickOff() {
-      clearInterval(timerId);
-      is_started = false;
+
+<head>
+  <meta charset="utf-8">
+  <title>Калькулятор</title>
+  <!-- <link rel="stylesheet" href="main.css"> -->
+  <style>
+    body {
+      background-color: rgb(193, 224, 224);
     }
 
-    // button.addEventListener('click', buttonClickOn);
-
-    // button.addEventListener('click', buttonClickOff);
-    
-    button.addEventListener('click', buttonClickHandler);
-
-    function buttonClickHandler() {
-      if (is_started) {
-        buttonClickOff();
-      } else {
-        buttonClickOn();
-      }
+    button {
+      background-color: white;
+      color: rgb(5, 32, 8);
+      border: 2px solid #4CAF50;
+      border-radius: 8px;
     }
-  </script>
-    
-  </body>
+
+    button:hover {
+      background-color: #4CAF50;
+      /* Green */
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    input {
+      width: 80px;
+      height: 20px;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div>
+    <input id="number1" type="number">
+    <select name="" id="operation">
+      <option id="add" value="+">+</option>
+      <option id="subtract" value="-">-</option>
+      <option id="multi" value="*">*</option>
+      <option id="divide" value="/">/</option>
+    </select>
+    <input id="number2" type="number">
+    <button id="equals">=</button>
+    <code id="result"> </code>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+
 </html>

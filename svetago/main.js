@@ -1,19 +1,29 @@
-function buildFun(n){
-	let res = []
-	for (let i = 0; i<= n; i++){
-		res.push(function f1(){
-			//console.log(i);
-            return i;
-		})
-	}
-	return res;
-}
-const num = 9
-let x = buildFun(num);
-function myFun(n) {
-    for (let j = 0; j <= n; j++) {
-    console.log(x[j]())
+var add = document.getElementById('add').textContent;
+var subtract = document.getElementById('subtract').textContent;
+var multi = document.getElementById('multi').textContent;
+var divide = document.getElementById('divide').textContent;
+
+var equals = document.getElementById('equals')
+var result = document.getElementById('result')
+
+function calc() {
+    var operation = document.getElementById('operation');
+    var value = operation.options[operation.selectedIndex].value;
+    const a = Number(document.getElementById('number1').value);
+    const b = Number(document.getElementById('number2').value);
+
+    if (value === add) {
+        result.textContent = a + b;
+    }
+    else if (value === subtract) {
+        result.textContent = a - b;
+    }
+    else if (value === multi) {
+        result.textContent = a * b;
+    }
+    else if (value === divide) {
+        result.textContent = a / b;
     }
 }
-myFun(num);
 
+equals.addEventListener('click', calc);
