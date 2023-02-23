@@ -1,29 +1,33 @@
 
-const buttonCalc = document.querySelectorAll('.equals')[0]
-const finalNumber = document.querySelectorAll('.finalNumber')[0]
+const button = document.getElementById('change-bg')
 
-function calculate(){
-  const firstNumber = document.getElementById('firstNumber').value
-  const lastNumber = document.getElementById('lastNumber').value
-  const signAll = document.getElementById('select')
-  const signSelected = signAll.querySelector(`option[value="${select.value}"]`).value  
-  let result
-  switch (signSelected) {
-    case 'add':
-      result = Number(firstNumber) + Number(lastNumber);
-      break
-    case 'sub':
-      result = Number(firstNumber) - Number(lastNumber);
-      break
-    case 'mult':
-      result=  Number(firstNumber) * Number(lastNumber);
-      break
-    case 'share':
-      result =  Number(firstNumber) / Number(lastNumber);
-      break
-  }
-  finalNumber.innerHTML = result
-
+function changeBackColor(){
+    const color = button.getAttribute("data-color")
+    document.body.style.backgroundColor = color
 }
+addEventListener('click',changeBackColor)
 
-buttonCalc.addEventListener('click', calculate)
+
+
+
+
+const COLOR = {
+    BALCK: '#000000',
+    BROWN: '#A52A2A',
+    BLUE: '#0000FF',
+    PINK: '#FF1493'
+}
+function changeBackColorInteval(color){
+    let maxValue = Object.keys(color).length
+
+    function randomNumber(max,min) {
+        const val = Math.floor(Math.random() * (max - min + 1) + min)
+        return val
+    }
+    const val = randomNumber(0, maxValue)
+
+    setInterval(() => {
+        document.body.style.backgroundColor = Object.keys(color)[val];
+    }, 2000);
+}
+changeBackColorInteval(COLOR)
