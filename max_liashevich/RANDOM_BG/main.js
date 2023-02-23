@@ -2,21 +2,33 @@
 const btn = document.querySelector('.btn');
 
 const COLORS = ['#33006F', '#EE82EE', '#1E2420', '#506A8E', '#7CB9E8', '#97233F'];
-let isToggle = false;
-let idInterval;
+let isToggle = !true;
+let isInterval;
 
 function getRandomDigit() {
   return Math.floor(Math.random() * COLORS.length);
 }
 
-function getRandomColor() {
-  idInterval = setInterval(() => {
+function randomBgColor() {
+  isInterval = setInterval(() => {
     document.body.style.backgroundColor = COLORS[getRandomDigit()];
   }, 2000);
 }
 
-btn.addEventListener('click', () => {
-  isToggle = !isToggle;
+function stopChange() {
+  clearInterval(isInterval)
+  document.body.style.backgroundColor = 'salmon';   
+}
 
-  isToggle ? getRandomColor() : clearInterval(idInterval);
+btn.addEventListener('click', () => {
+  isToggle = !isToggle
+
+  isToggle ? randomBgColor() : stopChange();
 });
+
+//---------
+function selectColor() {
+  let color = document.getElementById('colorInput');
+  // changing the background color
+  document.body.style.backgroundColor = color.value;
+}
