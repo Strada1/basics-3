@@ -1,0 +1,123 @@
+.main {
+    position: absolute;
+    background-color: rgb(170, 167, 167);
+    margin-top: 25%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    height: 200px;
+    border-radius: 15px;
+    border: 2px solid;
+    border-color: rgb(0, 0, 0);
+}
+.input1{
+    background-color: rgb(255, 162, 0);
+    font-size: 40px;
+    position: fixed;
+    color:rgb(0, 0, 0);
+    left:50px;
+    margin-top: 50px;
+    width: 150px;
+    height: 100px;
+    border-radius: 15px;
+    border: 2px solid;
+    border-color: rgb(0, 0, 0);
+}
+.input2{
+    background-color: rgb(255, 162, 0);
+    color:rgb(0, 0, 0);
+    font-size: 40px;
+    position: fixed;
+    margin-top: 50px;
+    left:290px;
+    width: 150px;
+    height: 100px;
+    border-radius: 15px;
+    border: 2px solid;
+    border-color: rgb(0, 0, 0);
+}
+.answer{
+    overflow:hidden;
+    background-color: rgb(255, 208, 0);
+    position: fixed;
+    left:585px;
+    margin-top: 50px;
+    width: 150px;
+    height: 100px;
+    border-radius: 15px;
+    border: 2px solid;
+    border-color: rgb(0, 0, 0);
+}
+#ans{
+    white-space: pre-wrap;
+    font-size: 40px;
+    margin-top: 25px;
+}
+.select-section{
+    background-color: rgb(255, 162, 0);
+    position: fixed;
+    font-size: 40px;
+    margin-left: 225px;
+    margin-top: 80px;
+}
+.plus{
+    font-weight: 2000;
+    text-align: center;
+    font-size: 55px;
+}
+.minus{
+    font-weight: 2000;
+    text-align: center;
+    font-size: 55px;
+}
+.multiply{
+    font-weight: 2000;
+    text-align: center;
+    font-size: 55px;
+}
+.division{
+    font-weight: 2000;
+    text-align: center;
+    font-size: 55px;
+}
+.plus:hover{
+    border-radius: 15px;
+    border: 2px solid;
+    border-color: rgb(0, 0, 0);
+    background-color:rgb(189, 189, 189);
+}
+.minus:hover{
+    border-radius: 15px;
+    border: 2px solid;
+    border-color: rgb(0, 0, 0);
+    background-color:rgb(189, 189, 189);
+}
+.multiply:hover{
+    border-radius: 15px;
+    border: 2px solid;
+    border-color: rgb(0, 0, 0);
+    background-color:rgb(189, 189, 189);
+}
+.division:hover{
+    border-radius: 15px;
+    border: 2px solid;
+    border-color: rgb(0, 0, 0);
+    background-color:rgb(189, 189, 189);
+}
+#rovno{
+    font-size: 100px;
+    color: black;
+    text-align: center;
+    position: absolute;
+    margin-left: 480px;
+    margin-top: 40px;
+}
+button {
+    padding: 0;
+    border: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    cursor: pointer;
+  }
