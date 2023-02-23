@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button class="secundomer">Секундомер</button>
+    <span class="hour">hour</span>
+    <span class="min">min</span>
+    <span class="sec">sec</span>
+
+    <script>
+        btn = document.querySelector('.secundomer')
+        hour = document.querySelector('.hour')
+        min = document.querySelector('.min')
+        sec = document.querySelector('.sec')
+        let timer;
+        let seconds = 0
+        let minutes = 0
+        let hours = 0
+
+        function start() {
+            if (timer) {
+                timer = clearInterval(timer)
+            }
+            else {
+                timer = setInterval(function () {
+                    seconds++
+                    if (seconds === 60) {
+                        seconds = 0
+                        minutes++
+                    }
+                    if (minutes === 60) {
+                        minutes = 0
+                        hours++
+                    }
+                    if (hours === 24) {
+                        hours = 0
+                    }
+                    hour.innerHTML = hours
+                    min.innerHTML = minutes
+                    sec.innerHTML = seconds
+                }, 10)
+            }
+        }
+        btn.addEventListener('click', start)
+    </script>
+</body>
+
+</html>
