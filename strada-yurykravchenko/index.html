@@ -16,28 +16,28 @@
 
       <div class="calculate__content">
         <div class="calculate__num">
-          <input type="number" placeholder="1">
+          <input class="num-2" type="text" placeholder="1">
         </div>
         <div class="select-group">
-          <select>
+          <select class="select">
             <option value="+">+</option>
-            <option value="+">-</option>
-            <option value="+">*</option>
-            <option value="+">/</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
           </select>
         </div>
         <div class="calculate__num">
-          <input type="number" placeholder="1">
+          <input class="num-1" type="text" placeholder="1">
         </div>
 
-        <button class="calc__nums" type="button">=</button>
+        <button class="calc__nums" onclick="calc()" type="button">=</button>
 
-        <span class="calc__result">ответ</span>
+        <span class="calc__result"></span>
       </div>
     </div>
   </div>
 
 </body>
-<script src="obj.js"></script>
+<script src="calc.js"></script>
 
 </html>

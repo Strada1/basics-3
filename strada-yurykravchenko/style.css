@@ -15,8 +15,9 @@ body {
 }
 
 .calculate__container {
+    padding: 30px;
     background-color: #17c1be;
-    width: 500px;
+    width: 600px;
     min-height: 300px;
     border-radius: 20px;
     margin: auto;
@@ -28,19 +29,21 @@ body {
 }
 
 .calculate__content {
+    width: 100%;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
 }
 
 .calculate__num,
-.select-group {
-    margin-right: 20px;
+.select-group,
+.calc__nums {
+    margin-bottom: 20px;
 }
 
 .calculate__num input {
-    width: 50px;
-    height: 50px;
+    width: 100%;
+    height: 20px;
     padding: 10px;
     border: 1px solid #ffffff;
     border-radius: 10px;
@@ -52,6 +55,8 @@ body {
 }
 
 .calc__nums {
+    width: 50px;
+    height: 50px;
     border: none;
     border-radius: 5px;
     box-shadow: 0px 1px 5px #000000;
@@ -59,7 +64,7 @@ body {
 
 .calc__result {
     display: block;
-    width: 50px;
+    width: 30%;
     height: 50px;
     display: flex;
     align-items: center;
@@ -68,5 +73,4 @@ body {
     box-shadow: 0px 1px 5px #000000;
     border-radius: 10px;
     background-color: #ffffff;
-    margin-left: 20px;
 }
