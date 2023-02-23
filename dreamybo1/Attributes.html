@@ -1,0 +1,50 @@
+<html>
+    <style>
+        #change-bg{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+        }
+    </style>
+    <head>
+        <body>
+            
+
+            <button id="change-bg" data-color="#e6e6e6">Изменить фон</button>
+
+
+            <script>
+                    var button = document.getElementById("change-bg")
+                    const body = document.body
+                    const colors = ['red', 'blue', 'green', 'orange'];
+
+
+
+                    function arrayRandElement(arr){ //randomizer
+                        var rand = Math.floor(Math.random() * arr.length);
+                        return arr[rand];
+                    }
+                    const white = '#FFFFFF';
+                    var flag = true;
+                    var timerId =1;
+                    function changeColor(){
+                        
+                        if(flag){
+                            timerId = setInterval(()=>
+                            body.style.backgroundColor = arrayRandElement(colors)
+                            ,2000)
+                            flag = false;
+                        }else{
+                            clearInterval(timerId);
+                            body.style.backgroundColor = white;
+                            flag = true;
+                        }
+                    }
+
+
+
+                    button.addEventListener("click", changeColor)
+            </script>
+        </body>
+    </head>
+</html>
