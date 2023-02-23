@@ -7,6 +7,7 @@ let min = 0;
 let hrs = 0;
 let t;
 
+//создаем функцию времени
 function tick() {
   sec++;
   if (sec >= 60) {
@@ -18,6 +19,7 @@ function tick() {
     }
   }
 }
+
 function add() {
   tick();
   h1.textContent =
