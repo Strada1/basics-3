@@ -80,7 +80,7 @@ select {
     max-width: 39px;
 }
 
-.result {
+.btn-result {
     border: var(--main-border);
     padding: 8px 13px;
 }
