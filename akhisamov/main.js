@@ -39,8 +39,12 @@ function calc () {
                 result1 = 'Некорректные данные';
         }
     }
-    elements.result.textContent = result1;
+    answer(result1)
     addAnswers(result1);
+}
+
+function answer (item) {
+    elements.result.textContent = item;
 }
 
 function addAnswers (item) {
