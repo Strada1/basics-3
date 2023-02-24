@@ -1,43 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+        <title>calculator</title>
+    </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <title>calculator</title>
-</head>
+    <body>
+        <div class="wrapper-calculate calculate">
+            <div class="calculate__container">
+                <h1>Калькулятор</h1>
 
-<body>
-  <div class="wrapper-calculate calculate">
-    <div class="calculate__container">
-      <h1>Калькулятор</h1>
+                <div class="calculate__content">
+                    <div class="calculate__num">
+                        <input class="num-1" type="text" placeholder="1" />
+                    </div>
+                    <div class="select-group">
+                        <select class="select">
+                            <option value="+">+</option>
+                            <option value="-">-</option>
+                            <option value="*">*</option>
+                            <option value="/">/</option>
+                        </select>
+                    </div>
+                    <div class="calculate__num">
+                        <input class="num-2" type="text" placeholder="1" />
+                    </div>
 
-      <div class="calculate__content">
-        <div class="calculate__num">
-          <input class="num-2" type="text" placeholder="1">
+                    <button class="calc__nums" type="button">=</button>
+
+                    <span class="calc__result"></span>
+                </div>
+            </div>
         </div>
-        <div class="select-group">
-          <select class="select">
-            <option value="+">+</option>
-            <option value="-">-</option>
-            <option value="*">*</option>
-            <option value="/">/</option>
-          </select>
-        </div>
-        <div class="calculate__num">
-          <input class="num-1" type="text" placeholder="1">
-        </div>
-
-        <button class="calc__nums" onclick="calc()" type="button">=</button>
-
-        <span class="calc__result"></span>
-      </div>
-    </div>
-  </div>
-
-</body>
-<script src="calc.js"></script>
-
+    </body>
+    <script src="calc.js"></script>
 </html>
