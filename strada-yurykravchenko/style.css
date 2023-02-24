@@ -1,0 +1,19 @@
+body {
+    margin: 0;
+    background-color: tomato;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.background {
+    min-width: 100px;
+    box-sizing: border-box;
+    border: none;
+    padding: 0;
+    background-color: aqua;
+    padding: 15px 45px;
+    border-radius: 5px;
+}
