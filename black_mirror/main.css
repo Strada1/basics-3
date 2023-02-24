@@ -1,0 +1,59 @@
+html {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 20px;
+    color: #000000;
+}
+
+.calc-wrap {
+    margin: 0 auto;
+    padding-top: 5%;
+    padding-left: 5%;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+input {
+    border: 1px solid #000000;
+    padding: 5px 10px;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    color: #000000;
+}
+
+input::placeholder {
+    font-weight: 400;
+    font-size: 20px;
+    color: #000000;
+}
+
+.operand {
+    width: 77px;
+    height: 23px;
+}
+
+.equals {
+    width: 39px;
+    height: 33px;
+    border-radius: 4px;
+}
+
+.result {
+    border: none;
+}
+
+.operators {
+    height: 33px;
+}
+
+.old-result {
+    padding-top: 10px;
+    padding-left: 5%;
+}
