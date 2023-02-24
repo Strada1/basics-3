@@ -3,8 +3,12 @@ const elements = {
     operation: document.querySelector('#operation'),
     numberTwo: document.querySelector('#numberTwo'),
     confirmation: document.querySelector('#confirmation'),
-    result: document.querySelector('#result')   
+    result: document.querySelector('#result'),
+    result_div: document.querySelector('.result_div')
 }
+
+
+
 
 function calc () {
     let a = Number(elements.numberOne.value);
@@ -36,7 +40,20 @@ function calc () {
         }
     }
     elements.result.textContent = result1;
+    addAnswers(result1);
+}
+
+function addAnswers (item) {
+    const newDiv = document.createElement('div');
+    newDiv.textContent = item;
+    elements.result_div.append(newDiv);
+}
+
+function deleteAnswer (event) {
+    elements.result_div.removeChild(event.target);
 }
 
 elements.confirmation.addEventListener('click', calc);
+elements.result_div.addEventListener('click', deleteAnswer);
+
 
