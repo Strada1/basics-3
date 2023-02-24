@@ -2,15 +2,17 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   background: rgb(255, 210, 152);
 }
 .main-div {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: top;
+  padding-top: 150px;
   width: 700px;
   border: 1px solid rgb(255, 210, 152);
-  height: 500px;
+  height: 600px;
   border-radius: 30px;
   background: linear-gradient(to bottom right, blue, pink 85%);
 }
@@ -43,4 +45,15 @@ body {
 .final-result {
   font-size: 17px;
   margin: 0px;
+}
+.last {
+  margin-top: -555px;
+  display: flex;
+  font-weight: bold;
+  text-decoration: underline;
+  color: rgb(105, 0, 0);
+}
+.results-field:hover {
+  cursor: pointer;
+  text-decoration: underline;
 }

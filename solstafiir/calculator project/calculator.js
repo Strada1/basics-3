@@ -1,6 +1,7 @@
 const ERRORS = {
   EMPTY_FIELDS: "Заполните поля!",
   DIVISION_BY_0: "Делить на 0 нельзя!",
+  STARTS_WITH_DOT: "Введите корректное число!",
 };
 const OPERATORS = {
   PLUS: "plus",
@@ -22,30 +23,42 @@ function calculate() {
     secondNumber.value === "0"
   ) {
     resultField.textContent = ERRORS.DIVISION_BY_0;
+  } else if (
+    firstNumber.value.startsWith(".") ||
+    secondNumber.value.startsWith(".")
+  ) {
+    resultField.textContent = ERRORS.STARTS_WITH_DOT;
   } else {
     switch (typeOfOperator.value) {
       case OPERATORS.PLUS:
-        resultField.textContent = (
-          +firstNumber.value + +secondNumber.value
-        ).toFixed(3);
+        resultField.textContent = parseFloat(
+          (+firstNumber.value + +secondNumber.value).toFixed(5)
+        );
         break;
       case OPERATORS.MINUS:
-        resultField.textContent = (
-          firstNumber.value - secondNumber.value
-        ).toFixed(3);
+        resultField.textContent = parseFloat(
+          (firstNumber.value - secondNumber.value).toFixed(5)
+        );
         break;
       case OPERATORS.MULTI:
-        resultField.textContent = (
+        resultField.textContent = parseFloat(
           firstNumber.value * secondNumber.value
-        ).toFixed(3);
+        ).toFixed(5);
         break;
       case OPERATORS.DIVISION:
-        resultField.textContent = (
-          firstNumber.value / secondNumber.value
-        ).toFixed(3);
+        resultField.textContent = parseFloat(
+          (firstNumber.value / secondNumber.value).toFixed(5)
+        );
         break;
     }
   }
+  const lastResult = document.createElement("div");
+  lastResult.className = "results-field";
+  lastResult.textContent = resultField.textContent;
+  document.body.appendChild(lastResult);
+  let removeResults = () => lastResult.remove();
+
+  lastResult.addEventListener("click", removeResults);
 }
 
 equalButton.addEventListener("click", calculate);
