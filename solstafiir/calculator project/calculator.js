@@ -15,7 +15,7 @@ const equalButton = document.querySelector(".equal-button");
 const typeOfOperator = document.querySelector(".select-section");
 const resultField = document.querySelector(".final-result");
 
-function calculate() {
+function calculator() {
   if (firstNumber.value === "" || secondNumber.value === "") {
     resultField.textContent = ERRORS.EMPTY_FIELDS;
   } else if (
@@ -29,28 +29,31 @@ function calculate() {
   ) {
     resultField.textContent = ERRORS.STARTS_WITH_DOT;
   } else {
-    switch (typeOfOperator.value) {
-      case OPERATORS.PLUS:
-        resultField.textContent = parseFloat(
-          (+firstNumber.value + +secondNumber.value).toFixed(5)
-        );
-        break;
-      case OPERATORS.MINUS:
-        resultField.textContent = parseFloat(
-          (firstNumber.value - secondNumber.value).toFixed(5)
-        );
-        break;
-      case OPERATORS.MULTI:
-        resultField.textContent = parseFloat(
-          firstNumber.value * secondNumber.value
-        ).toFixed(5);
-        break;
-      case OPERATORS.DIVISION:
-        resultField.textContent = parseFloat(
-          (firstNumber.value / secondNumber.value).toFixed(5)
-        );
-        break;
+    function checkOperator() {
+      switch (typeOfOperator.value) {
+        case OPERATORS.PLUS:
+          resultField.textContent = parseFloat(
+            (+firstNumber.value + +secondNumber.value).toFixed(5)
+          );
+          break;
+        case OPERATORS.MINUS:
+          resultField.textContent = parseFloat(
+            (firstNumber.value - secondNumber.value).toFixed(5)
+          );
+          break;
+        case OPERATORS.MULTI:
+          resultField.textContent = parseFloat(
+            firstNumber.value * secondNumber.value
+          ).toFixed(5);
+          break;
+        case OPERATORS.DIVISION:
+          resultField.textContent = parseFloat(
+            (firstNumber.value / secondNumber.value).toFixed(5)
+          );
+          break;
+      }
     }
+    checkOperator();
   }
   const lastResult = document.createElement("div");
   lastResult.className = "results-field";
@@ -61,4 +64,4 @@ function calculate() {
   lastResult.addEventListener("click", removeResults);
 }
 
-equalButton.addEventListener("click", calculate);
+equalButton.addEventListener("click", calculator);
