@@ -8,3 +8,8 @@
 .num_input {
     width: 60px;
 }
+
+.results {
+    display: flex;
+    flex-direction: column-reverse;
+}

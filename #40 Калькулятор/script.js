@@ -1,27 +1,41 @@
-let firstNum = document.querySelector('#firstNum');
-let secondNum = document.querySelector('#secondNum');
-let operator = document.querySelector('#selectOperator');
-let output = document.querySelector('#outputResult');
-let resultButton = document.querySelector('#resultButton');
+const firstNum = document.querySelector('#firstNum');
+const secondNum = document.querySelector('#secondNum');
+const operator = document.querySelector('#selectOperator');
+const output = document.querySelector('#outputResult');
+const resultButton = document.querySelector('#resultButton');
+const results = document.querySelector('.results')
 
 resultButton.addEventListener('click', () => {
+
+    let result = null;
     if (firstNum.value === '' && firstNum.value === '') {
         alert('Введите значения!');
         return
     }
-    switch(operator.value) {
+    switch (operator.value) {
         case 'plus':
-            output.textContent = Number(firstNum.value) + Number(secondNum.value);
+            result = Number(firstNum.value) + Number(secondNum.value);
             break
         case 'minus':
-            output.textContent = Number(firstNum.value) - Number(secondNum.value);
+            result = Number(firstNum.value) - Number(secondNum.value);
             break
         case 'multiply':
-            output.textContent = Number(firstNum.value) * Number(secondNum.value);
+            result = Number(firstNum.value) * Number(secondNum.value);
             break
         case 'divide':
-            output.textContent = Number(firstNum.value) / Number(secondNum.value);
+            result = Number(firstNum.value) / Number(secondNum.value);
             break
     }
+    output.textContent = result;
+    resultAppend(result);
 })
 
+results.addEventListener('click', e => {
+    e.target.remove();
+})
+
+function resultAppend(result) {
+    let div = document.createElement('div');
+    div.textContent = result;
+    results.appendChild(div);
+}
