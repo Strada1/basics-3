@@ -53,4 +53,8 @@ main {
     border-radius: 10px;
 }
 
+.new-div {
+    border: solid 2px black;
+}
+
 

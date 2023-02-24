@@ -4,13 +4,13 @@ const number1 = document.querySelector(".number1")
 const number2 = document.querySelector('.number2')
 const getElement = document.querySelector('.select')
 const result = document.querySelector('.buttonResult')
-const showResult = document.querySelector('.showResult')
+const showDiv = document.querySelector('.show')
+
 const createOperation = () => {
     const num1 = Number(number1.value);
     const num2 = Number(number2.value);
     let oper = getElement.value;
     let res;
-
 
     switch (oper) {
         case 'plus':
@@ -26,8 +26,13 @@ const createOperation = () => {
             res = num1 * num2;
             break;
     }
-
-    showResult.textContent = res
+    let div = document.createElement('div')
+    div.classList.add('new-div')
+    showDiv.appendChild(div)
+    div.textContent = res
 }
 
+document.addEventListener('click', i => {
+    if (i.target.classList.contains('new-div')){i.target.remove()}
+})
 result.addEventListener('click', createOperation)
