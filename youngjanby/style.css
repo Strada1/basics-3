@@ -1,0 +1,15 @@
+header {
+    text-align: center;
+}
+
+.box {
+    display: inline-block;
+}
+
+.history {
+    margin-left: 60%;
+}
+
+.history:hover {
+    cursor: pointer;
+}
