@@ -1,7 +1,7 @@
 'use strict';
 
 import { OPERATIONS } from "./constants";
-import { strip, checkIsResult, resetFields } from "./utils";
+import { strip, checkIsResult } from "./utils";
 
 // Variables
 const firstNumber = document.getElementById('first-number');
@@ -10,6 +10,11 @@ const select = document.getElementById('operations');
 const btn = document.querySelector('.calculator__btn-result');
 const resultOperation = document.querySelector('.calculator__result');
 const resultsOperation = document.querySelector('.calculator__results');
+
+export function resetFields() {
+  firstNumber.value = '';
+  secondNumber.value = '';
+}
 
 const calc = (a, b, operation) => {
   if (a === '' || b === '') {
