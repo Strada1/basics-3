@@ -1,19 +1,12 @@
-const ERRORS = {
-  EMPTY_FIELDS: "Заполните поля!",
-  DIVISION_BY_0: "Делить на 0 нельзя!",
-  STARTS_WITH_DOT: "Введите корректное число!",
-};
-const OPERATORS = {
-  PLUS: "plus",
-  MINUS: "minus",
-  MULTI: "multiply",
-  DIVISION: "division",
-};
-const firstNumber = document.querySelector(".first-value");
-const secondNumber = document.querySelector(".second-value");
-const equalButton = document.querySelector(".equal-button");
-const typeOfOperator = document.querySelector(".select-section");
-const resultField = document.querySelector(".final-result");
+import { ERRORS, OPERATORS } from "./namespaces.js";
+import {
+  checkOperator,
+  firstNumber,
+  secondNumber,
+  equalButton,
+  typeOfOperator,
+  resultField,
+} from "./calculatorActionFn.js";
 
 function calculator() {
   if (firstNumber.value === "" || secondNumber.value === "") {
@@ -29,30 +22,6 @@ function calculator() {
   ) {
     resultField.textContent = ERRORS.STARTS_WITH_DOT;
   } else {
-    function checkOperator() {
-      switch (typeOfOperator.value) {
-        case OPERATORS.PLUS:
-          resultField.textContent = parseFloat(
-            (+firstNumber.value + +secondNumber.value).toFixed(5)
-          );
-          break;
-        case OPERATORS.MINUS:
-          resultField.textContent = parseFloat(
-            (firstNumber.value - secondNumber.value).toFixed(5)
-          );
-          break;
-        case OPERATORS.MULTI:
-          resultField.textContent = parseFloat(
-            firstNumber.value * secondNumber.value
-          ).toFixed(5);
-          break;
-        case OPERATORS.DIVISION:
-          resultField.textContent = parseFloat(
-            (firstNumber.value / secondNumber.value).toFixed(5)
-          );
-          break;
-      }
-    }
     checkOperator();
   }
   const lastResult = document.createElement("div");
