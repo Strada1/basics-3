@@ -1,0 +1,62 @@
+@import _null
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap)
+
+body
+    background: radial-gradient(circle, #acacac 0%, rgba(0,0,0,1) 100%)
+    font-family: Roboto
+.wrapper
+.calc
+    display: flex
+    height: 50vh
+    align-items: flex-end
+    justify-content: center
+    gap: 0 10px
+    margin-bottom: 20px
+    &__body
+        display: flex
+        gap: 0 10px
+        align-items: center
+        justify-content: center
+    &__input
+        border: 1px solid black
+        width: 200px
+        font-size: 18px
+        height: 33px
+        padding: 5px 10px
+        border-radius: 5px
+        &:focus
+            border: 2px solid black
+    &__input--left
+    &__select
+        padding: 0 5px
+        border: 1px solid black
+        border-radius: 10px
+        height: 33px
+        cursor: pointer
+
+    &__input--right
+    &__button
+        height: 33px
+        padding: 0 14px
+        border: 1px solid black
+        border-radius: 5px
+        &:active
+            transform: translatey(2px)
+
+    &__select, &__button
+        &:hover
+            background-color: lightgrey
+
+.result
+    font-size: 25px
+    font-weight: 700
+    margin: 0 auto
+    border: 3px solid lightgrey
+    background-color: rgba(0, 0, 0, 0.100)
+    border-radius: 10px
+    padding: 10px
+    width: 300px
+    height: 300px
+    overflow: auto
+    & > *
+        cursor: pointer
