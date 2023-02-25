@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="styles_calc.css">
+  <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+  <title>Simple Calc</title>
+</head>
+<body>
+  <div class="program-box main">
+    <div class="program-box inner">
+      <label>
+        <input id="firstNumber" class="input long" type="number" placeholder="0">
+      </label>
+      <label>
+        <select id="oper" class="input button" name="operation">
+          <option value="add">+</option>
+          <option value="subtract">-</option>
+          <option value="multiply">*</option>
+          <option value="devide">/</option>
+        </select>
+      </label>
+      <label>
+        <input id="secondNumber" class="input" type="number" placeholder="0">
+      </label>
+      <button id="enter" class="input button" type="result">=</button>
+      <span id="span">0</span>
+    </div>
+  </div>
+  <script src="simplecalc.js"></script>
+</body>
