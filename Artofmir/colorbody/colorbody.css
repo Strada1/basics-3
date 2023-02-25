@@ -1,0 +1,60 @@
+:root {
+  --c-white: #ffffff;
+  --c-black: #000;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Audiowide', cursive;
+}
+
+.default-color {
+  background-image: -webkit-linear-gradient(30deg, #d7d7d7 10%, rgba(94, 85, 214) 90%);
+}
+
+.reset-color {
+  transition: 2s;
+  background-image: none;
+}
+
+.program-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main {
+  height: 100vh;
+}
+
+.inner{
+  justify-content: space-around;
+  height: 100%;
+  width: 100%;
+  max-width: 500px;
+  max-height: 200px;
+  border-radius: 10px;
+  background-color: var(--c-white);
+}
+
+.input-button {
+  height: 85px;
+  width: 85px;
+  border-radius: 45px;
+}
+
+.input-button:hover {
+  background: #c6d6d9;
+  box-shadow: 1px 8px 20px rgba(134, 94, 198, 0.378);
+  cursor: pointer;
+}
+
+.input-button:active {
+  background: #c6d6d9;
+  box-shadow: 2px 8px 20px rgba(134, 94, 198, 0.378);
+  color: var(--c-white);
+  border: 0.5px solid var(--c-white);
+  cursor: pointer;
+}
