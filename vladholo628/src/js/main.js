@@ -1,3 +1,5 @@
+import { calc } from "./calc";
+
 const firstNumberInput = document.getElementById("firstNumberInput");
 const secondNumberInput = document.getElementById("secondNumberInput");
 const resultScreen = document.querySelector(".calculator__result");
@@ -12,26 +14,7 @@ const OPERATIONS = {
   "/": "divide",
 };
 
-const calc = (a, b, operation) => {
-  const numbersAreValid = typeof a === "number" && typeof b === "number";
-  if (!numbersAreValid) {
-    console.log("Invalid Operands");
-  }
 
-  switch (operation) {
-    case "sum":
-      return a + b;
-    case "sub":
-      return a - b;
-    case "multi":
-      return a * b;
-    case "divide":
-      return a / b;
-
-    default:
-      console.log("Invalid Operation");
-  }
-};
 
 const addToHistory = (resultValue) => {
   const newHistoryItem = document.createElement("span");
