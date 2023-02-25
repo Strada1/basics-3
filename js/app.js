@@ -1,5 +1,8 @@
 'use strict';
 
+import { OPERATIONS } from "./constants";
+import { strip, checkIsResult, resetFields } from "./utils";
+
 // Variables
 const firstNumber = document.getElementById('first-number');
 const secondNumber = document.getElementById('second-number');
@@ -7,26 +10,6 @@ const select = document.getElementById('operations');
 const btn = document.querySelector('.calculator__btn-result');
 const resultOperation = document.querySelector('.calculator__result');
 const resultsOperation = document.querySelector('.calculator__results');
-
-const OPERATIONS = {
-  ADDITION: 'addition',
-  SUBSCRIBING: 'subscribing',
-  MULTIPLICATION: 'multiplication',
-};
-
-// Utils
-function strip(number) {
-  return (parseFloat(number.toPrecision(12)));
-}
-
-function checkIsNaN(value) {
-  return isNaN(value) ? 'Error!' : value;
-}
-
-function resetFields() {
-  firstNumber.value = '';
-  secondNumber.value = '';
-}
 
 const calc = (a, b, operation) => {
   if (a === '' || b === '') {
@@ -51,7 +34,7 @@ const calc = (a, b, operation) => {
       return strip(firstNum * secondNum);
 
     default:
-      return checkIsNaN(strip(firstNum / secondNum));
+      return checkIsResult(strip(firstNum / secondNum));
   }
 };
 
