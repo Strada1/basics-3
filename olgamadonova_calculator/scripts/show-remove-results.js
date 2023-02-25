@@ -1,4 +1,4 @@
-import {result} from './calculate.js';
+import { result } from './calculate.js';
 
 const resultsAreaElement = document.querySelector('[data-results-area]');
 
@@ -23,4 +23,8 @@ const removeResultElementsHandler = (evt) => {
     }
 }
 
-export {resultsAreaElement, showResultElementsHandler, removeResultElementsHandler}
+export {
+    resultsAreaElement,
+    showResultElementsHandler,
+    removeResultElementsHandler
+}

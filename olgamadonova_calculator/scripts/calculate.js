@@ -42,6 +42,9 @@ const enterElementHandler = () => {
         : result.toFixed(3);
 }
 
-enterElement.addEventListener('click', enterElementHandler);
 
-export {enterElement, result, enterElementHandler};
+export {
+    enterElement,
+    result,
+    enterElementHandler
+};

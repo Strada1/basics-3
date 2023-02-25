@@ -1,5 +1,5 @@
-import {enterElement, enterElementHandler} from './calculate.js';
-import {resultsAreaElement, showResultElementsHandler, removeResultElementsHandler} from './show-remove-results.js';
+import { enterElement, enterElementHandler } from './calculate.js';
+import { resultsAreaElement, showResultElementsHandler, removeResultElementsHandler } from './show-remove-results.js';
 
 enterElement.addEventListener('click', enterElementHandler);
 enterElement.addEventListener('click', showResultElementsHandler);
