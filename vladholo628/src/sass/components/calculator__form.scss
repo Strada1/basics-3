@@ -2,22 +2,23 @@
   display: flex;
   align-items: center;
   flex-wrap: nowrap;
+  font-size: 20px;
   &-select {
     margin-inline: 20px;
     color: #eee9da;
     background-color: #6096b4;
     border-radius: 10px;
-    border: none;
+    border: 2px solid black;
     padding: 0 10px;
     font-size: 32px;
   }
   &-input {
     width: 150px;
     border-radius: 10px;
-    border: none;
     background-color: #6096b4;
     color: #eee9da;
     padding: 10px;
+    border: 2px solid black;
   }
   &-button {
     display: inline-flex;
@@ -26,14 +27,22 @@
     font-size: 40px;
     width: 80px;
     height: 40px;
-    border-radius: 20px;
-    border: none;
+    border-radius: 10px;
+    border: 2px solid black;
     color: #eee9da;
     background-color: #6096b4;
     cursor: pointer;
     margin-left: 20px;
+    transition: all .3s;
+    box-shadow: 0 5px 5px rgba(0,0,0, .5);
     &:hover {
-      background-color: #93bfcf;
+      // background-color: #93bfcf;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 10px rgba(0,0,0, .5); 
+    }
+    &:active {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 3px rgba(0,0,0, .5); 
     }
   }
 }
