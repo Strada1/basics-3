@@ -1,7 +1,6 @@
 const select = document.querySelector('.select');
 let calcResult = document.querySelector('.calc__result');
-const calcButton = document.querySelector('.calc__nums');
-let content = document.querySelector('.calculate__content');
+
 
 
 function calc() {
@@ -33,18 +32,5 @@ let result;
     return calcResult.textContent = result
 }
 
-calcButton.addEventListener('click', function() {
-  calc();
-
-  const resultContainer = document.createElement('div');
-  resultContainer.classList.add('.result');
-  content.appendChild(resultContainer)
-  resultContainer.textContent = calcResult.textContent;
-
-  if(resultContainer) {
-    resultContainer.addEventListener('click', (evt) => {
-      evt.target.remove();
-    })
-  }
-})
+export { calc, calcResult };
 
