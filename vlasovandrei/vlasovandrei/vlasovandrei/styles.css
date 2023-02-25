@@ -1,0 +1,125 @@
+* {
+    border-radius: 5px;
+  }
+  
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #000000;
+    font-family: 'JetBrains Mono', sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 24px;
+    background-image: url('./images/maxresdefault.webp');
+    background-position: center;
+    background-attachment: scroll;
+  }
+  
+  .container {
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-center;
+    width: 90%;
+    min-height: 50vh;
+    background-color: aliceblue;
+    border-radius: 103px;
+    gap: 4px;
+    padding-top: 300px;
+    padding-bottom: 40px;
+    box-shadow: inset 1px 1px 50px 5px rgb(93, 246, 5);
+    background-color: #000000;
+  }
+  
+  .container-error {
+    box-shadow: inset 1px 1px 50px 5px #f4062e;
+  }
+  
+  .calculator {
+    width: 1100px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    column-gap: 8px;
+  }
+  
+  .save-output {
+    align-self: flex-end;
+    margin-right: 330px;
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding-left: 4px;
+    flex-wrap: nowrap;
+  }
+  
+  .output {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 55px;
+    background-color: chartreuse;
+    width: 300px;
+    height: 100px;
+    border: 1px solid black;
+    border-radius: 2px;
+    padding: 0 5px;
+    cursor: pointer;
+    box-shadow: 1px 1px 5px rgb(127, 255, 0);
+  }
+  
+  input[type = text] {
+    font-family: 'JetBrains Mono', sans-serif;
+    font-size: 55px;
+    box-sizing: border-box;
+    width: 295px;
+    height: 100px;
+    padding: 4px 5px 5px 10px;
+    border: 1px solid #000000;
+    border-radius: 2px;
+    box-shadow: 1px 1px 5px rgb(127, 255, 0);
+  }
+  
+  button {
+    font-family: 'JetBrains Mono', sans-serif;
+    width: 60px;
+    font-size: 40px;
+    cursor: pointer;
+    box-shadow: 1px 1px 5px rgb(127, 255, 0);
+  }
+  
+  .output:hover,
+  input[type = text]:hover,
+  select:hover,
+  button:hover  {
+    box-shadow: 2px 2px 5px rgb(245, 245, 245);
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+    cursor: pointer;
+  }
+  
+  select {
+    font-family: 'JetBrains Mono', sans-serif;
+    cursor: pointer;
+    box-shadow: 1px 1px 5px rgb(127, 255, 0);
+    width: 60px;
+    font-size: 40px;
+  }
+  
+  .error::before {
+    content: 'ERROR';
+    letter-spacing: 5px;
+    color: red;
+    font-size: 100px;
+    font-weight: 900;
+    text-shadow: 
+    1px 1px 5px #f4062e,
+    -1px -1px 5px #f4062e;
+    position: absolute;
+    top: 15%;
+  }
