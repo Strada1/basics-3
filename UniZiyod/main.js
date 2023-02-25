@@ -1,97 +1,60 @@
-// Переписать программу TODO на объектах. Хранить все “задачи” в массиве и использовать методы массива чтобы добавлять, удалять, менять и выводить задачи.
+/*
+const timerButton = document.getElementById('timerButton')
+const timerMinutes = document.getElementById('minutes')
+const timerSeconds = document.getElementById('seconds')
 
-const listofTasks = [{
-        name: 'Задача 1',
-        status: 'Закончено',
-        priority: 'Высокая',
-    },
+let minutes = 0;
+let seconds = 1;
 
-];
-
-let defaultStatus = 'Не начато';
-
-// Функция ДОБАВЛЕНИЯ задачи в массив
-console.log('___________________________________ ФУНКЦИЯ ДОБАВЛЕНИЯ');
-
-function addTask(taskName, taskPriority) {
-    if (taskPriority === undefined) {
-        listofTasks.push({
-            name: taskName,
-            status: defaultStatus,
-            priority: 'Низкий'
-        })
-        console.log(`${taskName} успешно добавлена. Приоритет по умолчанию: НИЗКИЙ`);
-    } else {
-        listofTasks.push({
-            name: taskName,
-            status: defaultStatus,
-            priority: taskPriority
-        })
-        console.log(`${taskName} успешно добавлена`);
-    }
-}
-
-// Функция ЗАВЕРШЕНИЯ задачи в массиве
-console.log('___________________________________ ФУНКЦИЯ ИЗМЕНЕНИЯ');
-
-function completeTask(taskName) {
-    for (const zadachi of listofTasks) {
-        if (zadachi.name === taskName) {
-            zadachi.status = 'Закончено'
+function launchTimer() {
+    timer = setInterval(() => {
+        timerSeconds.textContent = seconds.toString().padStart(2, '0');
+        timerMinutes.textContent = minutes.toString().padStart(2, '0');
+        seconds++;
+        if (seconds === 60) {
+            minutes++;
+            seconds = 0;
         }
-    }
-}
 
-
-// Функция ИЗМЕНЕНИЯ задачи в массиве, в т.ч и СТАТУСА
-console.log('___________________________________ ФУНКЦИЯ ИЗМЕНЕНИЯ');
-
-function changeTask(name, newTaskName, newTaskPriority) {
-    for (const zadachi of listofTasks) {
-        if (zadachi.name === name) {
-            zadachi.name = newTaskName;
-            zadachi.priority = newTaskPriority || 'Низкий';
-            console.log(`Вы успешно добавили задачу ———————— ${newTaskName}`);
+        if (minutes === 60) {
+            alert('Достигнут максимум времени');
+            clearInterval(timer);
+            seconds = 0;
+            minutes = 0;
         }
+
+
+    }, 1000)
+
+};
+
+timerButton.addEventListener('click', launchTimer)
+
+*/
+
+
+
+const firstNum = document.getElementById('numberOne');
+const secondNum = document.getElementById('numberTwo');
+const actSelect = document.querySelector('select');
+const actResultButton = document.getElementById('result');
+const actResult = document.getElementById('calcresult');
+
+function calc() {
+    if (actSelect.value === "+") {
+        let actPlusResult = Number(firstNum.value) + Number(secondNum.value);
+        return actResult.textContent = actPlusResult;
+    } else if (actSelect.value === "-") {
+        let actMinusResult = Number(firstNum.value) - Number(secondNum.value);
+        return actResult.textContent = actMinusResult;
+    } else if (actSelect.value === "*") {
+        let actMultiResult = Number(firstNum.value) * Number(secondNum.value);
+        return actResult.textContent = actMultiResult;
+    } else if (actSelect.value === "/") {
+        let actDivideResult = Number(firstNum.value) / Number(secondNum.value);
+        return actResult.textContent = actDivideResult;
     }
 }
 
-
-// Функция УДАЛЕНИЯ задачи в массиве
-console.log('___________________________________ ФУНКЦИЯ УДАЛЕНИЯ');
-
-function deleteTask(nameTask) {
-    for (const zadachi of listofTasks) {
-        if (zadachi.name === nameTask) {
-            listofTasks.splice(listofTasks.indexOf(zadachi), 1)
-            console.log(`Вы успешно удалили задачу ———————— "${nameTask}"`);
-        }
-    }
-}
-// Функция ВЫВОДА задач в массиве в консоль
-console.log(`___________________________________ ФУНКЦИЯ ВЫВОДА ЗАДАЧ'`);
-
-function showTasks() {
-    for (const zadachi of listofTasks) {
-        console.log(`${zadachi.name} ----- ${zadachi.status} ----- ${zadachi.priority}`);
-    }
-}
-
-// МЕТОДЫ ДЛЯ ПРОГРАММЫ TODO НА МАССИВАХ
-// addTask(название, приоритет) — метод добавления задачи (если без приоритета — по умолчанию низкий)
-// completeTask(название) — метод изменения статуса задачи
-// changeTask(название, название для замены, приоритет) — метод изменения задачи
-// deleteTask(название) — метод удаления задачи
-// showTasks() — метод отображения задач
-
-addTask('Задача 2', 'Высокая')
-addTask('Задача 3')
-addTask('Задача 4')
-console.log(listofTasks);
-changeTask('Задача 2', 'Задача 002', 'Низкий')
-console.log(listofTasks);
-deleteTask('Задача 002')
-console.log(listofTasks);
-completeTask('Задача 4')
-completeTask('Задача 3')
-showTasks()
+actSelect.addEventListener('change', calc);
+actResultButton.addEventListener('click', calc);
