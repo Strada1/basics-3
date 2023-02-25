@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet" href="style.css">
+ <script type="module" src="script.js" defer></script>
+ <title>Calc</title>
+</head>
+
+<body>
+ <div class="container">
+  <div class="wraper">
+   <!-- <form action=""> -->
+    <input class="clean-btn" type="button" id="cleanBtn" value="C">
+    <input class="number" type="text" id="numOne" placeholder="number 1">
+    <label for="signs-select">
+     <select name="select" id="signs-select" autofocus required>
+      <option value="" selected disable hidden></option>
+      <option id="plus" value="plus">+</option>
+     <option id="minus" value="minus">-</option>
+     <option id="mulyiply" value="multiply">*</option>
+     <option id="divide" value="divide">/</option>
+     </select>
+    </label>
+    <input class="number" type="text" id="numTwo" placeholder="number 2">
+    <input class="result-btn" type="button" id="resultBtn" value="=">
+    <span class="result" id="resultOut">0</span>
+
+   <!-- </form> -->
+  </div>
+ </div>
+
+</body>
+
+</html>
