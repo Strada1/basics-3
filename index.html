@@ -11,26 +11,31 @@
 <body>
   <div id="app" class="f-center">
     <div class="calculator f-center">
-      <label for="first-number">
-        <input id="first-number" class="input-number" type="text">
-      </label>
+      <div class="calculator__container">
+        <label for="first-number">
+          <input id="first-number" class="calculator__input-number" type="number">
+        </label>
 
-      <label for="operations">
-        <select name="operations" id="operations">
-          <option value="addition" class="operations__operation">+</option>
-          <option value="subscribing" class="operations__operation">-</option>
-          <option value="multiplication" class="operations__operation">*</option>
-          <option value="dividing" class="operations__operation">/</option>
-        </select>
-      </label>
+        <label for="operations">
+          <select name="operations" id="operations">
+            <option value="addition" class="operations__operation">+</option>
+            <option value="subscribing" class="operations__operation">-</option>
+            <option value="multiplication" class="operations__operation">*</option>
+            <option value="dividing" class="operations__operation">/</option>
+          </select>
+        </label>
 
-      <label for="second-number">
-        <input id="second-number" class="input-number" type="text">
-      </label>
+        <label for="second-number">
+          <input id="second-number" class="calculator__input-number" type="number">
+        </label>
 
-      <button class="btn-result">=</button>
+        <button class="calculator__btn-result">=</button>
 
-      <span class="result"></span>
+        <span class="calculator__result"></span>
+      </div>
+
+      <div class="calculator__results">
+      </div>
     </div>
   </div>
 </body>
