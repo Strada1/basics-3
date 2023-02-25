@@ -1,4 +1,4 @@
-function calc(operation, a, b) {
+export function calc(operation, a, b) {
     function add(a, b) {
         return a + b;
     }
@@ -33,6 +33,8 @@ function calc(operation, a, b) {
     }
 }
 
+
+/*
 const button = document.getElementById('button');
 const resultDivs = document.getElementById('resultDivs'); // Сборник результатов
 
@@ -64,3 +66,4 @@ button.addEventListener('click', () => {
 resultDivs.addEventListener('click', (event) => {
     event.target.remove();
 });
+*/

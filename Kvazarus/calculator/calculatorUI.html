@@ -28,7 +28,44 @@
 
     <div id="resultDivs"></div>
 
-    <script src="./calculatorLogic.js"></script>
+    <script type="module">
+        
+        import { calc } from "./calculatorLogic.js";
+
+        const button = document.getElementById('button');
+        const resultDivs = document.getElementById('resultDivs'); // Сборник результатов
+
+        button.addEventListener('click', () => {
+            const a = Number(document.getElementById('firstNumber').value);
+            const b = Number(document.getElementById('secondNumber').value);
+
+            const select = document.getElementById('operationSelect');
+            const selectedOption = select.selectedIndex;
+            const options = select.options;
+            const operation = options[selectedOption].textContent;
+
+            const result = calc(operation, a, b);
+
+            document.getElementById('result').textContent = result;
+
+            // Добавление результатов
+            // ниндзя код
+
+            const resultDiv = document.createElement('div');
+
+            resultDiv.textContent = result;
+            resultDiv.style.cursor = 'pointer';
+            resultDiv.style.margin = '2px 0 2px 0';
+
+            resultDivs.appendChild(resultDiv);
+        })
+
+        resultDivs.addEventListener('click', (event) => {
+            if (event.target !== resultDivs) {
+                event.target.remove();
+            }
+        });
+    </script>
 
 </body>
 
