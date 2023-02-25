@@ -1,0 +1,48 @@
+.calculator{
+
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+    width: 300px;
+    margin: 0 auto;
+  }
+  .number{
+    box-sizing: border-box;
+    margin: 0;
+    height: 50px;
+    width: 50px;
+    font-size: 15px;
+
+    color: black;
+
+  }
+  .number::placeholder {
+    color: #000000;
+    font-weight: 400;
+    font-size: 15px;
+  }
+  .action{
+    height: 50px;
+    width: 50px;
+    font-weight: 400;
+    font-size: 20px;
+  }
+  .equals{
+    height: 50px;
+    width:50px;
+    font-weight: 400;
+    font-size: 20px;
+  }
+  .finalNumber{
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 50px;
+
+  }
+  .createResult{
+    font-size: 20px;
+    text-align: center;
+  }

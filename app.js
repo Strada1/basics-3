@@ -1,33 +1,41 @@
+const buttonCalc = document.querySelectorAll('.equals')[0]
+const finalNumber = document.querySelectorAll('.finalNumber')[0]
+const section = document.querySelector('section')
 
-const button = document.getElementById('change-bg')
-
-function changeBackColor(){
-    const color = button.getAttribute("data-color")
-    document.body.style.backgroundColor = color
-}
-addEventListener('click',changeBackColor)
-
-
-
-
-
-const COLOR = {
-    BALCK: '#000000',
-    BROWN: '#A52A2A',
-    BLUE: '#0000FF',
-    PINK: '#FF1493'
-}
-function changeBackColorInteval(color){
-    let maxValue = Object.keys(color).length
-
-    function randomNumber(max,min) {
-        const val = Math.floor(Math.random() * (max - min + 1) + min)
-        return val
+function calculate(){
+    const createDiv = document.createElement('div')
+    const firstNumber = document.getElementById('firstNumber').value
+    const lastNumber = document.getElementById('lastNumber').value
+    const signAll = document.getElementById('select')
+    const signSelected = signAll.querySelector(`option[value="${select.value}"]`).value  
+    let result
+    switch (signSelected) {
+        case 'add':
+        result = Number(firstNumber) + Number(lastNumber);
+        break
+        case 'sub':
+        result = Number(firstNumber) - Number(lastNumber);
+        break
+        case 'mult':
+        result=  Number(firstNumber) * Number(lastNumber);
+        break
+        case 'share':
+        result =  Number(firstNumber) / Number(lastNumber);
+        break
     }
-    const val = randomNumber(0, maxValue)
+    finalNumber.innerHTML = result
 
-    setInterval(() => {
-        document.body.style.backgroundColor = Object.keys(color)[val];
-    }, 2000);
+    function removeResult(){
+        createDiv.remove()
+    }
+    (function addResult(){
+        createDiv.textContent = result
+        createDiv.className = "createResult"
+        document.body.appendChild(createDiv)
+    })()
+    
+    createDiv.addEventListener('click', removeResult)
 }
-changeBackColorInteval(COLOR)
+
+buttonCalc.addEventListener('click', calculate)
+
