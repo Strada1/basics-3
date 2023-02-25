@@ -1,4 +1,4 @@
-import { resultAppend } from "./modules/ResultAppend.js";
+import append from "./modules/ResultAppend.js";
 
 const firstNum = document.querySelector('#firstNum');
 const secondNum = document.querySelector('#secondNum');
@@ -29,7 +29,7 @@ resultButton.addEventListener('click', () => {
             break
     }
     output.textContent = result;
-    resultAppend(result, results);
+    append(result, results);
 })
 
 results.addEventListener('click', e => {
