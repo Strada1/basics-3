@@ -1,0 +1,29 @@
+* {
+    box-sizing: border-box;
+}
+
+.calculator {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    max-width: 700px;
+    height: 70px;
+    padding: 20px;
+    margin: 0 auto;
+}
+
+input,
+.output {
+    padding: 5px;
+}
+
+.output {
+    border: 1px solid black;
+    min-width: 75px;
+}
+
+.previous {
+    margin: 5px auto;
+    width: fit-content;
+    cursor: pointer;
+}

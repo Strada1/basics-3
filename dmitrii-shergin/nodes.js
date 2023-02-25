@@ -1,0 +1,6 @@
+export const EQUALS = document.querySelector('.equals')
+export const CALC = document.querySelector('.calculator')
+export const OPERATOR = document.querySelector('.operator')
+export const OUTPUT = document.querySelector('.output')
+export const FIRST_STRING = document.querySelector('.firstValue')
+export const SECOND_STRING = document.querySelector('.secondValue')
