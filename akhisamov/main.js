@@ -1,14 +1,9 @@
-const elements = {
-    numberOne: document.querySelector('#numberOne'),
-    operation: document.querySelector('#operation'),
-    numberTwo: document.querySelector('#numberTwo'),
-    confirmation: document.querySelector('#confirmation'),
-    result: document.querySelector('#result'),
-    result_div: document.querySelector('.result_div')
-}
+import {elements} from './modules/elements.js';
+import {deleteAnswer} from './modules/deleteAnswer.js';
+import {addAnswers} from './modules/addAnswers.js';
 
-
-
+elements.confirmation.addEventListener('click', calc);
+elements.result_div.addEventListener('click', deleteAnswer);
 
 function calc () {
     let a = Number(elements.numberOne.value);
@@ -47,17 +42,6 @@ function answer (item) {
     elements.result.textContent = item;
 }
 
-function addAnswers (item) {
-    const newDiv = document.createElement('div');
-    newDiv.textContent = item;
-    elements.result_div.append(newDiv);
-}
 
-function deleteAnswer (event) {
-    elements.result_div.removeChild(event.target);
-}
-
-elements.confirmation.addEventListener('click', calc);
-elements.result_div.addEventListener('click', deleteAnswer);
 
 
