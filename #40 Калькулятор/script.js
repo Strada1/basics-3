@@ -1,9 +1,11 @@
+import { resultAppend } from "./modules/ResultAppend.js";
+
 const firstNum = document.querySelector('#firstNum');
 const secondNum = document.querySelector('#secondNum');
 const operator = document.querySelector('#selectOperator');
 const output = document.querySelector('#outputResult');
 const resultButton = document.querySelector('#resultButton');
-const results = document.querySelector('.results')
+const results = document.querySelector('.results');
 
 resultButton.addEventListener('click', () => {
 
@@ -27,15 +29,9 @@ resultButton.addEventListener('click', () => {
             break
     }
     output.textContent = result;
-    resultAppend(result);
+    resultAppend(result, results);
 })
 
 results.addEventListener('click', e => {
     e.target.remove();
 })
-
-function resultAppend(result) {
-    let div = document.createElement('div');
-    div.textContent = result;
-    results.appendChild(div);
-}
