@@ -22,6 +22,10 @@ const createOperation = () => {
             res = num1 * num2;
             break;
     }
+
+    if (res === Infinity) {res = 'Cannot divide by zero'}
+    if (num1 || num2 == '') {res = 'Enter the number'}
+
     let div = document.createElement('div')
     div.classList.add('new-div')
     showDiv.appendChild(div)
