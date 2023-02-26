@@ -1,0 +1,21 @@
+* {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+input {
+    height: 33px;
+    width: 95px;
+    padding-left: 5px;
+    border: 1px solid #000000;
+    border-radius: 4px;
+}
+
+.button {
+    width: 39px;
+    height: 33px;
+}
+
