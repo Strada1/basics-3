@@ -1,0 +1,58 @@
+body {
+    background-color:#000000;
+}
+
+
+.form {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -40px 0 0 -202px;
+    align-items: center;
+}
+
+.number {
+    width: 70px;
+    height: 40px;
+    font-size: 20px;
+    margin-left: 15px;
+    margin-right: 15px;
+    border-radius: 10px;
+    padding-left: 15px;
+    border-width: 0px;
+    color: #ffffff;
+    background-color:#1e1e1e;
+}
+
+.mathAction {
+    width: 70px;
+    height: 40px;
+    font-size: 20px;
+    border-radius: 10px;
+    background-color: #00fff5;
+    color: #000000;
+}
+
+.button {
+    width: 70px;
+    height: 40px;
+    background-color: #00fff5;
+    color: #000000;
+    margin-right: 15px;
+    font-size: 20px;
+    border-radius: 10px;
+}
+
+.result {
+    color: #fff;
+    margin-right: 15px;
+    font-size: 24px;
+    font-weight: 400;
+    align-content: center;
+    font-family: Helvetica, sans-serif;
+}
+
+#value {
+    font-size: 40px;
+}
