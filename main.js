@@ -1,9 +1,10 @@
 const equalButton = document.getElementById("equalButton")
 const newCalculatedNumber =
-  document.getElementById("calculatedNumber").innerHTML
+  document.getElementById("calculatedNumber").textContent
 
 function newNumber() {
-  document.getElementById("calculatedNumber").innerHTML = "25"
+  document.getElementById("calculatedNumber").textContent = "25"
 }
 
 equalButton.addEventListener("click", newNumber)
+console.log(newCalculatedNumber)
