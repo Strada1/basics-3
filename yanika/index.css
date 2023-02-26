@@ -30,11 +30,9 @@ main {
 
 }
 .show {
-    border: solid 4px rgb(23, 23, 23);
     border-radius: 10px;
     width: 20%;
-    background-color: aliceblue;
-    background-color: rgb(132, 166, 135);
+    background-color: rgb(229, 189, 116);
 
 }
 .calc {
@@ -54,7 +52,10 @@ main {
 }
 
 .new-div {
+    font-size: 20px;
     border: solid 2px black;
+    border-radius: 5px;
+    margin-top: 5px;
 }
 
 
