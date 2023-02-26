@@ -28,7 +28,7 @@ const createOperation = () => {
     div.textContent = res
 }
 
-document.addEventListener('click', i => {
-    if (i.target.classList.contains('new-div')){i.target.remove()}
+document.addEventListener('click', searchDiv => {
+    if (searchDiv.target.classList.contains('new-div')){searchDiv.target.remove()}
 })
 result.addEventListener('click', createOperation)
