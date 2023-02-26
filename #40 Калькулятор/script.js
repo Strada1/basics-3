@@ -1,4 +1,5 @@
 import ResultAppend from "./modules/ResultAppend.js";
+import Calculate from "./modules/Calculate.js";
 
 const firstNum = document.querySelector('#firstNum');
 const secondNum = document.querySelector('#secondNum');
@@ -9,29 +10,19 @@ const results = document.querySelector('.results');
 
 resultButton.addEventListener('click', () => {
 
-    let result = null;
-    if (firstNum.value === '' && firstNum.value === '') {
-        alert('Введите значения!');
-        return
-    }
-    switch (operator.value) {
-        case 'plus':
-            result = Number(firstNum.value) + Number(secondNum.value);
-            break
-        case 'minus':
-            result = Number(firstNum.value) - Number(secondNum.value);
-            break
-        case 'multiply':
-            result = Number(firstNum.value) * Number(secondNum.value);
-            break
-        case 'divide':
-            result = Number(firstNum.value) / Number(secondNum.value);
-            break
-    }
+    let a = Number(firstNum.value);
+    let b = Number(secondNum.value);
+    let oper = operator.value;
+
+    if (a === 0 || b === 0) return
+    if (!(Number.isInteger(a) && Number.isInteger(b))) return 
+
+    let result = Calculate(a, b, oper);
+
     output.textContent = result;
     ResultAppend(result, results);
 })
 
 results.addEventListener('click', e => {
-    e.target.remove();
+    if (e.target.classList.contains('result')) e.target.remove();
 })
