@@ -32,6 +32,5 @@ const deleteResult = function (event) {
     results.removeChild(event.target);
 };
 
-
 results.addEventListener("click", deleteResult);
 resultBtn.addEventListener("click", calculator);
