@@ -1,10 +1,6 @@
 'use strict'
 
-const number1 = document.querySelector(".number1")
-const number2 = document.querySelector('.number2')
-const getElement = document.querySelector('.select')
-const result = document.querySelector('.buttonResult')
-const showDiv = document.querySelector('.show')
+import {number1, number2, getElement, result, showDiv} from '/variables.js'
 
 const createOperation = () => {
     const num1 = Number(number1.value);
