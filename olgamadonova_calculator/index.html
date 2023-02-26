@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main class="main">
+  <h1 class="visually-hidden">Калькулятор</h1>
+  <div class="calculator">
+      <div class="calculator__body">
+          <label>
+              <input class="calculator__operand" type="number" value="0" data-first-operator>
+              <span class="visually-hidden">первый оператор</span>
+          </label>
+          <label>
+              <select class="calculator__operator" data-operand>
+                  <option value="plus" selected>+</option>
+                  <option value="minus">-</option>
+                  <option value="multiply">*</option>
+                  <option value="divide">/</option>
+              </select>
+              <span class="visually-hidden">операнд</span>
+          </label>
+          <label>
+              <input class="calculator__operand" type="number" value="0" data-second-operator>
+              <span class="visually-hidden">второй оператор</span>
+          </label>
+          <button class="calculator__enter" type="button" data-enter>
+              &#61;<span class="visually-hidden">получить результат математической операции</span>
+          </button>
+          <div class="calculator__result" data-result>0</div>
+      </div>
+      <div class="calculator__results" data-results-area>
+          <h2 class="calculator__results-title">Results</h2>
+      </div>
+      </div>
+
+
+</main>
+<script src="scripts/script.js" type="module"></script>
+</body>
+</html>
