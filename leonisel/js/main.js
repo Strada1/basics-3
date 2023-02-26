@@ -2,6 +2,7 @@ const buttonEqual = document.getElementById('button-equal');
 const inputs = document.querySelectorAll('.input-wrapper_window');
 const select = document.querySelectorAll('.select');
 const resultEqual = document.getElementById('result');
+const output = document.querySelector('.output');
 
 let leftInputValue;
 let rightInputValue;
@@ -23,16 +24,12 @@ function calc(operation, a, b) {
   switch(operation) {
     case 'add':
       return aNum + bNum;
-      break;
     case 'multi':
       return aNum * bNum;
-      break;
     case 'subtract':
       return aNum - bNum;
-      break;
     case 'division':
       return aNum / bNum;
-      break;  
   }
 }
 
@@ -62,17 +59,32 @@ function getOperator(e) {
   }
 }
 
+function getOutput(num) {
+  const newOutput = document.createElement('div');
+  newOutput.classList.add('output-items');
+  output.prepend(newOutput);
+  newOutput.textContent = num;
+}
+
 function getEqual() {
   const result = calc(operator, leftInputValue, rightInputValue);
   resultEqual.textContent = result;
+  getOutput(result);
 }
 
 for (const input of inputs) {
   input.addEventListener('input', getInput);
 }
 
-for (let option of select) {
+for (const option of select) {
   option.addEventListener('change', getOperator);
 }
 
 buttonEqual.addEventListener('click', getEqual);
+
+output.addEventListener('click', function(event){
+  let target = event.target;
+  if(target.classList.contains('output-items')) {
+    target.remove();
+  }
+});
