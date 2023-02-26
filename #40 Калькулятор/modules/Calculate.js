@@ -2,13 +2,13 @@ function Calculate(a, b, oper) {
     
     switch (oper) {
         case 'plus':
-            return ( Number(a) + Number(b) );
+            return ( a + b );
         case 'minus':
-            return ( Number(a) - Number(b) );
+            return ( a - b );
         case 'multiply':
-            return ( Number(a) * Number(b) );
+            return ( a * b );
         case 'divide':
-            return ( Number(a) / Number(b) );
+            return ( a / b );
     }
 }
 
