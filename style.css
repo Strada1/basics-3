@@ -1,0 +1,30 @@
+body {
+  display: flex;
+  flex-direction: row;
+  /* box-sizing: border-box; */
+  /**/
+  /* position: absolute; */
+}
+
+div {
+  padding: 5px;
+}
+/* .inputNum { */
+/*   box-sizing: border-box; */
+/**/
+/*   position: absolute; */
+/*   width: 95px; */
+/*   height: 33px; */
+/**/
+/*   background: #ffffff; */
+/*   border: 1px solid #000000; */
+/* } */
+/**/
+/* .equalsButton { */
+/*   box-sizing: border-box; */
+/*   position: absolute; */
+/*   width: 95px; */
+/*   height: 33px; */
+/*   background: #fff; */
+/*   border: 1px solid #000000; */
+/* } */
