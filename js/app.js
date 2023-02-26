@@ -11,7 +11,7 @@ const btn = document.querySelector('.calculator__btn-result');
 const resultOperation = document.querySelector('.calculator__result');
 const resultsOperation = document.querySelector('.calculator__results');
 
-export function resetFields() {
+function resetFields() {
   firstNumber.value = '';
   secondNumber.value = '';
 }
