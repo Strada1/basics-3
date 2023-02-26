@@ -1,0 +1,20 @@
+* {
+    text-align: center;
+    margin-top: 100px;
+}
+input {
+    height: 26px;
+    width: 100px;
+}
+button {
+    height: 28px;
+    width: 30px;
+}
+p {
+    display: inline;
+    font-size: 80px;
+}
+div {
+    margin: 0;
+    font-size: 24px;
+}
