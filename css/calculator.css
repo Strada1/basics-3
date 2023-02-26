@@ -1,0 +1,13 @@
+.history-results {
+    width: 365px;
+    max-height: 250px;
+    overflow: auto;
+}
+
+.prev-result {
+    cursor: pointer;
+}
+
+.prev-result:hover {
+    background-color: rgb(224, 224, 224);
+}
