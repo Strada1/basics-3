@@ -44,7 +44,19 @@ h1 {
     background: none;
     border: none;
     color: rgb(137, 137, 137);
+    transition: 0.4s;
 }
+
+.inputTaskForm .btnTask:hover {
+    color: rgb(0, 110, 9);
+}
+
+.taskWrapper .btnTask:hover {
+    color: rgb(137, 0, 0);
+}
+
+
+
 
 .taskWrapper {
     margin: 8px 0;
@@ -55,6 +67,10 @@ h1 {
     border: 1px solid #989898;
     border-radius: 6px;
     padding: 12px 3px;
+}
+
+.taskWrapper.done {
+    background-color: #d5d5d5;
 }
 
 .taskText {
