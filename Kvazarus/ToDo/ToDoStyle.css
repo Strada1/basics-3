@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 19px;
+}
+
+body,
+div.wrapper,
+div.highPriority,
+div.lowPriority {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+}
+
+div.wrapper {
+    width: 480px;
+    min-height: 680px;
+    margin: 30px 0 30px 0;
+    padding: 10px;
+    /* ooooo */
+    border-radius: 15px;
+    background-color: rgb(231, 238, 238);
+}
+
+div.addTask, div.task {
+    display: flex;
+    justify-content: end;
+    width: 100%;
+    min-height: 45px;
+    margin: 4px;
+    border-radius: 6px;
+    border: 1px solid black;
+}
+
+div.containing {
+    display: flex;
+    justify-content: start;
+    width: 100%;
+    height: 100%;
+}
+
+span.ToDoText{
+    word-wrap: break-word;
+    max-width: 360px;
+    margin: 10px 0 10px 0;
+}
+
+h2 {
+    font-size: 21px;
+    font-weight: normal;
+    margin: 10px;
+}
+
+label, input {
+    display: block;
+    width: 100%;
+    min-height: 45px;
+}
+
+input {
+    padding-left: 8px;
+}
+
+button {
+    border: 0;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+button.addTaskButton {
+    background: url(https://www.freepnglogos.com/uploads/plus-icon/plus-icon-plus-math-icon-download-icons-9.png);
+    background-size: 21px;
+    background-repeat:no-repeat;
+    background-position: center;
+    width: 22px;
+    min-height: 45px;
+}
+
+button.deleteTaskButton {
+    background: url(https://avatanplus.com/files/resources/original/5968a2c8f2ed115d40bbe123.png);
+    background-size: 21px;
+    background-repeat:no-repeat;
+    background-position: center;
+    width: 22px;
+    height: 22px;
+    margin: 12px;
+}
+
+button.markAsReadyButton {
+    width: 21px;
+    height: 21px;
+    border-radius: 50%;
+    border: 1px solid black;
+    margin: 12px;
+}
