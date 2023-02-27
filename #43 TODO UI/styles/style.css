@@ -82,3 +82,14 @@ h1 {
     color: #202020;
     margin: 0 10px;
 }
+
+@media only screen and (max-width : 480px) {
+    main {
+        width: 100vw;
+        padding: 8px;
+    }
+    main>* {
+        margin: 0 auto;
+        width: 100vw;
+    }
+}
