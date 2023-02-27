@@ -15,7 +15,6 @@ resultButton.addEventListener('click', () => {
     let oper = operator.value;
 
     if (a === 0 || b === 0) return
-    if (!(Number.isInteger(a) && Number.isInteger(b))) return 
 
     let result = Calculate(a, b, oper);
 
