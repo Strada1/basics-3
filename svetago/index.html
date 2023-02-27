@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>TODO</title>
+  <!-- <link rel="stylesheet" href="main.css"> -->
+  
+  <style>
+    body {
+      background-color: rgb(231, 228, 205);
+    }
+
+    main {
+      margin: 0 auto;
+      width: 100%;
+      max-width: 500px;
+    }
+
+    h1 {
+      color: #ff0000;
+      text-align: center;
+      font-weight: 200;
+      font-size: 18px;
+      line-height: 21px;
+    }
+
+    h2 {
+      color: #459386;
+      text-align: center;
+      font-weight: 200;
+      font-size: 18px;
+      line-height: 21px;
+    }
+
+    .inputTaskForm {
+      display: flex;
+      border: 1px solid #5c5a5a;
+      border-radius: 6px;
+      padding: 5px 15px;
+    }
+
+    .inputTask {
+      box-sizing: border-box;
+      height: 25px;
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 5px 15px;
+    }
+
+    button {
+      background: none;
+      border: none;
+      color: #5c5a5a;
+    }
+
+    button:hover {
+      border: 1px solid #5c5a5a;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .taskForm {
+      margin: 8px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border: 1px solid #5c5a5a;
+      border-radius: 6px;
+      padding: 5px 15px;
+    }
+
+  </style>
+
+</head>
+
+<body>
+  <main>
+    <div class="highForm">
+      <h1> HIGH </h1>
+      
+      <div class="inputTaskForm">
+        <input class="inputTask" placeholder="Добавить к списку важных дел" id="inputTaskHigh">
+        <button class="button" id="addTaskHigh"> + </button>
+      </div>
+      
+      <div class="taskForm">
+        <input type="checkbox" class="checkboxTask">
+        <div class="taskText">
+          Вот вам и супер интересная тема.
+          Вы наверняка заметили что ваши файлы с кодом становятся все объемнее, что хочется вынести
+          некоторые вещи куда-то за пределы основной программы.
+        </div>
+        <button class="button" id="deleteTaskHigh"> х </button>
+      </div>
+
+      <div class="taskForm">
+        <input type="checkbox" class="checkboxTask">
+        <div class="taskText">
+          Сверстать этот TODO лист
+        </div>
+        <button class="button" id="deleteTaskHigh"> х </button>
+      </div>
+
+      <div class="taskForm">
+        <input type="checkbox" class="checkboxTask">
+        <div class="taskText">
+          Начать делать задачу
+        </div>
+        <button class="button" id="deleteTaskHigh"> х </button>
+      </div>
+
+    </div>
+   
+    <div class="lowForm">
+      <h2> LOW </h2>
+
+      <div class="inputTaskForm">
+        <input class="inputTask" placeholder="Добавить к списку" id="inputTaskLow">
+        <button class="button" id="addTaskLow"> + </button>
+      </div>
+
+      <div class="taskForm">
+        <input type="checkbox" class="checkboxTask">
+        <div class="taskText"> 
+          Посмотреть ютюбчик 
+        </div>
+        <button class="button" id="deleteTaskLow"> х </button>
+      </div>
+
+    </div>
+
+  </main>
+</body>
+
+</html>
