@@ -1,0 +1,149 @@
+.main{
+    position: relative;
+    border-color: black;
+    border: solid 2px;
+    border-radius: 5px;
+    margin-top: 25%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    height: 500px;
+    width: 400px;
+}
+.hight{
+    top: 100px;
+    position: relative;
+    border-color: black;
+    border: solid 2px;
+    border-radius: 5px;
+    height: 50px;
+    width: 350px;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+#hight_input{
+    font-family: 'Segoe UI';
+    font-style: normal;
+    font-weight: 200;
+    font-size: 20px;
+    text-align: center;
+    height: 50px;
+    width: 350px;
+    top: 0px;
+    position: absolute;
+}
+#add_hight{
+    border-color: black;
+    border: solid 2px;
+    border-radius: 3px;
+    position: relative;
+    margin-left: 340px;
+    top: -100%;
+    width: 20px;
+    height: 20px;
+}
+#del_hight{
+    border-color: black;
+    border: solid 2px;
+    border-radius: 3px;
+    position: relative;
+    margin-left: 340px;
+    top: -35px;
+    width: 20px;
+    height: 20px;
+}
+.check{
+    top:25%;
+    background-color: red;
+    position: relative;
+    border-color: black;
+    border: solid 2px;
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+}
+.check:active{
+    background-color: lightgreen;
+}
+#new_hight{
+    position: relative;
+    margin-top: 20px;
+    border-color: black;
+    border: solid 2px;
+    border-radius: 5px;
+    height: 50px;
+    width: 350px;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+.low{
+    top: 50px;
+    margin-top: 200px;
+    position: relative;
+    border-color: black;
+    border: solid 2px;
+    border-radius: 5px;
+    height: 50px;
+    width: 350px;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+#low_input{
+    font-family: 'Segoe UI';
+    font-style: normal;
+    font-weight: 200;
+    font-size: 20px;
+    text-align: center;
+    height: 50px;
+    width: 350px;
+    top: 0px;
+    position: absolute;
+}
+#add_low{
+    border-color: black;
+    border: solid 2px;
+    border-radius: 3px;
+    position: relative;
+    margin-left: 340px;
+    top: -100%;
+    width: 20px;
+    height: 20px;
+}
+#new_low{
+    position: relative;
+    margin-top: 20px;
+    border-color: black;
+    border: solid 2px;
+    border-radius: 5px;
+    height: 50px;
+    width: 350px;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+#del_low{
+    border-color: black;
+    border: solid 2px;
+    border-radius: 3px;
+    position: relative;
+    margin-left: 340px;
+    top: -35px;
+    width: 20px;
+    height: 20px;
+}
+#l{ 
+    font-family: 'Segoe UI';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 20px;
+    position: relative;
+    text-align: center;
+    top: -50px;
+}
+
+input {
+    all: unset;
+  }
