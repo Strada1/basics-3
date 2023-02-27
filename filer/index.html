@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="stylesheet" href="style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>#41 ДЗ Модули для калькулятора</title>
+</head>
+
+<body>
+	<div class="calculate">
+		<div id="cont" class="container">
+			<input value="" type='number' id="a" class="operants">
+			<select class="select" id="operantsAll" name="operants">
+				<option id="plus" value="plus">+</option>
+				<option value="minus">-</option>
+				<option value="multiply">*</option>
+				<option value="divide">/</option>
+			</select>
+			<input value="" type='number' id="b" class="operants">
+			<button id="myButton" class="result">=</button>
+			<span value="" id="resultSpan">Ответ</span>
+			
+			<script type="module" src="main.js"></script>
+		</div>
+	</div>
+</body>
+
+</html>
