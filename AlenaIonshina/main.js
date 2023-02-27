@@ -1,79 +1,66 @@
-//19 Практика ToDo
+const hoursElement = document.querySelector('.hours');
+const minutesElement = document.querySelector('.minutes');
+const secondsElement = document.querySelector('.seconds');
+const button = document.querySelector('.button');
 
-const ToDo = {
-    list: {
-    "create a new practice task": "In Progress", 
-	"make a bed": "Done", 
-	"write a post": "To Do",
-},
 
-//changeStatus("write a post", "Done") меняет статус задачи
-changeStatus (task, status) {
-    if (task in this.list) {
-      this.list[task] = status;
-    } else {
-      console.log ('Задача не найдена');
-    }
-  },
 
-// addTask('have a walk') добавляет новую задачу
-addTask (task, status) {
-    if (!(task in this.list)) {
-      this.list[task] = status;
-    } else  {
-      console.log('Эта задача присутствует в списке дел');
-    }
-  },
+//Переменные 
+let hours = 00;
+let minutes = 00;
+let seconds = 00;
+let interval
+let isActive = false;
 
-//deleteTask('have a walk') удаляет задачу
-deleteTask (task) {
-    if (task in this.list) {
-      delete this.list[task];
-    } else {
-      console.log('Задача отсутствует в списке дел');
-    }
-  },
 
-  //showList() показывает список всех задач
-  showList() {
-    for (const task in ToDo.list) {
-        //console.log('"' + task + '"' + ': '+ this.list[task])
-        console.log(`"${task}": ${this.list[task]}`)
-    }
-    console.log(`Nothing is Done1\n`)
-},
-
-showListRevet() {
-    let last_value = ''
-    sorted_by_value_object = Object.keys(ToDo.list).sort().reduce((accumulator, key) => {
-        accumulator[key] = ToDo.list[key];
-        return accumulator;
-      }, {})
-
-    for (const task in sorted_by_value_object) {
-        if (last_value.length == 0 || this.list[task] != last_value){
-            console.log(`${this.list[task]}:`)
-            last_value = this.list[task]
+function startTimer(){
+    interval = setInterval ( () => {
+        seconds++
+        if (seconds < 9) {
+            secondsElement.innerText = '0' + seconds
         }
-        console.log(`\t"${task}"`)
-    }
-    console.log(`Nothing is Done2\n`)
-},
+        if (seconds > 9) {
+            secondsElement.innerText = seconds
+        }
+        if (seconds > 59) {
+            minutes++
+            // minutesElement.innerText = '0' + minutes
+            seconds = 0
+            secondsElement.innerText = '0' + seconds
+        }
+
+        // Минуты
+        if (minutes < 9) {
+            minutesElement.innerText = '0' + minutes
+        }
+        if (minutes > 9) {
+            minutesElement.innerText = minutes
+        }
+        if (minutes > 59) {
+            hours++
+            // hoursElement.innerText = '0' + hours
+            minutes = 0
+            minutesElement.innerText = '0' + minutes
+        }
+
+        //Часы
+        if (hours < 9) {
+            hoursElement.innerText = '0' + hours
+        }
+        if (hours > 9) {
+            hoursElement.innerText = hours
+        }
+        if (hours > 59) {
+            seconds = 0
+        }
+} ,1000);
 }
 
-ToDo.changeStatus("make a bed", "In Progress")
-ToDo.addTask("read book", "Done")
-ToDo.deleteTask("write a post")
-ToDo.showList()
-ToDo.showListRevet()
+function stopTimer () {
+    clearInterval (interval)
+}
 
-
-
-
-
-
-
-
-
-
-  
+button.addEventListener ('click', () => {
+    isActive = !isActive;
+    isActive ? startTimer() : stopTimer ();
+})
