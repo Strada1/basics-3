@@ -1,5 +1,6 @@
+@import 'variables';
+@import "functions";
 @import "base";
-
-body {
-  font-size: 18px;
-}
+@import "common";
+@import "components/todo";
+@import "UI/styly";

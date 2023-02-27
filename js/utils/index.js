@@ -1,5 +1,5 @@
- export function resetFields(fields = {}) {
-  for (let field in fields) {
-    fields[field] = '';
+ export function resetFields(fields = []) {
+  for (let field of fields) {
+    field = '';
   }
  }
