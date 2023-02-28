@@ -1,0 +1,77 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+	padding: 0;
+}
+.wrapper {
+	font-size: 18px;
+	display: flex;
+	justify-content: center;
+	max-width: 550px;
+	min-height: 800px;
+	border: 3px solid #000;
+	margin: 0 auto;
+	padding-top: 25px;
+	padding-bottom: 12px;
+}
+.priority {
+	text-align: center;
+	font-family: "Roboto";
+	font-style: normal;
+	font-weight: 400;
+	font-size: 28px;
+	line-height: 21px;
+	color: #000000;
+	margin-bottom: 12px;
+}
+
+.addTask {
+	display: flex;
+	border: 1px solid #000;
+	justify-content: space-between;
+	margin-bottom: 8px;
+}
+
+.text{
+	max-width: 370px;
+	padding:  12px 0px
+}
+
+.taskCheckbox {
+	padding: 12px;
+}
+
+.enter{
+	border: none;
+	width: 100%;
+}
+
+.enter:hover, :active, :focus{
+	outline: 0;
+   outline-offset: 0
+}
+
+.divWrap{
+	border: 1px solid #000;
+	display: flex;
+	justify-content: space-between;
+	width: 510px;
+	height: 45px;
+	margin-bottom: 8px;
+}
+
+.enter:hover{
+	background: #494949;
+}
+.buttonAdd, .buttonDel{
+	margin: 12px 12px 0px 0px;
+	width: 1em;
+	height: 1em;
+	background-color: rgb(3, 3, 3);
+	clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);
+}
+
