@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>strada</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="todo__wrapper">
+    <div class="todo__block" id="todoBlockHigh">
+      <h3 class="todo__title">HIGH</h3>
+      <form onsubmit="addCard()" id="form"  class="todo__form">
+        <input class="todo__input" type="text" id="input" placeholder="Добавить важных дел">
+        <button id="button" type="submit" class="todo__button">+</button>
+      </form>
+
+
+      
+      
+      
+
+
+    </div>
+    <div class="todo__block" id="todoBlockLow">
+      <h3 class="todo__title">LOW</h3>
+      <form class="todo__form">
+        <input class="todo__input" type="text" placeholder="Добавить важных дел">
+        <button class="todo__button">+</button>
+      </form>
+
+      
+  </main>
+  <script src="index.js"></script>
+</body>
+</html>
