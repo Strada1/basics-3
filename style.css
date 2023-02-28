@@ -1,0 +1,111 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    box-sizing: border-box;
+}
+
+body{
+    text-align: center;
+    min-height: 100vh;
+    background-color: #252525;
+    color: #ffffff;
+}
+
+.todo{
+    width: 460px;
+    margin: 200px auto;
+}
+
+input{
+    background-color: #303030;
+    color: #ffffff;
+}
+
+.todo__priority-title{
+    margin: 16px 0 16px 0;
+}
+
+.todo__task{
+    border: 1px #ffffff solid;
+    border-radius: 6px;
+    padding: 12px 12px;
+    width: 100%;
+    margin-top: 12px;
+    transition: background 0.5s ease;
+    position: relative;
+}
+
+.todo__task:focus{
+    outline: none;
+}
+
+.todo__task:hover{
+   background: #006dd3;
+}
+
+.todo__label{
+    display: block;
+    text-align: left;
+    line-height: 21px;
+    max-width: 370px;
+    margin-left: 45px;
+    position: relative;
+    cursor: pointer;
+}
+
+label input{
+    appearance: none;
+    margin-left: -4px;
+    position: relative;
+}
+
+.checkbox{
+    border: 2px solid #998899;
+    width: 21px;
+    height: 21px;
+    position: absolute;
+    border-radius: 50%;
+    top: 0;
+    left: -40px;
+    cursor: pointer;
+}
+
+label input:checked ~ .checkbox::after {
+    content: "";
+    width: 13px;
+    height: 13px;
+    position: absolute;
+    border-radius: 50%;
+    top: 2px;
+    left: 2px;
+    background-color: #C4C4C4; 
+}
+
+.todo__button{
+    border: none;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    font-size: 0;
+}
+
+.add-button{
+    background: url("./add-icon.svg");
+    top:25px;
+    right: 10px;
+}
+
+.todo__form{
+    position: relative;
+    width: 460px;
+}
+
+.delete-button{
+    background: url("./delete-icon.svg") no-repeat;
+    top: 15px;
+    right: 10px;
+}
