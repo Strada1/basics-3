@@ -1,0 +1,102 @@
+@import "../variables/colors.scss";
+.todo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 700px;
+  padding: 16px 8px;
+  background-color: $base-color;
+  box-shadow: 5px 4px 10px rgba(0, 0, 0, 0.25);
+  &__form {
+    position: relative;
+    margin-bottom: 12px;
+  }
+  &__form-input {
+    width: 100%;
+    padding: 12px;
+    background: #f9f9f9;
+    border: 1px solid #989898;
+    border-radius: 6px;
+    position: relative;
+  }
+
+  &__form-btn {
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    right: 12;
+    top: 10;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+  &__list {
+    list-style: none;
+  }
+
+  &__item {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 12px;
+    background-color: $not-done-color;
+    border-radius: 6px;
+    &:not(:last-child) {
+      margin-bottom: 8px;
+    }
+    &--done {
+      background-color: $done-color;
+    }
+  }
+  &__item-text {
+    padding: 0 12px;
+  }
+  &__item-btn {
+    border: none;
+    background-color: transparent;
+    transform: rotate(45deg);
+    cursor: pointer;
+    margin-top: -5px;
+    margin-right: -5px;
+  }
+  &__item-input {
+    display: block;
+    cursor: pointer;
+    width: 21px;
+    height: 21px;
+    position: relative;
+    margin-right: 12px;
+  }
+  &__item-checkbox {
+    visibility: hidden;
+    &:checked ~ .todo__item-checkbox-span::after {
+      display: block;
+    }
+  }
+  &__item-checkbox-span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 21px;
+    height: 21px;
+    display: block;
+    border: 1px solid #998899;
+    border-radius: 100%;
+
+    &::after {
+      position: absolute;
+      display: none;
+      top: 53%;
+      left: 53%;
+      transform: translate(-53%, -53%);
+      width: 15px;
+      height: 15px;
+      content: "";
+      background-color: #998899;
+      border-radius: 100%;
+    }
+  }
+}

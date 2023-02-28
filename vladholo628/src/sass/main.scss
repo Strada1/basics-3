@@ -1,11 +1,16 @@
-@import "./normalize.scss";
-@import "./container/container";
-@import "./components/calculator.scss";
-@import "./components/calculator__form.scss";
-@import "./components/history.scss";
+@import "./components/todo.scss";
+@import "./components/category.scss";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
 
 body {
-  background-image: url("../images/My-Neighbor-Totoro-Scenery-hayao-miyazaki-41589065-1280-693.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-color: #f9f9f9;
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21px;
 }

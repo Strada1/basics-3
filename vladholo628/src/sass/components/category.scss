@@ -1,0 +1,10 @@
+@import "../variables/colors.scss";
+.category {
+  margin-bottom: 10px;
+  &__title {
+    text-align: center;
+    color: $heading-color;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+}
