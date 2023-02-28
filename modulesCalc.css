@@ -1,0 +1,65 @@
+body {
+    background: rgb(196, 246, 252);
+}
+.calc {
+    background-color: rgb(196, 196, 196);
+    box-shadow: 0px 0px 15px 5px rgba(14, 14, 14, 0.4);
+    border: 5px solid rgb(154, 154, 154);
+    border-radius: 15px;
+    margin-top: 10%;
+    margin-inline: 10%;
+    margin-bottom: 20px;
+    padding: 5%;
+    display: flex;
+    justify-content: center;
+}
+input {
+    padding: 5px;
+    font-size: 2em;
+    width: 50%;
+}
+button {
+    margin-inline: 5px;
+    font-size: 2em;
+}
+select {
+    margin-inline: 5px;
+    padding: 5px;
+    font-size: 2em;
+    appearance: none;
+}
+.result-copy {
+    margin: auto;
+    margin-top: 3px;
+    width: fit-content;
+    position: relative;
+    font-size: 2em; 
+    font-family: Arial, Helvetica, sans-serif; 
+    padding-top: 7px; background: rgb(246, 246, 246); 
+    padding-inline: 5px; 
+    border: 1px solid black;
+    border-radius: 5px;
+}
+.result-copy:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 4px 4px rgba(34, 60, 80, 0.2);
+}
+#result {
+    font-size: 2em; 
+    font-family: Arial, Helvetica, sans-serif; 
+    padding-top: 7px; background: rgb(246, 246, 246); 
+    padding-inline: 5px; 
+    border: 1px solid black;
+}
+button:hover {
+    cursor: pointer;
+    box-shadow: 4px 4px 8px 5px rgba(34, 60, 80, 0.2);
+}
+select:hover {
+    cursor: pointer;
+    box-shadow: 4px 4px 8px 5px rgba(34, 60, 80, 0.2);
+}
+input:hover {
+    cursor: pointer;
+    box-shadow: 4px 4px 8px 5px rgba(34, 60, 80, 0.2);
+}
