@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/calculator.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="calculator">
+    <input type="text" id="left-operand">
+    <select id="operation">
+      <option value="+">+</option>
+      <option value="-">-</option>
+      <option value="*">*</option>
+      <option value="/">/</option>
+    </select>
+    <input type="text" id="right-operand">
+    <button id="calculate">=</button>
+    <span id="result">0</span>
+  </div>
+  <p>Предыдущие результаты:</p>
+  <div class="history-results"></div>
+  
+  <script src="./scripts/calculator.js" type="module"></script>
+  <!-- <script src="./scripts/history-results.js" type="module"></script> -->
+</body>
+
+</html>
