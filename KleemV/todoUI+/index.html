@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="style.css" />
+    <script src="./main.js" defer></script>
+    <title>TODO</title>
+  </head>
+  <body>
+    <div class="list high">
+      <legend class="title">HIGH</legend>
+      <form class="new_task section" id="addTask">
+        <input
+          type="text"
+          class="new_task"
+          id="addTextTask"
+          placeholder="Добавить задачу"
+        />
+        <button class="add_button" type="submit" id="buttonAdTask">+</button>
+      </form>
+      <form class="task section">
+        <input class="check_btn" type="radio" />
+        <p class="todo_text">
+          Вот вам и супер интересная тема. Вы наверняка заметили что ваши файлы
+          с кодом становятся все объемнее, что хочется вынести некоторые вещи
+          куда-то за пределы основной программы.
+        </p>
+        <button class="del_button">+</button>
+      </form>
+      <form class="task section">
+        <input class="check_btn" type="radio" />
+        <p class="todo_text">Сверстать этот TODO list</p>
+        <button class="del_button">+</button>
+      </form>
+      <form class="task section">
+        <input class="check_btn" type="radio" />
+        <p class="todo_text">Начать делать задачу</p>
+        <button class="del_button">+</button>
+      </form>
+    </div>
+    <div class="list low">
+      <legend class="title">LOW</legend>
+      <form class="new_task section" id="addTask">
+        <input
+          type="text"
+          class="new_task"
+          id="newLowTask"
+          placeholder="Добавить"
+        />
+        <button class="add_button">+</button>
+      </form>
+      <form class="task section">
+        <input class="check_btn" type="radio" />
+        <p class="todo_text">Посмотреть ютубчик</p>
+        <button class="del_button">+</button>
+      </form>
+    </div>
+  </body>
+</html>
