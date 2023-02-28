@@ -1,0 +1,164 @@
+* {
+    box-sizing: border-box;
+}
+
+p {
+    margin: 0;
+}
+
+body {
+    position: relative;
+    background-color: #000000;
+    margin: 0;
+    padding: 0;
+    color: #000000;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+}
+
+.wrapper__form-todo {
+    max-width: 700px;
+    width: 74.66%;
+    padding: 0 50px;
+    margin: auto;
+}
+
+@media (max-width: 768px) {
+    .todo-wrapper {
+        width: 100%;
+        padding: 20px;
+    }
+}
+
+.form-todo {
+    padding: 25px 8px 200px;
+    background-color: #ffffff;
+}
+
+.wrapper__tasks legend {
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    text-align: center;
+    padding-top: 25px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+}
+
+.wrapper__add-task {
+    position: relative;
+    display: flex;
+}
+
+.wrapper__tasks {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+.field__add-task {
+    outline: none;
+    position: relative;
+    padding: 12px;
+    width: 100%;
+    border: 1px solid #989898;
+    border-radius: 6px;
+    margin-bottom: 8px;
+}
+
+.task-wrapper {
+    position: relative;
+    display: flex;
+    border: 1px solid #989898;
+    border-radius: 6px;
+    margin-bottom: 8px;
+}
+
+.task-wrapper label {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.task-check {
+    position: absolute;
+    top: 14px;
+    left: 12px;
+    display: inline-block;
+    margin: 0;
+}
+
+.task-text {
+    padding: 12px 45px;
+}
+
+/* кнопка добавления */
+.button__add-task {
+    position: absolute;
+    top: 13px;
+    right: 12px;
+
+    width: 13px;
+    height: 13px;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    z-index: 1;
+}
+
+.button__add-task span {
+    position: absolute;
+    display: inline-block;
+    width: 13px;
+    height: 1px;
+    background-color: #998899;
+    transform: rotate(90deg);
+    top: 53%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.button__add-task span::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 13px;
+    height: 1px;
+    background-color: #998899;
+    transform: rotate(90deg);
+}
+
+/* кнопка удаления */
+.button__delete-task {
+    position: absolute;
+    top: 13px;
+    right: 12px;
+
+    width: 13px;
+    height: 13px;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+}
+
+.button__delete-task-line {
+    position: absolute;
+    display: inline-block;
+    width: 13px;
+    height: 1px;
+    background-color: #998899;
+    transform: rotate(45deg);
+    top: 6px;
+    left: 0;
+}
+
+.button__delete-task-line::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 13px;
+    height: 1px;
+    background-color: #998899;
+    transform: rotate(90deg);
+}

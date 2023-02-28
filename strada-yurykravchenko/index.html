@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+        <title>TODO</title>
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="wrapper__form-todo">
+                <form class="form-todo" action="" method="get">
+                    <fieldset class="wrapper__tasks">
+                        <legend>HIGH</legend>
+                        <div class="wrapper__add-task">
+                            <button class="button__add-task" type="submit">
+                                <span></span>
+                            </button>
+                            <input class="field__add-task" type="text" value="" placeholder="Добавить важных дел" />
+                        </div>
+                        <div class="tasks-high__wrapper">
+                            <div class="task-wrapper">
+                                <label>
+                                    <input class="task-check" type="radio" />
+                                </label>
+                                <p class="task-text">Вот вам и супер интересная тема. Вы наверняка заметили что ваши файлы с кодом становятся все объемнее, что хочется вынести некоторые вещи куда-то за пределы основной программы.</p>
+                                <button class="button__delete-task" type="button">
+                                    <span class="button__delete-task-line"></span>
+                                </button>
+                            </div>
+                            <div class="task-wrapper">
+                                <label>
+                                    <input class="task-check" type="radio" />
+                                </label>
+                                <p class="task-text">Сверстать этот TODO list</p>
+                                <button class="button__delete-task" type="button">
+                                    <span class="button__delete-task-line"></span>
+                                </button>
+                            </div>
+                            <div class="task-wrapper">
+                                <label>
+                                    <input class="task-check" type="radio" />
+                                </label>
+                                <p class="task-text">Начать делать задачу</p>
+                                <button class="button__delete-task" type="button">
+                                    <span class="button__delete-task-line"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset class="wrapper__tasks">
+                        <legend>LOW</legend>
+                        <div class="wrapper__add-task">
+                            <button class="button__add-task" type="submit">
+                                <span class="button__delete-task-line"></span>
+                            </button>
+                            <input class="field__add-task" type="text" placeholder="Добавить" />
+                        </div>
+                        <div class="tasks-low__wrapper">
+                            <div class="task-wrapper">
+                                <label>
+                                    <input class="task-check" type="radio" />
+                                </label>
+                                <p class="task-text">Посмотреть ютубчик</p>
+                                <button class="button__delete-task" type="button">
+                                    <span class="button__delete-task-line"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+
+        <template class="template-task">
+            <div class="task-wrapper">
+                <label>
+                    <input class="task-check" type="radio" />
+                </label>
+                <p class="task-text">Вот вам и супер интересная тема. Вы наверняка заметили что ваши файлы с кодом становятся все объемнее, что хочется вынести некоторые вещи куда-то за пределы основной программы.</p>
+                <button class="button__delete-task" type="button">
+                    <span class="button__delete-task-line"></span>
+                </button>
+            </div>
+        </template>
+
+        <script src="main.js" type="module"></script>
+    </body>
+</html>
