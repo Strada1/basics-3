@@ -1,0 +1,44 @@
+.main {
+    text-align: center;
+    height: auto;
+    width: 476px;
+    border: 1px solid black;
+    margin: auto;
+}
+.form {
+    border: 1px solid black;
+    width: 415px;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    border-radius: 5px;
+}
+.inputTodo {
+    margin: auto;
+    margin-left: 10px;
+    width: 400px;
+    height: 20px;
+    border: none;
+}
+.inputButton {
+    border: none;
+    background: none;
+    font-size: 15px;
+    cursor: pointer;
+}
+.todo {
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 415px;
+    height: auto;
+    display: flex;
+    margin: 10px 30px 10px 30px;
+    justify-content: space-between;
+}
+.closeButton {
+    border: none;
+    background: none;
+    font-size: 10px;
+    cursor: pointer;
+}
