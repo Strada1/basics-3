@@ -26,7 +26,7 @@ div.wrapper {
     background-color: rgb(231, 238, 238);
 }
 
-div.addTask, div.task {
+div.addTask, div.task, form.addTask {
     display: flex;
     justify-content: end;
     width: 100%;
@@ -34,6 +34,11 @@ div.addTask, div.task {
     margin: 4px;
     border-radius: 6px;
     border: 1px solid black;
+}
+
+form.addTask {
+    margin: 0;
+    border: 0;
 }
 
 div.containing {
