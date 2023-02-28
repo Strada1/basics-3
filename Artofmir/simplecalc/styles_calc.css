@@ -67,3 +67,16 @@ body {
   color: var(--c-white);
   cursor: pointer;
 }
+
+.output {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+} 
+
+.removable {
+  color: rgba(30, 65, 64, 0.706);
+}
+.removable:hover {
+  cursor: pointer;
+}

@@ -1,4 +1,7 @@
-let entr = document.getElementById('enter');
+const entr = document.getElementById('enter');
+const outpt = document.getElementById('span');
+
+let acc = 0;
 
 calc = (a, b, operation) => {
 
@@ -19,29 +22,53 @@ calc = (a, b, operation) => {
   };
 };
 
-entr.addEventListener('click', calculate = () => {
+removeDiv = (divNum) => {
+  divNum.remove();
+};
+
+createDiv = (data) => {
+  const newDiv = document.createElement('div');
+  newDiv.textContent = data;
+  newDiv.className = 'removable';
+  const newSpan = document.querySelector('#output');
+  newSpan.insertBefore(newDiv, outpt);
+  newDiv.addEventListener('click', function (e) {
+    e.stopPropagation();
+    removeDiv(newDiv);
+  });
+};
+
+calculate = () => {
   
-  let outpt = document.getElementById('span');
-  let a = Number(document.getElementById('firstNumber').value);
-  let b = Number(document.getElementById('secondNumber').value);
-  let op = document.querySelector('#oper');
-  let operation = op.value;
+  const numberOne = Number(document.getElementById('firstNumber').value);
+  const numberTwo = Number(document.getElementById('secondNumber').value);
+  const calcOperation = document.querySelector('#oper').value;
 
-  console.log(`a = ${a} , b = ${b}, oper: ${operation}`);
+  console.log(`enter: a = ${numberOne} , b = ${numberTwo}, oper: ${calcOperation}`);
 
-  result = calc (a, b, operation);
+  let result = calc (numberOne, numberTwo, calcOperation);
 
   if ((typeof result) == 'string') {
 
     outpt.textContent = result;
+    acc = result;
 
   } else {
 
-    result = result.toFixed(6);
-    outpt.textContent = parseFloat(result);
+    outpt.textContent = parseFloat(`${result.toFixed(6)}`);
+    result = parseFloat(result.toFixed(6));
 
   };
-});
+
+  if (result !== acc) {
+
+    createDiv(acc);
+    acc = parseFloat(`${result.toFixed(6)}`);
+
+  };
+};
+
+entr.addEventListener('click', calculate);
 
 
 
