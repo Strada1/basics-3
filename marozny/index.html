@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator UI</title>
+  </head>
+  <body>
+    <input type="number" id="firstNumber" />
+    <select id="operations">
+      <option value="+">+</option>
+      <option value="-">-</option>
+      <option value="*">*</option>
+      <option value="/">/</option>
+    </select>
+    <input type="number" id="secondNumber" />
+    <button id="calculation">=</button>
+    <span id="result"></span>
+    <div id="resultShow" class="resultShow"></div>
+    <script type="module" src="./constants.js"></script>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
