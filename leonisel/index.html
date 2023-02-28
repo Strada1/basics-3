@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TO-DO</title>
+  <link rel="stylesheet" href="./styles/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+  <main class="main">
+    <div class="container">
+      <div class="todo-wrapper">
+        <div class="todo-container">
+          <div class="head-text">HIGH</div>
+          <div class="high-box">
+            <div class="inputs-wrapper">
+              <input type="text" class="inputs-enter-data" placeholder="Добавить важных дел">
+              <span class="add-task-btn"></span>
+            </div>
+            <div class="task-box">
+              <label class="label-checkbox-task">
+                <input type="checkbox" class="input-checkbox-task">
+                <span class="fake-checkbox"></span>
+              </label>
+              Вот вам и супер интересная тема. Вы наверняка заметили что ваши файлы с кодом становятся все объемнее, что хочется вынести некоторые вещи куда-то за пределы основной программы.
+              <span class="close-task-btn"></span>
+            </div>
+            <div class="task-box">
+              <label class="label-checkbox-task">
+                <input type="checkbox" class="input-checkbox-task">
+                <span class="fake-checkbox"></span>
+              </label>
+              Сверстать этот TODO list
+              <span class="close-task-btn"></span>
+            </div>
+            <div class="task-box" style="background: #F4F4F4;">
+              <label class="label-checkbox-task">
+                <input type="checkbox" class="input-checkbox-task">
+                <span class="fake-checkbox" id="delete-it"></span>
+              </label>
+              Начать делать задачу
+              <span class="close-task-btn"></span>
+            </div>
+          </div>
+          <div class="head-text">LOW</div>
+          <div class="low-box">
+            <div class="inputs-wrapper">
+              <input type="text" class="inputs-enter-data" placeholder="Добавить важных дел">
+              <span class="add-task-btn"></span>
+            </div>
+            <div class="task-box">
+              <label class="label-checkbox-task">
+                <input type="checkbox" class="input-checkbox-task">
+                <span class="fake-checkbox"></span>
+              </label>
+              Посмотреть ютубчик
+              <span class="close-task-btn"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script type="module" src="./js/main.js"></script>
+</body>
+</html>
+
