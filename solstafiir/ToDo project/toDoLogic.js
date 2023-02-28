@@ -25,7 +25,7 @@ function createTask() {
   deleteTaskButton.className = "delete-task-button";
   deleteTaskButton.textContent = "+";
 
-  document.body.appendChild(taskCanvas);
+  highForm.appendChild(taskCanvas);
   taskCanvas.prepend(content);
   taskCanvas.prepend(checkBox);
   taskCanvas.appendChild(deleteTaskButton);
