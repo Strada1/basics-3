@@ -1,0 +1,42 @@
+body {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	background-color: #1e1e1e;
+	max-width: 3840px;
+	margin: 0;
+}
+
+.calc-box {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	height: 800px;
+	width: 950px;
+	margin-top: 65px;
+	border-radius: 103px;
+	background-color: #ffffff;
+}
+
+.calc-content input {
+	font-size: 16px;
+	width: 95px;
+	height: 33px;
+}
+
+.calc-content select {
+	font-size: 16px;
+	width: 39px;
+	height: 33px;
+	background-color: #1e1e1e;
+	color: #ffffff;
+}
+
+.calc-content button {
+	font-size: 16px;
+	width: 39px;
+	height: 33px;
+	border-radius: 4px;
+	background-color: #1e1e1e;
+	color: #ffffff;
+}
