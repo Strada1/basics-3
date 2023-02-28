@@ -1,33 +1,38 @@
-let one = document.getElementById('num1.value');
-let two = document.getElementById('num2.value');
+let one = document.getElementById('num1');
+let two = document.getElementById('num2');
+let a = one.value;
+let b = two.value;
 let operator = document.getElementById('operator');
 let result = document.getElementById('result');
 let submit = document.getElementById('submit');
-let selectValue = operator.options[operator.selectedIndex].value;
-let res;
+
+
 
 let calculate = function() {
-
+  let selectValue = operator.value;
+  let a = +one.value;
+  let b = +two.value;
+  let res;
 
      switch(selectValue) {
     case '+':
-      result = one + two;
+      res = a + b;
       break;
       
     case '-':
-      result = one - two;
+      res = a - b;
       break;
         
     case '*':
-      result = one * two;
+      res = a * b;
       break;
           
     case '/':
-      result = one / two;
+      res = a / b;
       break;
     };
-    alert(result);
-    //return result.textContent = result
+   alert(+res);
+     result.innerHTML= res;
 };
 
 submit.addEventListener('click', calculate);
