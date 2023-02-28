@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO UI</title>
+    <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script type="module" src="main.js"></script>
+</head>
+
+<body>
+
+    <main>
+        <div class="highPriorityTasks">
+            <h1>HIGH</h1>
+            <form class="inputTaskForm">
+                <input class="inputTask" placeholder="Добавить к списку важных дел" id="inputTaskHigh">
+                <button class="btnTask" id="addTaskHigh" type="submit"><span class="material-symbols-outlined">
+                        add
+                    </span></button>
+            </form>
+            <div class="tasksContainer">
+                <div class="taskWrapper">
+                    <input type="checkbox" class="checkboxTask">
+                    <div class="taskText">Вот вам и супер интересная тема.
+                        Вы наверняка заметили что ваши файлы с кодом становятся все объемнее, что хочется вынести
+                        некоторые вещи куда-то за пределы основной программы.</div>
+                    <button class="btnTask"><span class="material-symbols-outlined">
+                        close
+                        </span></button>
+                </div>
+                <div class="taskWrapper">
+                    <input type="checkbox" class="checkboxTask">
+                    <div class="taskText">Сверстать этот TODO лист</div>
+                    <button class="btnTask"><span class="material-symbols-outlined">
+                        close
+                        </span></button>
+                </div>
+                <div class="taskWrapper">
+                    <input type="checkbox" class="checkboxTask">
+                    <div class="taskText">Начать делать задачу</div>
+                    <button class="btnTask"><span class="material-symbols-outlined">
+                        close
+                        </span></button>
+                </div>
+            </div>
+        </div>
+        <div class="lowPriorityTasks">
+            <h1>LOW</h1>
+            <div class="inputTaskForm">
+                <input class="inputTask" placeholder="Добавить" id="inputTaskLow">
+                <button class="btnTask" id="addTaskLow"><span class="material-symbols-outlined">
+                        add
+                    </span></button>
+            </div>
+            <div class="tasksContainer">
+                <div class="taskWrapper">
+                    <input type="checkbox" class="checkboxTask">
+                    <div class="taskText">Посмотреть ютубчик</div>
+                    <button class="btnTask"><span class="material-symbols-outlined">
+                        close
+                        </span></button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="./script.js"></script>
+</body>
+
+</html>
