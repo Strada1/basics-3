@@ -9,46 +9,29 @@
 </head>
 <body>
   <main class="todo__wrapper">
-    <div class="todo__block">
+    <div class="todo__block" id="todoBlockHigh">
       <h3 class="todo__title">HIGH</h3>
-      <form class="todo__form">
-        <input class="todo__input" type="text" placeholder="Добавить важных дел">
-        <button class="todo__button">+</button>
+      <form onsubmit="addCard()" id="form"  class="todo__form">
+        <input class="todo__input" type="text" id="input" placeholder="Добавить важных дел">
+        <button id="button" type="submit" class="todo__button">+</button>
       </form>
 
-      <div class="todo__card">
-        <input  class="card__checkbox" type="checkbox">
-        <label class="todo__description" >Вот вам и супер интересная тема. 
-          Вы наверняка заметили что ваши файлы с кодом становятся все объемнее, что хочется вынести некоторые вещи куда-то за пределы основной программы.</label>
-        <button class="todo__button">+</button>
-      </div>
-      <div class="todo__card">
-        <input  class="card__checkbox" type="checkbox">
-        <label class="todo__description" >Сверстать этот TODO list</label>
-        <button class="todo__button">+</button>
-      </div>
-      <div class="todo__card">
-        <input  class="card__checkbox" type="checkbox">
-        <label class="todo__description">Начать делать задачу</label>
-        <button class="todo__button">+</button>
-      </div>
+
+      
+      
+      
 
 
     </div>
-    <div class="todo__block">
+    <div class="todo__block" id="todoBlockLow">
       <h3 class="todo__title">LOW</h3>
       <form class="todo__form">
         <input class="todo__input" type="text" placeholder="Добавить важных дел">
         <button class="todo__button">+</button>
       </form>
 
-      <div class="todo__card">
-        <input  class="card__checkbox" type="checkbox">
-        <label class="todo__description">Посмотреть ютубчик</label>
-        <button class="todo__button">+</button>
-      </div>
-    </div>
+      
   </main>
-  
+  <script src="index.js"></script>
 </body>
 </html>
