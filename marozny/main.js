@@ -1,37 +1,31 @@
-let firstNumber = document.getElementById('firstNumber');
-let secondNumber = document.getElementById('secondNumber');
-let operations = document.getElementById('operations');
-let calculation = document.getElementById('calculation');
-let result = document.getElementById('result');
+import { firstNumber, secondNumber, operations, result, resultShow, calculation } from "./constants.js";
 
-function go() {
-switch (operations.options[operations.selectedIndex].text) {
-    case '+': 
-   plus();
-    break;
-    case '-': 
-    minus();
-    break;
-    case '*': 
-    multi();
-    break;
-    case '/': 
-    divide();
-    break;
-}
-}
-
-function plus() {
-    result.textContent = Number(firstNumber.value) + Number(secondNumber.value);
-}
-function minus() {
-    result.textContent = Number(firstNumber.value) - Number(secondNumber.value);
-}
-function multi() {
-    result.textContent = Number(firstNumber.value) * Number(secondNumber.value);
-}
-function divide() {
-    result.textContent = Number(firstNumber.value) / Number(secondNumber.value);
-}
-
-calculation.addEventListener('click', go);
+calculation.addEventListener('click', function (){
+    const newDiv = document.createElement('div');
+    switch (operations.value) {
+        case '+': 
+        result.innerHTML = Number(firstNumber.value) + Number(secondNumber.value);
+        newDiv.textContent = result.innerHTML;
+        resultShow.appendChild(newDiv);
+        break;
+        case '-': 
+        result.innerHTML = Number(firstNumber.value) - Number(secondNumber.value);
+        newDiv.textContent = result.innerHTML;
+        resultShow.appendChild(newDiv);
+        break;
+        case '*': 
+        result.innerHTML = Number(firstNumber.value) * Number(secondNumber.value);
+        newDiv.textContent = result.innerHTML;
+        resultShow.appendChild(newDiv);
+        break;
+        case '/': 
+        result.innerHTML = Number(firstNumber.value) / Number(secondNumber.value);
+        newDiv.textContent = result.innerHTML;
+        resultShow.appendChild(newDiv);
+        break;
+    }
+    newDiv.addEventListener('click', function (){
+        newDiv.remove();
+        newDiv.removeEventListener;
+    });
+});

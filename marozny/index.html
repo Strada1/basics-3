@@ -9,14 +9,16 @@
   <body>
     <input type="number" id="firstNumber" />
     <select id="operations">
-      <option value="plus">+</option>
-      <option value="minus">-</option>
-      <option value="multi">*</option>
-      <option value="divide">/</option>
+      <option value="+">+</option>
+      <option value="-">-</option>
+      <option value="*">*</option>
+      <option value="/">/</option>
     </select>
     <input type="number" id="secondNumber" />
     <button id="calculation">=</button>
     <span id="result"></span>
-    <script src="./main.js"></script>
+    <div id="resultShow" class="resultShow"></div>
+    <script type="module" src="./constants.js"></script>
+    <script type="module" src="./main.js"></script>
   </body>
 </html>
