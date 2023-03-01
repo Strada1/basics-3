@@ -14,11 +14,13 @@ function Render() {
 }
 
 function append(key, priority, text, isDone) {
+    let isChecked
+    isDone ? isChecked = 'checked' : isChecked = '';
 
     tasksContainer[priority].insertAdjacentHTML(
         `afterbegin`,
         `<div class='taskWrapper' data-isDone=${isDone}>
-            <input type="radio" class="checkboxTask" data-key=${key}>
+            <input type="radio" class="checkboxTask" data-key=${key} ${isChecked}>
             <div class="taskText">${text}</div>
             <button class="btnTask delBtn" data-key=${key}><span class="material-symbols-outlined delBtn" data-key=${key}>
                 close

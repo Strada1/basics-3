@@ -77,14 +77,14 @@ h1 {
 }
 
 .taskWrapper[data-isDone='true'] {
-    opacity: 0.3;
-    background-color: rgb(177, 177, 177);
+    opacity: 0.5;
+    background-color: rgb(220, 220, 220);
 }
 .taskWrapper[data-isDone='true'] div.taskText {
     color: white;
 }
 .taskWrapper[data-isDone='true'] input.checkboxTask {
-    display: none;
+    /* display: none; */
 }
 
 .taskText {
