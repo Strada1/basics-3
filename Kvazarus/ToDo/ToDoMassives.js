@@ -1,9 +1,7 @@
 // Моя ошибка, или скорее недочёт, состоит в том, что я не использовал методы массива,такие как findIndex или includes
-const ToDo = {
+export const ToDo = {
     list: [
-        { taskName: "create a new practice task", status: "In Progress", priority:"high" },
-        { taskName: "make a bed", status: "Done", priority:"low" },
-        { taskName: "write a post", status: "ToDo", priority:"low" }
+// Example: { taskName: "create a new practice task", status: "In Progress", priority: "high" },
     ],
     changeStatus(name, status) {
         for (const task of this.list) {
@@ -13,7 +11,9 @@ const ToDo = {
                 return;
             }
         }
+        alert("This name doesn't exist. Write 'addTask' to create new task.");
         console.log("This name doesn't exist. Write 'addTask' to create new task.");
+        return "error";
     },
     changePriority(name, priority) {
         for (const task of this.list) {
@@ -23,13 +23,16 @@ const ToDo = {
                 return;
             }
         }
+        alert("This name doesn't exist. Write 'addTask' to create new task.");
         console.log("This name doesn't exist. Write 'addTask' to create new task.");
+        return "error";
     },
-    addTask(name, status = "ToDo", priority = "low") {
+    addTask(name, priority = "low", status = "ToDo") {
         for (const task of this.list) {
             if (name === task["taskName"]) {
+                alert("This name already exists. Write 'changeStatus' to change status of the task.");
                 console.log("This name already exists. Write 'changeStatus' to change status of the task.");
-                return;
+                return "error";
             }
         }
         this.list.push({ "taskName": name, "status": status, "priority": priority });
@@ -41,19 +44,21 @@ const ToDo = {
                 return;
             }
         }
+        alert("This name doesn't exist.");
         console.log("This name doesn't exist.");
+        return "error";
     },
     statusOrPriorityOut(statusOrPriority, isStatus = 0) {
         console.log(`${statusOrPriority}:`);
         let flag = false;
-        this.list.forEach (task => {
+        this.list.forEach(task => {
             let x;
             if (isStatus) {
                 x = task["status"];
             } else {
                 x = task["priority"];
             }
-            if (x.toLowerCase() === statusOrPriority.toLowerCase() || (x.slice(0, 2)+' '+x.slice(2)).toLowerCase() === statusOrPriority.toLowerCase) {
+            if (x.toLowerCase() === statusOrPriority.toLowerCase() || (x.slice(0, 2) + ' ' + x.slice(2)).toLowerCase() === statusOrPriority.toLowerCase || (x.slice(0, 2) + x.slice(3)).toLowerCase() === statusOrPriority.toLowerCase) {
                 console.log('\t' + task.taskName);
                 flag = true;
             }
@@ -68,9 +73,3 @@ const ToDo = {
         this.statusOrPriorityOut("low", false);
     }
 };
-
-ToDo.showList();
-ToDo.changeStatus("write a post", "Done");
-ToDo.addTask('to wash dishes');
-ToDo.deleteTask("create a new practice task");
-ToDo.showList();

@@ -8,7 +8,8 @@
 body,
 div.wrapper,
 div.highPriority,
-div.lowPriority {
+div.lowPriority,
+div.markedAsReadyDivs {
     display: flex;
     flex-direction: column;
     justify-content: start;
@@ -26,7 +27,9 @@ div.wrapper {
     background-color: rgb(231, 238, 238);
 }
 
-div.addTask, div.task, form.addTask {
+div.addTask,
+div.task,
+form.addTask {
     display: flex;
     justify-content: end;
     width: 100%;
@@ -48,7 +51,7 @@ div.containing {
     height: 100%;
 }
 
-span.ToDoText{
+span.ToDoText {
     word-wrap: break-word;
     max-width: 360px;
     margin: 10px 0 10px 0;
@@ -60,7 +63,8 @@ h2 {
     margin: 10px;
 }
 
-label, input {
+label,
+input {
     display: block;
     width: 100%;
     min-height: 45px;
@@ -81,7 +85,7 @@ button:hover {
 button.addTaskButton {
     background: url(https://www.freepnglogos.com/uploads/plus-icon/plus-icon-plus-math-icon-download-icons-9.png);
     background-size: 21px;
-    background-repeat:no-repeat;
+    background-repeat: no-repeat;
     background-position: center;
     width: 22px;
     min-height: 45px;
@@ -90,7 +94,7 @@ button.addTaskButton {
 button.deleteTaskButton {
     background: url(https://avatanplus.com/files/resources/original/5968a2c8f2ed115d40bbe123.png);
     background-size: 21px;
-    background-repeat:no-repeat;
+    background-repeat: no-repeat;
     background-position: center;
     width: 22px;
     height: 22px;
