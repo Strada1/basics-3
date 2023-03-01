@@ -1,4 +1,5 @@
 import Render from "./Render.js";
+import {getUniqueID} from './functions.js'
 
 function LocalStorageAdd(event) {
     
@@ -6,10 +7,10 @@ function LocalStorageAdd(event) {
 
     let obj = event.target[0];
 
-    if (obj.value === '') return
+    if (!obj.value.trim().length) return
 
     localStorage.setItem(
-        Date.now(),
+        getUniqueID(),
         JSON.stringify({
             priority: obj.dataset.priority,
             text: obj.value,

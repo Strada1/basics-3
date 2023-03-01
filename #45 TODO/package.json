@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "uniqid": "^5.4.0"
+  }
+}
