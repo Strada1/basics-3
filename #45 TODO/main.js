@@ -1,7 +1,7 @@
-import LocalStorageAdd from './modules/LocalStorageAdd.js';
 import Render from './modules/Render.js';
+import LocalStorageAdd from './modules/LocalStorageAdd.js';
 import LocalStorageDelete from './modules/LocalStorageDelete.js'
-
+import LocalStorageChange from './modules/LocalStorageChange.js'
 
 // Слушатель собыитя "DOMContentLoaded". Отрисовывает все элементы после загрузки страницы
 document.addEventListener('DOMContentLoaded', Render);
@@ -12,18 +12,7 @@ document.addEventListener('submit', (event) => {
 });
 
 // Слушатель собыитя "click". Удаляет элемент при нажатии на кнопку
-// document.addEventListener('click', (event) => {
-//     LocalStorageDelete(event);
-// });
-
-const delbtns = document.querySelectorAll('.btnTask')
-delbtns.forEach(btn => {
-    btn.addEventListener('click', (event) => {
-        LocalStorageDelete(event)
-    })
-})
-
-
-// document.addEventListener('click', () => {
-//     console.log(document.body.innerHTML)
-// })
+document.addEventListener('click', (event) => {
+    LocalStorageDelete(event);
+    LocalStorageChange(event);
+});

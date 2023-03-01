@@ -76,8 +76,15 @@ h1 {
     transition: 0.4s;
 }
 
-.taskWrapper.done {
-    background-color: #d5d5d5;
+.taskWrapper[data-isDone='true'] {
+    opacity: 0.3;
+    background-color: rgb(177, 177, 177);
+}
+.taskWrapper[data-isDone='true'] div.taskText {
+    color: white;
+}
+.taskWrapper[data-isDone='true'] input.checkboxTask {
+    display: none;
 }
 
 .taskText {
