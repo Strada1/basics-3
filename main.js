@@ -154,3 +154,4 @@ console.log(list)
 }
 addl.addEventListener('click',addNewLow)
 
+// я не понимаю флексбоксы и по этому сделал адаптацию через js
