@@ -1,6 +1,7 @@
 import Render from "./Render.js";
 
 function LocalStorageAdd(event) {
+    
     event.preventDefault();
 
     let obj = event.target[0];

@@ -80,11 +80,9 @@ h1 {
     opacity: 0.5;
     background-color: rgb(220, 220, 220);
 }
+
 .taskWrapper[data-isDone='true'] div.taskText {
     color: white;
-}
-.taskWrapper[data-isDone='true'] input.checkboxTask {
-    /* display: none; */
 }
 
 .taskText {
@@ -95,6 +93,7 @@ h1 {
     line-height: 21px;
     color: #202020;
     margin: 0 10px;
+    overflow-wrap: anywhere;
 }
 
 @media only screen and (max-width : 480px) {
@@ -103,6 +102,7 @@ h1 {
         padding: 8px;
     }
     main>* {
+        min-width: none;
         margin: 0 auto;
         width: 100vw;
     }

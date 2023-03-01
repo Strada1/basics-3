@@ -1,6 +1,7 @@
 const tasksContainer = document.querySelectorAll('.tasksContainer');
 
 function Render() {
+    
     tasksContainer.forEach(container => {
         container.querySelectorAll('*').forEach(n => n.remove());
     });
@@ -14,6 +15,7 @@ function Render() {
 }
 
 function append(key, priority, text, isDone) {
+    
     let isChecked
     isDone ? isChecked = 'checked' : isChecked = '';
 
