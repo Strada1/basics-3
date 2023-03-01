@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrapper">
+    <div class="main">
+        <div class="hight" id="todoBlockHigh" >
+            <p id="l">HIGHT</p>
+            <form id="subh" onsubmit="addNewHight()" ><input type="text" id="hight_input" placeholder="Добавить ну прям очень важное дело"></input>
+            <button id="add_hight">+</button>
+            </form>
+        </div>
+        <div class="low" id="todoBlockLow">
+            <p id="l">LOW</p>
+           <form id ="dubl" onsubmit="addNewLow()"> <input type="text"  id="low_input" placeholder="Добавить менее важное, но тоже дело"></input>
+            <button id="add_low">+</button>
+            </form>
+        </div>
+    </div>
+</div>
+<script  src="main.js"></script>
+</body>
+</html>
