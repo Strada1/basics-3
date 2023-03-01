@@ -24,30 +24,7 @@
                         add
                     </span></button>
             </form>
-            <div class="tasksContainer">
-                <div class="taskWrapper">
-                    <input type="checkbox" class="checkboxTask">
-                    <div class="taskText">Вот вам и супер интересная тема.
-                        Вы наверняка заметили что ваши файлы с кодом становятся все объемнее, что хочется вынести
-                        некоторые вещи куда-то за пределы основной программы.</div>
-                    <button class="btnTask"><span class="material-symbols-outlined">
-                            close
-                        </span></button>
-                </div>
-                <div class="taskWrapper">
-                    <input type="checkbox" class="checkboxTask">
-                    <div class="taskText">Сверстать этот TODO лист</div>
-                    <button class="btnTask"><span class="material-symbols-outlined">
-                            close
-                        </span></button>
-                </div>
-                <div class="taskWrapper">
-                    <input type="checkbox" class="checkboxTask">
-                    <div class="taskText">Начать делать задачу</div>
-                    <button class="btnTask"><span class="material-symbols-outlined">
-                            close
-                        </span></button>
-                </div>
+            <div class="tasksContainer" data-priority="0">
             </div>
         </div>
         <div class="lowPriorityTasks">
@@ -58,18 +35,10 @@
                         add
                     </span></button>
             </form>
-            <div class="tasksContainer">
-                <div class="taskWrapper">
-                    <input type="checkbox" class="checkboxTask">
-                    <div class="taskText">Посмотреть ютубчик</div>
-                    <button class="btnTask"><span class="material-symbols-outlined">
-                            close
-                        </span></button>
-                </div>
+            <div class="tasksContainer" data-priority="1">
             </div>
         </div>
     </main>
-    <script src="./script.js"></script>
 </body>
 
 </html>
