@@ -11,7 +11,9 @@ document.addEventListener('submit', (event) => {
     LocalStorageAdd(event);
 });
 
-// Слушатель собыитя "click". Удаляет элемент при нажатии на кнопку
+// Слушатель собыитя "click". 
+// Удаляет элемент при нажатии на кнопку
+// Отмечает задачу выполненной
 document.addEventListener('click', (event) => {
     LocalStorageDelete(event);
     LocalStorageChange(event);
