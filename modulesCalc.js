@@ -33,6 +33,6 @@ function calcResult() {
                 break;
         }
     }
-    SaveDelResult();
+    SaveDelResult(resultText);
 }
 button.addEventListener("click", calcResult);

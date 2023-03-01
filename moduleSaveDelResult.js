@@ -1,4 +1,4 @@
-export function SaveDelResult() {
+export function SaveDelResult(resultText) {
     let resultCopy = document.createElement("div");
     resultCopy.className = "result-copy";
     resultCopy.textContent = resultText.textContent;
