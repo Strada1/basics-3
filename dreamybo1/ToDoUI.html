@@ -1,0 +1,263 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ::-webkit-scrollbar{
+            border-radius: 5px;
+            background: rgb(186,255,184);
+            background: linear-gradient(180deg, rgba(186,255,184,1) 0%, rgba(239,132,253,1) 100%);
+        }
+        ::-webkit-scrollbar-button{
+            border-radius: 6px;
+            background: rgb(255,255,255);
+background: linear-gradient(170deg, rgba(255,255,255,1) 0%, rgba(255,97,103,1) 94%);
+        }
+        ::-webkit-scrollbar-thumb{
+            background: rgb(255,255,255);
+            background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(230,255,230,1) 50%, rgba(255,255,255,1) 100%);
+            border-radius: 10px;
+        }
+        form{
+            background: rgb(250,145,107);
+            background: linear-gradient(90deg, rgba(250,145,107,1) 0%, rgba(132,194,253,1) 100%);
+        }
+        code{
+            font-family: Courier New, monospace;
+            font-size: 30px;
+            margin-bottom: 10px;
+            margin-top: 5px;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            background: rgb(226,255,225);
+            background: linear-gradient(180deg, rgba(226,255,225,1) 0%, rgba(132,236,253,1) 100%);
+        }
+        #mainDiv{
+            overflow: auto;
+            background: rgb(255,249,157);
+            background: linear-gradient(90deg, rgba(255,249,157,1) 0%, rgba(198,245,255,1) 100%);
+            border: 3px solid rgb(237, 125, 142);
+            border-radius: 5px;
+            height: 688px;
+            width: 476px;
+        }
+        .textDiv{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #inputChildDiv1{
+            overflow: hidden;
+            border: 1px solid black;
+            border-radius: 6px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 460px;
+        }
+        #inputChildDiv2{
+            overflow: hidden;
+            border: 1px solid black;
+            border-radius: 6px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 460px;
+        }
+        #addHighDiv{
+            
+            background: url(https://www.svgrepo.com/download/494644/add2.svg) no-repeat center;
+            background-size: contain;
+            cursor: pointer;
+            width: 21px;
+            height: 21px;
+            
+        }
+        #addLowDiv{
+            
+            background: url(https://www.svgrepo.com/download/494644/add2.svg) no-repeat center;
+            background-size: contain;
+            cursor: pointer;
+            width: 21px;
+            height: 21px;
+            
+        }
+        .deleteDiv{
+            
+            background: url(https://www.svgrepo.com/download/494725/close.svg) no-repeat center;
+            background-size: contain;
+            cursor: pointer;
+            width: 21px;
+            height: 21px;
+            
+        }
+        .checkbox {
+            width: 21px;
+            height: 21px;
+            background-color: gray;
+            border-radius: 50%;
+            vertical-align: middle;
+            border: 1px solid gray;
+            appearance: none;
+            -webkit-appearance: none;
+            outline: none;
+            cursor: pointer;
+        }
+
+        .checkbox:checked {
+            background-color: rgb(77, 225, 255);
+            border: 1px solid rgb(77, 225, 255);
+            background-image: url(https://www.svgrepo.com/download/494649/arrow-bottom4.svg);
+            background-size: contain;
+        }
+        .inputs{
+            background: rgb(250,145,107);
+            background: linear-gradient(90deg, rgba(250,145,107,1) 0%, rgba(132,194,253,1) 100%);
+        }
+        input{
+            
+            outline: none;
+            border: 1px black; 
+            width: 460px;
+            height: 40px;
+        }
+        input::-webkit-input-placeholder {
+            color:white;
+        }
+        #inputDiv{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #addTask{
+            font-family: Courier New, monospace;
+        }
+        .tasksDiv{
+            border: 1px solid black;
+            border-radius: 6px;
+            width: auto;
+            display: flex;
+            justify-content: space-between;
+            overflow: hidden;
+            align-items: center;
+            width: 460px;
+            height: auto;
+            margin-top: 10px;
+        }
+        .tasksDivs{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #highTask{
+            box-sizing: border-box;
+            height: auto;
+            
+        }
+    </style>
+</head>
+<body>
+    <div id="mainDiv">
+        <div class="textDiv">
+            <code id="high">HIGH</code>
+        </div>
+        <div id="inputDiv">
+            <form id="inputChildDiv1" onsubmit="
+                
+                
+                
+                
+
+
+
+
+
+
+
+
+
+
+
+                
+                ">
+                <input class="inputs" id="highInput" value="" placeholder="Add HIGH priority task" type="text">
+                <div id="addHighDiv"></div>
+            </form>
+        </div>
+
+        <div id="highTask">
+            <div class="tasksDivs">
+                <div class="tasksDiv">
+                    <div><input type="checkbox" class="checkbox" /></div>
+                    <span> Сделать ToDo UI </span>
+                    <div><div class="deleteDiv"></div></div>
+                </div>
+            </div>
+    
+    
+            <div class="tasksDivs">
+                <div class="tasksDiv">
+                    <div><input type="checkbox" class="checkbox" /></div>
+                    <span> Нагнать отставание </span>
+                    <div><div class="deleteDiv"></div></div>
+                </div>
+            </div>
+    
+            <div class="tasksDivs">
+                <div class="tasksDiv">
+                    <div><input type="checkbox" class="checkbox" /></div>
+                    <span> Получить материалку </span>
+                    <div><div class="deleteDiv"></div></div>
+                </div>
+            </div>
+        </div>
+       
+
+
+       
+
+
+
+
+        <div class="textDiv">
+            <code id="low">LOW</code>
+        </div>
+        <div id="inputDiv">
+            <form id="inputChildDiv2">
+                <input class="inputs" id="lowInput" value="" placeholder="Add LOW priority task" type="text">
+                <div id="addLowDiv"></div>
+            </form>
+        </div>
+
+        <div id="lowTask">
+            <div class="tasksDivs">
+                <div class="tasksDiv">
+                    <div><input type="checkbox" class="checkbox" /></div>
+                    <span> Сделать дз по инстику </span>
+                    <div><div class="deleteDiv"></div></div>
+                </div>
+            </div>
+    
+    
+            <div class="tasksDivs">
+                <div class="tasksDiv">
+                    <div><input type="checkbox" class="checkbox" /></div>
+                    <span> Купить книгу </span>
+                    <div><div class="deleteDiv"></div></div>
+                </div>
+            </div>    
+        </div>
+        
+       
+
+
+    </div>
+    <script src="/ToDoInput.js">
+</body>
+</html>
