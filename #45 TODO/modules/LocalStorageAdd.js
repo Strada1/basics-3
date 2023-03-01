@@ -1,3 +1,5 @@
+import Render from "./Render.js";
+
 function LocalStorageAdd(event) {
     event.preventDefault();
 
@@ -15,6 +17,8 @@ function LocalStorageAdd(event) {
     )
 
     obj.value = '';
+
+    Render()
 }
 
 export default LocalStorageAdd

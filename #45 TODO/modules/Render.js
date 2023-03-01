@@ -4,12 +4,13 @@ function Render() {
     tasksContainer.forEach(container => {
         container.querySelectorAll('*').forEach(n => n.remove());
     });
-
+    
     Object.entries(localStorage).forEach(([key, value]) => {
         value = JSON.parse(value);
         let { priority, text, isDone } = value;
         append(key, priority, text, isDone)
     })
+    console.log('render()')
 }
 
 function append(key, priority, text, isDone) {
@@ -24,6 +25,7 @@ function append(key, priority, text, isDone) {
             </span></button>
         </div>`
     )
+
 }
 
 export default Render
