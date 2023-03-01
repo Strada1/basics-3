@@ -1,0 +1,133 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body{
+    animation-name: backgroundAnim;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+  }
+  .container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  @keyframes backgroundAnim {
+  0%   {background: #ff85e4}
+  25% {background: plum;}
+  50%  {background: pink}
+  75% {background: plum;}
+  100% {background: #ff85e4;}
+  }
+  .main{
+    max-width: 700px;
+    text-align: center;
+    background-color: #fff;
+    padding:20px;
+    border-radius:15px;
+    overflow-y: scroll;
+    max-height: 100vh;
+  }
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+  }
+  input::placeholder       {opacity: 1; transition: opacity 0.3s ease; font-size: 15px; font-weight: normal;}
+  input:focus::placeholder  {opacity: 0; transition: opacity 0.3s ease;}
+  #solution{
+    color:firebrick;
+  }
+  .todo{
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+  }
+  .priority{
+    margin-bottom: 10px;
+  }
+  .priority input{
+    border-radius: 5px;
+    background-color: #fff;
+    height: 40px;
+    padding: 5px;
+  }
+  .priority__task-add, .task{
+    border: 1px solid grey;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    background-color: #fff;
+  }
+  .priority__task-add input{
+    width: 100%;
+    border: none;
+    padding-left: 15px;
+    padding-right: 25px;
+  }
+  .task{
+    display: flex;
+    position: relative;
+    padding-bottom: 10px;
+  }
+  .priority__task-add {
+    position: relative;
+  }
+  .task label{
+    margin-top: 7px;
+    margin-left: 10px;
+    text-align: left;
+    font-size: 20px;
+    padding-right: 15px;
+  }
+  .priority__header{
+    margin-bottom: 10px;
+  }
+  #task{
+    margin-top: 12px;
+    min-width: 15px;
+    height: 15px;
+    background-color: white;
+    border-radius: 50%;
+    border: 1px solid gray;
+    appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    cursor: pointer;
+    margin-left: 5px;
+}
+ #task:checked{
+    background-color: gray;
+    box-shadow:inset 0px 0px 0px 2px #fff;
+ }
+ .task-remove, .task-add{
+    position: absolute;
+    right: 0;
+    top: 5px;
+    border: none;
+    background-color: rgba(0,0,0,0);
+    cursor: pointer;
+    font-size: 25px;
+    color: gray;
+ }
+ .task-add::before{
+    content: "\e145";
+    font-family:'Material Symbols Outlined';
+}
+  .task-remove::before{
+    content: "\e5cd";
+    font-family:'Material Symbols Outlined';
+  }
+  .task-add:hover{
+    color: green;
+  }
+  .task-remove:hover{
+    color: red;
+  }
+  .error::placeholder {
+    color: red;
+  }
+  .task-done {
+    background-color: #F8F8F8;
+  }
