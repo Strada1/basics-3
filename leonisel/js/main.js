@@ -1,67 +1,38 @@
-import {calc} from './calc.js';
+const forms = document.querySelectorAll('.forms');
+const highBox = document.querySelector('.high-box');
+const lowBox = document.querySelector('.low-box');
+const inputLow = document.querySelector('#input-low');
+const inputHigh = document.querySelector('#input-high');
 
-// const buttonEqual = document.getElementById('button-equal');
-// const inputs = document.querySelectorAll('.input-wrapper_window');
-// const select = document.querySelectorAll('.select');
-// const resultEqual = document.getElementById('result');
-// const output = document.querySelector('.output');
+function getInputData(event) {
+  event.preventDefault();
+  const dataForm = event.target[0].value;
+  const newElement = document.createElement('div');
 
-// let leftInputValue;
-// let rightInputValue;
-// let operator;
+  function createDivTemplate(dataForm) {
 
-// function getInput(e) {
-//   if(e.target.id == 'input-left') {
-//     leftInputValue = +e.target.value;
-//   }
-//   if(e.target.id == 'input-right') {
-//     rightInputValue = +e.target.value; 
-//   }
-// }
+    newElement.classList.add('task-box');
+    newElement.insertAdjacentHTML('afterbegin', `<label class="label-checkbox-task">
+                                                 <input type="checkbox" class="input-checkbox-task">
+                                                 <span class="fake-checkbox"></span>
+                                                 </label>
+                                                 ${dataForm}                                           
+                                                 <span class="close-task-btn"></span>`
+                                                 );
+    return newElement;                                     
+  }
 
-// function getOperator(e) {
-//   switch(e.target.value){
-//     case '+':
-//       operator = 'add';
-//       break;
-//     case '-':
-//       operator = 'subtract';
-//       break;
-//     case '*':
-//       operator = 'multi';
-//       break;
-//     case '/':
-//       operator = 'division';
-//       break;      
-//   }
-// }
+  if(event.target[0].id === 'input-high') {
+    createDivTemplate(dataForm);
+    highBox.append(newElement);
+  }
 
-// function getOutput(num) {
-//   const newOutput = document.createElement('div');
-//   newOutput.classList.add('output-items');
-//   output.prepend(newOutput);
-//   newOutput.textContent = num;
-// }
+  if(event.target[0].id === 'input-low') {
+    createDivTemplate(dataForm);
+    lowBox.append(newElement); 
+  }                                        
+}
 
-// function getEqual() {
-//   const result = calc(operator, leftInputValue, rightInputValue);
-//   resultEqual.textContent = result;
-//   getOutput(result);
-// }
-
-// for (const input of inputs) {
-//   input.addEventListener('input', getInput);
-// }
-
-// for (const option of select) {
-//   option.addEventListener('change', getOperator);
-// }
-
-// buttonEqual.addEventListener('click', getEqual);
-
-// output.addEventListener('click', function(event){
-//   let target = event.target;
-//   if(target.classList.contains('output-items')) {
-//     target.remove();
-//   }
-// });
+for(const elem of forms) {
+  elem.addEventListener('submit', getInputData);
+}

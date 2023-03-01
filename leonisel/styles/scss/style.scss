@@ -83,7 +83,7 @@ html {
               }
               .add-task-btn {
                 position: absolute;
-                top: 10px;
+                top: 12px;
                 right: 13px;
                 width: 18px;
                 height: 18px;
@@ -135,9 +135,12 @@ html {
                   transition: .3s;
                 }
 
-                #delete-it::before {
-                  opacity: 1;
-                }
+                // #task-done {
+                //   background: #F4F4F4;
+                // }
+                // #task-done::before {
+                //   opacity: 1;
+                // }
 
                 .input-checkbox-task:checked + .fake-checkbox::before {
                   opacity: 1;

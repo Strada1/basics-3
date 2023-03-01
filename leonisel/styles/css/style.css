@@ -65,7 +65,7 @@ html body .main .container .todo-wrapper .todo-container .inputs-wrapper ::place
 }
 html body .main .container .todo-wrapper .todo-container .inputs-wrapper .add-task-btn {
   position: absolute;
-  top: 10px;
+  top: 12px;
   right: 13px;
   width: 18px;
   height: 18px;
@@ -110,9 +110,6 @@ html body .main .container .todo-wrapper .todo-container .task-box .label-checkb
   transform: translate(-50%, -50%);
   opacity: 0;
   transition: 0.3s;
-}
-html body .main .container .todo-wrapper .todo-container .task-box .label-checkbox-task #delete-it::before {
-  opacity: 1;
 }
 html body .main .container .todo-wrapper .todo-container .task-box .label-checkbox-task .input-checkbox-task:checked + .fake-checkbox::before {
   opacity: 1;
