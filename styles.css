@@ -1,0 +1,145 @@
+@font-face {
+    font-family: "JetBrains Mono";
+    font-style: normal;
+    font-weight: 400;
+    src: url("fonts/JetBrainsMono-Regular.woff") format("woff2");
+    font-display: swap;
+  }
+  
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "JetBrains Mono";
+    background-color:antiquewhite;
+  }
+  
+  .button {
+    display: block;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    position: absolute;
+    border: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    cursor: pointer;
+  }
+  
+  .button-add {
+    left: 93%;
+    top: 60%;
+  }
+  
+  .button-delete {
+    left: 93%;
+    top: 15px;
+  }
+  
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+  }
+  
+  .container {
+    background-color: rgba(50, 252, 255, 0.15);
+    padding: 25px 8px;
+    border-radius: 1px;
+    filter: drop-shadow(4px 4px 18px rgba(171, 2, 30, 0.141));
+  }
+  
+  .high-priority-container,
+  .low-priority-container {
+    position: relative;
+    display: grid;
+    gap: 8px;
+    width: 460px;
+  }
+  
+  .high-priority-container {
+    margin-bottom: 20px;
+  }
+  
+  .high-priority-form,
+  .low-priority-form {
+    display: grid;
+    position: relative;
+  }
+  
+  .priority-title,
+  .priority-title {
+    justify-self: center;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  
+  .error-msg {
+    position: absolute;
+    right: 5px;
+    top: 14px;
+    font-size: 14px;
+  }
+  
+  .task {
+    display: grid;
+    grid-template-columns: 30px 1fr 25px;
+    margin-bottom: 8px;
+    padding: 12px 12px;
+    position: relative;
+    border: 1px solid #989898;
+    border-radius: 6px;
+  }
+  
+  .input-adding-task {
+    font-family: inherit;
+    font-size: 18px;
+    padding: 12px 45px 12px 12px;
+    border: 2px solid #989898;
+    border-radius: 6px;
+  }
+  
+  .task-checkbox[type="checkbox"]:checked + .task-mark::before {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 17px;
+    height: 17px;
+    background-color: #C4C4C4;
+    border-radius: 50%;
+    content: '';
+  }
+  
+  .task-mark {
+    position: relative;
+    width: 21px;
+    height: 21px;
+    border: 1px solid #998899;
+    border-radius: 50%;
+  }
+  
+  label:active {
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  }
+  
+  label[class*='priority'] {
+    width: 50px;
+  }
+  
+  label[class*='priority']::after:active,
+  label[class*='priority']::before:active {
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  }
+  
+  label[class*='priority'] {
+    position: relative;
+  }
+  
+  
+  

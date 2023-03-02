@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>To Do List</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="high-priority-container">
+            <div class="error-msg"></div>
+            <form class="high-priority-form form" action="#" method="post">
+                <label class="priority-title" for="high-priority-input">High</label>
+                <input class="input-adding-task input-adding-high-task" type="text" id="high-priority-input"
+                    placeholder="Добавить важных дел">
+                <button class="button button-add">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <line y1="-0.5" x2="18.0096" y2="-0.5"
+                            transform="matrix(0.999988 -0.00481873 0.0748716 0.997193 1 10)" stroke="#998899" />
+                        <line y1="-0.5" x2="18.0401" y2="-0.5"
+                            transform="matrix(-0.0192905 -0.999814 0.998699 0.0509976 10.5404 18.8444)"
+                            stroke="#998899" />
+                    </svg>
+                </button>
+            </form>
+            <div class="task-conteiner task-conteiner-high">
+            </div>
+        </div>
+        <div class="low-priority-container">
+            <form class="low-priority-form" action="#" method="post">
+                <div class="error-msg"></div>
+                <label class="priority-title" for="low-priority-input">Low</label>
+                <input class="input-adding-task input-adding-low-task" type="text" id="low-priority-input"
+                    placeholder="Добавить">
+                <button class="button button-add">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <line y1="-0.5" x2="18.0096" y2="-0.5"
+                            transform="matrix(0.999988 -0.00481873 0.0748716 0.997193 1 10)" stroke="#998899" />
+                        <line y1="-0.5" x2="18.0401" y2="-0.5"
+                            transform="matrix(-0.0192905 -0.999814 0.998699 0.0509976 10.5404 18.8444)"
+                            stroke="#998899" />
+                    </svg>
+                </button>
+            </form>
+            <div class="task-conteiner task-conteiner-low">
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>
