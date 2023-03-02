@@ -1,5 +1,10 @@
-.todo-button {
+.todo-checkbox {
+  border: 1px solid $c-checkbox;
+  background-color: $c-white;
 
+  &:hover {
+
+  }
 }
 
 .todo-input {
