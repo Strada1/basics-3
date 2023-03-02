@@ -1,7 +1,8 @@
-// Моя ошибка, или скорее недочёт, состоит в том, что я не использовал методы массива,такие как findIndex или includes
+import { functions } from './addEventFunctions.js'
+
 export const ToDo = {
     list: [
-// Example: { taskName: "create a new practice task", status: "In Progress", priority: "high" },
+        // Example: { taskName: "create a new practice task", status: "In Progress", priority: "high" },
     ],
     changeStatus(name, status) {
         for (const task of this.list) {
@@ -30,8 +31,8 @@ export const ToDo = {
     addTask(name, priority = "low", status = "ToDo") {
         for (const task of this.list) {
             if (name === task["taskName"]) {
-                alert("This name already exists. Write 'changeStatus' to change status of the task.");
-                console.log("This name already exists. Write 'changeStatus' to change status of the task.");
+                alert("This name already exists.");
+                console.log("This name already exists.");
                 return "error";
             }
         }
@@ -48,28 +49,59 @@ export const ToDo = {
         console.log("This name doesn't exist.");
         return "error";
     },
-    statusOrPriorityOut(statusOrPriority, isStatus = 0) {
-        console.log(`${statusOrPriority}:`);
+    statusOrPriorityOut(statusOrPriority, isStatus = false, containingDiv) {
         let flag = false;
         this.list.forEach(task => {
+
+            if (!isStatus && task["status"].toLowerCase() === "done") {
+                return;
+            }
+
             let x;
             if (isStatus) {
                 x = task["status"];
             } else {
                 x = task["priority"];
             }
+
             if (x.toLowerCase() === statusOrPriority.toLowerCase() || (x.slice(0, 2) + ' ' + x.slice(2)).toLowerCase() === statusOrPriority.toLowerCase || (x.slice(0, 2) + x.slice(3)).toLowerCase() === statusOrPriority.toLowerCase) {
-                console.log('\t' + task.taskName);
                 flag = true;
+
+                const newDiv1 = document.createElement('div');
+                const newDiv2 = document.createElement('div');
+                const newButton = document.createElement('button');
+                const newSpan = document.createElement('span');
+                const newButton2 = document.createElement('button');
+
+                newDiv1.classList.add("task");
+                newDiv2.classList.add("containing");
+                newButton.classList.add("markAsReadyButton");
+                newSpan.classList.add("ToDoText");
+                newButton2.classList.add("deleteTaskButton");
+
+                newButton.addEventListener('click', functions.markAsReadyTask);
+                newButton2.addEventListener('click', functions.removeTask);
+
+                newSpan.textContent = task.taskName;
+                newDiv2.appendChild(newButton);
+                newDiv2.appendChild(newSpan);
+
+                newDiv1.appendChild(newDiv2);
+                newDiv1.appendChild(newButton2);
+
+                containingDiv.appendChild(newDiv1);
             }
         })
-        if (!flag) { console.log('\t' + '-'); }
+        if (!flag) { return true; }
     },
-    showList() {
-        this.statusOrPriorityOut("ToDo", true);
-        this.statusOrPriorityOut("In Progress", true);
-        this.statusOrPriorityOut("Done", true);
-        this.statusOrPriorityOut("high", false);
-        this.statusOrPriorityOut("low", false);
+    showList(containingDivForHighPriority, containingDivForLowPriority, containingDivForStatusDone) {
+        this.statusOrPriorityOut("high", false, containingDivForHighPriority);
+        this.statusOrPriorityOut("low", false, containingDivForLowPriority);
+        const result = this.statusOrPriorityOut("Done", true, containingDivForStatusDone);
+        if (result) {
+            containingDivForStatusDone.style.display = "none";
+        } else {
+            containingDivForStatusDone.style.display = "flex";
+        }
     }
 };

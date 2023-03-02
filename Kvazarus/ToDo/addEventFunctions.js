@@ -3,7 +3,7 @@
 import { objects } from './ToDohtmlObjects.js'
 import { ToDo } from './ToDoMassives.js';
 
-const { forms, inputsInForms, priorityDivs } = objects;
+const { forms, inputsInForms, priorityDivs, divMarkedAsReadyDivs } = objects;
 
 function createNewTask(event) {
     event.preventDefault();
@@ -32,46 +32,33 @@ function createNewTask(event) {
 
     if (result === "error") {return}
 
-    const newDiv1 = document.createElement('div');
-    const newDiv2 = document.createElement('div');
-    const newButton = document.createElement('button');
-    const newSpan = document.createElement('span');
-    const newButton2 = document.createElement('button');
-
-    newDiv1.classList.add("task");
-    newDiv2.classList.add("containing");
-    newButton.classList.add("markAsReadyButton");
-    newSpan.classList.add("ToDoText");
-    newButton2.classList.add("deleteTaskButton");
-
-    newButton.addEventListener('click', markAsReadyTask);
-    newButton2.addEventListener('click', removeTask);
-
-    newSpan.textContent = inputValue;
-    newDiv2.appendChild(newButton);
-    newDiv2.appendChild(newSpan);
-
-    newDiv1.appendChild(newDiv2);
-    newDiv1.appendChild(newButton2);
-
-    priorityDivs[bigCrutchIndex].appendChild(newDiv1);
-    // Также с помощью большого костыля находим див и вставляем новый
+    render();
 }
 
 function removeTask(event) {
     // event.target - это кнопка с классом "deleteTaskButton"
     const name = event.target.parentElement.firstElementChild.lastElementChild.textContent;
-    event.target.parentElement.remove(); // удаляет див с классом "task"
     ToDo.deleteTask(name);
+    render();
 }
 
 function markAsReadyTask(event) {
     const name = event.target.nextElementSibling.textContent;
-    ToDo.changeStatus(name, "Done");
+    const theTask = ToDo.list.find(task => task["taskName"] === name)
+    if (theTask.status.toLowerCase() === "done") {
+        ToDo.changeStatus(name, "ToDo");
+    } else {
+        ToDo.changeStatus(name, "Done");
+    }
+    render();
+}
 
-    const markedAsReadyDiv = document.querySelector('div.markedAsReadyDivs');
-    const taskDiv = event.target.parentElement.parentElement;
-    markedAsReadyDiv.appendChild(taskDiv);
+function render() {
+    const divsToRemove = document.querySelectorAll('div.task');
+    divsToRemove.forEach(div => {
+        div.remove(); 
+    });
+    ToDo.showList(priorityDivs[0], priorityDivs[1], divMarkedAsReadyDivs);
 }
 
 export const functions = {createNewTask, removeTask, markAsReadyTask}
