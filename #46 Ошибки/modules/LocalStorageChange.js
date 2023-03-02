@@ -1,4 +1,4 @@
-import Render from "./Render.js";
+import Render from "./Render.js"
 
 function LocalStorageChange(event) {
     
