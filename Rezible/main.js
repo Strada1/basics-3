@@ -5,21 +5,27 @@ document.addEventListener('DOMContentLoaded', render());
 highForm.addEventListener('submit',(event) => addTask(event));
 lowForm.addEventListener('submit',(event) => addTask(event));
 function addTask(event){
-	let element = event.target.id;
-	let highTaskText = inputHighTask.value;
-	let lowTaskText = inputLowTask.value;
-	switch (element){
-		case "high":
-			event.preventDefault();
-			if(!isValid(inputHighTask)) return;
-			todoAddTask(highTaskText, PRIORITIES.HIGH)
-			render()
-			break;
-		case "low":
-			event.preventDefault();
-			if(!isValid(inputLowTask)) return;
-			todoAddTask(lowTaskText, PRIORITIES.LOW)
-			render()
+	function addTask(event){
+		let element = event.target.id;
+		let inputPriority;
+		let taskText = "";
+		let priority;
+		event.preventDefault();
+		switch (element){
+			case "high":
+				inputPriority = inputHighTask;
+				taskText = inputPriority.value;
+				priority = PRIORITIES.HIGH;
+				break;
+			case "low":
+				inputPriority = inputLowTask;
+				taskText = inputPriority.value;
+				priority = PRIORITIES.LOW;
+				break;
+		}
+		if(!isValid(inputPriority)) return;
+		todoAddTask(taskText, priority)
+		render()
 	}
 }
 function isValid(inputPriorityTask){
