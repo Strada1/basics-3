@@ -23,54 +23,7 @@
             <img src="./img/close-icon.svg" alt="close button" />
           </button>
         </form>
-        <ul class="todo__list">
-          <li class="todo__item">
-            <label class="todo__item-input">
-              <input class="todo__item-checkbox" type="checkbox" checked />
-              <span class="todo__item-checkbox-span"></span>
-            </label>
-            <p class="todo__item-text">
-              Вот вам и супер интересная тема. Вы наверняка заметили что ваши
-              файлы с кодом становятся все объемнее, что хочется вынести
-              некоторые вещи куда-то за пределы основной программы.
-            </p>
-            <button class="todo__item-btn">
-              <img
-                class="todo__item-icon"
-                src="./img/close-icon.svg"
-                alt="Close Button"
-              />
-            </button>
-          </li>
-          <li class="todo__item">
-            <label class="todo__item-input">
-              <input class="todo__item-checkbox" type="checkbox" />
-              <span class="todo__item-checkbox-span"></span>
-            </label>
-            <p class="todo__item-text">Сверстать этот TODO list</p>
-            <button class="todo__item-btn">
-              <img
-                class="todo__item-icon"
-                src="./img/close-icon.svg"
-                alt="Close Button"
-              />
-            </button>
-          </li>
-          <li class="todo__item todo__item--done">
-            <label class="todo__item-input">
-              <input class="todo__item-checkbox" type="checkbox" checked />
-              <span class="todo__item-checkbox-span"></span>
-            </label>
-            <p class="todo__item-text">Начать делать задачу</p>
-            <button class="todo__item-btn">
-              <img
-                class="todo__item-icon"
-                src="./img/close-icon.svg"
-                alt="Close Button"
-              />
-            </button>
-          </li>
-        </ul>
+        <ul class="todo__list"></ul>
       </div>
       <div class="category category--low">
         <h3 class="category__title">Low</h3>
@@ -80,23 +33,25 @@
             <img src="./img/close-icon.svg" alt="close button" />
           </button>
         </form>
-        <ul class="todo__list">
-          <li class="todo__item">
-            <label class="todo__item-input">
-              <input class="todo__item-checkbox" type="checkbox" />
-              <span class="todo__item-checkbox-span"></span>
-            </label>
-            <p class="todo__item-text">Посмотреть ютубчик</p>
-            <button class="todo__item-btn">
-              <img
-                class="todo__item-icon"
-                src="./img/close-icon.svg"
-                alt="Close Button"
-              />
-            </button>
-          </li>
-        </ul>
+        <ul class="todo__list"></ul>
       </div>
     </div>
+    <template id="task-item-template">
+      <li class="todo__item">
+        <label class="todo__item-input">
+          <input class="todo__item-checkbox" type="checkbox" />
+          <span class="todo__item-checkbox-span"></span>
+        </label>
+        <p class="todo__item-text"></p>
+        <button class="todo__item-btn">
+          <img
+            class="todo__item-icon"
+            src="./img/close-icon.svg"
+            alt="Close Button"
+          />
+        </button>
+      </li>
+    </template>
+    <script type="module" src="./js/main.js"></script>
   </body>
 </html>

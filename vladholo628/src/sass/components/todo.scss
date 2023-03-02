@@ -49,6 +49,7 @@
     }
     &--done {
       background-color: $done-color;
+      text-decoration: line-through;
     }
   }
   &__item-text {
