@@ -1,43 +1,25 @@
 import {changeStatus, addTask as todoAddTask, deleteTask} from './todo.js'
-import {inputHighTask, highPriority, btnHighTask, inputLowTask, lowPriority, btnLowTask} from './view.js'
+import {inputHighTask, highPriority, inputLowTask, lowPriority, highForm, lowForm} from './view.js'
 import {STATUSES, PRIORITIES, list} from './constObjects.js'
-btnHighTask.addEventListener('click', (event) => addTask(event));
-inputHighTask.addEventListener('keypress', (event) => addTask(event)); 
-btnLowTask.addEventListener('click', (event) => addTask(event));
-inputLowTask.addEventListener('keypress', (event) => addTask(event)); 
+document.addEventListener('DOMContentLoaded', render());
+highForm.addEventListener('submit',(event) => addTask(event));
+lowForm.addEventListener('submit',(event) => addTask(event));
 function addTask(event){
 	let element = event.target.id;
 	let highTaskText = inputHighTask.value;
 	let lowTaskText = inputLowTask.value;
 	switch (element){
-		case "inputHighTask":
-			if (event.key === 'Enter') {
-				event.preventDefault();
-				if(!isValid(inputHighTask)) return;
-				todoAddTask(highTaskText, PRIORITIES.HIGH)
-				render()
-			}
-			break;
-		case "inputLowTask":
-			if (event.key === 'Enter') {
-				event.preventDefault();
-				if(!isValid(inputLowTask)) return;
-				todoAddTask(lowTaskText, PRIORITIES.LOW)
-				render()
-			}
-			break;
-		case "addHighTask":
+		case "high":
 			event.preventDefault();
 			if(!isValid(inputHighTask)) return;
 			todoAddTask(highTaskText, PRIORITIES.HIGH)
 			render()
 			break;
-		case "addLowTask":
+		case "low":
 			event.preventDefault();
-			if(!isValid(inputLowTask)) return;	
+			if(!isValid(inputLowTask)) return;
 			todoAddTask(lowTaskText, PRIORITIES.LOW)
 			render()
-			break;
 	}
 }
 function isValid(inputPriorityTask){
