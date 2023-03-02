@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>TODO List</h1>
+    <div class="container">
+        <section class="high" id="high">
+            <h2 class="high__priority priority">HIGH</h2>
+            <div class="add high__add">
+                <form onsubmit="return false;" id="form-adding" data-priority="high">
+                    <label for="add__field">
+                        <input type="text" id="add__field" class="add__field" placeholder="Добавить запланированное дело" required>
+                    </label>
+                    <button type="submit" class="add__btn"><img src="img/add.svg" alt="button add" class="add__icon"></button>
+                </form>
+            </div>
+            <div class="example">
+                <input type="checkbox" class="business__is-completed">
+                <p class="business__text" id="business__text">Вот вам и супер интересная тема.<br>
+                Вы наверняка заметили что ваши файлы с кодом становятся все объемнее, что хочется вынести некоторые вещи куда-то за пределы основной программы.</p>
+                <button class="business__btn"><img src="img/delete.svg" alt="button delete" class="business__icon-delete"></button>
+            </div>
+        </section>
+        <section class="low" id="low">
+            <h2 class="low__priority priority">LOW</h2>
+            <div class="add low__add">
+                <form onsubmit="return false;" id="form-adding" data-priority="low">
+                    <label for="add__field">
+                        <input type="text" id="add__field" class="add__field" placeholder="Добавить запланированное дело" required>
+                    </label>
+                    <button type="submit" class="add__btn"><img src="img/add.svg" alt="button add" class="add__icon"></button>
+                </form>
+            </div>
+        </section>
+    </div>
+    <script src="js/main.js" type="module"></script>
+</body>
+</html>
+<!--  -->
