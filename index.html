@@ -11,10 +11,11 @@
   <main class="todo__wrapper">
     <div class="todo__block" id="todoBlockHigh">
       <h3 class="todo__title">HIGH</h3>
-      <form onsubmit="addCard()" id="form"  class="todo__form">
+      <form onsubmit="addCard()" id="formHigh"  class="todo__form">
         <input class="todo__input" type="text" id="input" placeholder="Добавить важных дел">
-        <button id="button" type="submit" class="todo__button">+</button>
+        <button id="buttonHigh" type="submit" class="todo__button">+</button>
       </form>
+      <div id="cardBlockHigh" class="card__block"></div>
 
 
       
@@ -25,10 +26,12 @@
     </div>
     <div class="todo__block" id="todoBlockLow">
       <h3 class="todo__title">LOW</h3>
-      <form class="todo__form">
+      <form class="todo__form" id="formLow">
         <input class="todo__input" type="text" placeholder="Добавить важных дел">
-        <button class="todo__button">+</button>
+        <button id="buttonLow" type="submit" class="todo__button">+</button>
       </form>
+      <div id="cardBlockLow" class="card__block"></div>
+
 
       
   </main>
