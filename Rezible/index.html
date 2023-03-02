@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+  <link rel="stylesheet" href="./style.css">
+  <script type="module" src="./main.js"></script>
+</head>
+<body>
+<div class="container">
+  <div class="main">
+    <div class="todo">
+      <div class="priority">
+        <div class="priority__header">
+          HIGH
+        </div>
+        <div class="priority__task-add">
+          <form id="high">
+            <input type="text" id="inputHighTask" autocomplete="off" placeholder="Добавить важных дел">
+            <button class="task-add" type="submit"></button>
+          </form>
+        </div>
+        <div class="priority__todo-show" id="show-high-tasks">
+      </div>
+      <div class="priority">
+        <div class="priority__header">
+          LOW
+        </div>
+        <div class="priority__task-add">
+          <form id="low">
+            <input type="text" id="inputLowTask" autocomplete="off" placeholder="Добавить">
+            <button class="task-add" type="submit"></button>
+          </form>
+        </div>
+        <div class="priority__todo-show" id="show-low-tasks">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
