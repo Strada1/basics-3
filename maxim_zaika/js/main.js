@@ -1,6 +1,6 @@
 "use strict"
 
-import { render } from "./mainFunctions.js"
+import { render } from "./modules/mainFunctions.js"
 
 render();
 
