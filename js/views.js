@@ -1,4 +1,11 @@
-const form = document.querySelector('.high__create');
-const input = document.querySelector('.high__create input');
+// High
+const highForm = document.getElementById('high-form');
+const highField = document.getElementById('high-field');
+const highBtn = document.getElementById('high-btn');
 
-export { form, input };
+// Low
+const lowForm = document.getElementById('low-form');
+const lowField = document.getElementById('low-field');
+const lowBtn = document.getElementById('low-btn');
+
+// Task

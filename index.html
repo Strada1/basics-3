@@ -11,16 +11,13 @@
     <div class="todo__high high">
       <p class="high__title">HIGH</p>
 
-      <form class="high__create">
+      <form class="high__create" id="high-form">
         <label>
-          <input type="text" class="field" placeholder="Добавить важных дел">
+          <input type="text" class="field" id="high-field" placeholder="Добавить важных дел">
         </label>
 
-        <button class="btn" type="submit">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <line y1="-0.5" x2="18.0096" y2="-0.5" transform="matrix(0.999988 -0.00481873 0.0748716 0.997193 1 10)" stroke="#998899"/>
-            <line y1="-0.5" x2="18.0401" y2="-0.5" transform="matrix(-0.0192905 -0.999814 0.998699 0.0509976 10.5404 18.8444)" stroke="#998899"/>
-          </svg>
+        <button class="btn" id="high-btn" type="submit">
+          <img src="./img/add-icon.svg" alt="Add Icon">
         </button>
       </form>
 
@@ -29,16 +26,10 @@
           <input type="checkbox" class="checkbox task__checkbox">
         </label>
 
-        <p class="task__text">
-          Вот вам и супер интересная тема.
-          Вы наверняка заметили что ваши файлы с кодом становятся все объемнее, что хочется вынести некоторые вещи куда-то за пределы основной программы.
-        </p>
+        <p class="task__text">Вот вам и супер интересная тема</p>
 
-        <button>
-          <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <line y1="-0.5" x2="20.7803" y2="-0.5" transform="matrix(0.710506 0.703691 -0.65218 0.758064 1 1)" stroke="#998899"/>
-            <line y1="-0.5" x2="20.8155" y2="-0.5" transform="matrix(0.693335 -0.720616 0.670126 0.742247 1.56787 16)" stroke="#998899"/>
-          </svg>
+        <button class="task__remove">
+          <img src="./img/remove-icon.svg" alt="Remove Icon">
         </button>
       </div>
 
@@ -51,11 +42,8 @@
           Сверстать этот TODO list
         </p>
 
-        <button>
-          <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <line y1="-0.5" x2="20.7803" y2="-0.5" transform="matrix(0.710506 0.703691 -0.65218 0.758064 1 1)" stroke="#998899"/>
-            <line y1="-0.5" x2="20.8155" y2="-0.5" transform="matrix(0.693335 -0.720616 0.670126 0.742247 1.56787 16)" stroke="#998899"/>
-          </svg>
+        <button class="task__remove">
+          <img src="./img/remove-icon.svg" alt="Remove Icon">
         </button>
       </div>
 
@@ -68,11 +56,8 @@
           Начать делать задачу
         </p>
 
-        <button>
-          <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <line y1="-0.5" x2="20.7803" y2="-0.5" transform="matrix(0.710506 0.703691 -0.65218 0.758064 1 1)" stroke="#998899"/>
-            <line y1="-0.5" x2="20.8155" y2="-0.5" transform="matrix(0.693335 -0.720616 0.670126 0.742247 1.56787 16)" stroke="#998899"/>
-          </svg>
+        <button class="task__remove">
+          <img src="./img/remove-icon.svg" alt="Remove Icon">
         </button>
       </div>
     </div>
@@ -80,13 +65,17 @@
     <div class="todo-low low">
       <p class="low__title">LOW</p>
 
-      <form class="high__create">
+      <form class="low__create" id="low-form">
         <label>
-          <input type="text" class="field" placeholder="Добавить">
+          <input type="text" class="field" id="low-field" placeholder="Добавить">
         </label>
+
+        <button class="btn" id="low-btn" type="submit">
+          <img src="./img/add-icon.svg" alt="Add Icon">
+        </button>
       </form>
 
-      <div class="log__task task">
+      <div class="low__task task">
         <label>
           <input type="checkbox" class="checkbox task__checkbox">
         </label>
@@ -95,11 +84,8 @@
           Сверстать этот TODO list
         </p>
 
-        <button>
-          <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <line y1="-0.5" x2="20.7803" y2="-0.5" transform="matrix(0.710506 0.703691 -0.65218 0.758064 1 1)" stroke="#998899"/>
-            <line y1="-0.5" x2="20.8155" y2="-0.5" transform="matrix(0.693335 -0.720616 0.670126 0.742247 1.56787 16)" stroke="#998899"/>
-          </svg>
+        <button class="task__remove">
+          <img src="./img/remove-icon.svg" alt="Remove Icon">
         </button>
       </div>
     </div>

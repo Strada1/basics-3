@@ -14,6 +14,8 @@
 
   .high {
     margin-bottom: 12px;
+    max-height: 350px;
+    overflow: auto;
 
     &__title {
       margin-bottom: pxToRem(12px);
@@ -35,6 +37,18 @@
   .low {
     &__title {
       margin-bottom: 12px;
+    }
+
+    &__create {
+      margin-bottom: pxToRem(12px);
+
+      position: relative;
+
+      .btn {
+        position: absolute;
+        right: 25px;
+        top: 14px;
+      }
     }
   }
 }
