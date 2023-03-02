@@ -1,0 +1,98 @@
+*{
+padding: 0;
+margin: 0;
+}
+
+.calk {
+    margin-left: 100px;
+    margin-top: 100px;
+    height: 40px;
+    width: 323px;
+    position: relative;
+    gap: 8px;
+}
+
+
+.first-number,
+.second-number {
+    width: 95px;
+    height: 35px;
+}
+
+
+.button-equal {
+    width: 39px;
+    height: 33px;
+}
+
+
+.result {
+    display: inline-block;
+    width: 39px;
+    height: 33px;
+    border: 1px solid grey;
+    position: absolute;
+    top: 2px;
+    right: 0;
+    text-align: center;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
