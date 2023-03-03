@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="script.js" defer></script>
+  <title>To Do List</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="priority hight">
+
+      <h2>HIGHT</h2>
+
+      <form class="input__wrapper">
+
+        <input class="input" type="text" id="add_todo" placeholder="Добавить важных дел">
+
+        <button class='input__icon' type="submit">
+
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <line y1="-0.5" x2="18.0096" y2="-0.5" transform="matrix(0.999988 -0.00481873 0.0748716 0.997193 1 10)"
+              stroke="#998899" />
+            <line y1="-0.5" x2="18.0401" y2="-0.5"
+              transform="matrix(-0.0192905 -0.999814 0.998699 0.0509976 10.5404 18.8444)" stroke="#998899" />
+          </svg>
+
+        </button>
+
+      </form>
+
+      <div class="to-do-list__hight">
+        <!-- <div class="to-do-list">
+          <input type="checkbox" id="to-do-list_chebx">
+          <label class="">Вот вам и супер интересная тема. Вы наверняка заметили что ваши файлы с кодом становятся все
+            объемнее, что
+            хочется вынести некоторые вещи куда-то за пределы основной программы.
+          </label>
+          <button class='close__icon'><svg width="17" height="16" viewBox="0 0 17 16" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <line y1="-0.5" x2="20.7803" y2="-0.5" transform="matrix(0.710506 0.703691 -0.65218 0.758064 1 1)"
+                stroke="#998899" />
+              <line y1="-0.5" x2="20.8155" y2="-0.5" transform="matrix(0.693335 -0.720616 0.670126 0.742247 1.56787 16)"
+                stroke="#998899" />
+            </svg>
+          </button>
+        </div> -->
+        <!-- <div class="to-do-list">
+          <input type="checkbox" name="" id="to-do-list_chebx">
+          <label>Сверстать этот TODO list
+          </label>
+          <button class='close__icon'><svg width="17" height="16" viewBox="0 0 17 16" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <line y1="-0.5" x2="20.7803" y2="-0.5" transform="matrix(0.710506 0.703691 -0.65218 0.758064 1 1)"
+                stroke="#998899" />
+              <line y1="-0.5" x2="20.8155" y2="-0.5" transform="matrix(0.693335 -0.720616 0.670126 0.742247 1.56787 16)"
+                stroke="#998899" />
+            </svg>
+          </button>
+        </div> -->
+        <!-- <div class="to-do-list" id="checked-task">
+          <input type="checkbox" name="" id="to-do-list_chebx" checked>
+          <label>Начать делать задачу
+          </label>
+          <button class='close__icon'><svg width="17" height="16" viewBox="0 0 17 16" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <line y1="-0.5" x2="20.7803" y2="-0.5" transform="matrix(0.710506 0.703691 -0.65218 0.758064 1 1)"
+                stroke="#998899" />
+              <line y1="-0.5" x2="20.8155" y2="-0.5" transform="matrix(0.693335 -0.720616 0.670126 0.742247 1.56787 16)"
+                stroke="#998899" />
+            </svg>
+          </button>
+        </div> -->
+      </div>
+    </div>
+
+    <div class="priority low">
+
+      <h2>LOW</h2>
+
+      <form class="input__wrapper">
+        <input class="input" type="text" id="add_todo" placeholder="Добавить">
+        <button class='input__icon'>
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <line y1="-0.5" x2="18.0096" y2="-0.5" transform="matrix(0.999988 -0.00481873 0.0748716 0.997193 1 10)"
+              stroke="#998899" />
+            <line y1="-0.5" x2="18.0401" y2="-0.5"
+              transform="matrix(-0.0192905 -0.999814 0.998699 0.0509976 10.5404 18.8444)" stroke="#998899" />
+          </svg>
+        </button>
+      </form>
+      <!-- <div class="to-do-list">
+        <input type="checkbox" name="" id="to-do-list_chebx">
+        <label>Посмотреть ютубчик
+        </label>
+        <button class='close__icon'><svg width="17" height="16" viewBox="0 0 17 16" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <line y1="-0.5" x2="20.7803" y2="-0.5" transform="matrix(0.710506 0.703691 -0.65218 0.758064 1 1)"
+              stroke="#998899" />
+            <line y1="-0.5" x2="20.8155" y2="-0.5" transform="matrix(0.693335 -0.720616 0.670126 0.742247 1.56787 16)"
+              stroke="#998899" />
+          </svg>
+        </button>
+      </div> -->
+    </div>
+  </div>
+
+</body>
+
+</html>

@@ -1,0 +1,154 @@
+* {
+ box-sizing: border-box;
+ padding: 0;
+ margin: 0;
+}
+
+body {
+ background: #1E1E1E;
+ align-items: center;
+ font-family: 'Roboto', sans-serif;
+ font-style: normal;
+}
+
+h2 {
+ font-weight: 400;
+ font-size: 18px;
+ text-align: center;
+ margin-bottom: 12px;
+}
+
+.container {
+ margin: 3% auto;
+ width: 476px;
+ min-height: 688px;
+ padding: 8px;
+ background: #FFFFFF;
+ /* border-radius: 103px; */
+ display: flex;
+ flex-direction: column;
+ flex-wrap: wrap;
+ /* justify-content: center; */
+ align-items: center;
+}
+
+.priority {
+ position: relative;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ width: 100%;
+ margin-top: 25px;
+}
+
+.low{
+ margin-top: 12px;
+}
+
+.input__wrapper {
+ position: relative;
+ width: 100%;
+}
+
+.input {
+ padding: 10px 0px 10px 12px;
+ font-size: 15px;
+ border: 1px solid #989898;
+ color: #1E1E1E;
+ border-radius: 6px;
+ margin-bottom: 8px;
+ outline: none;
+ width: 100%;
+ /* transition: border-color .1s linear;  */
+}
+
+.input__icon {
+ position: absolute;
+ width: 20px;
+ height: 20px;
+ right: 10px;
+ top: 10px;
+ border: none;
+ /* fill: #998899; */
+ transition: fill .1s linear;
+ cursor: pointer;
+ background-color: #FFFFFF;
+}
+
+.to-do-list {
+ padding: 10px 0px 10px 12px;
+ border: 1px solid #989898;
+ border-radius: 6px;
+ position: relative;
+ margin-bottom: 8px;
+}
+
+.to-do-list:last-child {
+ margin-bottom: 0;
+}
+
+
+#to-do-list_chebx {
+ position: absolute;
+ opacity: 0;
+}
+
+#to-do-list_chebx+label {
+ display: block;
+ min-width: 370px;
+ position: relative;
+ /* cursor: pointer; */
+ padding-left: 45px;
+ padding-right: 18px
+}
+
+#to-do-list_chebx+label:before {
+ content: '';
+ position: absolute;
+ top: -2px;
+ left: 0;
+ width: 21px;
+ height: 21px;
+ border: 1px solid #998899;
+ border-radius: 50%;
+ background: #FFF;
+}
+
+#to-do-list_chebx+label:after {
+ content: '';
+ position: absolute;
+ top: 9px;
+ left: 12px;
+ width: 0px;
+ height: 0px;
+ border-radius: 50%;
+ background: #C4C4C4;
+ /* box-shadow: inset 0 1px 1px rgba(0, 0, 0, .5); */
+ /* opacity: 0; */
+ transition: .2s;
+}
+
+#to-do-list_chebx:checked+label:after {
+ opacity: 1;
+ top: 2px;
+ left: 4px;
+ width: 15px;
+ height: 15px;
+}
+
+#checked-task{
+background-color: #F4F4F4;
+}
+
+.close__icon {
+ position: absolute;
+ width: 40px;
+ height: 40px;
+ right: 0;
+ top: 1px;
+ border: none;
+ /* fill: #998899; */
+ /* transition: fill .1s linear; */
+ cursor: pointer;
+ background-color: inherit;
+}
