@@ -1,0 +1,11 @@
+body {
+  height: 100vh;
+
+  font-family: 'Roboto', sans-serif;
+  font-size: pxToRem(18px);
+  font-weight: 400;
+
+  background: #FF5F6D;
+  background: $main-gradient;
+  color: $c-black;
+}

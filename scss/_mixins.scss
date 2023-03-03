@@ -1,0 +1,7 @@
+@mixin field-font {
+  font-family: inherit;
+  font-style: normal;
+  font-weight: 400;
+  font-size: pxToRem(18px);
+  color: $c-field;
+}

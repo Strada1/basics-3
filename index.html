@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ToDo</title>
+  <link rel="stylesheet" href="./scss/main.css">
+  <script type="module" src="./js/app.js"></script>
+</head>
+<body class="f-center">
+  <div id="app" class="todo">
+    <div class="todo__high">
+      <p class="high__title">HIGH</p>
+
+      <form class="high__create" id="high-form">
+        <label>
+          <input type="text" class="field" id="high-field" placeholder="Добавить важных дел">
+        </label>
+
+        <button class="btn" id="high-btn" type="submit">
+          <img src="./img/add-icon.svg" alt="Add Icon">
+        </button>
+      </form>
+
+      <div class="high"></div>
+    </div>
+
+    <div class="todo-low">
+      <p class="low__title">LOW</p>
+
+      <form class="low__create" id="low-form">
+        <label>
+          <input type="text" class="field" id="low-field" placeholder="Добавить">
+        </label>
+
+        <button class="btn" id="low-btn" type="submit">
+          <img src="./img/add-icon.svg" alt="Add Icon">
+        </button>
+      </form>
+
+      <div class="low"></div>
+    </div>
+  </div>
+</body>
+</html>

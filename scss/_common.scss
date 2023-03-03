@@ -1,0 +1,68 @@
+.f-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.d-block {
+  display: block;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+.field {
+  width: 100%;
+  max-width: pxToRem(460px);
+
+  padding: pxToRem(12px) 0 pxToRem(12px) pxToRem(12px);
+
+  background: $c-white;
+  border: $main-border;
+  border-radius: 6px;
+
+  @include field-font();
+
+  color: inherit;
+
+  &::placeholder {
+    @include field-font();
+  }
+}
+
+.checkbox {
+  width: pxToRem(21px);
+  height: pxToRem(21px);
+
+  border: 1px solid $c-checkbox;
+}
+
+.through {
+  text-decoration: line-through;
+}
+
+.task {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+
+  margin: 0 auto;
+  padding: pxToRem(12px) 0 pxToRem(12px) pxToRem(12px);
+
+  width: 460px;
+
+  background: #FFFFFF;
+  border: 1px solid #989898;
+  border-radius: 6px;
+
+  &:not(:last-child) {
+    margin-bottom: 8px;
+  }
+
+  &__text {
+    text-align: left;
+    width: 370px;
+    color: #202020;
+  }
+}

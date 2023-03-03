@@ -1,0 +1,61 @@
+.todo {
+  width: 100%;
+  height: 100%;
+  max-width: pxToRem(500px);
+  max-height: pxToRem(700px);
+
+  border-radius: $b-radius;
+
+  background-color: $c-white;
+
+  text-align: center;
+
+  padding: pxToRem(25px) pxToRem(8px) pxToRem(25px);
+
+  .high {
+    margin-bottom: 12px;
+    max-height: 350px;
+    overflow: auto;
+
+    &__title {
+      margin-bottom: pxToRem(12px);
+    }
+
+    &__create {
+      margin-bottom: pxToRem(12px);
+
+      position: relative;
+
+      .btn {
+        position: absolute;
+        right: 25px;
+        top: 14px;
+      }
+    }
+  }
+
+  .low {
+    max-height: 250px;
+    overflow: auto;
+
+    &__title {
+      margin-bottom: 12px;
+    }
+
+    &__create {
+      margin-bottom: pxToRem(12px);
+
+      position: relative;
+
+      .btn {
+        position: absolute;
+        right: 25px;
+        top: 14px;
+      }
+    }
+  }
+
+  .done {
+    text-decoration: line-through;
+  }
+}

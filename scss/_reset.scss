@@ -1,0 +1,16 @@
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+button {
+  color: inherit;
+  background-color: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  border: none;
+  cursor: pointer;
+}
