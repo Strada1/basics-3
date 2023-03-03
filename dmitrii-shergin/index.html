@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div class="wrapper">
+
+        <div class="priority">
+            <h2 class="title">High</h2>
+            <form class="form" name="high">
+                <input class="add" type="text" name="add" placeholder="Добавить важных дел">
+                <button class="btn submit" name="submit">&#43;</button>
+            </form>
+            <ul class="task-list high"></ul>
+        </div>
+
+        <div class="priority">
+            <h2 class="title">Medium</h2>
+            <form class="form" name="medium">
+                <input class="add" type="text" name="add" placeholder="Добавить дел">
+                <button class="btn submit">+</button>
+            </form>
+            <ul class="task-list medium"></ul>
+        </div>
+
+        <div class="priority">
+            <h2 class="title">Low</h2>
+            <form class="form" name="low">
+                <input class="add" type="text" name="add" placeholder="Добавить ненужных дел">
+                <button class="btn submit">+</button>
+            </form>
+            <ul class="task-list low">
+                <!-- <li class="task-item">
+                    <input type="radio" class="done">
+                    <span class="task">Task 1</span>
+                    <button class="btn delete"> &times;</button>
+                </li> -->
+            </ul>
+        </div>
+    </div>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+
+</html>
