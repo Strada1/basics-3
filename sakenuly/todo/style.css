@@ -1,0 +1,16 @@
+#hcheckbox{
+    display: none;
+visibility: hidden;
+}
+#lowcheckbox{
+        display: none;
+    visibility: hidden;
+    }
+.highcheckbox-copy{
+    display: none;
+    visibility: hidden;
+}
+.lcheckbox-copy {
+    display: none;
+    visibility: hidden;
+}
