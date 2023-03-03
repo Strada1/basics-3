@@ -35,7 +35,7 @@
   }
 
   .low {
-    max-height: 350px;
+    max-height: 250px;
     overflow: auto;
 
     &__title {
@@ -53,5 +53,9 @@
         top: 14px;
       }
     }
+  }
+
+  .done {
+    text-decoration: line-through;
   }
 }

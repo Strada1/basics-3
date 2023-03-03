@@ -51,7 +51,12 @@ function addNewTask(e, { group, field, status }) {
   render(group);
 }
 
-function render (statusTask) {
+function render () {
+  // Reset DOM
+  highTasks.innerHTML = '';
+  lowTasks.innerHTML = '';
+
+  // Render DOM
   todoList.forEach(task => {
     const elDiv = document.createElement('div');
     const elBtn = document.createElement('button');
@@ -65,15 +70,28 @@ function render (statusTask) {
 
       elBtn.innerHTML = `<img src="./img/remove-icon.svg" alt="Remove Icon">`;
       elDiv.innerHTML = `
-    <label>
-        <input type="checkbox" class="checkbox task__checkbox">
-    </label>
-
-    <p class="task__text">${task.text}</p>
-    `;
+      <label>
+          <input type="checkbox" class="checkbox task__checkbox">
+      </label>
+  
+      <p class="task__text">${task.text}</p>
+      `;
 
       elBtn.addEventListener('click', function () {
-        console.log(this);
+        const idTask = Number(this.parentElement.dataset.id);
+
+        todoList = todoList.filter((task) => task.id !== idTask);
+
+        render();
+      });
+
+      if (task.done) {
+        elDiv.querySelector('.task__checkbox').checked = task.done;
+        elDiv.querySelector('.task__text').classList.add('done');
+      }
+
+      elDiv.querySelector('.task__checkbox').addEventListener('click', function () {
+        elDiv.querySelector('.task__text').classList.toggle('done');
       });
 
       elDiv.appendChild(elBtn);
@@ -85,11 +103,7 @@ function render (statusTask) {
       if (task.status === STATUSES.LOW) {
         lowTasks.appendChild(elDiv);
       }
-
-      return
     }
-
-    statusTask.appendChild(elDiv);
   });
 }
 
