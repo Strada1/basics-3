@@ -65,8 +65,32 @@ function render (){
                 DelNew.textContent = '-'
 
         function DelTask(){
+            let searchName = NewLabel.textContent;
+            let index = list.findIndex(el => el.name === searchName);
+            list.splice(index,1)
             NewDiv.remove()
-            list.splice([list.findIndex(item => item.name === NewLabel)], 1) 
+            console.log (list)
+            if (elem.priority === PRIORITIES.HIGH){
+            count -= 85
+            count1 -= 80
+            count2 -= 40
+                var c = count+'px'
+                var d = count1+'px'
+                var e = count2+'px'
+                    document.querySelector('.low').style.top = c;
+                        document.querySelector('.main').style.height = d;
+                        document.querySelector('.main').style.top = e; 
+                    return count1,count2
+            }
+            if (elem.priority === PRIORITIES.LOW){
+                count1 -= 85
+                count2 -= 42.5
+                    var d = count1+'px'
+                    var e = count2+'px'
+                        document.querySelector('.main').style.height = d;
+                        document.querySelector('.main').style.top = e;
+                        return count1,count2
+                }
         }
         DelNew.addEventListener("click", DelTask);
 
@@ -133,8 +157,6 @@ function moveLow(){
             document.querySelector('.main').style.height = d;
             document.querySelector('.main').style.top = e;
 }
-
-
 
 addh.addEventListener('click',addTask)
 addl.addEventListener('click',addTask)
