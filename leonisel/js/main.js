@@ -172,7 +172,7 @@ function render() {
   addTasksRenderUI();
 }
 
-// EVENT LISTENER
+//  WATCH EVENT LISTENER
 
 function watchForms(forms) {
   for(const elem of forms) {
