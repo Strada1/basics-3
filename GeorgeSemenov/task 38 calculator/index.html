@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>calculator UI</title>
+    <style>
+      .equalSymbol{text-align: center;border-radius: 5px; border: 1px solid black;
+        padding: 4px; display: inline-block;}
+      .result-container{
+        padding: 4px; display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <input 
+      type="number" 
+      name="left_operand" 
+      value="5"
+      id="left_operand"
+    />
+    <select name="operation" id="operation">
+      <option value="plus" selected>+</option>
+      <option value="minus">-</option>
+      <option value="multiple">*</option>
+      <option value="division">/</option>
+    </select>
+    <input 
+      type="number" 
+      name="left_operand" 
+      value="5"
+      id="right_operand"
+    >
+    <button 
+      class="equalSymbol"
+      id="calcualteButton"
+    >
+    =</button>
+    <p 
+      id="result"
+      class="result-container"
+    ></p>
+    <script type="text/javascript" src="./main.js"></script>
+  </body>
+</html>

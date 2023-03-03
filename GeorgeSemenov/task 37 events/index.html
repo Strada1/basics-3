@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Секудронмед</title>
+    <style>
+      input {padding: 10px; border-radius: 5px;}
+    </style>
+  </head>
+  <body>
+    <button
+      id="secButton"
+
+    >Кесундроме</button>
+    <script>
+      let button = document.getElementById("secButton");
+      let buttonClickCounter = 0;
+      let intervalId;
+      let secundomerStartedAt;
+
+      button.addEventListener('click',buttonClickHandler);
+
+      function buttonClickHandler(event){
+        buttonClickCounter++;
+        if(buttonClickCounter%2 !== 0){
+          secundomerStartedAt = !(secundomerStartedAt)? new Date() : secundomerStartedAt;
+
+          intervalId = setInterval(()=>{
+            console.log(`${secundomerStartedAt.getHours()} : ${secundomerStartedAt.getMinutes()} : ${secundomerStartedAt.getSeconds()}`);
+              secundomerStartedAt = new Date(secundomerStartedAt.getTime() + 1000);
+          },1000)
+        }else{
+          clearInterval(intervalId);
+        }
+      }
+    </script>
+  </body>
+</html>
