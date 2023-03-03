@@ -35,6 +35,9 @@
   }
 
   .low {
+    max-height: 350px;
+    overflow: auto;
+
     &__title {
       margin-bottom: 12px;
     }
