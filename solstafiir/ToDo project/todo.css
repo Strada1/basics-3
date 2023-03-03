@@ -30,9 +30,9 @@ p {
   padding-top: 10px;
   padding-bottom: 5px;
 }
-.high-priority-task-field,
+/* .high-priority-task-field,
 .low-priority-task-field {
-}
+} */
 .high-task-field,
 .low-task-field {
   display: flex;
