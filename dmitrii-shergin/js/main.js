@@ -17,17 +17,16 @@ function addTask(name, priority) {
     LIST.push({ name, status, priority })
 }
 
-function deleteTask(taskName) {
-    const taskIndex = LIST.findIndex(task => task.name === taskName)
+function deleteTask(name) {
+    const taskIndex = LIST.findIndex(task => task.name === name)
     if (taskIndex != -1) {
         LIST.splice(taskIndex, 1)
     }
 }
 
-function changeStatus(taskName) {
-    const task = LIST.find(task => task.name === taskName)
+function changeStatus(name) {
+    const task = LIST.find(task => task.name === name)
     task.status = (task.status === STATUS.DONE) ? STATUS.TO_DO : STATUS.DONE
-    return task.status
 }
 
 render()

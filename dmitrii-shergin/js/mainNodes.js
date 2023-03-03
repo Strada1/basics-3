@@ -11,21 +11,21 @@ function addTaskNode(event) {
 }
 
 function deleteTaskNode() {
-    const taskName = this.parentNode.querySelector('.task').textContent
-    deleteTask(taskName)
+    const name = this.parentNode.querySelector('.task').textContent
+    deleteTask(name)
     render()
 }
 
 function changeStatusNode() {
     const taskNode = this.parentNode.querySelector('.task')
-    const taskName = taskNode.textContent
-    const status = changeStatus(taskName)
-    if (status === STATUS.TO_DO) {
-        taskNode.classList.remove('doneTask')
-        this.parentNode.classList.remove('doneDiv')
-    } else if (status === STATUS.DONE) {
+    const name = taskNode.textContent
+    changeStatus(name)
+    if (this.checked) {
         taskNode.classList.add('doneTask')
         this.parentNode.classList.add('doneDiv')
+    } else {
+        taskNode.classList.remove('doneTask')
+        this.parentNode.classList.remove('doneDiv')
     }
 }
 
