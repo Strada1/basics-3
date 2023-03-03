@@ -50,15 +50,31 @@ html {
             .high-box {
               display: flex;
               flex-direction: column;
-              gap: 8px;
-              // border: $border-red;
+
+              .high-box_todo {
+                display: flex;
+                flex-direction: column;
+              }
+
+              .high-box_done {
+                display: flex;
+                flex-direction: column;
+              }
             }
   
             .low-box {
               display: flex;
               flex-direction: column;
-              gap: 8px;
-              // border: $border-red;
+
+              .low-box_todo {
+                display: flex;
+                flex-direction: column;
+              }
+
+              .low-box_done {
+                display: flex;
+                flex-direction: column;
+              }
             }
 
             .head-text {
@@ -97,10 +113,12 @@ html {
               }
             }
 
-            .task-box {position: relative;
+            .task-box {
+              position: relative;
               border: 1px solid #989898;
               border-radius: 6px;
               padding: 12px 45px;
+              margin-top: 8px;
 
               .label-checkbox-task {
                 position: absolute;
@@ -135,15 +153,16 @@ html {
                   transition: .3s;
                 }
 
-                // #task-done {
-                //   background: #F4F4F4;
-                // }
-                // #task-done::before {
-                //   opacity: 1;
-                // }
-
                 .input-checkbox-task:checked + .fake-checkbox::before {
                   opacity: 1;
+                }
+
+                #fake-checkbox_status-done::before {
+                  opacity: 1;
+                }
+
+                #fake-checkbox_status-done:checked + .fake-checkbox_status-done::before {
+                  opacity: 0;
                 }
               }
 
@@ -162,6 +181,10 @@ html {
                 cursor: pointer;
                 transform: rotate(45deg);
               }
+            }
+
+            #task-box_status-done {
+              background: #F4F4F4;
             }
           }
         }

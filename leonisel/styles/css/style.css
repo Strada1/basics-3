@@ -38,12 +38,26 @@ html body .main .container .todo-wrapper .todo-container {
 html body .main .container .todo-wrapper .todo-container .high-box {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+}
+html body .main .container .todo-wrapper .todo-container .high-box .high-box_todo {
+  display: flex;
+  flex-direction: column;
+}
+html body .main .container .todo-wrapper .todo-container .high-box .high-box_done {
+  display: flex;
+  flex-direction: column;
 }
 html body .main .container .todo-wrapper .todo-container .low-box {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+}
+html body .main .container .todo-wrapper .todo-container .low-box .low-box_todo {
+  display: flex;
+  flex-direction: column;
+}
+html body .main .container .todo-wrapper .todo-container .low-box .low-box_done {
+  display: flex;
+  flex-direction: column;
 }
 html body .main .container .todo-wrapper .todo-container .head-text {
   text-align: center;
@@ -80,6 +94,7 @@ html body .main .container .todo-wrapper .todo-container .task-box {
   border: 1px solid #989898;
   border-radius: 6px;
   padding: 12px 45px;
+  margin-top: 8px;
 }
 html body .main .container .todo-wrapper .todo-container .task-box .label-checkbox-task {
   position: absolute;
@@ -114,6 +129,12 @@ html body .main .container .todo-wrapper .todo-container .task-box .label-checkb
 html body .main .container .todo-wrapper .todo-container .task-box .label-checkbox-task .input-checkbox-task:checked + .fake-checkbox::before {
   opacity: 1;
 }
+html body .main .container .todo-wrapper .todo-container .task-box .label-checkbox-task #fake-checkbox_status-done::before {
+  opacity: 1;
+}
+html body .main .container .todo-wrapper .todo-container .task-box .label-checkbox-task #fake-checkbox_status-done:checked + .fake-checkbox_status-done::before {
+  opacity: 0;
+}
 html body .main .container .todo-wrapper .todo-container .task-box .close-task-btn {
   position: absolute;
   right: 12px;
@@ -126,6 +147,9 @@ html body .main .container .todo-wrapper .todo-container .task-box .close-task-b
   background-repeat: no-repeat;
   cursor: pointer;
   transform: rotate(45deg);
+}
+html body .main .container .todo-wrapper .todo-container #task-box_status-done {
+  background: #F4F4F4;
 }
 
 /*# sourceMappingURL=style.css.map */
