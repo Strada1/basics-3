@@ -13,22 +13,24 @@
 
 .calc-wrapper {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  max-width: 300px;
-  margin: 30vh auto 30px auto;
+  width: 500px;
+  margin: 40vh auto 30px auto;
 }
 
 .operand {
   width: 95px;
   height: 33px;
   border: 1px solid black;
+  margin-right: 20px;
 }
 
 .operator {
   border: 1px solid black;
   color: #444;
   border-radius: 5px;
+  margin-right: 20px;
 }
 
 /* .operator:active,
@@ -47,9 +49,7 @@
   border: 1px solid #000000;
   border-radius: 4px;
   padding: 4px 12px;
-}
-
-.equals {
+  margin-right: 20px;
   cursor: pointer;
   background-color: white;
 }
@@ -58,3 +58,27 @@
   cursor: pointer;
   background-color: wheat;
 }
+
+.sec-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  margin: 10px auto 30px auto;
+}
+
+.timer {
+  margin-right: 30px;
+}
+
+.btn {
+  margin-right: 10px;
+}
+
+/* input:valid {
+  background-color: white;
+}
+
+input:invalid {
+  background-color: lightpink;
+} */

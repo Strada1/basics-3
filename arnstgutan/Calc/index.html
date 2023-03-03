@@ -10,21 +10,24 @@
 </head>
 
 <body class="body_container">
+
   <div class="calc-wrapper">
-    <input type="text" class="operand oper1">
+    <input type="text" class="operand" id="left">
     <select name="select" class="operator">
       <option value="plus" selected> + </option>
       <option value="minus"> - </option>
       <option value="multiply"> × </option>
       <option value="division"> / </option>
     </select>
-    <input type="text" class="operand oper2">
+    <input type="text" class="operand" id="right">
     <button class="equals">=</button>
     <div class="result"></div>
   </div>
+
   <div class="sec-wrapper">
-    <div class="timer">sdsd</div>
-    <input type="button">
+    <div class="timer"></div>
+    <button id="strt" class="btn">start</button>
+    <button id="rst" class="btn">reset</button>
   </div>
   <script src="index.js"></script>
 </body>
