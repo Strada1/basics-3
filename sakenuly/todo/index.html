@@ -1,0 +1,61 @@
+    <!DOCTYPE html>
+    <html>
+        <link rel="stylesheet" href="style.css">
+    <head>
+
+
+
+    </head>
+    <body>
+        <header class="main-menu"> 
+    <script>
+        
+    </script>
+        </header>
+    <div class="block-form" >
+        <div class="high-text"> HIGH </div>
+                                                        <div id="hcheckbox" class="highcheckbox-copy">
+                                                            <input type="checkbox" class="hmaincheckbox" id ="hcheckboxinput">
+                                                            <label id="hlabel" class = "labels" for="hcheckboxinput">Задача с высоким приоритетом</label>
+                                                            <button type="button" id="delete-high-button"class="delete-symbols">&#10006;</button>
+                                                                </div>
+        <form id="high-form">
+        <div class="block-form-input">
+            <div id="high">  
+                <input id="high-input" type="text" class="add-input" placeholder="Добавить задачу">
+                <button type="submit" id="add-high-button" class="add-symbols">&#10010;</button>
+            </div>  
+            </div>
+        </form>
+        <div id="high-all"></div>
+        <div id="hcheckboxlist">
+
+        </div>
+            </div>
+        </div>
+    
+        <form id="low-form">
+        <div class="low-text"> Low </div>
+                                                        <div id="lowcheckbox" class="lcheckbox-copy">
+                                                            <input type="checkbox" class="lmaincheckbox"id="lcheckbox">
+                                                            <label id="llabel" class = "labels" for="lcheckbox"> Задача с низким приоритетом  </label> 
+                                                            <button type="button" id="delete-low-button" class="delete-symbols">&#10006;</button>
+                                                            </div>
+        <div id="low"> 
+            <input id="low-input" type="text" class="add-input" placeholder="Добавить задачу">
+            <button type="submit" id="add-low-button" class="add-symbols">&#10010;</button>
+        </div>
+    </form>
+    <div id="lcheckboxlist"></div>
+
+       
+
+        
+    <footer>
+    <button type="button" id="renderbutton"> РЕНДЕР!!</button>
+    </footer>
+    <script type="module" src="main.js"> </script>
+    <script type="module" src="mass.js"> </script>
+    </body>
+
+    </html>
