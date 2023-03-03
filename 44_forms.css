@@ -1,0 +1,106 @@
+body {
+	background-color: rgb(180, 180, 180);
+}
+
+.btn {
+	padding: 5px 20px;
+	border-radius: 30px;
+	border: none;
+	background-color: #e941234f;
+	color: white
+}
+
+.done_deal {
+	background-color: #3aa31a44;
+}
+
+.container {
+	height: 100%;
+}
+
+.wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.todo {
+	max-width: 600px;
+	min-height: 400px;
+	background-color: white;
+	color:midnightblue;
+	border-radius: 5px;
+	padding: 10px;
+	margin-top: 100px;
+}
+
+input {
+	border: none;	
+}
+
+.input_form {
+	display: flex;
+	justify-content: space-between;
+	border: 1px solid black;
+	border-radius: 5px;
+	padding: 5px;  
+	margin-bottom: 5px;    
+	gap: 5px;   
+	flex-grow: 0;  
+}
+
+.deal_item {
+	display: flex;
+	justify-content: space-between;
+	border: 1px solid black;
+	border-radius: 5px;
+	padding: 5px;  
+	margin-bottom: 5px;    
+	gap: 5px;   
+	flex-grow: 0;  
+}
+
+.bordered {
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+h1 {
+	font-weight: 600;
+	font-size: 18px;
+	text-align: center;
+	color: black
+}
+
+.high_add, .middle_add, .low_add {
+  min-width: 355px;
+  overflow: hidden;
+}
+
+p {
+  overflow: hidden;
+  margin: 5px;
+}
+
+[type='radio'] {
+  width: 10px;
+  /* height: 20px; */
+}
+form {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  border: 1px solid black;
+  padding: 3px;
+  margin-bottom: 5px;
+
+}
+
+img {
+  margin: 0 5px;;
+}
+
+.high_priority {
+	display: flex;
+	flex-direction: column;
+}
