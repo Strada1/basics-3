@@ -1,66 +1,51 @@
-const hoursElement = document.querySelector('.hours');
-const minutesElement = document.querySelector('.minutes');
-const secondsElement = document.querySelector('.seconds');
-const button = document.querySelector('.button');
+const number_1 = document.querySelector ('.number_1');
+const number_2 = document.querySelector ('.number_2');
+const js_select = document.querySelector ('.js_select');
+const buttonResult = document.querySelector ('.js_result');
+const output = document.querySelector ('.js_output');
 
 
-
-//Переменные 
-let hours = 00;
-let minutes = 00;
-let seconds = 00;
-let interval
-let isActive = false;
-
-
-function startTimer(){
-    interval = setInterval ( () => {
-        seconds++
-        if (seconds < 9) {
-            secondsElement.innerText = '0' + seconds
-        }
-        if (seconds > 9) {
-            secondsElement.innerText = seconds
-        }
-        if (seconds > 59) {
-            minutes++
-            // minutesElement.innerText = '0' + minutes
-            seconds = 0
-            secondsElement.innerText = '0' + seconds
-        }
-
-        // Минуты
-        if (minutes < 9) {
-            minutesElement.innerText = '0' + minutes
-        }
-        if (minutes > 9) {
-            minutesElement.innerText = minutes
-        }
-        if (minutes > 59) {
-            hours++
-            // hoursElement.innerText = '0' + hours
-            minutes = 0
-            minutesElement.innerText = '0' + minutes
-        }
-
-        //Часы
-        if (hours < 9) {
-            hoursElement.innerText = '0' + hours
-        }
-        if (hours > 9) {
-            hoursElement.innerText = hours
-        }
-        if (hours > 59) {
-            seconds = 0
-        }
-} ,1000);
+const OPERATIONS = {
+    summation:"addition",
+    subtraction:"subtraction",
+    multiplication:"multiplication",
+    division:"division",
 }
 
-function stopTimer () {
-    clearInterval (interval)
+function calculate (a, b, operation){
+    let conclusion = 0;
+
+   switch (operation) {
+    case OPERATIONS.summation:
+       conclusion = a + b; 
+        break;
+
+    case OPERATIONS.subtraction:
+        conclusion = a - b;
+        break;
+
+    case OPERATIONS.multiplication:
+        conclusion = a * b;
+        break;
+
+    case OPERATIONS.division:
+        conclusion = a / b;
+        break;
+    
+   
+    default:
+        break;
+   }
+   return conclusion;
 }
 
-button.addEventListener ('click', () => {
-    isActive = !isActive;
-    isActive ? startTimer() : stopTimer ();
+buttonResult.addEventListener ('click', function (){
+    const a = Number(number_1.value);
+    const b = Number(number_2.value);
+    const operation = js_select.value;
+
+    const conclusion = calculate (a,b,operation);
+
+    output.innerHTML = conclusion;
+
 })

@@ -1,68 +1,38 @@
-/* 
-.timer {
+body {
+    font-family: Arial, Helvetica, sans-serif;  
+    font-size: 15px;
+    font-weight: 400;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.time {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: cornflowerblue;
-    width: 150px;
-    height: 150px;
-    margin: 5px;
-    font-size: 95px;
-    color: white;
-}
-
-.button {
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-    width: 180px;
-} */
-
-#secundomers {
-    width: 600px;
-    height: 300px;
-    margin: 100px;
-    border-radius: 10px;
-    background: #fbefef;
-    text-align: center;
-}
-
-.timer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.time {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #40709f;
-    color: #ffeffb;
-    height: 150px;
-    width: 150px;
-    border-radius: 5px;
-    margin: 20px;
-    font-size: 95px;
-    }
-
- .button {
-    width: 150px;
-    height: 50px;
-    background: #7B68EE ;
-    color: #ffeffb;
-    font-size: 23px;
-    margin-top: 20px;
-    border-radius: 5px;
- }   
-
- button:hover {
-    background-color:#483D8B;
-    color: white;
- }
+    background-color: white;
+  }
+  
+  .container {
+      width: 700px;
+      height: 700px;
+      border: solid;
+      background-color:aqua;
+      border-radius: 10%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  
+  input {
+      width: 80px;
+      height: 25px;
+      margin: 5px;
+  }
+  
+  select {
+      width: 35px;
+      height: 25px;
+      margin: 5px;
+  }
+  
+  button {
+      width: 35px;
+      height: 25px;
+      margin: 5px;
+  }
