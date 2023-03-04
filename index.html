@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
   <title>strada</title>
-  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <main class="todo__wrapper">
     <div class="todo__block" id="todoBlockHigh">
       <h3 class="todo__title">HIGH</h3>
-      <form onsubmit="addCard()" id="formHigh"  class="todo__form">
-        <input class="todo__input" type="text" id="input" placeholder="Добавить важных дел">
+      <form onsubmit="addTask()" id="formHigh"  class="todo__form">
+        <input class="todo__input" type="text" id="inputHigh" placeholder="Добавить важных дел">
         <button id="buttonHigh" type="submit" class="todo__button">+</button>
       </form>
       <div id="cardBlockHigh" class="card__block"></div>
@@ -26,8 +25,8 @@
     </div>
     <div class="todo__block" id="todoBlockLow">
       <h3 class="todo__title">LOW</h3>
-      <form class="todo__form" id="formLow">
-        <input class="todo__input" type="text" placeholder="Добавить важных дел">
+      <form onsubmit="addTask()" class="todo__form" id="formLow">
+        <input class="todo__input" type="text" id="inputLow" placeholder="Добавить важных дел">
         <button id="buttonLow" type="submit" class="todo__button">+</button>
       </form>
       <div id="cardBlockLow" class="card__block"></div>
@@ -35,6 +34,11 @@
 
       
   </main>
-  <script src="index.js"></script>
+  <script type="module" src="index.js"></script>
+  <script type="module" src="render.js"></script>
+  
+
+  
+
 </body>
 </html>

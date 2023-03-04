@@ -1,36 +1,26 @@
+import {render} from './render.js'
+import {STATUSES,PRIORITIES} from './attributes.js'
 
 const buttonHigh = document.getElementById('buttonHigh')
 const buttonLow = document.getElementById('buttonLow')
-const todoBlockHigh = document.getElementById('todoBlockHigh')
-const todoBlockLow = document.getElementById('todoBlockLow')
-const cardBlockHigh = document.getElementById('cardBlockHigh')
-const cardBlockLow = document.getElementById('cardBlockLow')
-
-const input = document.getElementById('input')
-const formHigh = document.getElementById('formHigh')
-const formLow = document.getElementById('formLow')
+const inputHigh = document.getElementById('inputHigh')
+const inputLow = document.getElementById('inputLow')
 
 
 
-const STATUSES = {
-    TODO: "To Do",
-    IN_PROGRESS: "In progress",
-    DONE: "Done",
-};
-const PRIORITIES = {
-    HIGH: "High",
-    LOW: "Low",
-};
 
-const list = [
-
-
-];
-
+const list = [];
+let priority
 
 
 function addTask(event){
     event.preventDefault()
+
+    try{
+        const inputLowValue = inputLow.value
+    const inputHighValue = inputHigh.value
+  
+
     if(event.target === buttonHigh){
         priority = PRIORITIES.HIGH
 
@@ -40,19 +30,35 @@ function addTask(event){
 
 
     }
-    
-    list.push({
-        name: input.value,
-        priority
-    })
-    
-    while (cardBlockHigh.firstChild) {
-        cardBlockHigh.removeChild(cardBlockHigh.firstChild);
+
+    if(inputLowValue === ''){
+        list.push({
+            name: inputHighValue,
+            priority,
+            status:'In progress'
+        })
     }
-    while (cardBlockLow.firstChild) {
-        cardBlockLow.removeChild(cardBlockLow.firstChild);
+
+    if(inputHighValue === ''){
+        list.push({
+            name: inputLowValue,
+            priority,
+            status:'In progress'
+        })
     }
+    if(inputHighValue === '' || inputLowValue === ''){
+        throw new Error('Не правильный ввод данных')
+    }
+    
+    
+    
+    inputLow.value = ""
+    inputHigh.value = ""
     render(list)
+
+    }catch(er){
+        alert(er)
+    }
     
 
 
@@ -64,54 +70,7 @@ function addTask(event){
 
 
 
-function render(event){
-    
-    
-    
-    
-    list.forEach((elem)=>{
-        console.log(input.value)
 
-        const newDiv = document.createElement('div');
-        newDiv.className = 'todo__card'
-
-        const newInput = document.createElement('input');
-        newInput.className = 'card__checkbox'
-        newInput.type = 'checkbox'
-
-
-        const newLabel = document.createElement('label');
-        newLabel.className = 'todo__description'
-        newLabel.textContent = elem.name
-
-        const newButton = document.createElement('button');
-        newButton.className = 'todo__button'
-        newButton.textContent = '+'
-
-
-        function removeCard(){
-            newDiv.remove()
-        }
-        newButton.addEventListener("click", removeCard);
-
-
-        newDiv.appendChild(newInput);
-        newDiv.appendChild(newLabel);
-        newDiv.appendChild(newButton);
-        if(elem.priority === PRIORITIES.HIGH){
-            cardBlockHigh.appendChild(newDiv);
-
-        }
-        if(elem.priority === PRIORITIES.LOW){
-            cardBlockLow.appendChild(newDiv);
-
-        }
-    })
-
-
-
-
-}
 
 buttonHigh.addEventListener("click", addTask);
 buttonLow.addEventListener("click", addTask);

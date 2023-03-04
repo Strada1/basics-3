@@ -42,6 +42,22 @@ color: #000000;
   width: 5%;
   color: #998899;
 
+
+}
+.card__button{
+  border: 0;
+  font-size: 24px;
+  width: 5%;
+  color: #998899;
+  transform: rotate(45deg);
+
+
+}
+.todo__button:hover { 
+  color: green; 
+}
+.card__button:hover { 
+  color:red; 
 }
 .todo__card{
   display: flex;
