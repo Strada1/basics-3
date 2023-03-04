@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+    <title>43 TODO UI</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="todo-wrap">
+            <div class="todo-block">
+                <h3 class="title">high</h3>
+                <form class="form-tasks-high" onsubmit="return false">
+                    <div class="todo-add">
+                        <input type="text" placeholder="Добавить важных дел">
+                        <button class="btn-add-task" type="submit">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <line y1="-0.5" x2="18.0096" y2="-0.5"
+                                    transform="matrix(0.999988 -0.00481873 0.0748716 0.997193 1 10)" stroke="#998899" />
+                                <line y1="-0.5" x2="18.0401" y2="-0.5"
+                                    transform="matrix(-0.0192905 -0.999814 0.998699 0.0509976 10.5404 18.8444)"
+                                    stroke="#998899" />
+                            </svg>
+                        </button>
+                    </div>
+                </form>
+                <div class="todo-item-list">
+                    <div class="todo-item-list-high">
+                        <!-- <div class="todo-item">
+                            <input type="checkbox" id="task-4"><label for="task-4">Задание 1</label>
+                            <button class="btn-del-task">
+                                <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <line y1="-0.5" x2="20.7803" y2="-0.5"
+                                        transform="matrix(0.710506 0.703691 -0.65218 0.758064 1 1)" stroke="#998899" />
+                                    <line y1="-0.5" x2="20.8155" y2="-0.5"
+                                        transform="matrix(0.693335 -0.720616 0.670126 0.742247 1.56787 16)" stroke="#998899" />
+                                </svg>
+                            </button>
+                        </div> -->
+                    </div>                        
+                </div>               
+            </div>
+            <div class="todo-block">
+                <h3 class="title">low</h3>
+                <form class="form-tasks-low" onsubmit="return false">
+                    <div class="todo-add">
+                        <input type="text" placeholder="Добавить">
+                        <button class="btn-add-task">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <line y1="-0.5" x2="18.0096" y2="-0.5"
+                                    transform="matrix(0.999988 -0.00481873 0.0748716 0.997193 1 10)" stroke="#998899" />
+                                <line y1="-0.5" x2="18.0401" y2="-0.5"
+                                    transform="matrix(-0.0192905 -0.999814 0.998699 0.0509976 10.5404 18.8444)"
+                                    stroke="#998899" />
+                            </svg>
+                        </button>
+                    </div>
+                </form>
+                <div class="todo-item-list">
+                    <div class="todo-item-list-low"></div>                        
+                </div>   
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,93 @@
+html,
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 476px;
+    margin: 0 auto;
+    padding-top: 5%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.todo-wrap {
+    width: 100%;
+    padding: 25px 8px;
+
+}
+
+.title {
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    color: #000000;
+    text-align: center;
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+
+.todo-add  {
+    position: relative;
+}
+
+.todo-add input {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    color: #202020;
+    width: 460px;
+    height: 45px;
+    background: #FFFFFF;
+    border: 1px solid #989898;
+    border-radius: 6px;
+    padding: 12px;
+}
+
+.todo-add input::placeholder {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    color: #BBBBBB;
+}
+
+.todo-item {
+    width: 460px;
+    background: #FFFFFF;
+    border: 1px solid #989898;
+    border-radius: 6px;
+    padding: 12px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    position: relative;
+
+}
+
+.todo-item label {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    color: #202020;
+    max-width: 370px;
+    margin-left: 12px;
+    text-align: center;
+}
+
+
+.btn-add-task, .btn-del-task{
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
