@@ -15,58 +15,18 @@
       <div id="high" class="task-box">
         <h1 class="title">HIGH</h1>
         <form id="highstart" class="inputbox">
-          <input id="todohigh" class="textbox" type="text" placeholder="Добавить важных дел">   
+          <input id="inputhigh" class="textbox" type="text" placeholder="Добавить важных дел">   
             <button id="addhigh" class="button" type="submit">
               <ion-icon class="scale" name="add-outline"></ion-icon>
             </button>
           </form>
-      
-        <div class="task">
-          <input type="radio">
-          <div class="task-text">да, поле для добавления новой задачи должно быть именно формой
-            нет, весь остальной функционал сейчас делать не нужно, только форма - enter - создание дива - добавление в верстку 
-            кажется все это вы уже делали в прошлых задачах </div>
-          <button id="close" class="button" type="delete">
-            <ion-icon class="scale" name="close-outline"></ion-icon>
-          </button>
-        </div>
-
-        <div class="task">
-          <input type="radio">
-          <div class="task-text">да, поле для добавления новой задачи должно быть именно формой
-            нет, весь остальной функционал сейчас делать не нужно, только форма - enter - создание дива - добавление в верстку 
-            кажется все это вы уже делали в прошлых задачах </div>
-          <button id="close" class="button" type="delete">
-            <ion-icon class="scale" name="close-outline"></ion-icon>
-          </button>
-        </div>
-
-        <div class="task">
-          <input type="radio">
-          <div class="task-text">да, поле для добавления новой задачи должно быть именно формой
-            нет, весь остальной функционал сейчас делать не нужно, только форма - enter - создание дива - добавление в верстку 
-            кажется все это вы уже делали в прошлых задачах </div>
-          <button id="close" class="button" type="delete">
-            <ion-icon class="scale" name="close-outline"></ion-icon>
-          </button>
-        </div>
-
-        <div class="task">
-          <input type="radio">
-          <div class="task-text">да, поле для добавления новой задачи должно быть именно формой
-            нет, весь остальной функционал сейчас делать не нужно, только форма - enter - создание дива - добавление в верстку 
-            кажется все это вы уже делали в прошлых задачах </div>
-          <button id="close" class="button" type="delete">
-            <ion-icon class="scale" name="close-outline"></ion-icon>
-          </button>
-        </div>
-      
+    
       </div>
       <!-- Block with LOW Priority Tasks -->
       <div id="low" class="task-box">
         <h1 class="title">LOW</h1>
-        <form class="inputbox">
-          <input id="todolow" class="textbox" type="text" placeholder="Добавить">   
+        <form id="lowstart" class="inputbox">
+          <input id="inputlow" class="textbox" type="text" placeholder="Добавить">   
             <button id="addlow" class="button" type="submit">
               <ion-icon class="scale" name="add-outline"></ion-icon>
             </button>
@@ -81,7 +41,10 @@
       </div>
     </div>
   </div>
-  <script src="todo.js"></script>
+  <script type="module" src="todo.js"></script>
+  <script type="module" src="testArray.js"></script>
+  <script type="module" src="clear.js"></script>
+  <script type="module" src="tasklist.js"></script>
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>

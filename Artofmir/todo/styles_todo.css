@@ -114,7 +114,7 @@ ion-icon#add-outline, ion-icon#close-outline {
 .button {
   width: 35px;
   border: none;
-  background-color: white;
+  background-color: transparent;
 }
 
 .button:hover {
