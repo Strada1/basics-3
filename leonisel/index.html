@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TO-DO</title>
+  <link rel="stylesheet" href="./styles/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+  <main class="main">
+    <div class="container">
+      <div class="todo-wrapper">
+        <div class="todo-container">
+          <div class="head-text">HIGH</div>
+          <div class="high-box">
+            <div class="inputs-wrapper">
+              <form class="forms">
+                <input type="text" class="inputs-enter-data" id="input-high" placeholder="Добавить важных дел" required>
+                <span class="add-task-btn"></span>
+              </form>
+            </div>
+            <div class="high-box_todo">
+              <div class="task-box">
+                <label class="label-checkbox-task">
+                  <input type="checkbox" class="input-checkbox-task">
+                  <span class="fake-checkbox"></span>
+                </label>
+                Сверстать этот TODO list
+                <span class="close-task-btn"></span>
+              </div>
+            </div>
+            <div class="high-box_done">
+            </div>
+          </div>
+          <div class="head-text">LOW</div>
+          <div class="low-box">
+            <div class="inputs-wrapper">
+              <form class="forms">
+                <input type="text" class="inputs-enter-data" id="input-low" placeholder="Добавить важных дел" required>
+                <span class="add-task-btn"></span>
+              </form>
+            </div>
+            <div class="low-box_todo">
+              <div class="task-box">
+                <label class="label-checkbox-task">
+                  <input type="checkbox" class="input-checkbox-task">
+                  <span class="fake-checkbox"></span>
+                </label>
+                Посмотреть ютубчик
+                <span class="close-task-btn"></span>
+              </div>
+            </div>
+            <div class="low-box_done">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script type="module" src="./js/main.js"></script>
+  <script type="module" src="./js/render.js"></script>
+</body>
+</html>
+
