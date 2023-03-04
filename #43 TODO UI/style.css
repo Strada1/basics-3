@@ -1,0 +1,121 @@
+body {
+    background-color: #ccc; /* Задний фон страницы - серый */
+}
+
+/* Стили для окна To Do листа /
+/*background-color: #fff; / Окно To Do листа - белое *!*/
+/*.todo-list {*/
+/*border: 1px solid #000;*/
+/*border-radius: 5px;*/
+/*box-shadow: 0px 0px 10px #888;*/
+/*padding: 20px;*/
+/*margin: 50px auto;*/
+/*max-width: 800px;*/
+/*}*/
+
+/* Стили для задач /
+background-color: #fff; / Окно задачи - белое */
+/*.task {*/
+/*border: 1px solid #000;*/
+/*border-radius: 5px;*/
+/*box-shadow: 0px 0px 10px #888;*/
+/*padding: 20px;*/
+/*margin: 10px;*/
+/*max-width: 300px;*/
+/*display: flex;*/
+/*align-items: center;*/
+/*justify-content: space-between;*/
+/*}*/
+
+/* Стили для списка задач */
+#taskList {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+/* Стили для крестика */
+.delete-task {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5em;
+    margin: 0;
+    padding: 0;
+}
+
+.add-todo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.add-todo__input {
+    flex-grow: 1;
+    padding: 10px;
+    background-color: #FFFFFF;
+    border: 1px solid #000000;
+    color: #000000;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px 0 0 5px;
+
+}
+
+.add-todo__button {
+    padding: 10px;
+    background-color: #000000;
+    color: #FFFFFF;
+    font-size: 24px;
+    font-weight: bold;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+body {
+    background-color: #ccc;
+}
+
+.todo-list {
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px #888;
+    padding: 20px;
+    margin: 50px auto;
+    max-width: 400px;
+}
+
+.task {
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px #888;
+    padding: 20px;
+    margin: 10px;
+    max-width: 300px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+#task-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.delete-task {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5em;
+    margin: 0;
+    padding: 0;
+}
+.todo-priority {
+    text-align: center;
+    margin-bottom: 10px;
+}
