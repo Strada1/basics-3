@@ -1,10 +1,13 @@
 import { PRIORITIES, STATUSES } from "./nameSpaces.js";
 
-const list = [
+let list = [
   // { id: 1, name: "wash the car", status: "To Do", priority: "High" },
   // { id: 2, name: "create a post", status: "To Do", priority: "High" },
   // { id: 3, name: "suck", status: "To Do", priority: "Low" },
 ];
+if (localStorage.getItem("list")) {
+  list = JSON.parse(localStorage.getItem("list"));
+}
 
 function render() {
   const highTaskCollector = document.querySelector(".high-task-collector");
@@ -35,6 +38,7 @@ function render() {
       input.checked = true;
     }
   });
+  saveData();
   console.log(list);
 }
 
@@ -44,6 +48,10 @@ function deleteTasksFromArray() {
   if (taskFromArray) {
     taskFromArray.forEach((taskFromArray) => taskFromArray.remove());
   }
+}
+
+function saveData() {
+  localStorage.setItem("list", JSON.stringify(list));
 }
 
 export { render, list };

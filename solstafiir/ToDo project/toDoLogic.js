@@ -4,12 +4,6 @@ import { render, list } from "./todoRender.js";
 const highForm = document.querySelector(".high-task-field");
 const lowForm = document.querySelector(".low-task-field");
 
-// const list = [
-//   // { id: 1, name: "wash the car", status: "To Do", priority: "High" },
-//   // { id: 2, name: "create a post", status: "To Do", priority: "High" },
-//   // { id: 3, name: "suck", status: "To Do", priority: "Low" },
-// ];
-
 render();
 
 function addTask(contentForm, priority) {
