@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To Do list</title>
+    <link rel="stylesheet" href="todo.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="main-rectangle">
+        <div class="high-priority-task-field">
+          <p>HIGH</p>
+          <form action="" type="submit" class="high-task-field">
+            <input
+              class="add-high-task-field"
+              type="text"
+              placeholder="Добавить важные дела"
+            />
+            <button type="submit" class="high-add-button">+</button>
+          </form>
+          <div class="high-task-collector">
+
+          </div>
+         </div>
+
+        <div class="low-priority-task-field">
+          <p>LOW</p>
+          <form action="" class="low-task-field">
+            <input
+              class="add-low-task-field"
+              type="text"
+              placeholder="Добавить менее важные дела"
+            />
+            <button type="submit" class="low-add-button">+</button>
+          </form>
+          <div class="low-task-collector">
+
+          </div>
+        </div>
+    </div>
+    <script type="module" src="toDoLogic.js"></script>
+  </body>
+</html>
