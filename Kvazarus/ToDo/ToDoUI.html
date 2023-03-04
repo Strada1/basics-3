@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>ToDo</title>
+    <link href="./ToDoStyle.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="highPriority">
+            <h2>HIGH</h2>
+            <div class="addTask">
+                <form class="addTask">
+                    <label>
+                        <input type="text" placeholder="Добавить важные дела" value="">
+                    </label>
+                    <button class="addTaskButton" type="submit"></button>
+                </form>
+            </div>
+        </div>
+        <div class="lowPriority">
+            <h2>LOW</h2>
+            <div class="addTask">
+                <form class="addTask">
+                    <label>
+                        <input type="text" placeholder="Добавить" value="">
+                    </label>
+                    <button class="addTaskButton" type="submit"></button>
+                </form>
+            </div>
+            <!--
+            Just to remember the structure
+            <div class="task">
+                <div class="containing">
+                    <button class="markAsReadyButton"></button>
+                    <span class="ToDoText">
+                        Посмотреть ютубик
+                    </span>
+                </div>
+                <button class="deleteTaskButton"></button>
+            </div>
+            -->
+        </div>
+        <div class="markedAsReadyDivs">
+            <h2>READY</h2>
+        </div>
+    </div>
+    <script type="module" src="./ToDoLogiс.js"></script>
+</body>
+
+</html>
