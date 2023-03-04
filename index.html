@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>TODO</title>
+</head>
+<body>
+    <div class="todo">
+            <p class="todo__priority-title">Высокий приоритет</p>
+            <form action="#" method="post" class="todo__form">
+                <input type="text" id="high-priority-input" class="todo__input todo__task" placeholder="Добавить">
+                <button class="todo__button add-button">+</button>
+            </form>
+                <div class="todo__task">
+                    <label class="todo__label">
+                        <input type="checkbox" value="Вот вам и супер интересная тема.
+                        Вы наверняка заметили что ваши файлы с кодом становятся все объемнее, что хочется вынести некоторые вещи куда-то за пределы основной программы.">
+                        <span class="checkbox"></span>
+                       Почитать книгу
+                    </label>
+                    <button class="todo__button delete-button">x</button>
+                </div>
+                <div class="todo__task">
+                    <label class="todo__label">
+                        <input type="checkbox" value="Сверстать этот TODO list">
+                        <span class="checkbox"></span>
+                        Сверстать этот TODO list</label>
+                        <button class="todo__button delete-button">x</button>
+                </div>
+                <p class="todo__priority-title">Низкий приоритет</p>
+                <form action="#" method="post" class="todo__form">
+                    <input type="text" id="low-priority-input" class="todo__input todo__task" placeholder="Добавить">
+                    <button class="todo__button add-button">+</button>
+                </form>
+                <div class="todo__task">
+                    <label class="todo__label">
+                        <input type="checkbox" value="Сверстать этот TODO list">
+                        <span class="checkbox"></span>
+                        Посмотреть ютубчик
+                    </label>
+                        <button class="todo__button delete-button">x</button>
+                </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
