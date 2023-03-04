@@ -1,8 +1,10 @@
+import {render} from './render.js';
+
 const forms = document.getElementsByClassName('forms');
-const highBox = document.querySelector('.high-box');
-const lowBox = document.querySelector('.low-box');
-const inputLow = document.querySelector('#input-low');
-const inputHigh = document.querySelector('#input-high');
+// const highBox = document.querySelector('.high-box');
+// const lowBox = document.querySelector('.low-box');
+// const inputLow = document.querySelector('#input-low');
+// const inputHigh = document.querySelector('#input-high');
 const closeTaskBtn = document.getElementsByClassName('close-task-btn');
 const fakeCheckbox = document.getElementsByClassName('fake-checkbox');
 const highBoxTodo = document.querySelector('.high-box_todo');
@@ -22,7 +24,7 @@ const PRIORITY = {
   HIGH: 'high'
 }
 
-const list = [
+export const list = [
  {name: 'Сверстать этот TODO list', status: STATUS.TODO, priority: PRIORITY.HIGH},
  {name: 'Посмотреть ютубчик', status: STATUS.TODO, priority: PRIORITY.LOW}
 ];
@@ -77,14 +79,26 @@ function addUi(event) {
   event.preventDefault();
   let checkId;
   let dataForm;
-  
+
   const checkPlusButton = event.target.outerHTML;
   if(!checkPlusButton.includes("forms")) {
     checkId = event.target.parentNode[0].id;
     dataForm = event.target.parentNode[0].value;
+
   } else {
     checkId = event.target[0].id;
     dataForm = event.target[0].value;
+  }
+
+  try {
+    for (const obj of list) {
+      if(dataForm === obj.name){
+        console.log('OMG!')
+        throw new Error('Такое задание уже есть');
+      }
+    }  
+  } catch (error) {
+    alert(`Внимание! ${error.message}`);
   }
 
   if(checkId === 'input-high') {
@@ -139,14 +153,14 @@ function removeUi(event) {
 
 // RENDER
 
-function removeTasksRenderUI() {
+export function removeTasksRenderUI() {
   const allTasks = document.querySelectorAll('.task-box');
   for(const task of allTasks) {
     task.remove();
   }
 }
 
-function addTasksRenderUI() {
+export function addTasksRenderUI() {
   list.forEach(elem => {
     createDivTemplate(elem.name);
     if(elem.priority === PRIORITY.HIGH && elem.status === STATUS.TODO) {
@@ -165,11 +179,6 @@ function addTasksRenderUI() {
   })
   watchStatus(fakeCheckbox);
   watchRemoveBtns(closeTaskBtn); 
-}
-
-function render() {
-  removeTasksRenderUI();
-  addTasksRenderUI();
 }
 
 //  WATCH EVENT LISTENER
