@@ -1,0 +1,133 @@
+:root {
+  --c-white: #ffffff;
+  --c-black: #000;
+  --main-border: 1px solid var(--c-black);
+  --input-border-radius: 3px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+}
+
+body {
+  background-color: #111010;
+}
+
+.program-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: (var(--main-border));
+  background-color: #000;
+}
+
+.main {
+  height: 100vh;
+  background-color: #E5E5E5;
+  border: (var(--main-border));
+}
+
+.inner{
+  justify-content: flex-start;
+  height: 100%;
+  width: 100%;
+  max-width: 476px;
+  max-height: 688px;
+  border: (var(--main-border));
+  border-radius: var(--input-border-radius);
+  background-color: var(--c-white);
+}
+
+.task-box {
+  flex-basis: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: top;
+  align-items: center;
+  overflow:scroll;
+}
+
+.title {
+  display: block;
+  width: 460px;
+  position: sticky;
+  top: 13px;
+  text-align: center;
+  background-color: #ffffff;
+}
+
+.inputbox {
+  display: flex;
+  justify-content: space-between;
+  position: sticky;
+  top: 41px;
+  width: 460px;
+  height: 35px;
+  border: var(--main-border);
+  border-radius: var(--input-border-radius);
+  background-color: white;
+  margin: 10px;
+  padding: 5px;
+}
+
+.inputbox:focus {
+  background-color:rgba(62, 159, 146, 0.4)
+}
+
+.textbox {
+  border: none; 
+  outline: none;
+  width: 420px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 15px;
+}
+
+.task {
+  display: flex;
+  justify-content: space-between;
+  width: 460px;
+  background-color: white;
+  border: var(--main-border);
+  border-radius: var(--input-border-radius);
+  padding: 5px;
+  margin-top: 10px;
+}
+
+.task-text {
+  width: 100%;
+  margin-left: 10px;
+}
+
+ion-icon#add-outline, ion-icon#close-outline {
+  font-size: 32px;
+}
+
+.button {
+  width: 35px;
+  border: none;
+  background-color: transparent;
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+.button:hover ion-icon.scale {
+  transform: scale(1.4);
+}
+
+.button:active ion-icon.scale {
+  transform: scale(0.8);
+}
+
+
+

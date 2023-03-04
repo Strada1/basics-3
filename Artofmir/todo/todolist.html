@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="styles_todo.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+  <title>ToDoList</title>
+</head>
+<body>
+  <div class="program-box main">
+    <div class="program-box inner">
+      <!-- Block with HIGH Priority Tasks -->
+      <div id="high" class="task-box">
+        <h1 class="title">HIGH</h1>
+        <form id="highstart" class="inputbox">
+          <input id="inputhigh" class="textbox" type="text" placeholder="Добавить важных дел">   
+            <button id="addhigh" class="button" type="submit">
+              <ion-icon class="scale" name="add-outline"></ion-icon>
+            </button>
+          </form>
+    
+      </div>
+      <!-- Block with LOW Priority Tasks -->
+      <div id="low" class="task-box">
+        <h1 class="title">LOW</h1>
+        <form id="lowstart" class="inputbox">
+          <input id="inputlow" class="textbox" type="text" placeholder="Добавить">   
+            <button id="addlow" class="button" type="submit">
+              <ion-icon class="scale" name="add-outline"></ion-icon>
+            </button>
+        </form>
+      <div class="task">
+        <input type="radio">
+        <div>Ютубчик</div>
+        <button id="close" class="button" type="delete">
+          <ion-icon class="scale" name="close-outline"></ion-icon>
+        </button>
+      </div>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="todo.js"></script>
+  <script type="module" src="testArray.js"></script>
+  <script type="module" src="clear.js"></script>
+  <script type="module" src="tasklist.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
