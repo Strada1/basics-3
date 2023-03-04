@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO UI</title>
+    <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script type="module" src="./main.js"></script>
+</head>
+
+<body>
+
+    <main>
+        <div class="highPriorityTasks">
+            <h1>HIGH</h1>
+            <form class="inputTaskForm">
+                <input data-priority="0" class="inputTask" placeholder="Добавить к списку важных дел" id="inputTaskHigh">
+                <button class="btnTask" id="addTaskHigh" type="submit"><span class="material-symbols-outlined">
+                        add
+                    </span></button>
+            </form>
+            <div class="tasksContainer" data-priority="0">
+            </div>
+        </div>
+        <div class="lowPriorityTasks">
+            <h1>LOW</h1>
+            <form class="inputTaskForm">
+                <input data-priority="1" class="inputTask" placeholder="Добавить" id="inputTaskLow">
+                <button class="btnTask" id="addTaskLow" type="submit"><span class="material-symbols-outlined">
+                        add
+                    </span></button>
+            </form>
+            <div class="tasksContainer" data-priority="1">
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
