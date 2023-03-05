@@ -12,13 +12,13 @@
 
 <body>
   <div class="container">
-    <div class="priority hight">
+    <div class="priority__hight">
 
       <h2>HIGHT</h2>
 
       <form class="input__wrapper">
 
-        <input class="input" type="text" id="add_todo" placeholder="Добавить важных дел">
+        <input class="input__hight" type="text" id="add_todo" placeholder="Добавить важных дел">
 
         <button class='input__icon' type="submit">
 
@@ -33,12 +33,10 @@
 
       </form>
 
-      <div class="to-do-list__hight">
-        <!-- <div class="to-do-list">
-          <input type="checkbox" id="to-do-list_chebx">
-          <label class="">Вот вам и супер интересная тема. Вы наверняка заметили что ваши файлы с кодом становятся все
-            объемнее, что
-            хочется вынести некоторые вещи куда-то за пределы основной программы.
+      <div class="to-do-list hight">
+        <div class="to-do-task">
+          <input type="checkbox" id="to-do-list_checkbx">
+          <label>Вот вам и супер интересная тема. Вы наверняка заметили что ваши файлы с кодом становятся все объемнее, что очется вынести некоторые вещи куда-то за пределы основной программы.
           </label>
           <button class='close__icon'><svg width="17" height="16" viewBox="0 0 17 16" fill="none"
               xmlns="http://www.w3.org/2000/svg">
@@ -48,7 +46,7 @@
                 stroke="#998899" />
             </svg>
           </button>
-        </div> -->
+        </div>
         <!-- <div class="to-do-list">
           <input type="checkbox" name="" id="to-do-list_chebx">
           <label>Сверстать этот TODO list
@@ -78,12 +76,12 @@
       </div>
     </div>
 
-    <div class="priority low">
+    <div class="priority__low">
 
       <h2>LOW</h2>
 
       <form class="input__wrapper">
-        <input class="input" type="text" id="add_todo" placeholder="Добавить">
+        <input class="input__low" type="text" id="add_todo" placeholder="Добавить">
         <button class='input__icon'>
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
             <line y1="-0.5" x2="18.0096" y2="-0.5" transform="matrix(0.999988 -0.00481873 0.0748716 0.997193 1 10)"
@@ -93,6 +91,7 @@
           </svg>
         </button>
       </form>
+      <div class="to-do-list low">
       <!-- <div class="to-do-list">
         <input type="checkbox" name="" id="to-do-list_chebx">
         <label>Посмотреть ютубчик
@@ -106,6 +105,7 @@
           </svg>
         </button>
       </div> -->
+      </div>
     </div>
   </div>
 
