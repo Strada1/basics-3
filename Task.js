@@ -1,7 +1,7 @@
 function createCounter() {
   let count = 1;
 	// Функция в return может быть без названия
-  return function () {
+  return () => {
     return count++;
   };
 }
@@ -14,4 +14,5 @@ console.log(counterA()); // 1
 console.log(counterA()); // 2
 console.log(counterA()); // 3
 
+console.log(counterB()); // 1
 console.log(counterB()); // 1
