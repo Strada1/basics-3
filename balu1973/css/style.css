@@ -28,6 +28,7 @@
     display: flex;
     align-items: center;
     padding: 6px;
+    padding-right: 12px;
     margin-bottom: 8px;
     border: 1px solid #989898;
     border-radius: 6px;
@@ -52,7 +53,6 @@
     flex-shrink: 0;
     border: none;
     padding: 0;
-    margin-left: 5px;
     background-color: transparent;
     cursor: pointer;
     background-image: url(../img/svg/add.svg);
@@ -103,6 +103,10 @@
 
 .checkbox-container > input:checked + .checkbox-status-label {
     background-color: #C4C4C4;
+}
+
+.checkbox-container > input:not(:checked) + .checkbox-status-label:hover {
+    background-color: rgba(196, 196, 196, 0.3);
 }
 
 /* .checkbox-container > input:not(:checked) + .checkbox-status-label {

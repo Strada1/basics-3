@@ -71,8 +71,8 @@ const todoList = {
       }" data-id="${task.id}">                   
         <div class="checkbox-container">
           <input type="checkbox" id="${task.id}" class="checkbox-status-task" ${
-        task.status === STATUSES.DONE ? "checked" : ""
-      }>
+            task.status === STATUSES.DONE ? "checked" : ""
+          }>
           <label for="${task.id}" class="checkbox-status-label"></label>
         </div>
         <div class="task-content">${task.name}</div>
@@ -95,17 +95,7 @@ const todoList = {
   },
 
   render() {
-    for (const btn of document.querySelectorAll("btn-delete-task")) {
-      btn.removeEventListener("click", btnDeleteTaskHandler);
-    }
-
-    for (const task of document.querySelectorAll("task-container")) {
-      task.removeEventListener("change", checkboxStatusChangeHandler);
-    }
-
-    for (const container of document.querySelectorAll(".todo-list")) {
-      container.replaceChildren();
-    }
+    this.removeOldData();
 
     for (const task of this.list) {
       switch (task.priority) {
@@ -120,6 +110,20 @@ const todoList = {
       }
     }
   },
+
+  removeOldData() {
+    for (const btn of document.querySelectorAll("btn-delete-task")) {
+      btn.removeEventListener("click", btnDeleteTaskHandler);
+    }
+
+    for (const task of document.querySelectorAll("task-container")) {
+      task.removeEventListener("change", checkboxStatusChangeHandler);
+    }
+
+    for (const container of document.querySelectorAll(".todo-list")) {
+      container.replaceChildren();
+    }
+  }
 };
 
 export { todoList };
