@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="CSS/style.css">
+		<title>TodoUI</title>
+	</head>
+
+	<body>
+		<div class="wrapper">
+			<div class="priority priority--high">
+				<h2 class="priority__title">HIGH</h2>
+				<div class="priority__elements">
+					<div class="priority__addition-block block-addition">
+						<form class="block-addition__form" onsubmit="return false">
+							<input class="block-addition__input block-addition__input--high" data-priority="high" type="text" placeholder="Добавить важные дела">
+							<button class="block-addition__button block-addition__button--high button"></button>
+						</form>
+					</div>
+					<div class="priority__tasks-block block-tasks block-tasks--high">
+					</div>
+				</div>
+			</div>
+			<div class="priority priority--low">
+				<h2 class="priority__title">LOW</h2>
+				<div class="priority__elements">
+					<div class="priority__addition-block block-addition">
+						<form class="block-addition__form" onsubmit="return false">
+							<input class="block-addition__input block-addition__input--low" data-priority="low" type="text" placeholder="Добавить не важные дела">
+							<button class="block-addition__button block-addition__button--low button"></button>
+						</form>
+					</div>
+					<div class="priority__tasks-block block-tasks block-tasks--low">
+
+					</div>
+				</div>
+			</div>
+
+			</div>
+		</div>
+		<script type="module" src="./JS/main.js"></script>
+	</body>
+
+</html>
