@@ -1,5 +1,6 @@
 import { createNewTaskItem } from "./newTask";
 import { AVALIABLE_OPTIONS, todo } from "./todo";
+
 const highPriorityBlock = document.querySelector(".category--high");
 const lowPriorityBlock = document.querySelector(".category--low");
 const highPriorityForm = highPriorityBlock.querySelector(".todo__form");
@@ -33,10 +34,8 @@ const setStatusChange = () => {
 
     taskCheckbox.addEventListener("click", (e) => {
       if (taskIsDone) {
-        taskCheckbox.removeAttribute("checked");
         todo.changeStatus(taskName, AVALIABLE_OPTIONS.statuses.toDo);
       } else {
-        taskCheckbox.setAttribute("checked", "");
         todo.changeStatus(taskName, AVALIABLE_OPTIONS.statuses.done);
       }
 
