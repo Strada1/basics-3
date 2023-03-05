@@ -1,0 +1,269 @@
+// &display=swap&subset=cyrillic-ext
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,regular,500,700,900,&display=swap");
+
+/* ОБНУЛЕНИЕ СТИЛЕЙ */
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	box-sizing: border-box;
+}
+li {
+	list-style: none;
+}
+a,
+a:visited {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: inherit;
+	font-size: inherit;
+}
+img {
+	vertical-align: top;
+}
+html,
+body {
+	height: 100%;
+}
+html {
+	font-size: 18px; /* по умолчанию */
+}
+//========================================================================================================================================================
+body {
+	line-height: 1;
+	font-family: "Roboto";
+	color: #000000;
+	background: #ffffff;
+}
+.wrapper {
+	min-height: 100%;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+}
+[class*="__container"] {
+	max-width: 1170px;
+	margin: 0px auto;
+	padding: 0 12px;
+}
+// $main-color: ;
+// @media (max-width: 1140px) {
+// 	[class*="__container"] {
+// 		max-width: 970px;
+// 	}
+// }
+// /* №2 */
+// @media (max-width: 991.98px) {
+// 	[class*="__container"] {
+// 		max-width: 750px;
+// 	}
+// }
+// /* №3 */
+// @media (max-width: 767.98px) {
+// 	[class*="__container"] {
+// 		max-width: 500px;
+// 	}
+// }
+button,
+label {
+	cursor: pointer;
+}
+input,
+button {
+	background: transparent;
+}
+//========================================================================================================================================================
+
+//========================================================================================================================================================
+
+.page {
+	flex: 1 1 auto;
+	background: #b1b1b149;
+	// .page__main
+	&__main {
+		padding-top: 50px;
+		padding-bottom: 50px;
+	}
+}
+
+.main-page {
+	// .main-page__container
+	&__container {
+		@media (max-width: 500px) {
+			margin: 0 -12px;
+		}
+	}
+	// .main-page__todo
+	&__todo {
+		padding: 13px 8px 25px 8px;
+	}
+}
+
+.todo {
+	max-width: 476px;
+	width: 100%;
+	margin: 0 auto;
+	background: #ffffff;
+	// .todo__wrap
+	&__wrap {
+		&:not(:last-child) {
+			margin-bottom: 12px;
+		}
+	}
+	// .todo__top
+	&__top {
+		text-align: center;
+		&:not(:last-child) {
+			margin-bottom: 12px;
+		}
+	}
+	// .todo__wrap-input
+	&__wrap-input {
+		position: relative;
+		width: 100%;
+		border: 1px solid #989898;
+		border-radius: 6px;
+		&:not(:last-child) {
+			margin-bottom: 8px;
+		}
+		transition: all 0.3s ease 0s;
+		@media (any-hover: hover) {
+			&:hover {
+				background: #9341ff18;
+			}
+		}
+		&._error {
+			border: 1px solid #ff0000;
+		}
+	}
+	// .todo__input
+	&__input {
+		width: 100%;
+		font-size: 16px;
+		padding: 12px;
+		padding-right: 40px;
+		outline: none;
+		border-bottom: 1px solid #ff000000;
+		transition: all 0.3s ease 0s;
+	}
+	&__input:focus {
+		border-bottom: 1px solid #00ff00;
+	}
+	// .todo__tasks
+	&__tasks {
+	}
+}
+
+.button {
+	z-index: 100;
+	position: absolute;
+	width: 18px;
+	height: 18px;
+	top: 12px;
+	right: 12px;
+	background: #000;
+	background: url("../img/close.svg") top center/cover no-repeat;
+	transition: all 0.3s ease 0s;
+	// .button_add
+	&_add {
+		@media (any-hover: hover) {
+			&:hover {
+				transform: scale(1.5);
+			}
+		}
+	}
+	// .button_remove
+	&_remove {
+		align-self: flex-start;
+		flex: 0 0 18px;
+		transform: rotate(45deg);
+		position: relative;
+		top: 0;
+		right: 0;
+		@media (any-hover: hover) {
+			&:hover {
+				transform: scale(1.5) rotate(45deg);
+			}
+		}
+	}
+}
+.tasks-todo {
+	// .tasks-todo__task
+	&__task {
+	}
+}
+.task {
+	position: relative;
+	display: flex;
+	column-gap: 12px;
+	&:not(:last-child) {
+		margin-bottom: 8px;
+	}
+	align-items: center;
+	border: 1px solid #989898;
+	border-radius: 6px;
+	padding: 12px;
+	transition: all 0.3s ease 0s;
+	&._active {
+		background: #d6d6d6;
+	}
+	// .task__checkbox
+	&__checkbox {
+		position: relative;
+		align-self: flex-start;
+	}
+	// .task__checkbox-input
+	&__checkbox-input {
+		position: absolute;
+		opacity: 0;
+		bottom: 0;
+		left: 0;
+	}
+	// .task__checkbox-label
+	&__checkbox-label {
+		position: relative;
+		display: block;
+		width: 21px;
+		height: 21px;
+		border-radius: 50%;
+		border: 1px solid #998899;
+		&::before {
+			transition: all 0.3s ease 0s;
+			content: "";
+			position: absolute;
+			width: 15px;
+			height: 15px;
+			border-radius: 50%;
+			background: #04cf15;
+			top: 2px;
+			left: 2px;
+			transform: scale(0);
+			opacity: 0;
+			._active & {
+				opacity: 1;
+				transform: scale(1);
+			}
+		}
+	}
+	// .task__text
+	&__text {
+		flex: 1 1 auto;
+		line-height: 21px;
+	}
+	// .task__remove
+	&__remove {
+	}
+}
+
+//========================================================================================================================================================
