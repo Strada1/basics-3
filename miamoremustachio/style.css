@@ -1,0 +1,102 @@
+body {
+    background-color: lightcyan;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.task-block {
+    background-color: azure;
+    border: 1px solid black;
+    border-radius: 7px;
+    width: 80%;
+    min-width: 320px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 30px;
+    padding-bottom: 20px;
+}
+
+.priority {
+    display: flex;
+    justify-content: center;
+}
+
+.add-task-form {
+    display: flex;
+    align-items: center;
+}
+
+.input {
+    display: block;
+    flex: 1;
+    min-width: 120px;
+    height: 30px;
+    margin-left: 20px;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.add-button {
+    font-size: 17px;
+    height: 35px;
+    width: 35px;
+    min-width: 35px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.task {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border: 1px solid gray;
+    border-radius: 7px;
+    height: auto;
+    min-height: 30px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.task:hover {
+    background-color: whitesmoke;
+}
+
+.check-task {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-left: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.checkbox {
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.delete-button {
+    background: none;
+    border: none;
+    margin-left: 5px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.bottom {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}

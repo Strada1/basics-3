@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>ToDo list</title>
+</head>
+
+<body>
+    <h1 class="header"><i>ToDo List:</i></h1>
+
+    <div class="task-block" id="highTasks">
+        <h2 class="priority">HIGH</h2>
+        <form class="add-task-form" id="highTaskForm">
+            <input class="input" id="highTaskInput" type="text" autocomplete="off" placeholder="Write important task...">
+            <button class="add-button" type="submit">+</button>
+        </form>
+
+        <!--  Пример того, как будет выглядеть задача после добавления:
+        <div class="task" taskID="1234567">
+            <label class="check-task">
+                <input class="checkbox" type="checkbox" checked>
+                "Make a ToDo List"
+            </label>
+            <button class="delete-button">✕</button>
+        </div>
+        -->
+
+    </div>
+
+    <div class="task-block" id="lowTasks">
+        <h2 class="priority">LOW</h2>
+        <form class="add-task-form" id="lowTaskForm">
+            <input class="input" id="lowTaskInput" type="text" autocomplete="off" placeholder="Write casual task...">
+            <button class="add-button" type="submit">+</button>
+        </form>
+
+        <!-- Место для задачи -->
+
+    </div>
+
+    <div class="bottom">
+            <i>by Noble Nus</i>
+    </div>
+
+    <script src="main.js" type="module"></script>
+</body>
+</html>
