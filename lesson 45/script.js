@@ -18,7 +18,7 @@ const dom = {
   nameLow: document.querySelector('.input__low'),
   addBtn: document.querySelectorAll('.input__icon'),
   toDoTask: document.querySelector('.to-do-task'),
-  closeBtn: document.querySelector('.close__icon'),
+  closeBtn: document.querySelectorAll('.close__icon'),
 }
 
 function addTask(text, priority, tasks) {
@@ -50,57 +50,75 @@ function changeTaskStatus(id, tasks) {
   });
 }
 
+
 dom.addBtn.forEach((element) => {
   element.onclick = (e) => {
     e.preventDefault()
-    const target = e.target   
+    const target = e.target
 
     if (target.previousElementSibling.classList.contains('input__hight')) {
       const newTextHight = dom.nameHight.value
 
-      if(newTextHight !== '' && newTextHight !== ' '){
-      const newPriorityHight = PRIORITY.HIGH
-      addTask(newTextHight, newPriorityHight, list)
-      dom.nameHight.value = ''
-      tasksRender(list)
-      dom.nameHight.style.borderColor = '#989898'
-      dom.nameHight.setAttribute('placeholder', 'Добавить важных дел')
+      if (newTextHight !== '' && newTextHight !== ' ') {
+        const newPriorityHight = PRIORITY.HIGH
+        addTask(newTextHight, newPriorityHight, list)
+        dom.nameHight.value = ''
+        tasksRender(list)
+        dom.nameHight.style.borderColor = '#989898'
+        dom.nameHight.setAttribute('placeholder', 'Добавить важных дел')
       } else {
         dom.nameHight.setAttribute('placeholder', 'Please add task!')
         dom.nameHight.style.borderColor = 'red'
       }
     } else if (target.previousElementSibling.classList.contains('input__low')) {
       const newTextLow = dom.nameLow.value
-      if(newTextLow !== '' && newTextLow !== ' '){
+      if (newTextLow !== '' && newTextLow !== ' ') {
         const newPriorityLow = PRIORITY.LOW
         addTask(newTextLow, newPriorityLow, list)
         dom.nameLow.value = ''
         tasksRender(list)
         dom.nameLow.style.borderColor = '#989898'
         dom.nameLow.setAttribute('placeholder', 'Добавить')
-        } else {
-          dom.nameLow.setAttribute('placeholder', 'Please add task!')
-          dom.nameLow.style.borderColor = 'red'
-        }
+      } else {
+        dom.nameLow.setAttribute('placeholder', 'Please add task!')
+        dom.nameLow.style.borderColor = 'red'
+      }
     }
   }
 })
 
-document.onclick = (e) => {
-  const target = e.target
-  const deleteEl = target.classList.contains('close__icon')
-  const changeTaskEl = target.classList.contains('checkbox')
-  const task = target.parentElement
-  const taskId = task.getAttribute('id')
-  if (changeTaskEl) {
-    changeTaskStatus(taskId, list)
-    tasksRender(list)
-  };
-  if (deleteEl) {
+// console.log(dom.closeBtn);
+// function deleteTaskClick() {
+  if(dom.toDoTasksHight.contains(dom.toDoTask)){
+
+dom.closeBtn.forEach(element => {
+  console.log(element);
+  element.addEventListener('click', (e) => {
+      console.log(element);
+   console.log(e.target)
+    // console.log(element);
     deleteTask(taskId, list);
     tasksRender(list)
+  })
+})
   }
-}
+
+
+// document.onclick = (e) => {
+//   const target = e.target
+//   const deleteEl = target.classList.contains('close__icon')
+//   const changeTaskEl = target.classList.contains('checkbox')
+//   const task = target.parentElement
+//   const taskId = task.getAttribute('id')
+//   if (changeTaskEl) {
+//     changeTaskStatus(taskId, list)
+//     tasksRender(list)
+//   };
+//   if (deleteEl) {
+//     deleteTask(taskId, list);
+//     tasksRender(list)
+//   }
+// }
 
 function removeRender() {
   dom.toDoTask = document.querySelectorAll('.to-do-task')
@@ -151,6 +169,8 @@ function tasksRender(tasks) {
       dom.toDoTasksHight.insertAdjacentHTML('beforeend', taskListHtml)
     } else if (taskPriority == 'low') {
       dom.toDoTasksLow.insertAdjacentHTML('beforeend', taskListHtml)
-    }
+    }    
   });
+  
 };
+
