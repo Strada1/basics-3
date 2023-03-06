@@ -1,10 +1,9 @@
-const equalButton = document.getElementById("equalButton")
-const newCalculatedNumber =
-  document.getElementById("calculatedNumber").textContent
+const bgColorButton = document.getElementById("change-bg")
+const bgColor = bgColorButton.getAttribute("data-color")
+const body = document.body
 
-function newNumber() {
-  document.getElementById("calculatedNumber").textContent = "25"
+const changeBgColor = () => {
+  body.style.backgroundColor = bgColor
 }
 
-equalButton.addEventListener("click", newNumber)
-console.log(newCalculatedNumber)
+bgColorButton.addEventListener("click", changeBgColor)
