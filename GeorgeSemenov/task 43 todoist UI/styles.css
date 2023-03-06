@@ -1,0 +1,64 @@
+body{
+  background-color: grey;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21px;
+}
+.display{
+  max-width: 500px;
+  margin:0 auto;
+  padding: 25px 8px;
+  background-color: white;
+}
+
+.priority-name{
+  text-align: center;
+  text-transform: uppercase;
+}
+.task-input-wrapper{
+  position: relative;
+}
+.task-input{
+  width: 100%;
+  background: #FFFFFF;
+  border: 1px solid #989898;
+  border-radius: 6px;
+  padding: 12px;
+  box-sizing: border-box;
+  font-size: inherit;
+}
+.task-input::placeholder{
+  color: #BBBBBB;
+  font-size: inherit;
+}
+.add-task-button{
+  background-color: inherit;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  position: absolute;
+  transform: translateY(-50%);
+  top: 50%;
+  right: 12px;
+  width: 18px;
+  height: 18px;
+}
+.add-task-button::after,
+.add-task-button::before{
+  content: '';
+  top: 0;
+  left: 0;
+  position: absolute;
+  display: inline-block;
+  background-color: #998899;
+}
+.add-task-button:after{
+  width: 100%;
+  top: 50%;
+  height: 1px;
+}
+.add-task-button:before{
+  height: 100%;
+  left: 50%;
+  width: 1px;
+}
