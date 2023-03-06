@@ -1,0 +1,103 @@
+body {
+    background-color: rgb(223, 229, 238);
+}
+
+.task-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 600px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 0 25%;
+    background-color: white;
+}
+
+.high-priority-tasks,
+.low-priority-tasks {
+    flex: 1;
+    font-size: 18px;
+}
+
+#new-high-priority-task,
+#new-low-priority-task {
+    font-size: 18px;
+}
+
+.high-priority-tasks h2,
+.low-priority-tasks h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+    font-family: 'Golos Text', sans-serif;
+}
+
+form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+form input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: 'Golos Text', sans-serif;
+}
+
+form button[type="submit"] {
+    background-color: #4d2ff8;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+form button[type="submit"]:hover {
+    background-color: #3e8e41;
+}
+
+.tasks {
+    margin-left: 20px;
+}
+
+.tasks label {
+    display: block;
+    margin-bottom: 10px;
+    position: relative;
+    font-family: 'Golos Text', sans-serif;
+}
+
+.tasks label input[type="radio"] {
+    margin-right: 10px;
+}
+
+#new-high-priority-task,
+#new-low-priority-task {
+    border: 2px solid #4d2ff8;
+}
+
+label {
+    width: 350px;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+
+.delete-btn {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(100%, -50%);
+}
