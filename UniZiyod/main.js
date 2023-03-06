@@ -99,50 +99,14 @@ function deleteTask(event) {
 highTasksElements.addEventListener('click', deleteTask);
 lowTasksElements.addEventListener('click', deleteTask);
 
-function completeTask(event) {
-    event.preventDefault();
-    for (const zadachi of listofTasks) {
-        if (zadachi.id === taskName) {
-            zadachi.status = 'Закончено'
-        }
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// function completeTask(event) {
+//     event.preventDefault();
+//     for (const zadachi of listofTasks) {
+//         if (zadachi.id === taskName) {
+//             zadachi.status = 'Закончено'
+//         }
+//     }
+// }
 
 
 
