@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TODO UI</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="header">
+      <div class="container">
+        <div class="high-task">
+          <p>HIGH</p>
+          <form action="" type="submit" class="labell">
+            <input
+              type="text"
+              id="high-task"
+              class="add-high-task"
+              placeholder="Добавить важные дела"
+            />
+            <button class="high-add-button">+</button>
+          </form>
+        </div>
+        <div class="task">
+          <input type="checkbox" name="check" />
+          <div class="todo-list">
+            Вот вам и супер интересная тема. Вы наверняка заметили что ваши
+            файлы с кодом становятся все объемнее, что хочется вынести некоторые
+            вещи куда-то за пределы основной программы.
+          </div>
+          <button class="delete-task-button">+</button>
+        </div>
+        <div class="task">
+          <input type="checkbox" name="check" />
+          <div class="todo-list">Сверстать этот TODO list</div>
+          <button class="delete-task-button">+</button>
+        </div>
+        <div class="task">
+          <input type="checkbox" name="check" />
+          <div class="todo-list">Начать делать задачу</div>
+          <button class="delete-task-button">+</button>
+        </div>
+        <div class="low-task">
+          <p>LOW</p>
+          <form action="" type="submit" class="labelll">
+            <input
+              type="text"
+              id="low-task"
+              class="add-low-task"
+              placeholder="Добавить несрочные дела"
+            />
+            <button type="submit" class="low-add-button">+</button>
+          </form>
+          <div class="task">
+            <input type="checkbox" name="check" />
+            <div class="todo-list">Посмотреть ютубчик</div>
+            <button class="delete-task-button">+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
