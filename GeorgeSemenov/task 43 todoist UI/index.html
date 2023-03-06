@@ -15,11 +15,47 @@
         <button class="add-task-button"></button>
       </div>
       <div class="task">
-        <input type="checkbox" name="isCompleted" class="task-complete-checkbox">
+        <div class="checkbox-wrapper">
+          <input type="checkbox" name="isCompleted" class="task-complete-checkbox">
+        </div>
         <p class="task-description">Вот вам и супер интересная тема.<br/>Вы наверняка заметили что ваши файлы с кодом становятся все объемнее, что хочется вынести некоторые вещи куда-то за пределы основной программы.</p>
-        button
+        <div class="terminate-button-wrapper">
+          <button class="terminate-button" aria-label="terminate task"></button>
+        </div>
+      </div>
+      <div class="task">
+        <div class="checkbox-wrapper">
+          <input type="checkbox" name="isCompleted" class="task-complete-checkbox">
+        </div>
+        <p class="task-description">Сверстать этот TODO list</p>
+        <div class="terminate-button-wrapper">
+          <button class="terminate-button" aria-label="terminate task"></button>
+        </div>
+      </div>
+      <div class="task task_completed">
+        <div class="checkbox-wrapper">
+          <input type="checkbox" name="isCompleted" class="task-complete-checkbox" checked>
+        </div>
+        <p class="task-description">Начать делать задачу</p>
+        <div class="terminate-button-wrapper">
+          <button class="terminate-button" aria-label="terminate task"></button>
+        </div>
       </div>
 
+      <h1 class="priority-name">low</h1>
+      <div class="task-input-wrapper">
+        <input class="task-input" type="text" name="task-description" placeholder="Добавить"/>
+        <button class="add-task-button"></button>
+      </div>
+      <div class="task">
+        <div class="checkbox-wrapper">
+          <input type="checkbox" name="isCompleted" class="task-complete-checkbox">
+        </div>
+        <p class="task-description">Посмотреть ютубчик</p>
+        <div class="terminate-button-wrapper">
+          <button class="terminate-button" aria-label="terminate task"></button>
+        </div>
+      </div>
     </div>
     <script type="module" src="./main.js"></script>
   </body>
