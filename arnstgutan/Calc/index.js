@@ -125,6 +125,7 @@ reset.addEventListener("click", resetTimer);
 const colorChangeBtn = document.querySelector("#change-bg");
 const body = document.querySelector(".body_container");
 const colorCodes = document.querySelectorAll(".color-code");
+const saveColorBtn = document.querySelector("#save-bg");
 
 function getRandomColor() {
   const randomColor = Math.floor(Math.random() * 256);
@@ -152,5 +153,12 @@ function getListColorsValues() {
   });
 }
 
+function saveColorFunction() {
+  let bodyColorOnSave = getComputedStyle(body);
+  console.log(bodyColorOnSave.backgroundColor);
+  const newDiv = document.createElement("div");
+}
+
 colorChangeBtn.addEventListener("click", changeColor);
+saveColorBtn.addEventListener("click", saveColorFunction);
 document.addEventListener("DOMContentLoaded", getListColorsValues);
