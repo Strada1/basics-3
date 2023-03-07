@@ -1,3 +1,4 @@
+/* CALC */
 const operator = document.querySelector(".operator");
 const operandLeft = document.querySelector("#left");
 const operandright = document.querySelector("#right");
@@ -52,29 +53,97 @@ function calculate() {
         alert("Что за чертовщина!");
     }
   }
-  result.textContent = resultValue;
+  result.value = resultValue;
 }
 
 operator.addEventListener("click", operatorClick);
 window.addEventListener("click", removeActive);
 equals.addEventListener("click", calculate);
 
-const timer = document.querySelector(".timer");
-const button = document.querySelector(".button");
+/* TIMER */
+const timerValue = document.querySelector(".timer");
+const start = document.querySelector("#strt");
+const reset = document.querySelector("#rst");
+let sec = 0;
+let min = 0;
+let hrs = 0;
+let t;
 
 function buttonChange() {
-  if (button.textContent === "START") {
-    showTime();
-    button.textContent = "PAUSE";
+  if (start.textContent === "start") {
+    timer();
+    start.textContent = "pause";
   } else {
-    button.textContent = "START";
+    clearTimeout(t);
+    start.textContent = "start";
   }
 }
 
-function showTime() {
-  time += 1;
-  timer.textContent = time;
-  setTimeout(showTime, 1000);
+function tick() {
+  sec++;
+  if (sec >= 60) {
+    sec = 0;
+    min++;
+    if (min >= 60) {
+      min = 0;
+      hrs++;
+    }
+  }
 }
 
-button.addEventListener("click", buttonChange);
+function add() {
+  tick();
+  timerValue.textContent =
+    (hrs > 9 ? hrs : "0" + hrs) +
+    ":" +
+    (min > 9 ? min : "0" + min) +
+    ":" +
+    (sec > 9 ? sec : "0" + sec);
+  timer();
+}
+
+function timer() {
+  t = setTimeout(add, 1000);
+}
+
+function resetTimer() {
+  timerValue.textContent = "00:00:00";
+  sec = 0;
+  min = 0;
+  hrs = 0;
+  start.textContent = "start";
+  clearTimeout(t);
+}
+
+start.addEventListener("click", buttonChange);
+reset.addEventListener("click", resetTimer);
+
+/* COLORS */
+const colorChangeBtn = document.querySelector("#change-bg");
+const body = document.querySelector(".body_container");
+const colorCode = document.querySelectorAll(".color-code");
+
+function getRandomColor() {
+  const randomColor = Math.floor(Math.random() * 256);
+  console.log(randomColor);
+  return randomColor;
+}
+
+function changeColor() {
+  body.style.backgroundColor =
+    "rgb(" +
+    getRandomColor() +
+    "," +
+    getRandomColor() +
+    "," +
+    getRandomColor() +
+    ")";
+}
+
+function getListColorsValues() {
+  let color = colorCode.previousSibling;
+  console.log(color);
+}
+
+colorChangeBtn.addEventListener("click", changeColor);
+document.addEventListener("DOMContentLoaded", getListColorsValues);

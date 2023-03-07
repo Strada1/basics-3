@@ -1,0 +1,24 @@
+<div id="outerDiv">
+  <div id="innerDiv">
+    <button id="innerButton">Нажми меня</button>
+  </div>
+</div>
+
+<script>
+  var outerDiv = document.getElementById('outerDiv');
+  var innerDiv = document.getElementById('innerDiv');
+  var innerButton = document.getElementById('innerButton');
+
+  function buttonClickHandler(event) {
+    event.stopPropagation()
+    alert('Кнопка нажата');
+  }
+
+  function divClickHandler() {
+    alert('Див нажат');
+  }
+
+  innerButton.addEventListener('click', buttonClickHandler);
+  innerDiv.addEventListener('click', divClickHandler);
+  outerDiv.addEventListener('click', divClickHandler);
+</script>

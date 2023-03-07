@@ -6,11 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quantico:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body class="body_container">
-
+  <div id="change-bg" data-color="#e6e6e6"></div>
   <div class="calc-wrapper">
     <input type="text" class="operand" id="left">
     <select name="select" class="operator">
@@ -21,14 +22,25 @@
     </select>
     <input type="text" class="operand" id="right">
     <button class="equals">=</button>
-    <div class="result"></div>
+    <input class="result"></input>
   </div>
 
   <div class="sec-wrapper">
-    <div class="timer"></div>
+    <div class="timer">00:00:00</div>
     <button id="strt" class="btn">start</button>
-    <button id="rst" class="btn">reset</button>
+    <div id="rst" class="btn"></div>
   </div>
+
+  <div class="color-list-menu">
+    <h2 class="clhead">List of colors</h2>
+    <div class="colors-container">
+      <div class="color-example">
+        <div class="example"></div>
+        <div class="color-code"></div>
+      </div>
+    </div>
+  </div>
+
   <script src="index.js"></script>
 </body>
 

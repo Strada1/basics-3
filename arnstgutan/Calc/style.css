@@ -1,5 +1,12 @@
+/* @font-face {
+  font-family: 'Quantico', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  src: local('Quantico'), url(https://fonts.googleapis.com/css2?family=Inika:wght@400;700&family=Inter:wght@400;700&family=Quantico&display=swap);
+} */
+
 * {
-  font-family: 'Inter';
+  font-family: 'Quantico';
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
@@ -7,30 +14,57 @@
   box-sizing: border-box;
 }
 
+
 .body_container {
+  font-family: 'Quantico';
+  font-style: normal;
   color: #000000;
+  background-color: rgb(123, 228, 107);
+  display: flex;
+  flex-direction: column;
 }
 
 .calc-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 500px;
-  margin: 40vh auto 30px auto;
+  width: 600px;
+  margin: 10% auto 30px auto;
 }
 
-.operand {
-  width: 95px;
-  height: 33px;
+.operand,
+.result {
+  height: 40px;
+  width: 150px;
   border: 1px solid black;
   margin-right: 20px;
+  border-radius: 10px;
+  box-shadow: 4px 4px 7px #242424;
+  transition: 0.4s;
+}
+
+.operand:hover,
+.result:hover {
+  transform: scale(1.05);
+}
+
+
+.result {
+  width: max-content;
 }
 
 .operator {
-  border: 1px solid black;
-  color: #444;
-  border-radius: 5px;
+  padding: 0px 12px;
+  height: 40px;
   margin-right: 20px;
+  cursor: pointer;
+  background-color: #444;
+  color: white;
+  border: 1px solid black;
+  margin-right: 20px;
+  border-radius: 10px;
+  box-shadow: 4px 4px 7px #242424;
+  transition: 0.4s;
 }
 
 /* .operator:active,
@@ -39,41 +73,116 @@
   background-color: #444;
 }
  */
-.active {
-  color: whitesmoke;
-  background-color: #444;
-  border: 2px solid rgb(99, 204, 225);
-}
 
 .equals {
-  border: 1px solid #000000;
-  border-radius: 4px;
   padding: 4px 12px;
+  height: 40px;
   margin-right: 20px;
   cursor: pointer;
-  background-color: white;
+  background-color: #444;
+  color: white;
+  border: 1px solid black;
+  margin-right: 20px;
+  border-radius: 10px;
+  box-shadow: 4px 4px 7px #242424;
+  transition: 0.4s;
 }
 
-.equals:hover {
+.equals:hover,
+.operator:hover {
   cursor: pointer;
-  background-color: wheat;
+  transform: scale(1.05);
 }
 
 .sec-wrapper {
+  height: 300px;
+  width: 300px;
+  border-radius: 100%;
+  background-color: white;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 500px;
   margin: 10px auto 30px auto;
+  box-shadow: 0px 10px 20px 10px rgba(255, 255, 255, 0.5);
 }
 
 .timer {
-  margin-right: 30px;
+  font-weight: 700;
+  font-size: 50px;
+  line-height: 64px;
+  margin-top: 70px;
 }
 
-.btn {
-  margin-right: 10px;
+#strt {
+  cursor: pointer;
+  margin-top: 20px;
+  background-color: rgba(0, 0, 0, 0);
+  border: 0px;
+  transition: 0.4s;
 }
+
+#rst {
+
+  margin-top: 20px;
+  background-image: url('/Reset_button.svg.png');
+  background-size: 40px;
+  background-position: center center;
+  width: 40px;
+  height: 40px;
+  transition: 0.4s;
+}
+
+#change-bg {
+  margin: 50px auto;
+  cursor: pointer;
+  margin-top: 20px;
+  background-image: url('/101360.png');
+  background-size: 40px;
+  background-position: center center;
+  width: 40px;
+  height: 40px;
+  transition: 0.4s;
+}
+
+#rst:hover,
+#strt:hover,
+#change-bg:hover {
+  transform: scale(1.105);
+}
+
+
+.btn {
+  margin-right: 0px;
+}
+
+.color-list-menu {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  padding: 5px 10px 10px 20px;
+}
+
+.colors-container {
+  width: 180px;
+}
+
+.example {
+  width: 40px;
+  height: 30px;
+  background-color: rgb(123, 228, 107);
+  align-self: flex-start;
+  border-radius: 5px;
+}
+
+
 
 /* input:valid {
   background-color: white;
