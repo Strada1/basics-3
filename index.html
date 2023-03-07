@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="myButton">Нажми меня</button>
+    <a href="http://example.com" id="myLink">Ссылка</a>
+    <div id="outerDiv">
+      <div id="innerDiv">
+        <button id="innerButton">Новая кнопка внутри кучи div-ов</button>
+      </div>
+    </div>
+    <ul id="myList">
+      <li>Первый элемент</li>
+      <li>Второй элемент</li>
+      <li>Третий элемент</li>
+    </ul>
+    <button id="stopatch">Секундомер</button>
+    <script>
+      // Записываем кнопку в переменную button
+      let button = document.getElementById('myButton');
+      let link = document.getElementById('myLink');
+
+      let innerButton = document.getElementById('innerButton');
+      let innerDiv = document.getElementById('innerDiv');
+      let outerDiv = document.getElementById('outerDiv');
+
+      let list = document.getElementById('myList');
+      let stopwatch = document.getElementById('stopatch');
+      let seconds = 0;
+      let isClicked = false;
+			let timerId;
+      // Функция, которая выводит сообщение
+      function buttonClickHandler(event) {
+        event.stopPropagation();
+        alert('Кнопка нажата');
+      }
+      function linkClickHandler(event) {
+        // Метод preventDefault останавливает браузер выполнять дефолтное действие
+        event.preventDefault();
+        // event - событие, target - объект события
+        alert(
+          'Переход по ссылке остановлен, ссылка - ' +
+            event.target.getAttribute('href')
+        );
+        // getAttribute() - получение данных об атрибуте объекта
+      }
+      function divClickHandler() {
+        alert('div is clicked!');
+      }
+      function listClickHandler(event) {
+        alert('list is clicked on ' + event.target.innerText);
+      }
+      function stopwatchClickHandler() {
+        if (isClicked === false) {
+          timerId = setInterval(() => console.log(++seconds), 1000);
+					isClicked = true
+        } else {
+					clearInterval(timerId);
+					isClicked = false
+				}
+      }
+      // Добавляем слушатель события - addEventListener на событие click
+      button.addEventListener('click', buttonClickHandler);
+      link.addEventListener('click', linkClickHandler);
+      // Если click случился - вызываем функцию buttonClickHandler
+      innerButton.addEventListener('click', buttonClickHandler);
+      innerDiv.addEventListener('click', divClickHandler);
+      outerDiv.addEventListener('click', divClickHandler);
+      list.addEventListener('click', listClickHandler);
+      stopwatch.addEventListener('click', stopwatchClickHandler);
+    </script>
+  </body>
+</html>
