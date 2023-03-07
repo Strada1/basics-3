@@ -22,6 +22,7 @@
   background-color: rgb(123, 228, 107);
   display: flex;
   flex-direction: column;
+  transition: 1.4s;
 }
 
 .calc-wrapper {
@@ -29,7 +30,7 @@
   justify-content: center;
   align-items: center;
   width: 600px;
-  margin: 10% auto 30px auto;
+  margin: 20px auto 30px auto;
 }
 
 .operand,
@@ -145,12 +146,24 @@
   transition: 0.4s;
 }
 
-#rst:hover,
-#strt:hover,
-#change-bg:hover {
-  transform: scale(1.105);
+#save-bg {
+  margin: 50px auto;
+  cursor: pointer;
+  margin-top: 20px;
+  background-image: url('/save--v1.png');
+  background-size: 40px;
+  background-position: center center;
+  width: 40px;
+  height: 40px;
+  transition: 0.4s;
 }
 
+#rst:hover,
+#strt:hover,
+#change-bg:hover,
+#save-bg:hover {
+  transform: scale(1.105);
+}
 
 .btn {
   margin-right: 0px;
@@ -174,15 +187,28 @@
   width: 180px;
 }
 
+.color-example {
+  display: flex;
+}
+
 .example {
   width: 40px;
   height: 30px;
   background-color: rgb(123, 228, 107);
   align-self: flex-start;
   border-radius: 5px;
+  margin-right: 10px;
 }
 
+.color-control {
+  display: flex;
+  margin: 0px auto;
+  width: 200px;
+}
 
+.color-code {
+  font-size: 10px;
+}
 
 /* input:valid {
   background-color: white;

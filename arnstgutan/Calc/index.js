@@ -93,6 +93,9 @@ function tick() {
 
 function add() {
   tick();
+  if (sec % 2 === 0) {
+    changeColor();
+  }
   timerValue.textContent =
     (hrs > 9 ? hrs : "0" + hrs) +
     ":" +
@@ -121,7 +124,7 @@ reset.addEventListener("click", resetTimer);
 /* COLORS */
 const colorChangeBtn = document.querySelector("#change-bg");
 const body = document.querySelector(".body_container");
-const colorCode = document.querySelectorAll(".color-code");
+const colorCodes = document.querySelectorAll(".color-code");
 
 function getRandomColor() {
   const randomColor = Math.floor(Math.random() * 256);
@@ -141,8 +144,12 @@ function changeColor() {
 }
 
 function getListColorsValues() {
-  let color = colorCode.previousSibling;
-  console.log(color);
+  colorCodes.forEach((colorCode) => {
+    let code = colorCode.previousElementSibling;
+    let styles = getComputedStyle(code);
+    console.log(styles.backgroundColor);
+    colorCode.textContent = styles.backgroundColor;
+  });
 }
 
 colorChangeBtn.addEventListener("click", changeColor);
