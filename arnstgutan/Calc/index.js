@@ -126,6 +126,7 @@ const colorChangeBtn = document.querySelector("#change-bg");
 const body = document.querySelector(".body_container");
 const colorCodes = document.querySelectorAll(".color-code");
 const saveColorBtn = document.querySelector("#save-bg");
+const colorsContainer = document.querySelector(".colors-container");
 
 function getRandomColor() {
   const randomColor = Math.floor(Math.random() * 256);
@@ -154,9 +155,22 @@ function getListColorsValues() {
 }
 
 function saveColorFunction() {
-  let bodyColorOnSave = getComputedStyle(body);
-  console.log(bodyColorOnSave.backgroundColor);
-  const newDiv = document.createElement("div");
+  let bodyStyle = getComputedStyle(body);
+  let bodyColorOnSave = bodyStyle.backgroundColor;
+  console.log(bodyColorOnSave);
+
+  const newColorEx = document.createElement("div");
+  colorsContainer.appendChild(newColorEx);
+  newColorEx.classList.add("color-example");
+
+  const newExample = document.createElement("div");
+  newColorEx.appendChild(newExample);
+  newExample.classList.add("example");
+  newExample.style.backgroundColor = bodyColorOnSave;
+
+  const newCode = document.createElement("div");
+  newColorEx.appendChild(newCode);
+  newCode.classList.add("color-code");
 }
 
 colorChangeBtn.addEventListener("click", changeColor);
