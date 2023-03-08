@@ -68,13 +68,6 @@
   transition: 0.4s;
 }
 
-/* .operator:active,
-.operator:hover {
-  color: whitesmoke;
-  background-color: #444;
-}
- */
-
 .equals {
   padding: 4px 12px;
   height: 40px;
@@ -124,7 +117,6 @@
 }
 
 #rst {
-
   margin-top: 20px;
   background-image: url('/Reset_button.svg.png');
   background-size: 40px;

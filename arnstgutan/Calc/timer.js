@@ -1,4 +1,4 @@
-import { /*  body, getRandomColor, */ changeColor } from "./index.js";
+import { /*  body, getRandomColor, */ changeColor } from "./colors.js";
 
 export const timerValue = document.querySelector(".timer");
 export const start = document.querySelector("#strt");

@@ -4,26 +4,10 @@ const operandLeft = document.querySelector("#left");
 const operandright = document.querySelector("#right");
 const equals = document.querySelector(".equals");
 const result = document.querySelector(".result");
-let operand1, operand2, resultValue;
-let time = 0;
-
-function operatorClick() {
-  if (operator.classList.contains("active")) {
-    operator.classList.remove("active");
-  } else {
-    operator.classList.add("active");
-  }
-}
-
-function removeActive(e) {
-  if (e.target !== operator) {
-    operator.classList.remove("active");
-  }
-}
+let operand1, operand2, operatorValue, resultValue;
 
 function checkValue() {
   if (isFinite(operand1) && isFinite(operand2)) {
-    console.log(true);
     return true;
   } else {
     alert("Введите числа");
@@ -56,8 +40,6 @@ function calculate() {
   result.value = resultValue;
 }
 
-operator.addEventListener("click", operatorClick);
-window.addEventListener("click", removeActive);
 equals.addEventListener("click", calculate);
 
 /* TIMER */
@@ -66,7 +48,7 @@ timer.start.addEventListener("click", timer.buttonChange);
 timer.reset.addEventListener("click", timer.resetTimer);
 
 /* COLORS */
-const colorChangeBtn = document.querySelector("#change-bg");
+/* const colorChangeBtn = document.querySelector("#change-bg");
 export const body = document.querySelector(".body_container");
 const colorCodes = document.querySelectorAll(".color-code");
 const saveColorBtn = document.querySelector("#save-bg");
@@ -128,27 +110,26 @@ function setBGfromColorList(exp) {
   body.style.backgroundColor = exampleBGColor;
 }
 
-colorChangeBtn.addEventListener("click", changeColor);
-saveColorBtn.addEventListener("click", saveColorFunction);
-colorsContainer.addEventListener("click", function (event) {
-  let target = event.target;
-  if (!target.classList.contains("example")) return;
-  setBGfromColorList(target);
-});
-
 function deleteColorFromList(exp) {
   let colorExampleToDelete = exp.parentElement;
   console.log(colorExampleToDelete);
   colorExampleToDelete.remove();
-  /*   if (colorExampleToDelete.contains("color-example")) {
-    colorExampleToDelete.remove();
-  } */
-}
+} */
 
-colorsContainer.addEventListener("click", function (event) {
+import * as colors from "./colors.js";
+
+colors.colorChangeBtn.addEventListener("click", colors.changeColor);
+colors.saveColorBtn.addEventListener("click", colors.saveColorFunction);
+colors.colorsContainer.addEventListener("click", function (event) {
   let target = event.target;
-  if (!target.classList.contains("delete-example")) return;
-  deleteColorFromList(target);
+  if (!target.classList.contains("example")) return;
+  colors.setBGfromColorList(target);
 });
 
-document.addEventListener("DOMContentLoaded", getListColorsValues);
+colors.colorsContainer.addEventListener("click", function (event) {
+  let target = event.target;
+  if (!target.classList.contains("delete-example")) return;
+  colors.deleteColorFromList(target);
+});
+
+document.addEventListener("DOMContentLoaded", colors.getListColorsValues);
