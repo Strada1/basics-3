@@ -61,81 +61,25 @@ window.addEventListener("click", removeActive);
 equals.addEventListener("click", calculate);
 
 /* TIMER */
-const timerValue = document.querySelector(".timer");
-const start = document.querySelector("#strt");
-const reset = document.querySelector("#rst");
-let sec = 0;
-let min = 0;
-let hrs = 0;
-let t;
-
-function buttonChange() {
-  if (start.textContent === "start") {
-    timer();
-    start.textContent = "pause";
-  } else {
-    clearTimeout(t);
-    start.textContent = "start";
-  }
-}
-
-function tick() {
-  sec++;
-  if (sec >= 60) {
-    sec = 0;
-    min++;
-    if (min >= 60) {
-      min = 0;
-      hrs++;
-    }
-  }
-}
-
-function add() {
-  tick();
-  if (sec % 2 === 0) {
-    changeColor();
-  }
-  timerValue.textContent =
-    (hrs > 9 ? hrs : "0" + hrs) +
-    ":" +
-    (min > 9 ? min : "0" + min) +
-    ":" +
-    (sec > 9 ? sec : "0" + sec);
-  timer();
-}
-
-function timer() {
-  t = setTimeout(add, 1000);
-}
-
-function resetTimer() {
-  timerValue.textContent = "00:00:00";
-  sec = 0;
-  min = 0;
-  hrs = 0;
-  start.textContent = "start";
-  clearTimeout(t);
-}
-
-start.addEventListener("click", buttonChange);
-reset.addEventListener("click", resetTimer);
+import * as timer from "./timer.js";
+timer.start.addEventListener("click", timer.buttonChange);
+timer.reset.addEventListener("click", timer.resetTimer);
 
 /* COLORS */
 const colorChangeBtn = document.querySelector("#change-bg");
-const body = document.querySelector(".body_container");
+export const body = document.querySelector(".body_container");
 const colorCodes = document.querySelectorAll(".color-code");
 const saveColorBtn = document.querySelector("#save-bg");
 const colorsContainer = document.querySelector(".colors-container");
 const example = document.querySelectorAll(".example");
 
-function getRandomColor() {
+export function getRandomColor() {
   const randomColor = Math.floor(Math.random() * 256);
   console.log(randomColor);
   return randomColor;
 }
 
-function changeColor() {
+export function changeColor() {
   body.style.backgroundColor =
     "rgb(" +
     getRandomColor() +
