@@ -7,6 +7,8 @@ const solution = document.getElementById('solution');
 getSolutionButton.addEventListener('click', () => {
   // Получаем оператор
   const operator = operators.options[operators.selectedIndex].value;
+  const result = document.createElement('div');
+  result.className = 'div'
   switch (operator) {
     case '+':
       solution.textContent = +a.value + +b.value;
