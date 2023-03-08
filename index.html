@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 39 - Attributies and properties</title>
+  </head>
+  <body>
+    <div id="myElement" value="значение">Текст дива</div>
+    <button id="change-bg">Изменить фон</button>
+    <div class="my-class">
+      Этот элемент имеет классы 'beautiful-class not-class' после выполнения
+      JS-скрипта
+    </div>
+    <div class="my-class">Этот элемент имеет класс my-class</div>
+    <script>
+      //! Атрибут class имеет свойство className
+      //! Атрибут for имеет свойство htmlFor
+
+      // Получение объекта целиком
+      const element = document.getElementById('myElement');
+      // Получение его атрибута value
+      const value = element.getAttribute('value');
+      // Получение текста элемента
+      const text = element.textContent;
+      // Получение свойства CSS элемента
+      const backgroundColor = element.style.backgroundColor;
+      // Получаем объект кнопки по ID
+      const btn = document.getElementById('change-bg');
+      // Выбираем первый элемент с классом 'my-class' из HTML
+      const myClass = document.querySelector('.my-class');
+      // С помощью свойства className меняем у него класс
+      myClass.className = 'new-class';
+
+      // С помощью classList можно делать add, remove, toggle, contains
+      // Добавим (не поменяем!) класс элемента
+      myClass.classList.add('beautiful-class');
+      myClass.classList.add('not-class');
+      // С помощью remove удалим класс new-class
+      myClass.classList.remove('new-class');
+
+      // Все вычисленные стили элемента - getComputedStyle
+      const styles = getComputedStyle(myClass);
+      // Получение объекта CSSStyleDeclaration стилей кнопки
+      const btnStyles = getComputedStyle(btn);
+      console.log(btnStyles.alignItems); // flex-start
+      console.log(btnStyles.color); // rgb(0, 0, 0) - черный
+      // Добавляем HTML-атрибут к HTML-объекту
+      btn.setAttribute('data-color', '#e6e6e6');
+      btn.addEventListener('click', (event) => {
+        // Задаем цвет фона body из атрибута btn с помощью getAttribute
+        document.body.style.backgroundColor = btn.getAttribute('data-color');
+      });
+      // С помощью style можно менять стили прямо из JS
+      btn.style.backgroundColor = 'green'; // Кнопка будет зеленого цвета
+      console.log(element);
+      console.log(value);
+      console.log(text);
+      console.log(backgroundColor);
+      console.log(myClass.classList.contains('new-class')); // false
+      console.log(myClass.classList.contains('beautiful-class')); // true
+      console.log(styles.backgroundColor); // rgba(0, 0, 0, 0) - черный, но с нулевой прозрачностью, т.е. белый
+      console.log(btnStyles.backgroundColor); // rgb(0, 128, 0) // 128 = 'green' в CSS
+
+      // Задача по изменению цвета страницы
+      setInterval(() => {
+        const colors = ['red', 'blue', 'green', 'orange'];
+        // Геним от 0 до 1 число, умножаем его на кол-во элементов в списке и округляем в меньшую сторону
+        // (0.5 * 4) = 2 -> index = 2, Math.random() -> от 0 (включительно) до 1 (исключительно)
+        const randomColor = colors[Math.floor(Math.random() * colors.length)];
+        document.body.style.backgroundColor = randomColor;
+      }, 2000);
+    </script>
+  </body>
+</html>
