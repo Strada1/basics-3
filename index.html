@@ -8,18 +8,20 @@
 		<link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <form action="">
-      <input title="a" type="number" id="a" value="0" />
-      <select title="operator" name="" id="operators">
-        <option value="+">+</option>
-        <option value="/">/</option>
-        <option value="*">*</option>
-        <option value="-">-</option>
-      </select>
-      <input title="b" type="number" id="b" value="0" />
-			<button id="getSolutionButton" type="button">=</button>
-			<span id="solution">0</span	>
-    </form>
+    <div class="calculator">
+      <form action="" id="calculator">
+        <input title="a" type="number" id="a" value="0" />
+        <select title="operator" name="" id="operators">
+          <option value="+">+</option>
+          <option value="/">/</option>
+          <option value="*">*</option>
+          <option value="-">-</option>
+        </select>
+        <input title="b" type="number" id="b" value="0" />
+        <button id="getSolutionButton" type="button">=</button>
+        <span id="solution">0</span	>
+      </form>
+    </div>
 		<script src="main.js"></script>
   </body>
 </html>
