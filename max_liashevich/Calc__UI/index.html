@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Chakra+Petch:300,300italic,regular,italic,500,500italic,600,600italic,700,700italic"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./CSS/style.css" />
+    <title>CALC-UI</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="content">
+        <h1 class="calc_title">CALCULATE THIS</h1>
+        <div class="calc_window">
+          <input
+            type="text"
+            placeholder="First num"
+            id="firstNum"
+            class="num_input"
+          />
+          <select id="selectOperator">
+            <option value="plus">+</option>
+            <option value="minus">-</option>
+            <option value="multiply">*</option>
+            <option value="divide">/</option>
+          </select>
+          <input
+            type="text"
+            placeholder="Second num"
+            id="secondNum"
+            class="num_input"
+          />
+          <button id="resultButton">=</button>
+          <div id="outputResult"></div>
+        </div>
+        <div class="results"></div>
+      </div>
+    </div>
+    <script src="./JS/Calc-UI.js"></script>
+  </body>
+</html>

@@ -1,0 +1,141 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+  transition: 0.4s all linear;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  overflow: hidden;
+  font-size: 16px;
+  font-family: "Chakra Petch";
+  background-color: rgba(70, 131, 180, 0.648);
+}
+
+.wrapper {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.content {
+  position: relative;
+  padding: 100px 0px;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  flex-direction: column;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.calc_title {
+  font-family: inherit;
+  color: rgb(255, 255, 255);
+  letter-spacing: 0.5rem;
+  font-size: 3rem;
+  text-shadow: 3px 3px 2px rgba(0, 0, 0, 0.404);
+}
+
+input {
+  font-family: inherit;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 10px;
+  font-size: 1.1rem;
+  text-transform: capitalize;
+  text-align: center;
+  border-radius: 10px;
+  outline: none;
+  border: 1px solid grey;
+  box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.313);
+}
+
+input:focus {
+  box-shadow: 0px 0px 10px 3px rgba(255, 0, 0, 0.313);
+}
+hr {
+  color: black;
+  max-width: 100%;
+}
+select {
+  cursor: pointer;
+  border-radius: 10px;
+  outline: none;
+  border: 1px solid grey;
+  font-size: 1.2rem;
+  appearance: none;
+
+  margin: 0;
+  width: 100%;
+  text-align: center;
+  padding-left: 10px;
+  padding: 10px 0px;
+  border: 1px solid grey;
+  box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.313);
+}
+select:hover {
+  background-color: rgba(70, 131, 180, 0.298);
+  color: white;
+  box-shadow: 0px 0px 5px 1px rgb(255, 0, 0);
+}
+
+#resultButton {
+  margin: 0px 10px;
+  margin-bottom: 20px;
+  padding: 10px 15px;
+  border-radius: 10px;
+  outline: none;
+  border: 1px solid grey;
+  background-color: white;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+#resultButton:hover {
+  background-color: steelblue;
+  color: white;
+}
+
+#outputResult,
+.results {
+  padding: 20px 40px;
+  border-radius: 10px;
+  font-weight: 900;
+  outline: none;
+  border: 1px solid grey;
+  background-color: white;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+.results {
+  padding: 20px 40px;
+}
+.results:hover {
+  background-color: steelblue;
+  color: white;
+}
+
+.calc_window {
+  padding: 20px 0px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+}
+
+.bg_title {
+  transform: translateY(-10%);
+  z-index: -1;
+  font-size: 25rem;
+  color: rgba(255, 255, 255, 0.085);
+  font-weight: 900;
+}

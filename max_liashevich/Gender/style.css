@@ -1,0 +1,83 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  transition: 0.3s all ease-in-out2;
+}
+body {
+  font-size: 16px;
+  font-family: "Genos";
+  background: linear-gradient(
+    290deg,
+    rgba(132, 126, 114, 0.623),
+    rgba(132, 126, 114, 0.321),
+    rgba(132, 126, 114, 0.076)
+  );
+}
+.wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+.wrapper_title {
+  position: absolute;
+  font-size: 20rem;
+  font-weight: 900;
+  top: 35%;
+  color: rgba(0, 0, 0, 0.085);
+  letter-spacing: -50px;
+}
+
+.gender_block {
+  transform: translateY(200px);
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+p {
+  text-transform: uppercase;
+  font-size: 2rem;
+  font-weight: 700;
+}
+.info {
+  margin-bottom: 10px;
+}
+.result {
+  display: inline-block;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+input {
+  font-family: inherit;
+  padding: 20px;
+  border: 0.5px solid black;
+  font-size: 25px;
+  border-radius: 15px;
+  outline: none;
+  text-transform: uppercase;
+  overflow: hidden;
+}
+
+button {
+  font-family: inherit;
+  padding: 30px;
+  outline: none;
+  background-color: #fff;
+  font-size: 30px;
+  text-transform: uppercase;
+  border-radius: 45px;
+  cursor: pointer;
+  transition: 0.4s all ease-in-out;
+}
+button:hover {
+  border: 2px solid rgb(186, 132, 132);
+  background-color: black;
+  color: #fff;
+  box-shadow: 0px 0px 12px rgba(255, 0, 0, 0.494);
+}
