@@ -6,3 +6,5 @@ https://www.youtube.com/watch?v=zhnScPqcBKY
 
   Лучше избегать огромных строк таких как Number(document.getElementById().trim())
   export(var1, var2) можно из модуля экспортировать сразу несколько переменных, а не каждый.
+
+  Если на элемент повесил eventListener - то, после удаления элемента нужно также удалить и eventListener element.removeEventListener, т.к. программа не удаляет слушатели.
