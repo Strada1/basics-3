@@ -1,51 +1,41 @@
-const OPERATORS = {
-  ADD: "+",
-  MULTI: "*",
-  SUBTRACT: "-",
-  DIVIDE: "/",
-};
+const firstNum = document.querySelector('#firstNum');
+const secondNum = document.querySelector('#secondNum');
+const operator = document.querySelector('#selectOperator');
+const output = document.querySelector('#outputResult');
+const resultButton = document.querySelector('#resultButton');
+const results = document.querySelector('.results')
 
-function calc() {
-  let result;
-  let valueNumberOne = document.getElementById("firstNum").value;
-  let valueNumberTwo = document.getElementById("secondNum").value;
-  let operator = document.getElementById("mathOperator").value;
-  const equation = document.querySelector(".equation");
+resultButton.addEventListener('click', () => {
 
-  if (isNaN(valueNumberOne) || isNaN(valueNumberTwo)) {
-    alert("You should use numbers!");
-  } else {
-    let numberOne = +valueNumberOne;
-    let numberTwo = +valueNumberTwo;
-
-    switch (operator) {
-      case OPERATORS.ADD:
-        result = numberOne + numberTwo;
-        break;
-
-      case OPERATORS.MULTI:
-        result = numberOne * numberTwo;
-        break;
-
-      case OPERATORS.SUBTRACT:
-        result = numberOne - numberTwo;
-        break;
-
-      case OPERATORS.DIVIDE:
-        if (numberTwo === 0) {
-          alert("Division by 0 isn't allowed here");
-        } else {
-          result = numberOne / numberTwo;
-          break;
-        }
-
-      default:
-        result = "something is wrong";
+    let result = null;
+    if (firstNum.value === '' && firstNum.value === '') {
+        alert('Введите значения!');
+        return
     }
-  }
+    switch (operator.value) {
+        case 'plus':
+            result = Number(firstNum.value) + Number(secondNum.value);
+            break
+        case 'minus':
+            result = Number(firstNum.value) - Number(secondNum.value);
+            break
+        case 'multiply':
+            result = Number(firstNum.value) * Number(secondNum.value);
+            break
+        case 'divide':
+            result = Number(firstNum.value) / Number(secondNum.value);
+            break
+    }
+    output.textContent = result;
+    resultAppend(result);
+})
 
-  equation.textContent = result;
+results.addEventListener('click', e => {
+    e.target.remove();
+})
+
+function resultAppend(result) {
+    let div = document.createElement('div');
+    div.textContent = result;
+    results.appendChild(div);
 }
-
-let buttonEquals = document.getElementById("forEqual");
-buttonEquals.addEventListener("click", calc);
