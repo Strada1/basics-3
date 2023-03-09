@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To Do list</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="wrapper">
+    <div class="main-rectangle">
+        <div class="high-priority-task-field">
+            <p>HIGH</p>
+            <form action="" type="submit" class="high-priority-form">
+                <input
+                        class="add-high-task-field"
+                        type="text"
+                        placeholder="Добавить важные дела"
+                        value="";
+                />
+                <button type="submit" class="high-add-button">+</button>
+            </form>
+
+
+
+        </div>
+
+        <div class="low-priority-task-field" >
+            <p>LOW</p>
+            <form action="" class="low-priority-form">
+                <input
+                        class="add-low-task-field"
+                        type="text"
+                        placeholder="Добавить менее важные дела"
+                />
+                <button type="submit" class="low-add-button">+</button>
+            </form>
+
+        </div>
+    </div>
+</div>
+<script src="toDoUI.js"></script>
+</body>
+</html>
