@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Форма</title>
+  <style>
+    body {
+      background-color: rgb(156, 128, 152);
+    }
+
+    button {
+      background-color: white;
+      color: rgb(5, 32, 8);
+      border: 2px solid #4b1a53;
+      border-radius: 8px;
+    }
+
+    button:hover {
+      background-color: #c16baa;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    input {
+      width: 160px;
+      height: 20px;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div>
+    <input id = "inputText" type="text">
+    <button id = "bnSendRequest">Отправить</button>
+    <div>
+      <code id="result"></code>
+    </div>
+  </div>
+
+  <script>
+    const button = document.getElementById('bnSendRequest');
+    const name = document.getElementById('inputText');
+    const result = document.getElementById("result");
+    button.addEventListener('click', fnSendRequest);
+
+    async function fnSendRequest() {
+      const firstName = name.value;
+      const serverUrl = 'https://api.genderize.io';
+      const url = `${serverUrl}?name=${firstName}`;
+      console.log(firstName, url);
+      const response = await fetch(url);
+      if (response.ok) {
+        const text_out = await response.json();
+        console.log(text_out);
+        result.innerText = `${firstName} is ${text_out.gender}`;
+      } else {
+        console.log("Error:", response.statusText);
+        result.innerText = "Error:" + response.statusText;
+      }
+    }
+  </script>
+</body>
+
+</html>
