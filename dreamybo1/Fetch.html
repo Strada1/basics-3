@@ -1,0 +1,75 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch</title>
+    <style>
+        body{
+            
+            background-color: rgb(158, 201, 239);
+        }
+        button{
+            background-image: url(https://www.svgrepo.com/download/340299/fetch-upload-cloud.svg);
+            background-size: contain;
+            width: 21px;
+            height: 21px;
+            border-color: red;
+            box-shadow: 1px;
+            
+        }
+        input{
+            height: 21px;
+            border: none;
+            outline: none;
+        }
+        #mainDiv{
+            display: flex;
+            border: 10px solid rgb(144, 143, 143);
+        }
+        #newDiv{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #title{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+        }
+        #center{
+            position: absolute;
+            top:50%;
+            left: 50%;
+            transform: translate(-50% , -50%)
+        }
+        h1{
+            font: italic small-caps bold 16px/2 cursive;
+            color: #cb5153;
+            border: 3px solid rgb(254, 254, 254);
+            border-radius: 5px;
+            
+        }
+    </style>
+</head>
+<body>
+
+
+    <div id="center">
+        <div id="title">
+            <h1>GENDER?</h1>
+        </div>
+        
+        <div id="newDiv">
+            <form method="get" id="mainDiv">
+                <input id="input" name="input" placeholder="type name" value="" type="text">
+                <button id="button" type="button"></button>
+            </form>
+        </div>
+    </div>
+        
+        
+</body>
+<script src="Fetch.js"></script>
+</html>
