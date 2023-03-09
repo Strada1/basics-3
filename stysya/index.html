@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+  <body>
+    <div class="all">
+      <div class="block">
+        <div class="high">
+          <h2 class="header">HIGH</h2>
+          <form class="addTask">
+            <input
+              class="input-1"
+              type="text"
+              value=""
+              placeholder="Добавить вaжных дел"
+            />
+            <button class="plusHigh" type="submit">+</button>
+          </form>
+          <div class="allHighTask list"></div>
+
+          <div class="low">
+            <h2 class="header">LOW</h2>
+            <form class="addTask">
+              <input
+                class="input-2"
+                type="text"
+                value=""
+                placeholder="Добавить не очень вaжных дел"
+              />
+              <button class="plusLow" type="submit">+</button>
+            </form>
+
+            <div class="allLowTask list"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="./main.js" defer></script>
+</html>
