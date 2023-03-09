@@ -1,0 +1,70 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body{
+    animation-name: backgroundAnim;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+  }
+  .container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  @keyframes backgroundAnim {
+  0%   {background: #ff85e4}
+  25% {background: plum;}
+  50%  {background: pink}
+  75% {background: plum;}
+  100% {background: #ff85e4;}
+  }
+  .main{
+    max-width: 700px;
+    text-align: center;
+    background-color: #fff;
+    padding:20px;
+    border-radius:15px;
+    max-height: 100vh;
+  }
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+  }
+  input::placeholder       {opacity: 1; transition: opacity 0.3s ease; font-size: 15px; font-weight: normal;}
+  input:focus::placeholder  {opacity: 0; transition: opacity 0.3s ease;}
+  #solution{
+    color:firebrick;
+  }
+  #gender input{
+    border: 2px solid grey;
+    border-radius: 5px;
+    background-color: #fff;
+    height: 40px;
+    padding-left: 15px;
+    padding-right: 25px;
+    text-align: center;
+  }
+  #gender button{
+    border: 0;
+    height: 40px;
+    width: 150px;
+    border-radius: 10px;
+    margin: 5px;
+    cursor: pointer;
+    transition: 1.5s;
+    font-size: 15px;
+  }
+  #gender button:hover{
+    font-weight: bold;
+    box-shadow: 0 0 0 2px lightgray, 0 0 0 3px #888;
+    color: white;
+    background-color: lightgray;
+  }
+  .message__error{
+    color: red;
+    font-weight: bold;
+  }
