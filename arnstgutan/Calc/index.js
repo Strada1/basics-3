@@ -127,6 +127,7 @@ const body = document.querySelector(".body_container");
 const colorCodes = document.querySelectorAll(".color-code");
 const saveColorBtn = document.querySelector("#save-bg");
 const colorsContainer = document.querySelector(".colors-container");
+const example = document.querySelectorAll(".example");
 
 function getRandomColor() {
   const randomColor = Math.floor(Math.random() * 256);
@@ -171,8 +172,39 @@ function saveColorFunction() {
   const newCode = document.createElement("div");
   newColorEx.appendChild(newCode);
   newCode.classList.add("color-code");
+  newCode.textContent = bodyStyle.backgroundColor;
+
+  const newDelete = document.createElement("div");
+  newColorEx.appendChild(newDelete);
+  newDelete.classList.add("delete-example");
+}
+
+function setBGfromColorList(exp) {
+  let exampleBGColor = getComputedStyle(exp).backgroundColor;
+  body.style.backgroundColor = exampleBGColor;
 }
 
 colorChangeBtn.addEventListener("click", changeColor);
 saveColorBtn.addEventListener("click", saveColorFunction);
+colorsContainer.addEventListener("click", function (event) {
+  let target = event.target;
+  if (!target.classList.contains("example")) return;
+  setBGfromColorList(target);
+});
+
+function deleteColorFromList(exp) {
+  let colorExampleToDelete = exp.parentElement;
+  console.log(colorExampleToDelete);
+  colorExampleToDelete.remove();
+  /*   if (colorExampleToDelete.contains("color-example")) {
+    colorExampleToDelete.remove();
+  } */
+}
+
+colorsContainer.addEventListener("click", function (event) {
+  let target = event.target;
+  if (!target.classList.contains("delete-example")) return;
+  deleteColorFromList(target);
+});
+
 document.addEventListener("DOMContentLoaded", getListColorsValues);

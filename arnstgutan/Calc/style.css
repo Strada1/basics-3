@@ -199,6 +199,7 @@
   align-self: flex-start;
   border-radius: 5px;
   margin-right: 10px;
+  cursor: pointer;
 }
 
 .color-control {
@@ -208,7 +209,21 @@
 }
 
 .color-code {
-  font-size: 10px;
+  font-size: 12px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.delete-example {
+  cursor: pointer;
+  background-image: url('/Delete-Button-PNG-HD-Image.png');
+  background-size: 10px;
+  background-position: center center;
+  width: 10px;
+  height: 10px;
+  transition: 0.4s;
+  align-self: center;
+  margin: auto;
 }
 
 /* input:valid {
