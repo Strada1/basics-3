@@ -1,0 +1,13 @@
+#
+# DocumentRoot: The directory out of which you will serve your
+# documents. By default, all requests are taken from this directory, but
+# symbolic links and aliases may be used to point to other locations.
+#
+#DocumentRoot "C:/xampp/htdocs"
+#<Directory "C:/xampp/htdocs">
+
+DocumentRoot "C:\Users\UserB\Documents\share\strada-repository\basics-3\GeorgeSemenov\task 40 модификации документа"
+<Directory "C:\Users\UserB\Documents\share\strada-repository\basics-3\GeorgeSemenov\task 40 модификации документа">
+
+просто найди участок по комментариям
+и замени две последние строки.
