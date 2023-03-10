@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-do</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="high">
+      <h1>HIGH</h1>
+      <div class="add-new-task">
+        <input type="text" value="Добавить важные дела" />
+        <button id="add"></button>
+      </div>
+    </div>
+    <div class="high-tasks">
+      <div class="high-task">
+        <input class="task" type="radio" name="task" />
+        <label for="task"
+          >Вот вам и супер интересная тема!</label
+        >
+        <button id="remove"></button>
+      </div>
+    </div>
+    <div class="high-tasks">
+      <div class="high-task">
+        <input class="task" type="radio" name="task" />
+        <label for="task"
+          >Сверстать этот TODO list</label
+        >
+        <button id="remove"></button>
+      </div>
+    </div>
+    <div class="high-tasks">
+      <div class="high-task">
+        <input class="task" type="radio" name="task" checked/>
+        <label for="task"
+          >Начать делать задачу</label
+        >
+        <button id="remove"></button>
+      </div>
+    </div>
+    <div class="low">
+      <h1>LOW</h1>
+      <div class="add-new-task">
+        <input type="text" value="Добавить" />
+        <button id="add"></button>
+      </div>
+    </div>
+    <div class="low-tasks">
+      <div class="high-task">
+        <input class="task" type="radio" name="task"/>
+        <label for="task"
+          >Начать делать задачу</label
+        >
+        <button id="remove"></button>
+      </div>
+    </div>
+  </body>
+</html>
