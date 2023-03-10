@@ -1,0 +1,16 @@
+.form{
+    width: 400px;
+    height: 200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+.form__input{
+    width: 200px;
+    height: 30px;
+    
+}
+.form__button{
+    width: 100px;
+    height: 30px;
+}
