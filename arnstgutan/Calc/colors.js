@@ -44,6 +44,7 @@ export function saveColorFunction() {
   newColorEx.appendChild(newExample);
   newExample.classList.add("example");
   newExample.style.backgroundColor = bodyColorOnSave;
+  newExample.value = bodyColorOnSave;
 
   const newCode = document.createElement("div");
   newColorEx.appendChild(newCode);
