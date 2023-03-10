@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Genderize</title>
+    <style type="text/css">
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <form class="genderizeForm">
+        <input type="text" placeholder="name" value="">
+        <button type="submit">Check</button>
+    </form>
+
+    <script>
+        const form = document.querySelector('form.genderizeForm');
+        const input = document.querySelector('form.genderizeForm > input')
+
+        async function genderize(event) {
+            event.preventDefault();
+            const firstName = input.value;
+            input.value = "";
+            const serverUrl = 'https://api.genderize.io';
+            const url = `${serverUrl}?name=${firstName}`;
+
+            const responce = await fetch(url);
+
+            if (responce.ok) {
+                const responceJSON = await responce.json();
+                alert(firstName + ' is ' + responceJSON['gender']);
+                console.log(responce.status);
+            } else {
+                console.log("Ошибка: " + responce.status);
+            }
+        }
+
+        form.addEventListener('submit', genderize)
+    </script>
+
+</body>
+
+</html>
