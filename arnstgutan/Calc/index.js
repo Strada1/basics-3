@@ -22,7 +22,7 @@ function calculate() {
   if (checkValue()) {
     switch (operatorValue) {
       case "plus":
-        resultValue = operand1 + operand2;
+        resultValue = +operand1 + +operand2;
         break;
       case "minus":
         resultValue = operand1 - operand2;
