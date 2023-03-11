@@ -1,5 +1,17 @@
 @import url('../node_modules/reset-css/reset.css');
 
+
+html {
+    height: 100vh;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 /* Настройка гридов */
 
 .weather_app {
@@ -10,8 +22,9 @@
     grid-template-rows: 40px 1fr;
     grid-template-columns: 1fr 1fr;
     max-width: 600px;
-    margin: auto;
 }
+
+
 
 .search_container {
     grid-area: search;
@@ -66,7 +79,6 @@ button:hover {
     width: 100%;
     padding: 0 16px;
 }
-
 .submit_search {
     padding: 0 16px;
 }
@@ -104,29 +116,43 @@ button:hover {
     grid-template-rows: 1fr 44px;
 }
 
-.tabs__item {
-    height: 400px;
-    overflow-y: auto;
-}
 
-.tabs__item::-webkit-scrollbar {
-    display: none;
-}
-
-.tabs__nav {
-    box-sizing: border-box;
-    height: 100%;
-    display: flex;
-    align-items: stretch;
-}
 
 .tabs__content {
     padding: 20px;
 }
+.tabs__item {
+    height: 400px;
+    overflow-y: auto;
+}
+.tabs__item::-webkit-scrollbar {
+    display: none;
+}
 
+
+
+.tabs__nav {
+    box-sizing: border-box;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+}
 .tabs__nav-btn {
+    font-size: 18px;
+    font-weight: 400;
+    font-family: monospace;
     border: 1px solid black
 }
+.tabs__nav-btn:hover {
+    background-color: rgb(210, 210, 210);
+}
+
+
+
+
+
+
 
 /* медиа выражения для адаптива под мобильные устройства */
 
