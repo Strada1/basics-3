@@ -1,24 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Погода</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="./styles/main.css">
     <script defer src="./index.js"></script>
 </head>
+
 <body>
     <div class="weather_app">
         <div class="search_container">
-            input
+            <form class="search_form">
+                <input placeholder="Название города" class="search_input">
+                <button type="submit" class="sumbit_search">
+                    <span class="material-symbols-outlined">
+                        search
+                    </span>
+                </button>
+            </form>
         </div>
         <div class="stat_container">
             14 c
         </div>
         <div class="locations_container">
-            added locataions
+            <div class="title_locations">Added Locations :</div>
+            <ul class="list_locations">
+                <li>Amur</li>
+                <li>Samara</li>
+                <li>Bali</li>
+                <li>Dane</li>
+                <li>Kilo</li>
+                <li>Nur-Sultan</li>
+            </ul>
         </div>
     </div>
 </body>
+
 </html>
