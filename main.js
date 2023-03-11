@@ -98,21 +98,21 @@ const addTaskByAddButton = function (event) {
         event.preventDefault();
 
         const newTask = event.target.parentNode.querySelector(".todo__input").value;
-        if (newTask === "" || newTask === " ") {
+        if (newTask.trim() === "") {
             event.target.parentNode.querySelector(".todo__input").value = "";
-            event.target.placeholder = "Нельзя добавить пустую задачу";
+            event.target.parentNode.querySelector(".todo__input").placeholder = "Нельзя добавить пустую задачу";
         }
 
-        else if (newTask != "") {
+        else {
             event.target.parentNode.querySelector(".todo__input").placeholder = "Добавить";
-            const taskName = event.target.parentNode.querySelector(".todo__input").value;
+            const newTask = event.target.parentNode.querySelector(".todo__input").value;
 
             if (event.target.parentNode.querySelector(".todo__input") === highPriorityInput) {
-                list.unshift({ name: taskName, status: "Todo", priority: "High" });
+                list.unshift({ name: newTask, status: "Todo", priority: "High" });
             }
 
             else if (event.target.parentNode.querySelector(".todo__input") === lowPriorityInput) {
-                list.unshift({ name: taskName, status: "Todo", priority: "Low" });
+                list.unshift({ name: newTask, status: "Todo", priority: "Low" });
             }
             event.target.parentNode.querySelector(".todo__input").value = "";
             render();
