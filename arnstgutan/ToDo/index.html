@@ -15,20 +15,36 @@
     <h1>TO DO</h1>
     <div class="todo-container">
       <h2 class="priority-title">HIGH</h2>
-      <input type="text" class="task-input" id="highAddTaskInput" placeholder="Добавить важных дел">
-      <div class="add-icon" id="highAddTaskBtn"></div>
-      <div class="high-task">
-        <input class="done-checkbox" type="checkbox">
-        <div class="task-text">Какая-то задача</div>
-        <div class="delete-icon"></div>
+      <form action="" type="submit" class="form">
+        <input type="text" class="task-input" id="highInput" placeholder="Добавить важных дел">
+        <div class="add-icon" id="highAddTaskBtn">+</div>
+      </form>
+      <div class="high-tasks tasks-list">
+        <div class="task">
+
+          <label class="container">
+            <input type="checkbox" checked="checked">
+            <span class="checkmark"></span>
+          </label>
+
+          <div class="task-text">Какая-то задача</div>
+          <div class="delete-icon">+</div>
+        </div>
       </div>
       <h2 class="priority-title">LOW</h2>
-      <input type="text" class="task-input" id="lowAddTaskInput" placeholder="Добавить неважных дел">
-      <div class="add-icon" id="lowAddTaskBtn"></div>
-      <div class="low-task">
-        <input class="done-checkbox" type="checkbox">
-        <div class="task-text">Какая-то задача</div>
-        <div class="delete-icon"></div>
+      <form action="" type="submit" class="form">
+        <input type="text" class="task-input" id="lowInput" placeholder="Добавить неважных дел">
+        <div class="add-icon" id="lowAddTaskBtn">+</div>
+      </form>
+      <div class="low-tasks tasks-list">
+        <div class="task">
+          <label class="container">
+            <input type="checkbox">
+            <span class="checkmark"></span>
+          </label>
+          <div class="task-text">Какая-то задача</div>
+          <div class="delete-icon">+</div>
+        </div>
       </div>
     </div>
   </main>
