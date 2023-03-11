@@ -121,15 +121,20 @@ button:hover {
 .tabs__content {
     padding: 20px;
 }
-.tabs__item {
+.tabs__content {
     height: 400px;
     overflow-y: auto;
 }
-.tabs__item::-webkit-scrollbar {
+.tabs__content::-webkit-scrollbar {
     display: none;
 }
 
-
+.tabs__item {
+    display: none;
+}
+.tabs__item.active {
+    display: block;
+}
 
 .tabs__nav {
     box-sizing: border-box;
