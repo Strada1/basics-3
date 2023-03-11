@@ -1,7 +1,7 @@
-import renderTasksContainer from './renderTasksContainer.js';
 import renderTask from './renderTask.js';
 
 export default function render(renderByProperty = "priority"){
+  this.parentNode.innerHTML='';
   //renderByProperty - по какому свойству группировать задачи при рендере
   let virtualList = this.list.concat([]);
   let currentPropertyStatus = "";
@@ -14,9 +14,9 @@ export default function render(renderByProperty = "priority"){
   virtualList.forEach((item,index,arr)=>{
     if(currentPropertyStatus != item[renderByProperty]){
       currentPropertyStatus = item[renderByProperty];
-      tasksContainer = renderTasksContainer(currentPropertyStatus)
+      tasksContainer = this.renderTasksContainer(
+        {title:currentPropertyStatus,parentNode: this.parentNode})
     }
-    renderTask(item.name, item.status, tasksContainer)
-    // console.log(`   name: ${item.name}, priority: ${item.priority}`);
+    this.renderTask(item, tasksContainer)
   })
 }

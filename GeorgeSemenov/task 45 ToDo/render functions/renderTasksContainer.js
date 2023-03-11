@@ -1,6 +1,7 @@
 import createAndSetClassName from './createAndSetClassName.js';
 
-export default function renderTasksContainer(title,tasks,placeholder = "Добавить",parentNode=document.getElementById('display')){
+export default function renderTasksContainer({title,placeholder}){
+  placeholder = placeholder? placeholder: "Добавить";
   let tasksContainer = createAndSetClassName('div','tasks-container');
   
   //создаём заголовок
@@ -10,6 +11,7 @@ export default function renderTasksContainer(title,tasks,placeholder = "Доба
 
   //создаём форму
   const taskInputWrapper = createAndSetClassName('form','task-input-wrapper');
+  taskInputWrapper.addEventListener('submit',(e)=>{onSubmit(e,taskInputWrapper,this)});
   taskInputWrapper.dataset.priority = title;
   const taskInput = createAndSetClassName('input','task-input');
   taskInput.type = 'text';
@@ -20,6 +22,16 @@ export default function renderTasksContainer(title,tasks,placeholder = "Доба
   taskInputWrapper.appendChild(addTaskButton);
   tasksContainer.appendChild(taskInputWrapper);
 
-  parentNode.appendChild(tasksContainer);
+  this.parentNode.appendChild(tasksContainer);
   return tasksContainer;  
+}
+
+function onSubmit(e,form,toDoList){
+    e.preventDefault();
+    const priority = form.dataset.priority;
+    const taskText = form.querySelector('input.task-input').value;
+    if(taskText){
+      toDoList.addTask(taskText,'undone',priority)
+      toDoList.render();
+    }
 }
