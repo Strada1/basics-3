@@ -1,2 +1,47 @@
-@import '../node_modules/reset-css/reset.css'
+@import url('../node_modules/reset-css/reset.css');
 
+.weather_app {
+    display: grid;
+    grid-template-areas: 
+        'search search'
+        'stat locat';
+    grid-template-rows: 40px 1fr;
+    grid-template-columns: 1fr 1fr;
+    max-width: 600px;
+    height: 435px;
+    margin: auto;
+}
+
+.search_container {
+    grid-area: search;
+
+    box-sizing: border-box;
+    border: 1px solid black;
+}
+
+.stat_container {
+    grid-area: stat;
+
+    box-sizing: border-box;
+    border: 1px solid black;
+}
+
+.locations_container {
+    grid-area: locat;
+
+    box-sizing: border-box;
+    border: 1px solid black;
+}
+
+@media (max-width: 480px) {
+    .weather_app {
+        grid-template-areas:
+            'search'
+            'stat'
+            'locat';
+        grid-template-rows: 40px 1fr 1fr;
+        grid-template-columns: 100vw;
+        height: 100vh;
+        /* width: 100vw; */
+    }
+}
