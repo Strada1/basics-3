@@ -4,13 +4,12 @@
 
 .weather_app {
     display: grid;
-    grid-template-areas: 
+    grid-template-areas:
         'search search'
         'stat locat';
     grid-template-rows: 40px 1fr;
     grid-template-columns: 1fr 1fr;
     max-width: 600px;
-    height: 435px;
     margin: auto;
 }
 
@@ -38,7 +37,8 @@
 
 /* стили по умолчанию для кнопки и инпута*/
 
-button, input {
+button,
+input {
     border: none;
     background: none;
 }
@@ -74,7 +74,7 @@ button:hover {
 
 /* стилизация контейнера locations */
 
-.locations_container > * {
+.locations_container>* {
     font-size: 24px;
     font-weight: 500;
 }
@@ -97,9 +97,36 @@ button:hover {
     padding: 15px;
 }
 
+/* стилизация контейнера статистики */
 
+.stat_container {
+    display: grid;
+    grid-template-rows: 1fr 44px;
+}
 
+.tabs__item {
+    height: 400px;
+    overflow-y: auto;
+}
 
+.tabs__item::-webkit-scrollbar {
+    display: none;
+}
+
+.tabs__nav {
+    box-sizing: border-box;
+    height: 100%;
+    display: flex;
+    align-items: stretch;
+}
+
+.tabs__content {
+    padding: 20px;
+}
+
+.tabs__nav-btn {
+    border: 1px solid black
+}
 
 /* медиа выражения для адаптива под мобильные устройства */
 
@@ -112,6 +139,5 @@ button:hover {
         grid-template-rows: 40px 1fr 1fr;
         grid-template-columns: 100vw;
         height: 100vh;
-        /* width: 100vw; */
     }
 }
