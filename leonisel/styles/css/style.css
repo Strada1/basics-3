@@ -1,0 +1,234 @@
+html {
+  box-sizing: border-box;
+}
+html *, html *::after, html *::before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+html body {
+  height: 100vh;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  color: #202020;
+  background: #e7e7e7;
+}
+html body .main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+html body .main .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+html body .main .container .weather-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 621px;
+  height: 462px;
+  background: #FFFFFF;
+}
+html body .main .container .weather-wrapper .weather-container {
+  width: 600px;
+  height: 435px;
+  border: 1px solid #000000;
+}
+html body .main .container .weather-wrapper .weather-container .input-wrapper {
+  position: relative;
+  height: 45px;
+  border-bottom: 46px solid #000000;
+}
+html body .main .container .weather-wrapper .weather-container .input-wrapper .inputs-enter-data {
+  width: 100%;
+  padding: 12px;
+  height: 45px;
+  outline: none;
+  border: none;
+}
+html body .main .container .weather-wrapper .weather-container .input-wrapper .add-task-btn {
+  position: absolute;
+  top: 12px;
+  right: 13px;
+  width: 21.86px;
+  height: 21.86px;
+  cursor: pointer;
+}
+html body .main .container .weather-wrapper .weather-container .content-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+html body .main .container .weather-wrapper .weather-container .content-wrapper .content-wrapper-box {
+  height: 388px;
+  width: 50%;
+}
+html body .main .container .weather-wrapper .weather-container .content-wrapper .content-wrapper-box_1 {
+  border-right: 1px solid #000;
+}
+html body .main .container .weather-wrapper .weather-container .content-wrapper .content-wrapper-box_1 .box1-high {
+  height: 345px;
+  border-bottom: 1px solid #000;
+  overflow: hidden;
+}
+html body .main .container .weather-wrapper .weather-container .content-wrapper .content-wrapper-box_1 .box1-high .box1-high_first-container {
+  height: 143px;
+  padding-top: 20px;
+  padding-left: 23px;
+}
+html body .main .container .weather-wrapper .weather-container .content-wrapper .content-wrapper-box_1 .box1-high .box1-high_first-container .box1-high_first-container_temperature {
+  position: relative;
+  height: 85px;
+  width: 95px;
+  font-size: 70px;
+  line-height: 82px;
+}
+html body .main .container .weather-wrapper .weather-container .content-wrapper .content-wrapper-box_1 .box1-high .box1-high_first-container .box1-high_first-container_temperature .mask {
+  position: absolute;
+  top: 13px;
+  right: -6px;
+  height: 17px;
+  width: 17px;
+}
+html body .main .container .weather-wrapper .weather-container .content-wrapper .content-wrapper-box_1 .box1-high .box1-high_second-container {
+  height: 59px;
+  display: flex;
+  justify-content: center;
+}
+html body .main .container .weather-wrapper .weather-container .content-wrapper .content-wrapper-box_1 .box1-high .box1-high_third-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 143px;
+  padding-left: 12px;
+  padding-right: 26px;
+  padding-bottom: 17px;
+}
+html body .main .container .weather-wrapper .weather-container .content-wrapper .content-wrapper-box_1 .box1-high .box1-high_third-container .box1-high_third-container_city {
+  height: 28px;
+  font-size: 24px;
+  line-height: 28px;
+}
+html body .main .container .weather-wrapper .weather-container .content-wrapper .content-wrapper-box_1 .box1-high .box1-high_third-container .shape {
+  height: 22px;
+  width: 22px;
+}
+html body .main .container .weather-wrapper .weather-container .content-wrapper .content-wrapper-box_1 .box1-high .box1-high_first-container_second-screen {
+  height: 68px;
+  padding-top: 33px;
+  padding-left: 17px;
+  font-size: 24px;
+  line-height: 28px;
+}
+html body .main .container .weather-wrapper .weather-container .content-wrapper .content-wrapper-box_1 .box1-high .box1-high_second-container_second-screen {
+  padding-left: 15px;
+  padding-top: 35px;
+}
+html body .main .container .weather-wrapper .weather-container .content-wrapper .content-wrapper-box_1 .box1-high .box1-high_second-container_second-screen .list-cities {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 196px;
+  font-size: 24px;
+  line-height: 28px;
+}
+html body .main .container .weather-wrapper .weather-container .content-wrapper .content-wrapper-box_1 .box1-high .box1-high_second-container_second-screen .list-cities .list-cities_items {
+  list-style: none;
+}
+html body .main .container .weather-wrapper .weather-container .content-wrapper .content-wrapper-box_1 .box1-high .box1-high_first-container_third-screen {
+  height: 68px;
+  padding-top: 33px;
+  padding-left: 17px;
+  font-size: 24px;
+  line-height: 28px;
+}
+html body .main .container .weather-wrapper .weather-container .content-wrapper .content-wrapper-box_1 .box1-high .box1-high_second-container_third-screen {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  padding-left: 16px;
+  font-size: 18px;
+  line-height: 21px;
+}
+html body .main .container .weather-wrapper .weather-container .content-wrapper .content-wrapper-box_1 .box1-high .box1-high_second-container_third-screen .current-weather-box_wrapper {
+  width: 265px;
+  height: 120px;
+  border: 1px solid #000000;
+}
+html body .main .container .weather-wrapper .weather-container .content-wrapper .content-wrapper-box_1 .box1-high .box1-high_second-container_third-screen .current-weather-box_wrapper .current-weather-box_wrapper-first {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 65px;
+  padding-top: 6px;
+  padding-left: 8px;
+  padding-right: 12px;
+}
+html body .main .container .weather-wrapper .weather-container .content-wrapper .content-wrapper-box_1 .box1-high .box1-high_second-container_third-screen .current-weather-box_wrapper .current-weather-box_wrapper-second {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 10px;
+  padding-right: 10px;
+  height: 42px;
+}
+html body .main .container .weather-wrapper .weather-container .content-wrapper .content-wrapper-box_1 .box1-low {
+  display: flex;
+  flex-direction: row;
+  height: 43px;
+}
+html body .main .container .weather-wrapper .weather-container .content-wrapper .content-wrapper-box_1 .box1-low .box1-low_children {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+html body .main .container .weather-wrapper .weather-container .content-wrapper .content-wrapper-box_1 .box1-low .box1-low_child-black {
+  background: #000;
+  color: #FFF;
+}
+html body .main .container .weather-wrapper .weather-container .content-wrapper .content-wrapper-box_1 .box1-low .box1-low_first {
+  width: 99px;
+  border-right: 1px solid #000;
+}
+html body .main .container .weather-wrapper .weather-container .content-wrapper .content-wrapper-box_1 .box1-low .box1-low_second {
+  width: 102px;
+  border-right: 1px solid #000;
+}
+html body .main .container .weather-wrapper .weather-container .content-wrapper .content-wrapper-box_1 .box1-low .box1-low_third {
+  width: 96px;
+}
+html body .main .container .weather-wrapper .weather-container .content-wrapper .content-wrapper-box_2 {
+  font-size: 24px;
+  line-height: 28.13px;
+}
+html body .main .container .weather-wrapper .weather-container .content-wrapper .content-wrapper-box_2 .box_2-high {
+  padding-left: 18px;
+  padding-top: 33px;
+  height: 68px;
+  border-bottom: 1px solid #000;
+}
+html body .main .container .weather-wrapper .weather-container .content-wrapper .content-wrapper-box_2 .box_2-low {
+  padding-top: 35px;
+  padding-left: 18px;
+}
+html body .main .container .weather-wrapper .weather-container .content-wrapper .content-wrapper-box_2 .box_2-low .ul-list {
+  width: 113px;
+  height: 238px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+html body .main .container .weather-wrapper .weather-container .content-wrapper .content-wrapper-box_2 .box_2-low .ul-list .ul-list_li {
+  list-style-type: none;
+}
+
+/*# sourceMappingURL=style.css.map */
