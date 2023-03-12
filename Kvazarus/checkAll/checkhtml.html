@@ -1,0 +1,10 @@
+<div id="myDiv">Это <strong>жирный</strong> текст.</div>
+
+<script>
+  // получаем содержимое элемента
+  const content = document.getElementById('myDiv').textContent;
+  alert(content); // выводит "Это жирный текст."
+
+  // изменяем содержимое элемента
+  document.getElementById('myDiv').textContent = 'Новый текст.';
+</script>
