@@ -27,7 +27,7 @@ color: #000000;
 }
 .weather__item{
     width: 100%;
-    height: 25%;
+    height: 45%;
     border: 1px solid black;
 }
 .weather__item_block{
@@ -35,7 +35,9 @@ color: #000000;
     height: 50%;
     margin: 0 auto;
 }
-.weather__data{
+.weather__indicators{
+    width: 100%;
+    height: 100%;
     display: flex;
     justify-content: space-between;
     font-family: 'Roboto';
@@ -48,4 +50,24 @@ line-height: 21px;
 
 color: #000000;
 
+}
+.weather__indicators_block{
+    width: 50%;
+    height: 100%;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    
+    color: #000000;
+}
+.weather__icon{
+    max-width: 50px;
+    max-height: 50px;
+}
+.indicators_flex_end{
+    align-items: end;
+    display:flex;
+    flex-direction:column;
 }

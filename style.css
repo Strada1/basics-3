@@ -1,10 +1,10 @@
 .container{
-    width: 500px;
+    width: 650px;
     height: 430px;
     margin: 0 auto;
 }
 .container__search{
-    width: 494px;
+    width: 644px;
     height: 45px;
     margin-bottom:3px;
 }
