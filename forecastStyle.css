@@ -1,0 +1,51 @@
+.window__title{
+    border: 0;
+    width: 85%;
+    height: 20%;
+    font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+line-height: 28px;
+
+color: #000000;
+    margin: 0 auto;
+    padding-top: 10px;
+
+}
+.weather__card_block{
+    width: 85%;
+    height: 80%;
+    margin: 0 auto;
+    font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+line-height: 20px;
+
+color: #000000;
+}
+.weather__item{
+    width: 100%;
+    height: 25%;
+    border: 1px solid black;
+}
+.weather__item_block{
+    width: 95%;
+    height: 50%;
+    margin: 0 auto;
+}
+.weather__data{
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 18px;
+line-height: 21px;
+/* identical to box height */
+
+
+color: #000000;
+
+}
