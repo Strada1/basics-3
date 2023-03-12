@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+
+  <title>weather</title>
+</head>
+
+<body>
+  <div class="container">
+    <form  class="search">
+      <input type="text" placeholder="search">
+      <button type="submit" class="search-btn">
+        <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path opacity="0.54" fill-rule="evenodd" clip-rule="evenodd" d="M16.3775 14.5H15.385L15.04 14.1575C16.2588 12.7362 17 10.8938 17 8.875C17 4.3875 13.3625 0.75 8.875 0.75C4.3875 0.75 0.75 4.3875 0.75 8.875C0.75 13.3625 4.3875 17 8.875 17C10.8938 17 12.735 16.26 14.1563 15.0425L14.5013 15.385V16.375L20.7488 22.6137L22.6125 20.75L16.3775 14.5ZM8.87501 14.5C5.76751 14.5 3.25001 11.9825 3.25001 8.875C3.25001 5.76875 5.76751 3.25 8.87501 3.25C11.9813 3.25 14.5 5.76875 14.5 8.875C14.5 11.9825 11.9813 14.5 8.87501 14.5Z" fill="black"/>
+          </svg>
+      </button>
+    </form>
+
+    <div class="main">
+      <div class="main-info">
+        <div class="main-info__tabs">
+          <ul>
+            <li class="main-info__tab" id="now">
+              <div class="now">
+              <div class="main-info__top">
+                <!-- <p>14°</p> -->
+              </div>
+              <div class="main-info__image">
+                <!-- <img src="images/icons8-cloud-96 1.png" alt="cloud"> -->
+              </div>
+              <div class="main-info__footer">
+                <!-- <p>Aktobe</p> -->
+                <!-- <p></p> -->
+                <input type="image" src="images/Shape.png" alt="img">
+              </div>
+            </div>
+            </li>
+
+            <li class="main-info__tab" id="details">
+              <div class="details">
+              <!-- <h3>Aktobe</h3> -->
+              <!-- <ul>
+                <li>Temperature: 14°</li>
+                <li>Feels like: 10°</li>
+                <li>Weather: Clouds</li>
+                <li>Sunrise: 03:21</li>
+                <li>Sunset: 18:54</li>
+              </ul> -->
+            </div>
+            </li>
+
+            <li class="main-info__tab" id="forecast">
+              <div class="forecast">
+              <h3>Aktobe</h3>
+              <div class="forecast-info">
+                <div class="forecast-info__top">
+                <p>17 May <span>12.00</span></p>
+              </div>
+              <div class="forecast-info__body">
+                <p>Temperature: 13° <span>Rain</span></p>
+                <p>Feels like: 10° <img src="images/icons8-rain-96 1.png" alt="rain"></p>
+              </div>
+              </div>
+              <div class="forecast-info">
+                <div class="forecast-info__top">
+                <p>17 May <span>15.00</span></p>
+              </div>
+              <div class="forecast-info__body">
+                <p>Temperature: 13° <span>Rain</span></p>
+                <p>Feels like: 10° <img src="images/icons8-rain-96 1.png" alt="rain"></p>
+              </div>
+              </div>
+              <div class="forecast-info">
+                <div class="forecast-info__top">
+                <p>17 May <span>18.00</span></p>
+              </div>
+              <div class="forecast-info__body">
+                <p>Temperature: 13° <span>Rain</span></p>
+                <p>Feels like: 10° <img src="images/icons8-rain-96 1.png" alt="rain"></p>
+              </div>
+              </div>
+            </div>
+            </li>
+          </ul>
+        </div>
+
+        <ul class="main-info__buttons">
+          <li class="main-info__button">
+            <a href="#now">Now</a>
+          </li>
+          <li class="main-info__button">
+            <a href="#details">Details</a>
+          </li>
+          <li class="main-info__button">
+            <a href="#forecast">Forecast</a>
+          </li>
+        </ul>
+      </div>
+
+
+      <div class="main-location">
+        <div class="main-location__add">
+          <h3>Added location:</h3>
+        </div>
+        <div class="main-location__cities">
+          <p>Amur</p>
+          <p>Samara</p>
+          <p>Bali</p>
+          <p>Dane</p>
+          <p>Kilo</p>
+          <p>Nur-Sultan</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+</body>
+
+</html>
