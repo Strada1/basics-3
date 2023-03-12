@@ -1,5 +1,6 @@
 $border-red: solid 1px red;
 $border-green: solid 1px green;
+$border-blue: solid 1px blue;
 $font-roboto: 'Roboto', sans-serif;
 
 html {
@@ -13,20 +14,21 @@ html {
 
   body {
     // border: $border-red;
-    // height: 100vh;
+    height: 100vh;
     font-family: $font-roboto;
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
     line-height: 21px;
     color: #202020;
+    background: #e7e7e7;
 
     .main {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      // height: 100%;
+      height: 100%;
       // border: $border-green;
       
       .container {
@@ -35,156 +37,250 @@ html {
         justify-content: center;
         // border: $border-red;
 
-        .todo-wrapper {
+        .weather-wrapper {
           display: flex;
           flex-direction: column;
-          height: 688px;
-          padding: 0 8px;
-          // border: 1px solid blue;
+          justify-content: center;
+          align-items: center;
+          width: 621px;
+          height: 462px;
+          background: #FFFFFF;
+          // border: 1px solid #FFFFFF;
 
-          .todo-container {
-            padding-top: 13px;
-            width: 460px;
-            // border: $border-green;
+          .weather-container {
+            width: 600px;
+            height: 435px;      
+            border: 1px solid #000000;
 
-            .high-box {
-              display: flex;
-              flex-direction: column;
-
-              .high-box_todo {
-                display: flex;
-                flex-direction: column;
-              }
-
-              .high-box_done {
-                display: flex;
-                flex-direction: column;
-              }
-            }
-  
-            .low-box {
-              display: flex;
-              flex-direction: column;
-
-              .low-box_todo {
-                display: flex;
-                flex-direction: column;
-              }
-
-              .low-box_done {
-                display: flex;
-                flex-direction: column;
-              }
-            }
-
-            .head-text {
-              text-align: center;
-              padding: 12px 0;
-            }
-
-            .inputs-wrapper {
+            .input-wrapper {
               position: relative;
+              // border: $border-green;
+              height: 45px;
+              border-bottom: 46px solid #000000;
 
               .inputs-enter-data {
                 width: 100%;
                 padding: 12px;
                 height: 45px;
-                border: 1px solid #989898;
-                border-radius: 6px;
-                outline:none;
+                outline: none;
+                border: none
               }
 
-              ::placeholder{
-                color: #BBBBBB;
-              }
               .add-task-btn {
                 position: absolute;
                 top: 12px;
                 right: 13px;
-                width: 18px;
-                height: 18px;
-                background:
-                  linear-gradient(#998899,#998899),
-                  linear-gradient(#998899,#998899);
-                background-position:center;
-                background-size: 18px 1px, 1px 18px;
-                background-repeat: no-repeat;
+                width: 21.86px;
+                height: 21.86px;
+                // background: red;
                 cursor: pointer;
               }
             }
 
-            .task-box {
-              position: relative;
-              border: 1px solid #989898;
-              border-radius: 6px;
-              padding: 12px 45px;
-              margin-top: 8px;
+            .content-wrapper {
+              display: flex;
+              flex-direction: row;
+              // border: $border-red;
 
-              .label-checkbox-task {
-                position: absolute;
-                left: 12px;
-                top: 12px;
+              .content-wrapper-box {
+                // border: $border-blue;
+                height: 388px;
+                width: 50%;
+                // border: 1px solid #000000;
+              }
 
-                .input-checkbox-task {
-                  display: none;
+              .content-wrapper-box_1 {
+                border-right: 1px solid #000;
+
+                .box1-high {
+                  height: 345px;
+                  border-bottom: 1px solid #000;
+                  overflow: hidden;
+
+                  //first-screen
+                  .box1-high_first-container {
+                    height: 143px;
+                    padding-top: 20px;
+                    padding-left: 23px;
+
+                    .box1-high_first-container_temperature {
+                      position: relative;
+                      height: 85px;
+                      width: 95px;
+                      font-size: 70px;
+                      line-height: 82px;
+                      // border: $border-blue;
+
+                      .mask {
+                        position: absolute;
+                        top: 13px;
+                        right: -6px;
+                        height: 17px;
+                        width: 17px;
+                      }
+                    }
+                  }
+
+                  .box1-high_second-container {
+                    height: 59px;
+                    display: flex;
+                    justify-content: center;
+                  }
+
+                  .box1-high_third-container {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: flex-end;
+                    height: 143px;
+                    padding-left: 12px;
+                    padding-right: 26px;
+                    padding-bottom: 17px;
+
+                    .box1-high_third-container_city {
+                      height: 28px;
+                      font-size: 24px;
+                      line-height: 28px;
+                    }
+
+                    .shape {
+                      height: 22px;
+                      width: 22px;
+                    }
+                  }
+
+                  //second-screen
+                  .box1-high_first-container_second-screen {
+                    height: 68px;
+                    padding-top: 33px;
+                    padding-left: 17px;
+                    font-size: 24px;
+                    line-height: 28px;
+                  }
+
+                  .box1-high_second-container_second-screen {
+                    padding-left: 15px;
+                    padding-top: 35px;
+
+                    .list-cities {
+                      display: flex;
+                      flex-direction: column;
+                      justify-content: space-between;
+                      height: 196px;
+                      font-size: 24px;
+                      line-height: 28px;
+
+                      .list-cities_items {
+                        list-style: none;
+                      }
+                    }
+                  }
+
+                  //third-screen
+                  .box1-high_first-container_third-screen {
+                    height: 68px;
+                    padding-top: 33px;
+                    padding-left: 17px;
+                    font-size: 24px;
+                    line-height: 28px;
+                  }
+
+                  .box1-high_second-container_third-screen {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 9px;
+                    padding-left: 16px;
+                    font-size: 18px;
+                    line-height: 21px;
+
+                    .current-weather-box_wrapper {
+                      width: 265px;
+                      height: 120px;
+                      border: 1px solid #000000;
+
+                      .current-weather-box_wrapper-first {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        height: 65px;
+                        padding-top: 6px;
+                        padding-left: 8px;
+                        padding-right: 12px;
+                      }
+                      
+                      .current-weather-box_wrapper-second {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        padding-left: 10px;
+                        padding-right: 10px;
+                        height: 42px;
+                      }
+                    }
+                  }
                 }
 
-                .fake-checkbox {
-                  position: relative;
-                  display: inline-block;
-                  width: 21px;
-                  height: 21px;
-                  border: 1px solid #998899;
-                  border-radius: 50%;
-                }
+                .box1-low {
+                  display: flex;
+                  flex-direction: row;
+                  height: 43px;
 
-                .fake-checkbox::before {
-                  content: "";
-                  position: absolute;
-                  display: block;
-                  width: 15px;
-                  height: 15px;
-                  background: #C4C4C4;
-                  border-radius: 50%;
-                  top: 50%;
-                  left: 50%;
-                  transform: translate(-50%, -50%);
-                  opacity: 0;
-                  transition: .3s;
-                }
+                  .box1-low_children {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    cursor: pointer;
+                  }
 
-                .input-checkbox-task:checked + .fake-checkbox::before {
-                  opacity: 1;
-                }
+                  .box1-low_child-black {
+                    background: #000;
+                    color: #FFF;
+                  }
 
-                #fake-checkbox_status-done::before {
-                  opacity: 1;
-                }
+                  .box1-low_first {
+                    width: 99px;
+                    border-right: 1px solid #000;
+                  }
 
-                #fake-checkbox_status-done:checked + .fake-checkbox_status-done::before {
-                  opacity: 0;
+                  .box1-low_second {
+                    width: 102px;
+                    border-right: 1px solid #000;
+                  }
+
+                  .box1-low_third {
+                    width: 96px;
+                  }
                 }
               }
 
-              .close-task-btn {
-                position: absolute;
-                right: 12px;
-                top: 14px;
-                width: 15px;
-                height: 15px;
-                background:
-                  linear-gradient(#998899,#998899),
-                  linear-gradient(#998899,#998899);
-                background-position:center;
-                background-size: 15px 1px, 1px 15px;
-                background-repeat: no-repeat;
-                cursor: pointer;
-                transform: rotate(45deg);
-              }
-            }
+              .content-wrapper-box_2 {
+                font-size: 24px;
+                line-height: 28.13px;
 
-            #task-box_status-done {
-              background: #F4F4F4;
+                .box_2-high {
+                  padding-left: 18px;
+                  padding-top: 33px;
+                  height: 68px;
+                  border-bottom: 1px solid #000;
+                }
+
+                .box_2-low {
+                  padding-top: 35px;
+                  padding-left: 18px;
+
+                  .ul-list {
+                    width: 113px;
+                    height: 238px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+
+                    .ul-list_li {
+                      list-style-type: none;
+                    }
+                  }
+                }
+              }
             }
           }
         }

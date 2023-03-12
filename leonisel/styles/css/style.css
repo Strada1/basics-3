@@ -7,149 +7,228 @@ html *, html *::after, html *::before {
   padding: 0;
 }
 html body {
+  height: 100vh;
   font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
   line-height: 21px;
   color: #202020;
+  background: #e7e7e7;
 }
 html body .main {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 100%;
 }
 html body .main .container {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-html body .main .container .todo-wrapper {
+html body .main .container .weather-wrapper {
   display: flex;
   flex-direction: column;
-  height: 688px;
-  padding: 0 8px;
+  justify-content: center;
+  align-items: center;
+  width: 621px;
+  height: 462px;
+  background: #FFFFFF;
 }
-html body .main .container .todo-wrapper .todo-container {
-  padding-top: 13px;
-  width: 460px;
+html body .main .container .weather-wrapper .weather-container {
+  width: 600px;
+  height: 435px;
+  border: 1px solid #000000;
 }
-html body .main .container .todo-wrapper .todo-container .high-box {
-  display: flex;
-  flex-direction: column;
-}
-html body .main .container .todo-wrapper .todo-container .high-box .high-box_todo {
-  display: flex;
-  flex-direction: column;
-}
-html body .main .container .todo-wrapper .todo-container .high-box .high-box_done {
-  display: flex;
-  flex-direction: column;
-}
-html body .main .container .todo-wrapper .todo-container .low-box {
-  display: flex;
-  flex-direction: column;
-}
-html body .main .container .todo-wrapper .todo-container .low-box .low-box_todo {
-  display: flex;
-  flex-direction: column;
-}
-html body .main .container .todo-wrapper .todo-container .low-box .low-box_done {
-  display: flex;
-  flex-direction: column;
-}
-html body .main .container .todo-wrapper .todo-container .head-text {
-  text-align: center;
-  padding: 12px 0;
-}
-html body .main .container .todo-wrapper .todo-container .inputs-wrapper {
+html body .main .container .weather-wrapper .weather-container .input-wrapper {
   position: relative;
+  height: 45px;
+  border-bottom: 46px solid #000000;
 }
-html body .main .container .todo-wrapper .todo-container .inputs-wrapper .inputs-enter-data {
+html body .main .container .weather-wrapper .weather-container .input-wrapper .inputs-enter-data {
   width: 100%;
   padding: 12px;
   height: 45px;
-  border: 1px solid #989898;
-  border-radius: 6px;
   outline: none;
+  border: none;
 }
-html body .main .container .todo-wrapper .todo-container .inputs-wrapper ::placeholder {
-  color: #BBBBBB;
-}
-html body .main .container .todo-wrapper .todo-container .inputs-wrapper .add-task-btn {
+html body .main .container .weather-wrapper .weather-container .input-wrapper .add-task-btn {
   position: absolute;
   top: 12px;
   right: 13px;
-  width: 18px;
-  height: 18px;
-  background: linear-gradient(#998899, #998899), linear-gradient(#998899, #998899);
-  background-position: center;
-  background-size: 18px 1px, 1px 18px;
-  background-repeat: no-repeat;
+  width: 21.86px;
+  height: 21.86px;
   cursor: pointer;
 }
-html body .main .container .todo-wrapper .todo-container .task-box {
+html body .main .container .weather-wrapper .weather-container .content-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+html body .main .container .weather-wrapper .weather-container .content-wrapper .content-wrapper-box {
+  height: 388px;
+  width: 50%;
+}
+html body .main .container .weather-wrapper .weather-container .content-wrapper .content-wrapper-box_1 {
+  border-right: 1px solid #000;
+}
+html body .main .container .weather-wrapper .weather-container .content-wrapper .content-wrapper-box_1 .box1-high {
+  height: 345px;
+  border-bottom: 1px solid #000;
+  overflow: hidden;
+}
+html body .main .container .weather-wrapper .weather-container .content-wrapper .content-wrapper-box_1 .box1-high .box1-high_first-container {
+  height: 143px;
+  padding-top: 20px;
+  padding-left: 23px;
+}
+html body .main .container .weather-wrapper .weather-container .content-wrapper .content-wrapper-box_1 .box1-high .box1-high_first-container .box1-high_first-container_temperature {
   position: relative;
-  border: 1px solid #989898;
-  border-radius: 6px;
-  padding: 12px 45px;
-  margin-top: 8px;
+  height: 85px;
+  width: 95px;
+  font-size: 70px;
+  line-height: 82px;
 }
-html body .main .container .todo-wrapper .todo-container .task-box .label-checkbox-task {
+html body .main .container .weather-wrapper .weather-container .content-wrapper .content-wrapper-box_1 .box1-high .box1-high_first-container .box1-high_first-container_temperature .mask {
   position: absolute;
-  left: 12px;
-  top: 12px;
+  top: 13px;
+  right: -6px;
+  height: 17px;
+  width: 17px;
 }
-html body .main .container .todo-wrapper .todo-container .task-box .label-checkbox-task .input-checkbox-task {
-  display: none;
+html body .main .container .weather-wrapper .weather-container .content-wrapper .content-wrapper-box_1 .box1-high .box1-high_second-container {
+  height: 59px;
+  display: flex;
+  justify-content: center;
 }
-html body .main .container .todo-wrapper .todo-container .task-box .label-checkbox-task .fake-checkbox {
-  position: relative;
-  display: inline-block;
-  width: 21px;
-  height: 21px;
-  border: 1px solid #998899;
-  border-radius: 50%;
+html body .main .container .weather-wrapper .weather-container .content-wrapper .content-wrapper-box_1 .box1-high .box1-high_third-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 143px;
+  padding-left: 12px;
+  padding-right: 26px;
+  padding-bottom: 17px;
 }
-html body .main .container .todo-wrapper .todo-container .task-box .label-checkbox-task .fake-checkbox::before {
-  content: "";
-  position: absolute;
-  display: block;
-  width: 15px;
-  height: 15px;
-  background: #C4C4C4;
-  border-radius: 50%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 0;
-  transition: 0.3s;
+html body .main .container .weather-wrapper .weather-container .content-wrapper .content-wrapper-box_1 .box1-high .box1-high_third-container .box1-high_third-container_city {
+  height: 28px;
+  font-size: 24px;
+  line-height: 28px;
 }
-html body .main .container .todo-wrapper .todo-container .task-box .label-checkbox-task .input-checkbox-task:checked + .fake-checkbox::before {
-  opacity: 1;
+html body .main .container .weather-wrapper .weather-container .content-wrapper .content-wrapper-box_1 .box1-high .box1-high_third-container .shape {
+  height: 22px;
+  width: 22px;
 }
-html body .main .container .todo-wrapper .todo-container .task-box .label-checkbox-task #fake-checkbox_status-done::before {
-  opacity: 1;
+html body .main .container .weather-wrapper .weather-container .content-wrapper .content-wrapper-box_1 .box1-high .box1-high_first-container_second-screen {
+  height: 68px;
+  padding-top: 33px;
+  padding-left: 17px;
+  font-size: 24px;
+  line-height: 28px;
 }
-html body .main .container .todo-wrapper .todo-container .task-box .label-checkbox-task #fake-checkbox_status-done:checked + .fake-checkbox_status-done::before {
-  opacity: 0;
+html body .main .container .weather-wrapper .weather-container .content-wrapper .content-wrapper-box_1 .box1-high .box1-high_second-container_second-screen {
+  padding-left: 15px;
+  padding-top: 35px;
 }
-html body .main .container .todo-wrapper .todo-container .task-box .close-task-btn {
-  position: absolute;
-  right: 12px;
-  top: 14px;
-  width: 15px;
-  height: 15px;
-  background: linear-gradient(#998899, #998899), linear-gradient(#998899, #998899);
-  background-position: center;
-  background-size: 15px 1px, 1px 15px;
-  background-repeat: no-repeat;
+html body .main .container .weather-wrapper .weather-container .content-wrapper .content-wrapper-box_1 .box1-high .box1-high_second-container_second-screen .list-cities {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 196px;
+  font-size: 24px;
+  line-height: 28px;
+}
+html body .main .container .weather-wrapper .weather-container .content-wrapper .content-wrapper-box_1 .box1-high .box1-high_second-container_second-screen .list-cities .list-cities_items {
+  list-style: none;
+}
+html body .main .container .weather-wrapper .weather-container .content-wrapper .content-wrapper-box_1 .box1-high .box1-high_first-container_third-screen {
+  height: 68px;
+  padding-top: 33px;
+  padding-left: 17px;
+  font-size: 24px;
+  line-height: 28px;
+}
+html body .main .container .weather-wrapper .weather-container .content-wrapper .content-wrapper-box_1 .box1-high .box1-high_second-container_third-screen {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  padding-left: 16px;
+  font-size: 18px;
+  line-height: 21px;
+}
+html body .main .container .weather-wrapper .weather-container .content-wrapper .content-wrapper-box_1 .box1-high .box1-high_second-container_third-screen .current-weather-box_wrapper {
+  width: 265px;
+  height: 120px;
+  border: 1px solid #000000;
+}
+html body .main .container .weather-wrapper .weather-container .content-wrapper .content-wrapper-box_1 .box1-high .box1-high_second-container_third-screen .current-weather-box_wrapper .current-weather-box_wrapper-first {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 65px;
+  padding-top: 6px;
+  padding-left: 8px;
+  padding-right: 12px;
+}
+html body .main .container .weather-wrapper .weather-container .content-wrapper .content-wrapper-box_1 .box1-high .box1-high_second-container_third-screen .current-weather-box_wrapper .current-weather-box_wrapper-second {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 10px;
+  padding-right: 10px;
+  height: 42px;
+}
+html body .main .container .weather-wrapper .weather-container .content-wrapper .content-wrapper-box_1 .box1-low {
+  display: flex;
+  flex-direction: row;
+  height: 43px;
+}
+html body .main .container .weather-wrapper .weather-container .content-wrapper .content-wrapper-box_1 .box1-low .box1-low_children {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
-  transform: rotate(45deg);
 }
-html body .main .container .todo-wrapper .todo-container #task-box_status-done {
-  background: #F4F4F4;
+html body .main .container .weather-wrapper .weather-container .content-wrapper .content-wrapper-box_1 .box1-low .box1-low_child-black {
+  background: #000;
+  color: #FFF;
+}
+html body .main .container .weather-wrapper .weather-container .content-wrapper .content-wrapper-box_1 .box1-low .box1-low_first {
+  width: 99px;
+  border-right: 1px solid #000;
+}
+html body .main .container .weather-wrapper .weather-container .content-wrapper .content-wrapper-box_1 .box1-low .box1-low_second {
+  width: 102px;
+  border-right: 1px solid #000;
+}
+html body .main .container .weather-wrapper .weather-container .content-wrapper .content-wrapper-box_1 .box1-low .box1-low_third {
+  width: 96px;
+}
+html body .main .container .weather-wrapper .weather-container .content-wrapper .content-wrapper-box_2 {
+  font-size: 24px;
+  line-height: 28.13px;
+}
+html body .main .container .weather-wrapper .weather-container .content-wrapper .content-wrapper-box_2 .box_2-high {
+  padding-left: 18px;
+  padding-top: 33px;
+  height: 68px;
+  border-bottom: 1px solid #000;
+}
+html body .main .container .weather-wrapper .weather-container .content-wrapper .content-wrapper-box_2 .box_2-low {
+  padding-top: 35px;
+  padding-left: 18px;
+}
+html body .main .container .weather-wrapper .weather-container .content-wrapper .content-wrapper-box_2 .box_2-low .ul-list {
+  width: 113px;
+  height: 238px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+html body .main .container .weather-wrapper .weather-container .content-wrapper .content-wrapper-box_2 .box_2-low .ul-list .ul-list_li {
+  list-style-type: none;
 }
 
 /*# sourceMappingURL=style.css.map */
