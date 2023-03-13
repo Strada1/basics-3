@@ -8,14 +8,14 @@ async function FirstTab() {
     let json = await data.json();
 
     let degrees = Math.round(json.main.temp - 273)
-    let imgSrc = json.weather[0].icon
-    let ThisCity = json.name
-
     document.querySelector('.degrees').textContent = `${degrees} °`
-    document.querySelector('.city_now').textContent = `${ThisCity}`
-    document.querySelector('.pic_cloud').src = `icons/${imgSrc}.png`
-    console.log(json)
-
     
+    let imgSrc = json.weather[0].icon
+    document.querySelector('.pic_cloud').src = `icons/${imgSrc}.png`
+    
+    let ThisCity = json.name
+    document.querySelector('.city_now').textContent = `${ThisCity}`
 }
+
+
 document.getElementById('button-search').addEventListener('click', FirstTab)
