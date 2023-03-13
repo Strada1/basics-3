@@ -1,0 +1,156 @@
+body {
+  font-family: "Roboto", sans-serif;
+}
+li {
+  list-style: none;
+  margin: 5px 5px 5px 10px;
+}
+
+.main {
+  width: 500px;
+  height: 500px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 50px;
+  margin-top: 45px;
+}
+
+.inputForm {
+  border: 1px solid;
+  width: 498px;
+}
+.input {
+  margin-left: 10px;
+  width: 450px;
+  height: 30px;
+  border: none;
+}
+.inputButton {
+  border: none;
+  background: none;
+  font-size: 15px;
+  cursor: pointer;
+}
+.imgForm {
+  width: 15px;
+  height: 15px;
+}
+.input:focus {
+  outline: none;
+}
+.city {
+  width: auto;
+  text-align: left;
+  margin-top: 300px;
+  display: flex;
+  justify-content: space-around;
+}
+.like {
+  width: 20px;
+  height: 20px;
+
+  margin-left: 100px;
+}
+
+.tabs-content {
+  width: 245px;
+  height: 425px;
+  overflow: hidden;
+  border: 1px solid black;
+  font-size: 20px;
+}
+.tabs-content ul li {
+  width: 245px;
+  height: 425px;
+  font-size: 20px;
+}
+
+.tabs-buttons {
+  font-size: 21px;
+  display: flex;
+  justify-content: space-around;
+  text-decoration: none;
+  width: 245px;
+  height: 35px;
+  border: 1px solid black;
+  margin: auto;
+  padding: 0;
+  margin: 0;
+}
+.tabs-buttonsNow,
+.tabs-buttonsDetails,
+.tabs-buttonsForecast {
+  text-decoration: none;
+  border: 1px solid black;
+  padding: 1px;
+}
+.tabs-buttonsNow:hover,
+.tabs-buttonsDetails:hover,
+.tabs-buttonsForecast:hover {
+  color: white;
+  text-decoration: none;
+  background-color: black;
+}
+
+.AddedLocations {
+  border: 1px solid black;
+  width: 251px;
+  height: 70px;
+  text-align: center;
+  font-size: 23px;
+}
+
+.ListCity {
+  border: 1px solid;
+  width: 251px;
+  height: 390px;
+  font-size: 20px;
+  line-height: 35px;
+}
+
+.wheather {
+  width: 250px;
+  height: 400px;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+
+  padding: 10px;
+  font-size: 8px;
+}
+
+.wheatherBlock {
+  display: flex;
+  font-size: 11px;
+  flex-wrap: wrap;
+  border: 1px solid black;
+  width: 200px;
+  height: 100px;
+  margin: 10px;
+  scroll-behavior: smooth;
+  padding: 5px;
+}
+.data {
+  width: 110px;
+  height: 20px;
+}
+.time {
+  width: 80px;
+  height: 20px;
+  text-align: center;
+}
+.temperature {
+  width: 110px;
+  height: 50px;
+}
+.rain {
+  font-size: 8px;
+  text-align: center;
+
+  width: 80px;
+  height: 50px;
+}
+.iconWeather {
+  width: 20px;
+  height: 20px;
+}
