@@ -1,0 +1,96 @@
+/* Задний фон страницы - серый */
+body {
+    background-color: #ccc;
+}
+
+.TitleToDoList {
+    text-align: center
+}
+
+/* Стили для списка задач */
+#TaskListHigh {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+/* Стили для крестика */
+.deleteTaskButton {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5em;
+    margin: 0;
+    padding: 0;
+}
+
+.addTodo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.addTodoInputField {
+    flex-grow: 1;
+    padding: 10px;
+    background-color: #FFFFFF;
+    border: 1px solid #000000;
+    color: #000000;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px 0 0 5px;
+}
+
+.addTodoButton {
+    padding: 10px;
+    background-color: #000000;
+    color: #FFFFFF;
+    font-size: 24px;
+    font-weight: bold;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+.TodoListCenterField {
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px #888;
+    padding: 20px;
+    margin: 50px auto;
+    max-width: 400px;
+}
+
+.task {
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px #888;
+    padding: 20px;
+    margin: 10px;
+    max-width: 300px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+#LowTaskList {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.deleteTaskButton {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5em;
+    margin: 0;
+    padding: 0;
+}
+
+.todoPriorityFields {
+    text-align: center;
+    margin-bottom: 10px;
+}
