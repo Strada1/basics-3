@@ -6,58 +6,61 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="todo-list">
-    <h1>To Do List</h1>
-    <div class="todo-priority">
+<div class="TodoListCenterField">
+    <h1 class="TitleToDoList">To Do List</h1>
+    <div class="todoPriorityFields">
         <h2>High</h2>
-        <form id="addHighForm">
-            <div class="add-todo">
-                <input type="text" id="addTodo" class="add-todo__input" placeholder="Добавить задачу">
-                <button type="button" id="addButton" class="add-todo__button">+</button>
+        <form id="addHighForm" onsubmit="addTaskHigh(); return false">
+            <div class="addTodo">
+                <input type="text" id="addTodoHigh" class="addTodoInputField" placeholder="Добавить задачу">
+                <button type="button" id="addButtonHigh" class="addTodoButton">+</button>
             </div>
         </form>
-        <div id="taskList">
-            <div class="task">
-                <input type="radio">
-                <p>Задача 1</p>
-                <button type="button" class="delete-task">✖</button>
-            </div>
-            <div class="task">
-                <input type="radio">
-                <p>Задача 2</p>
-                <button type="button" class="delete-task">✖</button>
-            </div>
-            <div class="task">
-                <input type="radio">
-                <p>Задача 3</p>
-                <button type="button" class="delete-task">✖</button>
-            </div>
+        <div id="TaskListHigh">
+<!--            <div class="task">-->
+<!--                <input type="radio">-->
+<!--                <p>Задача 1</p>-->
+<!--                <button type="button" class="deleteTaskButton">✖</button>-->
+<!--            </div>-->
+<!--            <div class="task">-->
+<!--                <input type="radio">-->
+<!--                <p>Задача 2</p>-->
+<!--                <button type="button" class="deleteTaskButton">✖</button>-->
+<!--            </div>-->
+<!--            <div class="task">-->
+<!--                <input type="radio">-->
+<!--                <p>Задача 3</p>-->
+<!--                <button type="button" class="deleteTaskButton">✖</button>-->
+<!--            </div>-->
         </div>
     </div>
-    <div class="todo-priority">
+    <div class="todoPriorityFields">
         <h2>Low</h2>
-        <div class="add-todo">
-            <input type="text" class="add-todo__input" placeholder="Добавить задачу">
-            <button class="add-todo__button">+</button>
-        </div>
-        <div id="task-list">
-            <div class="task">
-                <input type="checkbox">
-                <p>Задача 1</p>
-                <button type="radio" class="delete-task">✖</button>
+        <form id="addLowForm" onsubmit="addTaskLow(); return false">
+            <div class="addTodo">
+                <input type="text" id="addToDoLow" class="addTodoInputField" placeholder="Добавить задачу">
+                <button type="button" id="addButtonLow" class="addTodoButton">+</button>
             </div>
-            <div class="task">
-                <input type="checkbox">
-                <p>Задача 2</p>
-                <button type="radio" class="delete-task">✖</button>
-            </div>
-            <div class="task">
-                <input type="radio">
-                <p>Задача 3</p>
-                <button type="button" class="delete-task">✖</button>
-            </div>
+        </form>
+        <div id="TaskListLow">
+<!--            <div class="task">-->
+<!--                <input type="checkbox">-->
+<!--                <p>Задача 1</p>-->
+<!--                <button type="radio" class="deleteTaskButton">✖</button>-->
+<!--            </div>-->
+<!--            <div class="task">-->
+<!--                <input type="checkbox">-->
+<!--                <p>Задача 2</p>-->
+<!--                <button type="radio" class="deleteTaskButton">✖</button>-->
+<!--            </div>-->
+<!--            <div class="task">-->
+<!--                <input type="radio">-->
+<!--                <p>Задача 3</p>-->
+<!--                <button type="button" class="deleteTaskButton">✖</button>-->
+<!--            </div>-->
         </div>
     </div>
 </div>
+<script src="script.js"></script>
 </body>
 </html>

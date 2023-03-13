@@ -1,40 +1,20 @@
+/* Задний фон страницы - серый */
 body {
-    background-color: #ccc; /* Задний фон страницы - серый */
+    background-color: #ccc;
 }
 
-/* Стили для окна To Do листа /
-/*background-color: #fff; / Окно To Do листа - белое *!*/
-/*.todo-list {*/
-/*border: 1px solid #000;*/
-/*border-radius: 5px;*/
-/*box-shadow: 0px 0px 10px #888;*/
-/*padding: 20px;*/
-/*margin: 50px auto;*/
-/*max-width: 800px;*/
-/*}*/
-
-/* Стили для задач /
-background-color: #fff; / Окно задачи - белое */
-/*.task {*/
-/*border: 1px solid #000;*/
-/*border-radius: 5px;*/
-/*box-shadow: 0px 0px 10px #888;*/
-/*padding: 20px;*/
-/*margin: 10px;*/
-/*max-width: 300px;*/
-/*display: flex;*/
-/*align-items: center;*/
-/*justify-content: space-between;*/
-/*}*/
+.TitleToDoList {
+    text-align: center
+}
 
 /* Стили для списка задач */
-#taskList {
+#TaskListHigh {
     display: flex;
     flex-direction: column-reverse;
 }
 
 /* Стили для крестика */
-.delete-task {
+.deleteTaskButton {
     background-color: transparent;
     border: none;
     cursor: pointer;
@@ -43,13 +23,13 @@ background-color: #fff; / Окно задачи - белое */
     padding: 0;
 }
 
-.add-todo {
+.addTodo {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
 }
 
-.add-todo__input {
+.addTodoInputField {
     flex-grow: 1;
     padding: 10px;
     background-color: #FFFFFF;
@@ -58,10 +38,9 @@ background-color: #fff; / Окно задачи - белое */
     font-size: 18px;
     font-weight: bold;
     border-radius: 5px 0 0 5px;
-
 }
 
-.add-todo__button {
+.addTodoButton {
     padding: 10px;
     background-color: #000000;
     color: #FFFFFF;
@@ -72,11 +51,7 @@ background-color: #fff; / Окно задачи - белое */
     cursor: pointer;
 }
 
-body {
-    background-color: #ccc;
-}
-
-.todo-list {
+.TodoListCenterField {
     background-color: #fff;
     border: 1px solid #000;
     border-radius: 5px;
@@ -100,14 +75,13 @@ body {
     justify-content: space-between;
 }
 
-#task-list {
+#LowTaskList {
     display: flex;
     flex-direction: column;
     align-items: center;
-
 }
 
-.delete-task {
+.deleteTaskButton {
     background-color: transparent;
     border: none;
     cursor: pointer;
@@ -115,7 +89,8 @@ body {
     margin: 0;
     padding: 0;
 }
-.todo-priority {
+
+.todoPriorityFields {
     text-align: center;
     margin-bottom: 10px;
 }
