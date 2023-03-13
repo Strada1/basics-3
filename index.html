@@ -11,52 +11,41 @@
     <div class="high">
       <h1>HIGH</h1>
       <div class="add-new-task">
-        <input type="text" value="Добавить важные дела" />
-        <button id="add"></button>
+        <form onsubmit="addNewTask('high', this); return false">
+          <input
+            id="highLevelTaskInput"
+            autocomplete="off"
+            type="text"
+            value="Добавить важные дела"
+            onfocus="clearInput(this)"
+          />
+          <button id="add"></button>
+        </form>
       </div>
     </div>
-    <div class="high-tasks">
-      <div class="high-task">
-        <input class="task" type="radio" name="task" />
-        <label for="task"
-          >Вот вам и супер интересная тема!</label
-        >
-        <button id="remove"></button>
-      </div>
-    </div>
-    <div class="high-tasks">
-      <div class="high-task">
-        <input class="task" type="radio" name="task" />
-        <label for="task"
-          >Сверстать этот TODO list</label
-        >
-        <button id="remove"></button>
-      </div>
-    </div>
-    <div class="high-tasks">
-      <div class="high-task">
-        <input class="task" type="radio" name="task" checked/>
-        <label for="task"
-          >Начать делать задачу</label
-        >
-        <button id="remove"></button>
-      </div>
-    </div>
+    <div class="high-tasks"></div>
     <div class="low">
       <h1>LOW</h1>
       <div class="add-new-task">
-        <input type="text" value="Добавить" />
-        <button id="add"></button>
+        <form onsubmit="addNewTask('low', this); return false">
+          <input
+            type="text"
+            value="Добавить"
+            autocomplete="off"
+            id="lowLevelTaskInput"
+            onfocus="clearInput(this)"
+          />
+          <button id="add"></button>
+        </form>
       </div>
     </div>
     <div class="low-tasks">
-      <div class="high-task">
-        <input class="task" type="radio" name="task"/>
-        <label for="task"
-          >Начать делать задачу</label
-        >
+      <div class="low-task">
+        <input class="task" type="checkbox" name="task" />
+        <label for="task">Начать делать задачу</label>
         <button id="remove"></button>
       </div>
     </div>
+    <script src="main.js"></script>
   </body>
 </html>

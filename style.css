@@ -47,7 +47,7 @@ h1 {
 	justify-content: center;
 }
 
-.high-task {
+.high-task, .low-task {
   border-radius: 6px;
   border: 1px solid #989898;
 	margin-top: 8px;
