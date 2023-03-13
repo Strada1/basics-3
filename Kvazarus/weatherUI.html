@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Weather</title>
+        <link href="./weatherStyle.css" rel="stylesheet">
+    </head>
+    <body>
+        <header> <!--Тут блок с поиском-->
+            <form>
+                <label>
+                    <input type="text" name="search" placeholder="Aktobe" id="searchInput" value="">
+                </label>
+                <button type="submit"></button>
+            </form>
+        </header>
+        <div class="wrapper"><!--Тут блок, содержащий всё, кроме поиска (обёртка то бишь)-->
+            <main> <!--Страницы + кнопки-->
+                <div class="pages">
+                    <ul class="list_of_pages">
+                        <li id="now">
+                            <div class="page_now"> <!--Страница now-->
+                                <span>
+                                    <span class="cityTemperature">14</span>&deg
+                                </span>
+                                <div class="center_img">
+                                    <img src="https://www.freeiconspng.com/uploads/weather-icon-png-16.png" alt="weather" id="pageNowImg">
+                                </div>
+                                <form class="city_in_page">
+                                    <p class="cityName">Aktobe</p>
+                                    <button type="submit"></button>
+                                </form>
+                            </div>
+                        </li>
+                        <li id="details">
+                            <div class="page_details"> <!--Страница details-->
+                                <p class="cityName">Aktobe</p>
+                                <div class="city_data">
+                                    <ul>
+                                        <li>Temperature: <span class="cityTemperature">14</span>&deg</li>
+                                        <li>Feels like: 10&deg</li>
+                                        <li>Weather: Clouds</li>
+                                        <li>Sunrise: 03:21</li>
+                                        <li>Sunset: 18:54</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li id="forecast">
+                            <div class="page_forecast"> <!--Страница forecast-->
+                                <p class="cityName">Aktobe</p>
+                                <div class="city_forecast">
+                                    <ul>
+                                        <li>
+                                            <div class="date_and_time">
+                                                <span>17 May</span>
+                                                <span>12:00</span>
+                                            </div>
+                                            <div class="temp_and_weather_state">
+                                                <div class="temp_info">
+                                                    <span>Temperature: 13&deg</span>
+                                                    <br>
+                                                    <span>Feels like: 10&deg</span>
+                                                </div>
+                                                <div class="weather_state">
+                                                    <span>Rain</span>
+                                                    <br>
+                                                    <img src="https://cdn-icons-png.flaticon.com/512/116/116251.png" alt="rain">
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="date_and_time">
+                                                <span>17 May</span>
+                                                <span>15:00</span>
+                                            </div>
+                                            <div class="temp_and_weather_state">
+                                                <div class="temp_info">
+                                                    <span>Temperature: 13&deg</span>
+                                                    <br>
+                                                    <span>Feels like: 10&deg</span>
+                                                </div>
+                                                <div class="weather_state">
+                                                    <span>Rain</span>
+                                                    <br>
+                                                    <img src="https://cdn-icons-png.flaticon.com/512/116/116251.png" alt="rain">
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="date_and_time">
+                                                <span>17 May</span>
+                                                <span>12:00</span>
+                                            </div>
+                                            <div class="temp_and_weather_state">
+                                                <div class="temp_info">
+                                                    <span>Temperature: 13&deg</span>
+                                                    <br>
+                                                    <span>Feels like: 10&deg</span>
+                                                </div>
+                                                <div class="weather_state">
+                                                    <span>Rain</span>
+                                                    <br>
+                                                    <img src="https://cdn-icons-png.flaticon.com/512/116/116251.png" alt="rain">
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="tabs"> <!--Собственно кнопки-->
+                    <ul class="list_of_tabs">
+                        <li><a href="#now" class="tag">Now</a></li>
+                        <li><a href="#details" class="tag">Details</a></li>
+                        <li style="border-right: 0px;"><a href="#forecast" class="tag">Forecast</a></li>
+                    </ul>
+                </div>
+            </main>
+            <aside><!--Боковая страница с локациями-->
+                <div class="title_locs"> <!--Их заголовок-->
+                    <p>Added locations:</p>
+                </div>
+                <div class="locs"> <!--Сами локации-->
+                    <ul>
+                        <li>Amur</li>
+                        <li>Samara</li>
+                        <li>Bali</li>
+                        <li>Dane</li>
+                        <li>Kilo</li>
+                        <li>Nur-Sultan</li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+        <script src="./weatherHtmlObjects.js" type="module"></script>
+        <script src="./weatherLogic.js" type="module"></script>   
+    </body>
+</html>
