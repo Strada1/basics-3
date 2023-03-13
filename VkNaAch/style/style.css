@@ -1,0 +1,197 @@
+.search {
+   width: 620px;
+   /* Ширина поля с кнопкой */
+   border: 1px solid #000;
+   /* Параметры рамки */
+   min-height: 20px;
+   /* Минимальная высота */
+}
+
+input[type="search"] {
+   border: none;
+   /* Убираем рамку */
+   outline: none;
+   /* Убираем свечение в Chrome и Safari */
+   width: 590px;
+   /* Ширина поля */
+   vertical-align: middle;
+   font-size: 30px;
+   /* Выравнивание по середине */
+}
+
+input[type="submit"] {
+   width: 20px;
+   /* Ширина кнопки */
+   height: 20px;
+   /* Высота кнопки */
+   border: none;
+   /* Убираем рамку */
+   background:  no-repeat 50% 50%;
+   /* Параметры фона */
+}
+
+ 
+
+
+.location {
+   position: absolute;
+   right: 0px;
+   border: 1px solid;
+   width: 310px;
+   top: 38px;
+   bottom: 0px;
+   border-right: 0px;
+   border-top: 0px;
+   border-bottom: 0px;
+   
+}
+.bodyLeft{
+   padding-left: px;
+}
+
+.btnsFooter {
+   position: absolute;
+   margin: 29px auto;
+   display: flex;
+   border-radius: none;
+   margin-top: -50px ;
+   margin-bottom: -100px;
+   position: sticky;
+   top: 50px;
+
+}
+
+.nav{
+display: flex;
+position: absolute;
+}
+
+.NowBtn {
+  border: 1px solid;
+  width: 100px;
+  border-left: 0;
+}
+
+.DetailsBtn {
+   width: 100px;
+   height: 47px;
+   border: 1px solid;
+   border-left: 0;
+}
+
+.ForecastBtn {
+   border: 1px solid;
+   width: 109px;
+   border-left: 0;
+   
+}
+a{
+   color: #000;
+   font-size: 18px;
+   padding:  0px;
+   justify-content: center;
+   
+   }
+.uls {
+
+   position: relative;
+}
+
+.appendLoc {
+   border-bottom: 1px solid;
+}
+
+li {
+   list-style-type: none;
+   padding-top: 14px;
+   font-size: 24px;
+   
+}
+
+.obl {
+   font-size: 50px;
+   align-items: center;
+    margin-left: 110px;
+   margin-top: 60px;   
+}
+
+.likehelp {
+   padding: 0px 0px 0px 0;
+  display: flex;
+   align-items: center;
+   text-align: right;
+   margin-right: 1px;
+   
+}
+
+.city__nameA {
+   margin-top: 100px;
+   margin-right: 190px;
+   margin-bottom: 100px;
+   font-size: 24px;
+   justify-content: left;
+   
+}
+
+.like {
+ padding-right:10px ;
+}
+.Det{
+font-size: 24px; 
+padding: 0 0 0 18px; 
+}
+.now__temp {
+   font-size: 67px;
+}
+.heart{
+   align-items: center;
+   font-size: 22px;
+}
+
+.like{
+font-size: 22px;
+}
+
+.tabs__block{
+   border: 1px solid;
+   width: 621px;
+   height: 462px;
+   position: relative;
+   display: flex;
+   flex-wrap: wrap;
+   list-style: none;
+   display: none;
+
+}
+
+
+.tabs__block:target{
+   display: block;}
+
+
+.NowBtn2 {
+   border: 1px solid;
+   width: 100px;
+   
+   border-left: 0;
+ }
+ 
+ .DetailsBtn2 {
+    width: 100px;
+    height: 45px;
+    border: 1px solid;
+    border-left: 0;
+ }
+ 
+ .ForecastBtn2 {
+   padding-top: 10px;
+    border: 1px solid;
+    width: 107px;
+    border-left: 0;
+    
+ }
+
+ 
+.tabs_blockAll{
+position: relative;
+}
