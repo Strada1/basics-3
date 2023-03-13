@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Погода</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="./styles/main.css">
+    <script type="module" src="./index.js"></script>
+</head>
+
+<body>
+    <div class="weather_app">
+        <div class="search_container">
+            <form class="search_form">
+                <input placeholder="Название города" class="search_input" required type="text">
+                <button type="submit" class="sumbit_search">
+                    <span class="material-symbols-outlined">
+                        search
+                    </span>
+                </button>
+            </form>
+        </div>
+        <div class="stat_container">
+            <div class="tabs__content">
+                <div class="tabs__item infoNow active" id="tab_1">
+                    <div id="tempNow">14</div>
+                    <img id="imgWeatherNow" src="https://openweathermap.org/img/wn/10d@2x.png">
+                    <div id="currentCity">
+                        <div id="cityName">Moscow</div>
+                        <button type="button"><span class="material-symbols-outlined">
+                                favorite
+                            </span></button>
+                    </div>
+                </div>
+                <div class="tabs__item" id="tab_2">
+                    2
+                </div>
+                <div class="tabs__item" id="tab_3">
+                    3
+                </div>
+            </div>
+            <div class="tabs__nav">
+                <button class="tabs__nav-btn active" type="button" data-tab="#tab_1">Now</button>
+                <button class="tabs__nav-btn" type="button" data-tab="#tab_2">Details</button>
+                <button class="tabs__nav-btn" type="button" data-tab="#tab_3">Forecast</button>
+            </div>
+        </div>
+        <div class="locations_container">
+            <div class="title_locations">Added Locations</div>
+            <ul class="list_locations">
+                <li>Amur</li>
+                <li>Samara</li>
+                <li>Bali</li>
+                <li>Dane</li>
+                <li>Kilo</li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>
