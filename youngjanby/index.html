@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Weather</title>
+            <link rel="stylesheet" href="style.css">
+    </head>
+        <body>
+            <div class="main">
+                <div class="search_block">
+                    <form action="#">
+                            <input type="text" placeholder="Aktobe" class="search" id="search">
+                            <button class ="button_search" type="submit" id="button-search">
+                                <img class="pic_search" src="icons/search.png" alt="search_icon" />
+                            </button>
+                    </form> 
+                </div>
+                 <div class="main__block_1">
+                    <div class="tabs-content">
+                        <ul>
+                            <li id="one">
+                                <p class="degrees">14 &deg;</p>
+                                <img class="pic_cloud" src="icons/icons8-cloud-96 1.png" alt="cloud_icon" />
+                                <div class="city_like">
+                                <p class="city_now"> Aktobe </p>
+                                <button class="button_like" type="submit">
+                                <img src="icons/Shape.png" alt="like_icon" />
+                                </button>
+                            </div>
+                            </li>
+                            <li id="two">
+                                <ul class="details_list">
+                                    <p class="city_details"> Aktobe </p>
+                                    <li>Temperature: 14&deg;</li>
+                                    <li>Feels like: 10&deg;</li>
+                                    <li>Weather: Clouds</li>
+                                    <li>Sunrise: 03:21 </li>
+                                    <li>Sunset: 18:54 </li>
+                                </ul>
+                            </li>
+                            <li id="three">Содержимое 3-го экрана 
+                            </li>
+                        </ul>
+                        </div>
+                        <ul class="tabs-buttons">
+                            <li><a class="tab_now" href="#one">Now</a></li>
+                            <li><a class="tab_details" href="#two">Details</a></li>
+                            <li><a class="tab_forecast" href="#three">Forecast</a></li>
+                        </ul>                                          
+                </div>
+                 <div class="main__block_2">
+                    <p class="add_loc"> Added Locations </p> 
+                    <ul class="add_city">
+                        <li>Amur</li>
+                        <li>Samara</li>
+                        <li>Bali</li>
+                        <li>Dane</li>
+                        <li>Kilo</li>
+                        <li>Nur-Sultan</li>
+                      </ul>
+                 </div>             
+            </div>
+
+            <script src="main.js"></script>
+        </body>
+</html>
