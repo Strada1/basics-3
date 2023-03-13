@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-do</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="high">
+      <h1>HIGH</h1>
+      <div class="add-new-task">
+        <form onsubmit="addNewTask('high', this); return false">
+          <input
+            id="highLevelTaskInput"
+            autocomplete="off"
+            type="text"
+            value="Добавить важные дела"
+            onfocus="clearInput(this)"
+          />
+          <button id="add"></button>
+        </form>
+      </div>
+    </div>
+    <div class="high-tasks"></div>
+    <div class="low">
+      <h1>LOW</h1>
+      <div class="add-new-task">
+        <form onsubmit="addNewTask('low', this); return false">
+          <input
+            type="text"
+            value="Добавить"
+            autocomplete="off"
+            id="lowLevelTaskInput"
+            onfocus="clearInput(this)"
+          />
+          <button id="add"></button>
+        </form>
+      </div>
+      <div class="low-tasks"></div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
