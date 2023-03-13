@@ -1,26 +1,11 @@
-const tabsBtn   = document.querySelectorAll(".tabs__nav-btn");
-const tabsItems = document.querySelectorAll(".tabs__item");
+import onTabClick from './src/modules/onTabClick.js';
+import searchFetch from './src/modules/searchFetch.js';
+
+
+// Функция для переключения табов по клику -- modules/onTabClick
 const tabsNav = document.querySelector(".tabs__nav");
+tabsNav.addEventListener('click', onTabClick);
 
-tabsNav.addEventListener('click', onTabClick)
-    
-function onTabClick(event) {
-
-    let currentBtn = event.target;
-    let tabId = currentBtn.dataset.tab;
-    let currentTab = document = document.querySelector(tabId);
-
-    if ( ! currentBtn.classList.contains('active') ) {
-        tabsBtn.forEach(btn => {
-            btn.classList.remove('active')
-        });
-        tabsItems.forEach(tab => {
-            tab.classList.remove('active')
-        })
-    }
-
-    currentBtn.classList.add('active');
-    currentTab.classList.add('active');
-
-}
-
+// Функция запроса города из строки поиска -- modules/searchFetch
+const searchForm = document.querySelector('.search_form');
+searchForm.addEventListener('submit', searchFetch)
