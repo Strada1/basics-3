@@ -17,7 +17,6 @@ function addTask(name, priority) {
     console.log(
       `Задача ${name} существует! Попробуйте добавить другую задачу. `
     );
-    console.log('==================');
   } else {
     if (typeof name === 'string' && typeof priority === 'string') {
       tasks.push({ name: name, priority: priority });
@@ -31,7 +30,7 @@ function addNewTask(levelOfTask) {
   if (levelOfTask == 'high') { // High level of task
     let highLevelTaskInput =
       document.getElementById('highLevelTaskInput').value;
-    if (highLevelTaskInput !== '') {
+    if (highLevelTaskInput !== '' && !isTaskExist(highLevelTaskInput)) {
       addTask(highLevelTaskInput, 'high')
       let highLevelTasks = document.querySelector('.high-tasks');
       let newTask = document.createElement(`div`);
@@ -40,15 +39,16 @@ function addNewTask(levelOfTask) {
         <form action="">
           <input class="task" type="checkbox" name="task" />
         </form>
-        <label for="task" class='labelOfTask'>${highLevelTaskInput}</label>
-        <button id="remove"></button>
+        <label for="task" class='label-of-task'>${highLevelTaskInput}</label>
+        <button id="remove" onclick="deleteTask(this.parentNode.querySelectorAll('.label-of-task')[0].textContent); this.parentNode.remove()"></button>
       </div>`;
       highLevelTasks.appendChild(newTask);
     }
   } else if (levelOfTask == 'low') { // Low level of task
     let lowLevelTaskInput = document.getElementById('lowLevelTaskInput').value;
-    if (lowLevelTaskInput !== '') {
+    if (lowLevelTaskInput !== '' && !isTaskExist(lowLevelTaskInput)) {
       addTask(lowLevelTaskInput, 'low')
+      console.log(lowLevelTaskInput)
       let lowLevelTasks = document.querySelector('.low-tasks');
       let newTask = document.createElement(`div`);
       newTask.innerHTML = `
@@ -56,11 +56,27 @@ function addNewTask(levelOfTask) {
     <form action="">
       <input class="task" type="checkbox" name="task" />
     </form>
-    <label for="task" class='labelOfTask'>${lowLevelTaskInput}</label>
-    <button id="remove"></button>
+    <label for="task" class='label-of-task'>${lowLevelTaskInput}</label>
+    <button id="remove" onclick="deleteTask(this.parentNode.querySelectorAll('.label-of-task')[0].textContent); this.parentNode.remove()"></button>
   </div>`;
       lowLevelTasks.appendChild(newTask);
     }
+  }
+}
+
+function deleteTask(name) {
+  if (isTaskExist(name) === true) {
+    for (const task of tasks) {
+      if (task.name === name) {
+        // Находим индекс удаляемого объекта
+        let indexOfDeleted = tasks.indexOf(task);
+        tasks.splice(indexOfDeleted, 1);
+      }
+    }
+  } else {
+    alert(
+      `Задача ${name} не существует! Попробуйте удалить другую задачу. `
+    );
   }
 }
 
