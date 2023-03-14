@@ -1,0 +1,283 @@
+* { 
+    box-sizing: border-box;
+}
+
+body {
+    max-width: 1000px;
+    min-width: 530px;
+
+    background-color:azure;
+}
+
+header, main, aside {
+    border: 2px solid black;
+}
+
+aside {
+    border-left: 0;
+}
+
+div.title_locs {
+    border-bottom: 2px solid black;
+}
+
+header, .city_in_page {
+    display: flex;
+    justify-content: end;
+    height: 50px;
+    border-bottom: 0;
+}
+
+form {
+    display: flex;
+    justify-content: end;
+    height: 100%;
+    width: 100%;
+}
+
+header input {
+    display:block;
+    width: 100%;
+    height: 100%;
+    font: 22px Arial;
+}
+
+header label {
+    width: 100%;
+    height: 100%;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+header button {
+    background: url(https://cdn-icons-png.flaticon.com/512/751/751463.png);
+    background-size: 40px;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 50px;
+    border: 0;
+}
+
+.city_in_page > p {
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin: 0 0 0 15px;
+    font-size: 2em;
+    font-weight: bolder;
+}
+
+.page_details > p, .page_forecast > p {
+    width: 100%;
+    height: 100%;
+    margin: 0 0 30px 25px;
+    font-size: 2em;
+    font-weight: bolder;
+}
+
+
+header img {
+    object-fit: contain;
+    margin: 6px;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: row;
+}
+
+.wrapper > main, .wrapper > aside {
+    width: 50%;
+}
+
+.pages {
+    overflow:hidden;
+    width: 100%;
+    height: 300px;
+}
+
+.page_now > span {
+    margin: 0 0 0 20px;
+    font: bold 80px Arial;
+}
+
+ul.list_of_pages > li {
+    margin-bottom: 100px;
+}
+
+main > div {
+    width: 100%;
+}
+
+div.center_img {
+    text-align: center;
+}
+
+div.center_img > img {
+    object-fit: contain;
+    width: 130px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.city_in_page > img {
+    display: block;
+    object-fit: contain;
+    margin: 5px;
+}
+
+.city_in_page button {
+    background: url(https://pic.onlinewebfonts.com/svg/img_573153.png);
+    background-size: 40px;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 50px;
+    border: 0;
+}
+
+/*
+
+*/
+
+
+/*Начало страницы Forecast*/
+.page_forecast {
+    height: 300px;
+    overflow: scroll;
+}
+
+.page_forecast p {
+    display: inline;
+    margin-left: 25px;
+    font-size: 2em;
+    font-weight: bolder;
+}
+
+.city_forecast {
+    margin-top: 35px;
+}
+
+.city_forecast li {
+    border: 2px solid black;
+    margin: 0 8%;
+}
+
+.city_forecast span {
+    font-size: 25px;
+}
+
+.date_and_time {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 10px 35px 10px;
+}
+
+.temp_and_weather_state {
+    display: flex;
+    justify-content: space-between;
+}
+
+.temp_info {
+    display: block;
+    margin-left: 10px;
+} 
+
+
+.weather_state {
+    display: block;
+    width: 20%;
+    text-align: center;
+}
+
+.weather_state > img {
+    width: 70%;
+}
+
+.page_forecast li {
+    margin-top: 9px;
+}
+/*Конец страницы Forecast*/
+
+
+
+/*Начало кнопок*/
+div.tabs {
+    display: block;  
+    height: 80px;
+    width: 100%;
+    overflow: hidden;
+}
+
+ul.list_of_tabs {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 100%;
+}
+
+ul.list_of_tabs > li {
+    display: inline-block;
+    height: 100%;
+    flex-basis: 100%;
+    background: rgb(255, 255, 255);
+    border-top: 2px solid black;
+    border-right: 2px solid black;
+    text-align: center;
+    background-color:azure;
+}
+
+a.tag {
+    display: block;
+    width: 100%;
+    height: 100%;
+    font: bold 20px Arial;
+    text-decoration: none;
+    color: black;
+    line-height: 80px;
+}
+
+a.tag:hover{
+    background: black;
+    color: white;
+    cursor: pointer;
+}
+
+a.tag:active {
+    box-shadow: inset 0 0 10px rgb(184, 184, 184);
+}
+
+a.tag:focus{
+    background: black;
+    color: white;
+}
+
+
+/*Конец кнопок*/
+
+
+
+.locs {
+    height: 85%;
+}
+
+.title_locs {
+    height: 15%;   
+}
+
+.title_locs > p, .locs > ul, .city_data > ul {
+    font-size: xx-large;
+    font-weight: bold;
+    margin: 15px 0 0 15px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+div.locs li, div.city_data li {
+    margin: 10px;
+}
