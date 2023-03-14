@@ -1,0 +1,27 @@
+body {
+    background-color: #c0c0c0;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width:960px;
+    margin:0 auto;
+    height: 100vh;
+}
+
+.form-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.result-list {
+    text-align: center;
+}
+
+h3 {
+    margin-top: 20px;
+}
