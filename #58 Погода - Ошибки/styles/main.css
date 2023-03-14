@@ -1,0 +1,230 @@
+@import url('../node_modules/reset-css/reset.css');
+
+
+html {
+    height: 100vh;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Настройка гридов */
+
+.weather_app {
+    box-sizing: border-box;
+    display: grid;
+    grid-template-areas:
+        'search search'
+        'stat locat';
+    grid-template-rows: 40px 1fr;
+    grid-template-columns: 1fr 1fr;
+    height: 460px;
+    width: 620px;
+    max-width: 620px;
+    border: 1px solid black;
+}
+
+
+
+.search_container {
+    grid-area: search;
+
+    box-sizing: border-box;
+    border-bottom: 1px solid black;
+}
+
+.stat_container {
+    grid-area: stat;
+
+    box-sizing: border-box;
+}
+
+.locations_container {
+    grid-area: locat;
+
+    box-sizing: border-box;
+    border-left: 1px solid black;
+    overflow-y: auto;
+}
+
+
+/* стили по умолчанию для кнопки и инпута*/
+
+button,
+input {
+    border: none;
+    background: none;
+}
+
+button:hover {
+    transition: 0.3s;
+    color: rgb(126, 126, 126);
+}
+
+
+/* стилизация контейнера search */
+
+.search_container {
+    display: flex;
+    align-items: stretch;
+}
+
+.search_form {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.search_input {
+    width: 100%;
+    padding: 0 16px;
+}
+
+.submit_search {
+    padding: 0 16px;
+}
+
+
+/* стилизация контейнера locations */
+
+.locations_container>* {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.title_locations {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding: 0 15px;
+    border-bottom: 1px solid black;
+    height: 45px;
+}
+
+.list_locations {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px;
+}
+
+.list_locations li:hover {
+    transition: 0.3s;
+    transform: translateX(5px);
+}
+
+/* стилизация контейнера статистики */
+
+.stat_container {
+    display: grid;
+    grid-template-rows: 1fr 44px;
+}
+
+
+
+.tabs__content {
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.tabs__content::-webkit-scrollbar {
+    display: none;
+}
+
+.tabs__item {
+    display: none;
+    height: 100%;
+}
+
+.tabs__item.active {
+    display: grid;
+}
+
+.tabs__nav {
+    box-sizing: border-box;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    border-top: 1px solid black;
+}
+
+.tabs__nav-btn {
+    font-size: 18px;
+    font-weight: 400;
+    font-family: monospace;
+}
+
+.tabs__nav-btn:not(:last-child) {
+    border-right: 1px solid black
+}
+
+.tabs__nav-btn:hover {
+    background-color: rgb(178, 178, 178);
+    color: white;
+}
+
+.tabs__nav-btn.active {
+    background-color: rgb(85, 85, 85);
+    color: white;
+}
+
+/* стилизация tab-now */
+
+#now__temp {
+    font-size: 70px;
+    font-weight: 400;
+}
+#now__img {
+    justify-self: center;
+    align-self: flex-end;
+}
+.now__city-wrapper {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    font-size: 24px;
+}
+
+.tab__now {
+    grid-template-rows: 1fr 1fr 1fr;
+    text-align: center;
+}
+
+.tab__details div {
+    align-self: center;
+    font-size: 21px;
+    font-weight: 400;
+}
+
+/* стилизация tab-details */
+
+.tab__details {
+    grid-template-rows: 2fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+/* медиа выражения для адаптива под мобильные устройства */
+
+@media (max-width: 480px) {
+    .weather_app {
+        grid-template-areas:
+            'search'
+            'stat'
+            'locat';
+        grid-template-rows: 40px 1fr 1fr;
+        grid-template-columns: 100vw;
+        height: 100vh;
+        border: none;
+    }
+
+    .tabs__nav-btn {
+        border-bottom: 1px solid black;
+    }
+}
