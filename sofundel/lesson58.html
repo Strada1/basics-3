@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Weather</title>
+    <link rel="stylesheet" href="./view/lesson58.css">
+</head>
+
+<body>
+    <div class="weather">
+
+        <!--Форма ввода-->
+        <form class="search-form" id="searchForm">
+            <input type="text" class="search-form__search-text" id="inputText" placeholder="Enter the name of the city">
+            <button class="search-form__search-button" id="searchButton"></button>
+        </form>
+
+
+        <!--Основное окно-->
+        <div class="weather-info">
+
+            <!--Левая часть-->
+            <div class="weather-info__left-part">
+
+                <!--Информация о погоде-->
+                <div class="weather-info__content">
+                    <ul>
+                        <li class="weather-info__now-tab-content" id="nowTabContent">
+                            <div class="weather-info__now-tab-temperature" id="nowTabTemperature"></div>
+                            <div class="weather-info__now-tab-weather"><img id="nowTabWeather"></div>
+                            <div class="weather-info__now-tab-city" id="nowTabCity"></div>
+                            <button class="weather-info__now-tab-favorite-button"></button>
+                        </li>
+
+                        <li id="detailsTabContent">
+                            <div class="weather-info__details-tab-city" id="detailsTabCity"></div>
+                            <ul class="weather-info__details-tab-info">
+                                <li id="detailsTabTemperature"></li>
+                                <li id="detailsTabFeels"></li>
+                                <li id="detailsTabWeather"></li>
+                                <li id="detailsTabSunrise"></li>
+                                <li id="detailsTabSunset"></li>
+                            </ul>
+                        </li>
+
+                        <li id="forecastTabContent">
+                            <div class="weather-info__forecast-tab-city"></div>
+                            <ul class="weather-info__forecast-tab-info">
+                                <li>
+                                    <div class="weather-info__forecast-tab-info-date"></div>
+                                    <div class="weather-info__forecast-tab-info-time"></div>
+                                    <div class="weather-info__forecast-tab-info-temperature"></div>
+                                    <div class="weather-info__forecast-tab-info-feels"></div>
+                                    <div class="weather-info__forecast-tab-info-type"></div>
+                                    <div class="weather-info__forecast-tab-info-img"><img id="forecastTabWeather"></div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+    
+                <!--Кнопки смены типа информации-->
+                <ul class="weather-info__tabs">
+                    <li><a href="#nowTabContent">Now</a></li>
+                    <li><a href="#detailsTabContent">Details</a></li>
+                    <li><a href="#forecastTabContent">Forecast</a></li>
+                </ul>
+            </div>
+
+            <!--Правая часть - Добавленные локации-->
+            <div class="weather-info__added-locations">
+                <div class="weather-info__added-locations-header">Added Locations:</div>
+                <ul class="weather-info__added-locations-list">
+                    <li></li>
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="./lesson58.js"></script>
+
+</body>
+
+</html>

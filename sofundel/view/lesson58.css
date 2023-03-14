@@ -1,0 +1,337 @@
+* {
+    margin: 0rem;
+    padding: 0rem;
+    box-sizing: border-box;
+
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:active {
+    color: white;
+}
+
+a:hover {
+    color: white;
+}
+
+.weather {
+    width: 40rem;
+    margin: 0.5rem;
+
+    border: 1px solid black;
+}
+
+.search-form {
+    position: relative;
+}
+
+.search-form__search-text {
+    padding: 0.5rem;
+    padding-right: 2.5rem;
+
+    width: 100%;
+    height: 2rem;
+
+    border-bottom: 1px solid black;
+    border-top: 0rem;
+    border-left: 0rem;
+    border-right: 0rem;
+}
+
+.search-form__search-button {
+    width: 1.5rem;
+    height: 1.5rem;
+
+    background: url(./search_icon.svg) 50% 50% no-repeat;
+
+    position: absolute;
+    top: 0.25rem;
+    right: 0.5rem;
+
+    border: 0px;
+}
+
+.weather-info {
+    display: flex;
+}
+
+.weather-info__left-part {
+    width: 50%;
+}
+
+.weather-info__content {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    height: 18em;
+
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    overflow: hidden;
+}
+
+.weather-info__tabs {
+    display: inline-flex;
+
+    width: 100%;
+    height: 2rem;   
+}
+
+.weather-info__tabs li {
+    width: calc(20rem/3);
+
+    list-style-type: none;
+
+    background-color: white;
+    border-right: 1px solid black;
+}
+
+.weather-info__tabs li a { 
+    display: block;
+
+    text-align: center;
+    padding-top: 0.4rem;
+
+    height: 2rem;
+}
+
+.weather-info__tabs li:active {
+    background-color: black;  
+}
+
+.weather-info__tabs li:hover {
+    background-color: black;  
+}
+
+.weather-info__added-locations {
+    width: 20rem;
+    /*border: 1px solid black;*/
+}
+
+.weather-info__added-locations-header {
+    padding-left: 1rem;
+    padding-top: 1.5rem;
+
+    width: 100%;
+    height: 3.5rem;
+
+    font-size: 1.3rem;
+
+    border-bottom: 1px solid black;
+}
+
+.weather-info__added-locations-list {
+    padding: 1rem;
+    padding-top: 1.5rem;
+
+    width: 100%;
+    height: 16.5rem;
+
+    font-size: 1.3rem;
+
+    overflow-y: scroll;
+}
+
+.weather-info__added-locations-list li {
+    list-style-type: none;
+
+    margin-bottom: 0.5rem;
+
+    font-size: 1.3rem;
+}
+
+.weather-info__now-tab-temperature {
+    padding-left: 1.5rem;
+    padding-top: 0.5rem;
+
+    font-size: 4rem;
+
+    width: 100%;
+    height: 6rem;
+
+    /*border: 1px solid black;*/
+}
+
+.weather-info__now-tab-weather {
+    width: 100%;
+    height: 6rem;
+
+    text-align: center;
+
+    /*border: 1px solid black;*/
+}
+
+#nowTabWeather {
+    width: 6rem;
+    border: 0px;
+}
+
+.weather-info__now-tab-city {
+    padding-left: 1rem;
+    padding-top: 3.5rem;
+
+    width: 100%;
+    height: 6rem;
+
+    font-size: 1.3rem;
+
+    /*border: 1px solid black;*/
+}
+
+.weather-info__now-tab-content {
+    position: relative;
+}
+
+.weather-info__now-tab-favorite-button {
+    width: 1.5rem;
+    height: 1.5rem;
+
+    background: url(./like_icon.svg) 50% 50% no-repeat;
+
+    position: absolute;
+    top: 15.5rem;
+    left: 17rem;
+
+    border: 0px;
+}
+
+.weather-info__details-tab-city {
+    padding-left: 1rem;
+    padding-top: 1.5rem;
+
+    width: 100%;
+    height: 3.5rem;
+
+    font-size: 1.3rem;
+}
+
+.weather-info__details-tab-info {
+    padding-top: 1.5rem;
+    padding-left: 1rem;
+
+    width: 100%;
+    height: 14.5rem;
+}
+
+.weather-info__details-tab-info li {
+    list-style-type: none;
+
+    margin-bottom: 0.5rem;
+
+    font-size: 1.3rem;
+}
+
+.weather-info__forecast-tab-city {
+    padding-left: 1rem;
+    padding-top: 1.5rem;
+
+    width: 100%;
+    height: 3.5rem;
+
+    font-size: 1.3rem;
+}
+
+.weather-info__forecast-tab-info {
+    width: 100%;
+    height: 14.5rem;
+
+    overflow-y: scroll;
+}
+
+.weather-info__forecast-tab-info li {
+    position: relative;
+
+    margin-left: 1rem;
+    margin-top: 0rem;
+    margin-bottom: 1rem;
+
+    width: 17rem;
+    height: 8rem;
+
+    list-style-type: none;
+
+    border: 1px solid black;
+}
+
+.weather-info__forecast-tab-info-date {
+    position: absolute;
+
+    width: 10rem;
+    white-space: nowrap;
+    overflow: hidden;
+
+    left: 0.5rem;
+    top: 0.25rem;
+}
+
+.weather-info__forecast-tab-info-temperature {
+    position: absolute;
+
+    width: 10rem;
+    white-space: nowrap;
+    overflow: hidden;
+
+    left: 0.5rem;
+    top: 4.5rem;
+}
+
+.weather-info__forecast-tab-info-feels {
+    position: absolute;
+
+    width: 10rem;
+    white-space: nowrap;
+    overflow: hidden;
+
+    left: 0.5rem;
+    top: 6rem;
+}
+
+.weather-info__forecast-tab-info-time {
+    position: absolute;
+
+    width: 6rem;
+    white-space: nowrap;
+    overflow: hidden;
+
+    right: 0.5rem;
+    top: 0.25rem;
+
+    text-align: right;
+}
+
+.weather-info__forecast-tab-info-type {
+    position: absolute;
+
+    width: 6rem;
+    white-space: nowrap;
+    overflow: hidden;
+
+    right: 0.5rem;
+    top: 4.5rem;
+
+    text-align: right;
+}
+
+.weather-info__forecast-tab-info-img {
+    position: absolute;
+
+    width: 6rem;
+    white-space: nowrap;
+    overflow: hidden;
+
+    right: 0.5rem;
+    top: 6rem;
+
+    text-align: right;
+}
+
+#forecastTabWeather {
+    width: 1.5rem;
+}
