@@ -1,0 +1,233 @@
+   .weather {
+     padding: 200px 0 200px 0;
+     background-color: gray;
+   }
+
+   .inner__weather {
+     height: 442px;
+     width: 640px;
+     border: 1px solid black;
+     position: relative;
+   }
+
+   .input__weather {
+     width: 638px;
+     border: none;
+     border-bottom: 1px solid black;
+     outline: none;
+     padding: 0 35px;
+     height: 45px;
+     font-family: 'Roboto';
+     font-style: normal;
+     font-weight: 400;
+     font-size: 18px;
+     line-height: 21px;
+   }
+
+   .search__city {
+     position: absolute;
+     right: 0;
+     background-color: transparent;
+     border: transparent;
+     font-size: 40px;
+   }
+
+
+   .container {
+     width: 650px;
+     margin: 0 auto;
+     display: flex;
+     justify-content: center;
+     padding: 10px;
+     background-color: white;
+   }
+
+   .weather__info {
+     width: 50%;
+     border-right: 1px solid #000;
+     height: 396px;
+     position: relative;
+   }
+
+   .weather__temperature {
+     font-family: 'Roboto';
+     font-style: normal;
+     font-weight: 400;
+     font-size: 70px;
+     line-height: 82px;
+     margin-left: 23px;
+     position: absolute;
+     top: 0;
+     left: 0;
+   }
+
+   .buttons__weather {
+     display: flex;
+   }
+
+   .button__info {
+     background-color: transparent;
+     border: 1px solid #000;
+     border-left: transparent;
+     border-bottom: transparent;
+     width: 106.35px;
+     height: 45px;
+     transition: background-color 1s, color 1s;
+   }
+
+   .button__info:hover {
+     background-color: #000;
+     color: #fff;
+     cursor: pointer;
+   }
+
+   .weather__city {
+     position: absolute;
+     left: 12px;
+     bottom: 52px;
+     font-family: 'Roboto';
+     font-style: normal;
+     font-weight: 400;
+     font-size: 24px;
+     line-height: 28px;
+     color: #000000;
+   }
+
+   .weather__info-now {
+     height: 351px;
+   }
+
+   .button__forecast {
+     border-right: transparent;
+   }
+
+   .hard__weather {
+     position: absolute;
+     right: 26px;
+     bottom: 50px;
+   }
+
+   .hard__cloud {
+     position: absolute;
+     left: 34%;
+     top: 30%;
+   }
+
+
+   .inner__weather-nesting {
+     display: flex;
+   }
+
+   .weather-locations-added {
+     font-family: 'Roboto';
+     font-style: normal;
+     font-weight: 400;
+     line-height: 28px;
+     font-size: 24px;
+     color: #000000;
+     border-bottom: 1px solid black;
+     padding: 0 0 7px 18px;
+     margin-bottom: 35px;
+   }
+
+   .weather-locations {
+     width: 100%;
+     padding: 33px 0 49px 0;
+   }
+
+   .list__locations {
+     padding-left: 18px;
+   }
+
+   .nesting__location {
+     font-family: 'Roboto';
+     font-style: normal;
+     font-weight: 400;
+     font-size: 24px;
+     line-height: 28px;
+     color: #000000;
+     margin-bottom: 16px;
+   }
+
+   .weather__info-details {
+     padding: 33px 0 16px 15px;
+     font-family: 'Roboto';
+     font-style: normal;
+     font-weight: 400;
+     font-size: 24px;
+     line-height: 28px;
+     color: #000000;
+     display: none;
+     height: 351px;
+   }
+
+   .weather__details-span {
+     display: block;
+     margin-bottom: 48px;
+   }
+
+   .weather__list-objects {
+     margin-bottom: 17px;
+   }
+
+   .forecast::-webkit-scrollbar {
+     display: none;
+   }
+
+   .forecast {
+     min-width: 310px;
+     padding: 33px 18px 0 18px;
+     display: none;
+     max-height: 351px;
+     overflow: auto;
+   }
+
+   .forecast__text {
+     display: block;
+     margin-bottom: 7px;
+     font-size: 24px;
+     line-height: 28px;
+     color: #000;
+   }
+
+   .forecast__info {
+     max-width: 275px;
+     border: 1px solid #000;
+     padding: 6px 10px 13px;
+     font-size: 18px;
+     line-height: 21px;
+     margin-bottom: 9px;
+   }
+
+   .forecast__info span {
+     display: block;
+   }
+
+   .forecast__info-top {
+     display: flex;
+     justify-content: space-between;
+     margin-bottom: 34px;
+   }
+
+   .forecast__info-bottom {
+     display: flex;
+     justify-content: space-between;
+   }
+
+   .forecast__temperature {
+     max-width: 140px;
+   }
+
+   .type__weather {
+     position: relative;
+   }
+
+   .type__weather::before {
+     content: "";
+     background-image: url(../images/icon-rain.svg);
+     position: absolute;
+     top: 18px;
+     right: 3px;
+     width: 31px;
+     height: 31px;
+   }
