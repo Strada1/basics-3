@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather</title>
+  <link rel="stylesheet" href="./styles/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+  <main class="main">
+    <div class="container">
+      <div class="weather-wrapper">
+        <div class="weather-container">
+          <div class="input-wrapper">
+            <form class="form">
+              <input type="text" class="inputs-enter-data" placeholder="Aktobe" required>
+              <img class="add-task-btn" src="./assets/img/path.svg" alt="path"></img>
+            </form>
+          </div>
+          <div class="content-wrapper">
+            <div class="content-wrapper-box content-wrapper-box_1">
+              <div class="box1-high">
+                <div class="box1-high_first-container">
+                  <div class="box1-high_first-container_temperature">
+                    <span class="text-temperature">14</span>
+                    <img src="./assets/img/mask.svg" alt="mask" class="mask">
+                  </div>
+                </div>
+                <div class="box1-high_second-container">
+                  <img src="./assets/img/cloud.svg" alt="cloud" class="cloud">
+                </div>
+                <div class="box1-high_third-container">
+                  <div class="box1-high_third-container_city">Aktobe</div>
+                  <img src="./assets/img/shape.svg" alt="shape" class="shape">
+                </div>
+              </div>
+              <div class="box1-low">
+                <div class="box1-low_children box1-low_first box1-low_child-black">Now</div>
+                <div class="box1-low_children box1-low_second">Details</div>
+                <div class="box1-low_children box1-low_third">Forecast</div>
+              </div>
+            </div>
+            <div class="content-wrapper-box content-wrapper-box_2">
+              <div class="box_2-high">Added Locations:</div>
+              <div class="box_2-low">
+                <ul class="ul-list">
+                  <li class="ul-list_li">Amur</li>
+                  <li class="ul-list_li">Samara</li>
+                  <li class="ul-list_li">Bali</li>
+                  <li class="ul-list_li">Dane</li>
+                  <li class="ul-list_li">Kilo</li>
+                  <li class="ul-list_li">Nur-Sultan</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <template id="first-template">
+    <div class="weather-wrapper">
+      <div class="weather-container">
+        <div class="input-wrapper">
+          <form class="form">
+            <input type="text" class="inputs-enter-data" placeholder="Aktobe" required>
+            <img class="add-task-btn" src="./assets/img/path.svg" alt="path"></img>
+          </form>
+        </div>
+        <div class="content-wrapper">
+          <div class="content-wrapper-box content-wrapper-box_1">
+            <div class="box1-high">
+              <div class="box1-high_first-container">
+                <div class="box1-high_first-container_temperature">14
+                  <img src="./assets/img/mask.svg" alt="mask" class="mask">
+                </div>
+              </div>
+              <div class="box1-high_second-container">
+                <img src="./assets/img/cloud.svg" alt="cloud" class="cloud">
+              </div>
+              <div class="box1-high_third-container">
+                <div class="box1-high_third-container_city">Aktobe</div>
+                <img src="./assets/img/shape.svg" alt="shape" class="shape">
+              </div>
+            </div>
+            <div class="box1-low">
+              <div class="box1-low_children box1-low_first box1-low_child-black">Now</div>
+              <div class="box1-low_children box1-low_second">Details</div>
+              <div class="box1-low_children box1-low_third">Forecast</div>
+            </div>
+          </div>
+          <div class="content-wrapper-box content-wrapper-box_2">
+            <div class="box_2-high">Added Locations:</div>
+            <div class="box_2-low">
+              <ul class="ul-list">
+                <li class="ul-list_li">Amur</li>
+                <li class="ul-list_li">Samara</li>
+                <li class="ul-list_li">Bali</li>
+                <li class="ul-list_li">Dane</li>
+                <li class="ul-list_li">Kilo</li>
+                <li class="ul-list_li">Nur-Sultan</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </template>
+  <template id="second-template">
+    <div class="weather-wrapper">
+      <div class="weather-container">
+        <div class="input-wrapper">
+          <form class="form">
+            <input type="text" class="inputs-enter-data" placeholder="Aktobe" required>
+            <img class="add-task-btn" src="./assets/img/path.svg" alt="path"></img>
+          </form>
+        </div>
+        <div class="content-wrapper">
+          <div class="content-wrapper-box content-wrapper-box_1">
+            <div class="box1-high">
+              <div class="box1-high_first-container_second-screen">Aktobe</div>
+              <div class="box1-high_second-container_second-screen">
+                <ul class="list-cities">
+                  <li class="list-cities_items">Temperature: 14°</li>
+                  <li class="list-cities_items">Feels like: 10°</li>
+                  <li class="list-cities_items">Weather: Clouds</li>
+                  <li class="list-cities_items">Sunrise: 03:21</li>
+                  <li class="list-cities_items">Sunset: 18:54</li>
+                </ul>
+              </div>
+            </div>
+            <div class="box1-low">
+              <div class="box1-low_children box1-low_first">Now</div>
+              <div class="box1-low_children box1-low_second box1-low_child-black">Details</div>
+              <div class="box1-low_children box1-low_third">Forecast</div>
+            </div>
+          </div>
+          <div class="content-wrapper-box content-wrapper-box_2">
+            <div class="box_2-high">Added Locations:</div>
+            <div class="box_2-low">
+              <ul class="ul-list">
+                <li class="ul-list_li">Amur</li>
+                <li class="ul-list_li">Samara</li>
+                <li class="ul-list_li">Bali</li>
+                <li class="ul-list_li">Dane</li>
+                <li class="ul-list_li">Kilo</li>
+                <li class="ul-list_li">Nur-Sultan</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </template>
+  <template id="third-template">
+    <div class="weather-wrapper">
+      <div class="weather-container">
+        <div class="input-wrapper">
+          <form class="form">
+            <input type="text" class="inputs-enter-data" placeholder="Aktobe" required>
+            <img class="add-task-btn" src="./assets/img/path.svg" alt="path"></img>
+          </form>
+        </div>
+        <div class="content-wrapper">
+          <div class="content-wrapper-box content-wrapper-box_1">
+            <div class="box1-high">
+              <div class="box1-high_first-container_third-screen">Aktobe</div>
+                <div class="box1-high_second-container_third-screen">
+                  <div class="current-weather-box_wrapper">
+                    <div class="current-weather-box_wrapper-first">
+                      <div class="current-weather-box_wrapper-first_data">17 May</div>
+                      <div class="current-weather-box_wrapper-first_time">12:00</div>
+                    </div>
+                    <div class="current-weather-box_wrapper-second">
+                      <div class="current-weather-box_wrapper-second_child">
+                        <div>Temperature: 13</div>
+                        <div>Feels like: 10</div>
+                      </div>
+                      <div class="current-weather-box_wrapper-second_child">
+                        <div>Rain</div>
+                        <img src="./assets/img/rain.svg" alt="rain">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="current-weather-box_wrapper">
+                    <div class="current-weather-box_wrapper-first">
+                      <div class="current-weather-box_wrapper-first_data">17 May</div>
+                      <div class="current-weather-box_wrapper-first_time">12:00</div>
+                    </div>
+                    <div class="current-weather-box_wrapper-second">
+                      <div class="current-weather-box_wrapper-second_child">
+                        <div>Temperature: 13</div>
+                        <div>Feels like: 10</div>
+                      </div>
+                      <div class="current-weather-box_wrapper-second_child">
+                        <div>Rain</div>
+                        <img src="./assets/img/rain.svg" alt="rain">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="current-weather-box_wrapper">
+                    <div class="current-weather-box_wrapper-first">
+                      <div class="current-weather-box_wrapper-first_data">17 May</div>
+                      <div class="current-weather-box_wrapper-first_time">12:00</div>
+                    </div>
+                    <div class="current-weather-box_wrapper-second">
+                      <div class="current-weather-box_wrapper-second_child">
+                        <div>Temperature: 13</div>
+                        <div>Feels like: 10</div>
+                      </div>
+                      <div class="current-weather-box_wrapper-second_child">
+                        <div>Rain</div>
+                        <img src="./assets/img/rain.svg" alt="rain">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div class="box1-low">
+              <div class="box1-low_children box1-low_first">Now</div>
+              <div class="box1-low_children box1-low_second">Details</div>
+              <div class="box1-low_children box1-low_third box1-low_child-black">Forecast</div>
+            </div>
+          </div>
+          <div class="content-wrapper-box content-wrapper-box_2">
+            <div class="box_2-high">Added Locations:</div>
+            <div class="box_2-low">
+              <ul class="ul-list">
+                <li class="ul-list_li">Amur</li>
+                <li class="ul-list_li">Samara</li>
+                <li class="ul-list_li">Bali</li>
+                <li class="ul-list_li">Dane</li>
+                <li class="ul-list_li">Kilo</li>
+                <li class="ul-list_li">Nur-Sultan</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </template>
+  <script type="module" src="./js/main.js"></script>
+</body>
+</html>
+
