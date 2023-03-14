@@ -177,15 +177,15 @@ button:hover {
 
 /* стилизация tab-now */
 
-#tempNow {
+#now__temp {
     font-size: 70px;
     font-weight: 400;
 }
-#imgWeatherNow {
+#now__img {
     justify-self: center;
     align-self: flex-end;
 }
-#currentCity {
+.now__city-wrapper {
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
@@ -193,7 +193,7 @@ button:hover {
     font-size: 24px;
 }
 
-.infoNow {
+.tab__now {
     grid-template-rows: 1fr 1fr 1fr;
 }
 
