@@ -11,22 +11,23 @@ function capitalizeFirstLetter(string) {
 async function sendPromiseToGetData(url) {
     try {
         const responceData = await fetch(url);
+        const receivedDataJSON = await responceData.json();
+        console.log(receivedDataJSON);
         if (responceData.ok) {
-            const receivedDataJSON = await responceData.json();
-            //console.log(receivedDataJSON);
             let cityTemperature = receivedDataJSON.main.temp - 273; // Перевод из кельвинов в цельсий
             cityTemperature = Math.round(cityTemperature);
-            //console.log(cityTemperature);
             const weatherConditionsImgSrc = receivedDataJSON.weather[0].icon;
-            //console.log(weatherConditionsImgSrc);
             return { cityTemperature, weatherConditionsImgSrc };
         } else {
-            throw new Error(responceData.status);
+            const errorText = "Error " + receivedDataJSON.cod + ": " + receivedDataJSON.message;
+            console.log(errorText);
+            alert(errorText);
+            return { cityTemperature: "error" };
         }
     } catch (err) {
-        console.log("Произошла ошибка при запросе данных");
+        console.log("Произошла ошибка при запросе данных, ошибка не со стороны пользователя");
         console.log(err);
-        return { cityTemperature: "error", weatherConditionsImgSrc: null };
+        return { cityTemperature: "error" };
     }
 
 }
