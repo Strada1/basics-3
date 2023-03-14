@@ -195,6 +195,19 @@ button:hover {
 
 .tab__now {
     grid-template-rows: 1fr 1fr 1fr;
+    text-align: center;
+}
+
+.tab__details div {
+    align-self: center;
+    font-size: 21px;
+    font-weight: 400;
+}
+
+/* стилизация tab-details */
+
+.tab__details {
+    grid-template-rows: 2fr 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 
 /* медиа выражения для адаптива под мобильные устройства */

@@ -26,7 +26,7 @@
         </div>
         <div class="stat_container">
             <div class="tabs__content">
-                <div class="tabs__item tab__now active" id="tab_1">
+                <div class="tabs__item tab__now" id="tab_1">
                     <div id="now__temp">14</div>
                     <img id="now__img" src="https://openweathermap.org/img/wn/10d@2x.png">
                     <div class="now__city-wrapper">
@@ -36,16 +36,22 @@
                             </span></button>
                     </div>
                 </div>
-                <div class="tabs__item tab__details" id="tab_2">
-                    2
+                <div class="tabs__item tab__details active" id="tab_2">
+                    <div class="details__city"><span id="details__city">Moscow</span></div>
+                    <div class="details__temp">Temparature: <span id="details__temp">14</span></div>
+                    <div class="details__feeltemp">Feels like: <span id="details__feeltemp">10</span></div>
+                    <div class="details__windspeed">Wind: <span id="details__windspeed">4</span></div>
+                    <div class="details__weather">Weather: <span id="details__weather">Clouds</span></div>
+                    <div class="details__sunrise">Sunrise: <span id="details__sunrise">3:21</span></div>
+                    <div class="details__sunset">Sunset: <span id="details__sunset">18:54</span></div>
                 </div>
                 <div class="tabs__item tab__forecast" id="tab_3">
                     3
                 </div>
             </div>
             <div class="tabs__nav">
-                <button class="tabs__nav-btn active" type="button" data-tab="#tab_1">Now</button>
-                <button class="tabs__nav-btn" type="button" data-tab="#tab_2">Details</button>
+                <button class="tabs__nav-btn" type="button" data-tab="#tab_1">Now</button>
+                <button class="tabs__nav-btn active" type="button" data-tab="#tab_2">Details</button>
                 <button class="tabs__nav-btn" type="button" data-tab="#tab_3">Forecast</button>
             </div>
         </div>

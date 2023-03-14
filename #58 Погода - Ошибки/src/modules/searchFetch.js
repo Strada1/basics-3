@@ -1,5 +1,7 @@
 import renderTabNow from './renderTabNow.js';
+import renderTabDetails from './renderDetails.js'
 import { serverUrl, apiKey } from './consts.js';
+import isValid from './isValid.js';
 
 // Функция получения названия города из input
 // Получает данные погоды
@@ -11,16 +13,17 @@ async function searchFetch(event) {
     event.preventDefault()
 
     const now__city = event.target[0].value;
-    let data = await getData(now__city);
-    
-    if (data === null) return;
 
-    let {main, weather, name} = data;
+    if (!isValid(now__city)) return
+
+    let data = await getData(now__city);
+    if (data === null) return;
+    let { main, name, sys, weather, wind } = data;
 
     renderTabNow(main, weather, name);
-    // TODO: renderDetails()
+    renderTabDetails(main, name, sys, weather, wind)
     // TODO: renderForecast()
-    
+
     event.target[0].value = '';
 }
 
@@ -33,13 +36,13 @@ async function searchFetch(event) {
 async function getData(now__city) {
 
     const url = `${serverUrl}?q=${now__city}&appid=${apiKey}&units=metric`;
-    
+
     try {
 
         let response = await fetch(url);
         let data = await response.json();
 
-        if (data.cod !== 200 ) throw new Error(`Город с названием "${now__city}" не найден`)
+        if (response.status === 404) throw new Error(`Город с названием "${now__city}" не найден`)
 
         return data
 
