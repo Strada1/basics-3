@@ -9,15 +9,15 @@
 <body>
   <main class="container">
     <div class="container__search">
-        <input class="search__input"  type="text" placeholder="Aktobe">
+        <input class="search__input" id="input" type="text" placeholder="Aktobe">
     </div>
     <div class="container__weather">
         <div class="weather__block">
           <div class="weather__window">
-              <div class="weather__time">14</div>
-            <div class="weather__cloud"><img src="svg/icons8-cloud-96 1.svg" alt=""></div>
+              <div id="temperature" class="weather__time">14</div>
+            <div class="weather__cloud"><img src="svg/icons8-cloud-96 1.svg" id="icon" alt=""></div>
             <div class="weather__block_under">
-              <div class="weather__city">Aktobe</div>
+              <div id="name" class="weather__city">Aktobe</div>
               <div class="weather__like">
                 <img src="svg/Shape.svg" alt="">
               </div>
@@ -50,5 +50,6 @@
     </div>
 
   </main>
+  <script type="module" src="js/index.js"></script>
 </body>
 </html>
