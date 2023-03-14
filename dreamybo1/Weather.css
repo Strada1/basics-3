@@ -39,6 +39,8 @@ body{
     
 }
 input{
+    font-family: Roboto;
+    font-style: normal;
     outline: none;
     border:none;
     background-color: rgb(251, 246, 239);
@@ -96,6 +98,7 @@ input{
     
 }
 #leftContent{
+    background-color: rgb(205, 211, 244);
     position: relative;
     height: 344px;
     width: 298px;
@@ -187,7 +190,7 @@ input{
     width: 30px;
     height: 30px;
     cursor: pointer;
-    background-color: rgb(251, 246, 239);
+    background-color: rgb(205, 211, 244);
     left: 85%;
 }
 ::placeholder{

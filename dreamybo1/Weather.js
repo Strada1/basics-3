@@ -1,15 +1,13 @@
-import { render } from "./Render";
-
+import render from "./Render.js";
 
 const inputForm = document.querySelector("#inputTown");
 inputForm.addEventListener("submit", fun)
 const buttonFind = document.querySelector("#buttonSearch")
 buttonFind.addEventListener("click", fun)
-const townNow = document.querySelector("#townLeft");
+
 const serverUrl = 'http://api.openweathermap.org/data/2.5/weather';
 const apiKey = 'f660a2fb1e4bad108d6160b7f58c555f'; //(этот ключ имеет ограничение в кол-ве запросов, если будут ошибки - придется сгенерировать новый или спросить в чате)
-let tempNow = document.querySelector("#tempLeft")
-const weatherImg = document.querySelector('#cloudImg')
+
 
 
 async function fun(e){

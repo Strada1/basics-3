@@ -1,6 +1,6 @@
-export {render};
-
-
+let tempNow = document.querySelector("#tempLeft")
+const weatherImg = document.querySelector('#cloudImg')
+const townNow = document.querySelector("#townLeft"); 
 
 function render(main, weather, name){
     let temp = Math.floor(main.temp);
@@ -10,3 +10,4 @@ function render(main, weather, name){
     townNow.textContent = name;
     console.log(tempNow)
 }
+export default render;
