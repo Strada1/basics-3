@@ -1,0 +1,227 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic);
+
+
+
+*, *:before, *:after{
+    
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+}
+
+body{
+    font-family: 'Roboto';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(245, 239, 217);
+}
+#mainDiv{
+    font-family: Roboto;
+    font-style: normal;
+    overflow: hidden;
+    display: flex;  
+    flex-wrap: wrap;
+    height: 435px;
+    width: 600px;
+    border: solid 1px black;
+    background-color: rgb(251, 246, 239);
+}
+#inputTown{
+    margin: 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 45px;
+    border-bottom: 1px solid black;
+    
+}
+input{
+    outline: none;
+    border:none;
+    background-color: rgb(251, 246, 239);
+    height: 100%;
+    width: 100%;
+}
+#buttonSearch{
+    background-image: url(https://www.svgrepo.com/download/507849/search.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: rgb(251, 246, 239);
+    height: 21.86px;
+    width: 21.86px;
+    border: none;
+    margin: 20px;
+    cursor: pointer;
+    
+}
+#leftTab{
+    display: flex;
+    align-items: end;
+    flex-direction: column;
+    min-width: 298px;
+    height: 100%;
+    border-right: 1px solid black;
+}
+#rightTab{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+#divTabs{
+    display: flex;
+    width: 100%;
+    height: 389px;
+}
+.buttons{
+    border: 1px solid #000;
+    border-right: 0px;
+    height: 45px;
+    flex: 1 1 33.3%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer !important;
+}
+.buttonsList{
+    margin: 0PX;
+    min-width: 298px;
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    
+    
+}
+#leftContent{
+    position: relative;
+    height: 344px;
+    width: 298px;
+    
+}
+.textButton{
+    color: #000;
+    text-decoration: none;
+    
+
+}
+#addedLocations{
+    display: flex;
+
+    min-height: 68px;
+    border-bottom: 1px solid black;
+}
+#locationsList{
+    height: 100%;
+    list-style-type: none;
+    overflow: auto;
+}
+.locations{
+    padding-left: 18px;
+    padding-top: 13px;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+    
+}
+#titleRight{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+    padding-top:33px ;
+    padding-left: 18px;
+}
+#Amur{
+    padding-left: 18px;
+    padding-top: 35px;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+}
+.choosen{
+    background-color: #000;
+}
+.choosenText{
+    color: white;
+}
+#cloudDiv{
+    
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    
+}
+#cloudImg{
+    
+    width: 78px;
+    height: 59px;
+}
+#tempLeft{
+    padding-left: 23px;
+    padding-top:20px ;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 70px;
+    line-height: 82px;
+}
+#townLeft{
+    position: absolute;
+    bottom: 0px;
+    padding-bottom: 17px;
+    padding-left: 12px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+}
+#favButton{
+    position: absolute;
+    bottom: 17px;
+    background-image: url(https://www.svgrepo.com/download/502699/heart.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    background-color: rgb(251, 246, 239);
+    left: 85%;
+}
+::placeholder{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    padding-left: 16px;
+}
+.hiden{
+    display: none;
+}
+#townLeftDetails{
+    position: absolute;
+    padding-top: 33px;
+    padding-left: 17px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+}
+.detailsParametres{
+    list-style-type: none;
+    padding-left: 18px;
+    padding-top: 13px;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+}
+#detailsParametresTemp{
+    list-style-type: none;
+    padding-left: 18px;
+    padding-top: 103px;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+}

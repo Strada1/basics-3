@@ -1,0 +1,68 @@
+<html lang="en">
+    <link rel="stylesheet" href="Weather.css">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+</head>
+<body>
+    <div id="mainDiv">
+        <form id="inputTown" action="">
+            <input id="inputMain" value="" placeholder="Aktobe" type="text">
+            <button id="buttonSearch" type="button"></button>
+        </form>
+        <div id="divTabs">
+            <div id="leftTab">
+                <div id="leftContent">
+                    <div >
+                        <h2 id="tempLeft">14°</h2>
+                        <div id="cloudDiv">
+                            <img id="cloudImg" src="https://www.svgrepo.com/download/262581/clouds.svg"  alt="">
+                        </div>
+                        <h2 id="townLeft">Aktobe</h2>
+                        <button  id="favButton"></button>
+                    </div>
+                    <div class="hiden">
+                        <h2 id="townLeftDetails">Aktobe</h2>
+                        <li id="detailsParametresTemp">Temperature:</li>
+                        <li class="detailsParametres">Feels like:</li>
+                        <li class="detailsParametres">Weather:</li>
+                        <li class="detailsParametres">Sunrise:</li>
+                        <li class="detailsParametres">Sunset:</li>
+                    </div>
+                    <div>
+
+                    </div>
+                </div>
+                <ul class="buttonsList">
+                    <li class="buttons choosen" id="nowButton">
+                        <a class="textButton choosenText" id="now" href="">Now</a>
+                    </li>
+                    <li class="buttons" id="detailsButton">
+                        <a class="textButton" id="details"  href="">Details</a>
+                    </li>
+                    <li class="buttons" id="forecastButton">
+                        <a class="textButton" id="forecast" href="">Forecast</a>
+                    </li>
+                </ul>
+                
+            </div>  
+            <div id="rightTab">
+                <div id="addedLocations">
+                    <h2 id="titleRight">Added locations:</h2>
+                </div>
+                <div id="locationsList">
+                    <li id="Amur">Amur</li>
+                    <li class="locations">Samara</li>
+                    <li class="locations">Bali</li>
+                    <li class="locations">Dane</li>
+                    <li class="locations">Kilo</li>
+                    <li class="locations">Nur-Sultan</li>
+                </div>
+            </div>
+        </div>    
+    </div>
+</body>
+<script src="Weather.js"></script>
+</html>
