@@ -1,4 +1,5 @@
-import renderTabNow from './renderTabNow.js'
+import renderTabNow from './renderTabNow.js';
+import { serverUrl, apiKey } from './consts.js';
 
 // Функция получения названия города из input
 // Получает данные погоды
@@ -9,8 +10,8 @@ import renderTabNow from './renderTabNow.js'
 async function searchFetch(event) {
     event.preventDefault()
 
-    const cityName = event.target[0].value;
-    let data = await getData(cityName);
+    const now__city = event.target[0].value;
+    let data = await getData(now__city);
     
     if (data === null) return;
 
@@ -29,18 +30,16 @@ async function searchFetch(event) {
 // Получает данные погоды
 // Если запрос с ошибкой то выводит сообщение в alert
 // Возвращает данные о погоде
-async function getData(cityName) {
+async function getData(now__city) {
 
-    const serverUrl = 'http://api.openweathermap.org/data/2.5/weather';
-    const apiKey = '4ffd32aaf968b4c03c60829ec4d46eb1';
-    const url = `${serverUrl}?q=${cityName}&appid=${apiKey}&units=metric`;
+    const url = `${serverUrl}?q=${now__city}&appid=${apiKey}&units=metric`;
     
     try {
 
         let response = await fetch(url);
         let data = await response.json();
 
-        if (data.cod !== 200 ) throw new Error(`Город с названием "${cityName}" не найден`)
+        if (data.cod !== 200 ) throw new Error(`Город с названием "${now__city}" не найден`)
 
         return data
 

@@ -1,6 +1,4 @@
-const tabsBtn = document.querySelectorAll(".tabs__nav-btn");
-const tabsItems = document.querySelectorAll(".tabs__item");
-
+import { tabsBtn, tabsItems } from "./consts.js";
 
 function onTabClick(event) {
 
