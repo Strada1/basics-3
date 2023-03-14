@@ -1,24 +1,28 @@
-const templateContainer = document.querySelector('.container');
-const firstTemplate = document.querySelector('#first-template');
-const secondTemplate = document.querySelector('#second-template');
-const thirdTemplate = document.querySelector('#third-template');
-const screenSwitchButtons = document.querySelectorAll('.box1-low_children');
-const cloneFirst = firstTemplate.content.cloneNode(true);
-const cloneSecond = secondTemplate.content.cloneNode(true);
-const cloneThird = thirdTemplate.content.cloneNode(true);
+import {getDataInputSubmit} from './modules/uiNow.js';
+import {form} from './modules/domElements.js';
 
-const putFirstTemplate = templateContainer.appendChild(cloneFirst);
+getDataInputSubmit(form);
 
-console.log(screenSwitchButtons);
+// const screenSwitchButtons = document.querySelectorAll('.box1-low_children');
+// const templateContainer = document.querySelector('.container');
+// const firstTemplate = document.querySelector('#first-template');
+// const secondTemplate = document.querySelector('#second-template');
+// const thirdTemplate = document.querySelector('#third-template');
 
-for(let button of screenSwitchButtons) {
-  button.addEventListener('click', function(){
-    console.log('Hello');
-  });
-}
+// const cloneFirst = firstTemplate.content.cloneNode(true);
+// const cloneSecond = secondTemplate.content.cloneNode(true);
+// const cloneThird = thirdTemplate.content.cloneNode(true);
 
+// const putFirstTemplate = templateContainer.appendChild(cloneFirst);
 // const putSecondTemplate = templateContainer.appendChild(cloneSecond);
 // const putThirdTemplate = templateContainer.appendChild(cloneThird);
+
+// console.log(screenSwitchButtons);
+// for(let button of screenSwitchButtons) {
+//   button.addEventListener('click', function(){
+//     console.log('Hello');
+//   });
+// }
 
 // function switchScreen(event) {
 //   console.log(event.target)
@@ -31,4 +35,6 @@ for(let button of screenSwitchButtons) {
 //   }
 // }
 // clickScreenSwitchButtons(screenSwitchButtons);
+
+
 

@@ -12,13 +12,61 @@
 </head>
 <body>
   <main class="main">
-    <div class="container"></div>
+    <div class="container">
+      <div class="weather-wrapper">
+        <div class="weather-container">
+          <div class="input-wrapper">
+            <form class="form">
+              <input type="text" class="inputs-enter-data" placeholder="Aktobe" required>
+              <img class="add-task-btn" src="./assets/img/path.svg" alt="path"></img>
+            </form>
+          </div>
+          <div class="content-wrapper">
+            <div class="content-wrapper-box content-wrapper-box_1">
+              <div class="box1-high">
+                <div class="box1-high_first-container">
+                  <div class="box1-high_first-container_temperature">
+                    <span class="text-temperature">14</span>
+                    <img src="./assets/img/mask.svg" alt="mask" class="mask">
+                  </div>
+                </div>
+                <div class="box1-high_second-container">
+                  <img src="./assets/img/cloud.svg" alt="cloud" class="cloud">
+                </div>
+                <div class="box1-high_third-container">
+                  <div class="box1-high_third-container_city">Aktobe</div>
+                  <img src="./assets/img/shape.svg" alt="shape" class="shape">
+                </div>
+              </div>
+              <div class="box1-low">
+                <div class="box1-low_children box1-low_first box1-low_child-black">Now</div>
+                <div class="box1-low_children box1-low_second">Details</div>
+                <div class="box1-low_children box1-low_third">Forecast</div>
+              </div>
+            </div>
+            <div class="content-wrapper-box content-wrapper-box_2">
+              <div class="box_2-high">Added Locations:</div>
+              <div class="box_2-low">
+                <ul class="ul-list">
+                  <li class="ul-list_li">Amur</li>
+                  <li class="ul-list_li">Samara</li>
+                  <li class="ul-list_li">Bali</li>
+                  <li class="ul-list_li">Dane</li>
+                  <li class="ul-list_li">Kilo</li>
+                  <li class="ul-list_li">Nur-Sultan</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </main>
   <template id="first-template">
     <div class="weather-wrapper">
       <div class="weather-container">
         <div class="input-wrapper">
-          <form class="forms">
+          <form class="form">
             <input type="text" class="inputs-enter-data" placeholder="Aktobe" required>
             <img class="add-task-btn" src="./assets/img/path.svg" alt="path"></img>
           </form>
@@ -66,7 +114,7 @@
     <div class="weather-wrapper">
       <div class="weather-container">
         <div class="input-wrapper">
-          <form class="forms">
+          <form class="form">
             <input type="text" class="inputs-enter-data" placeholder="Aktobe" required>
             <img class="add-task-btn" src="./assets/img/path.svg" alt="path"></img>
           </form>
@@ -112,7 +160,7 @@
     <div class="weather-wrapper">
       <div class="weather-container">
         <div class="input-wrapper">
-          <form class="forms">
+          <form class="form">
             <input type="text" class="inputs-enter-data" placeholder="Aktobe" required>
             <img class="add-task-btn" src="./assets/img/path.svg" alt="path"></img>
           </form>
@@ -195,7 +243,7 @@
       </div>
     </div>
   </template>
-  <script src="./js/main.js"></script>
+  <script type="module" src="./js/main.js"></script>
 </body>
 </html>
 
